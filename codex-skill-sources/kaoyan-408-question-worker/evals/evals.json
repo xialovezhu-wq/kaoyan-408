@@ -1,0 +1,13 @@
+{
+  "schema": "portable-skill-evals-v1",
+  "evals": [
+    {"name": "current_question_first_break"},
+    {"name": "high_correct_no_wrong_capture"},
+    {"name": "medium_correct_is_captured"},
+    {"name": "wrong_feedback_then_capture"},
+    {"name": "capture_recovery_does_not_repeat_outcome"},
+    {"name": "unified_navigation_retains_unresolved_item"},
+    {"name": "independent_correct_recovery_is_observation_only"},
+    {"name": "trace_choice_conflict_fails_closed"}
+  ]
+}

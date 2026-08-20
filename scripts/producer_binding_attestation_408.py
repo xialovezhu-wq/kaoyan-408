@@ -11,7 +11,12 @@ from pathlib import Path
 from typing import Any, Mapping
 
 
-FORBIDDEN_KEYS = {"release_id", "activation_id", "dispatcher_authority", "dispatcher_authority_fingerprint", "mcp_authority", "mcp_authority_fingerprint", "mcp_release_id", "producer_authority_fingerprint"}
+FORBIDDEN_KEYS = {
+    "release_id", "activation_id", "dispatcher_authority",
+    "dispatcher_authority_fingerprint", "mcp_authority",
+    "mcp_authority_fingerprint", "mcp_release_id",
+    "producer_authority_fingerprint",
+}
 
 
 class ProducerBindingError(RuntimeError):
@@ -54,8 +59,19 @@ def _timestamp(value: str) -> dt.datetime:
 
 def load_descriptor(path: Path, *, subject: str) -> dict[str, Any]:
     descriptor = json.loads(path.read_text(encoding="utf-8"))
-    expected = {"schema_version", "subject", "attestation_required_after", "foreground_skill", "producer", "capture_contract", "attestation_relative_root", "formal_write_count", "descriptor_content_sha256"}
-    if not isinstance(descriptor, dict) or set(descriptor) != expected or descriptor.get("schema_version") != "producer_binding_descriptor_v1" or descriptor.get("subject") != subject or descriptor.get("formal_write_count") != 0:
+    expected = {
+        "schema_version", "subject", "attestation_required_after",
+        "foreground_skill", "producer", "capture_contract",
+        "attestation_relative_root", "formal_write_count",
+        "descriptor_content_sha256",
+    }
+    if (
+        not isinstance(descriptor, dict)
+        or set(descriptor) != expected
+        or descriptor.get("schema_version") != "producer_binding_descriptor_v1"
+        or descriptor.get("subject") != subject
+        or descriptor.get("formal_write_count") != 0
+    ):
         raise ProducerBindingError("producer binding descriptor invalid")
     core = {key: value for key, value in descriptor.items() if key != "descriptor_content_sha256"}
     if descriptor.get("descriptor_content_sha256") != sha256_value(core):
@@ -68,8 +84,10 @@ def load_descriptor(path: Path, *, subject: str) -> dict[str, Any]:
     if not isinstance(skill, dict):
         raise ProducerBindingError("foreground Skill binding missing")
     for prefix in ("authoritative", "installed"):
-        candidate = Path(str(skill.get(f"{prefix}_path") or ""))
-        if not candidate.is_absolute() or candidate.is_symlink() or not candidate.is_file() or sha256_file(candidate) != skill.get(f"{prefix}_sha256"):
+        raw_path = skill.get(f"{prefix}_path")
+        digest = skill.get(f"{prefix}_sha256")
+        candidate = Path(str(raw_path or ""))
+        if not candidate.is_absolute() or candidate.is_symlink() or not candidate.is_file() or sha256_file(candidate) != digest:
             raise ProducerBindingError(f"foreground Skill {prefix} binding mismatch")
     authoritative_path = Path(str(skill.get("authoritative_path") or ""))
     installed_path = Path(str(skill.get("installed_path") or ""))
@@ -104,6 +122,79 @@ def load_descriptor(path: Path, *, subject: str) -> dict[str, Any]:
     return descriptor
 
 
+def _bound_file(path: Path) -> dict[str, str]:
+    candidate = path.expanduser().resolve(strict=True)
+    if candidate.is_symlink() or not candidate.is_file():
+        raise ProducerBindingError("producer binding source file invalid")
+    return {"path": str(candidate), "sha256": sha256_file(candidate)}
+
+
+def build_descriptor(
+    *,
+    subject: str,
+    attestation_required_after: str,
+    authoritative_skill: Path,
+    installed_skill: Path,
+    producer_files: list[Path],
+    capture_contract_files: list[Path],
+    attestation_relative_root: str,
+) -> dict[str, Any]:
+    """Build one resolved descriptor without embedding machine paths in source.
+
+    Deployment and tests call this function with explicit paths and persist the
+    result outside the version-controlled source tree.  The checked-in example
+    documents placeholders only.
+    """
+
+    if subject != "cs408" or not producer_files or not capture_contract_files:
+        raise ProducerBindingError("producer binding descriptor inputs invalid")
+    _timestamp(attestation_required_after)
+    authoritative = _bound_file(authoritative_skill)
+    installed = _bound_file(installed_skill)
+    if (
+        authoritative["sha256"] != installed["sha256"]
+        or Path(authoritative["path"]).read_bytes()
+        != Path(installed["path"]).read_bytes()
+    ):
+        raise ProducerBindingError("foreground Skill authoritative/installed parity mismatch")
+    relative_root = Path(attestation_relative_root)
+    if relative_root.is_absolute() or ".." in relative_root.parts:
+        raise ProducerBindingError("producer binding sidecar root invalid")
+    producer_rows = [_bound_file(path) for path in producer_files]
+    contract_rows = [_bound_file(path) for path in capture_contract_files]
+    core = {
+        "schema_version": "producer_binding_descriptor_v1",
+        "subject": subject,
+        "attestation_required_after": attestation_required_after,
+        "foreground_skill": {
+            "authoritative_path": authoritative["path"],
+            "authoritative_sha256": authoritative["sha256"],
+            "installed_path": installed["path"],
+            "installed_sha256": installed["sha256"],
+        },
+        "producer": {
+            "source_files": producer_rows,
+            "source_closure_sha256": sha256_value(producer_rows),
+        },
+        "capture_contract": {"files": contract_rows},
+        "attestation_relative_root": relative_root.as_posix(),
+        "formal_write_count": 0,
+    }
+    _assert_release_neutral(core)
+    return {**core, "descriptor_content_sha256": sha256_value(core)}
+
+
+def write_descriptor(path: Path, descriptor: Mapping[str, Any]) -> None:
+    """Persist a resolved descriptor atomically and reject conflicting bytes."""
+
+    load_subject = str(descriptor.get("subject") or "")
+    load_descriptor_payload = dict(descriptor)
+    if load_subject != "cs408":
+        raise ProducerBindingError("producer binding descriptor subject invalid")
+    _assert_release_neutral(load_descriptor_payload)
+    _atomic_no_clobber(path.expanduser().resolve(), load_descriptor_payload)
+
+
 def _atomic_no_clobber(path: Path, value: Mapping[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = canonical_bytes(value)
@@ -111,7 +202,9 @@ def _atomic_no_clobber(path: Path, value: Mapping[str, Any]) -> None:
     try:
         os.fchmod(descriptor, 0o600)
         with os.fdopen(descriptor, "wb") as handle:
-            handle.write(payload); handle.flush(); os.fsync(handle.fileno())
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
         try:
             os.link(temporary, path)
         except FileExistsError:
@@ -122,13 +215,38 @@ def _atomic_no_clobber(path: Path, value: Mapping[str, Any]) -> None:
             os.unlink(temporary)
 
 
-def publish_attestation(*, descriptor_path: Path, repo_root: Path, subject: str, capture_id: str, capture_content_sha256: str, recorded_at: str) -> dict[str, Any]:
+def publish_attestation(
+    *, descriptor_path: Path, repo_root: Path, subject: str,
+    capture_id: str, capture_content_sha256: str, recorded_at: str,
+) -> dict[str, Any]:
     descriptor = load_descriptor(descriptor_path, subject=subject)
     if _timestamp(recorded_at) < _timestamp(descriptor["attestation_required_after"]):
-        return {"status": "historical_pre_attestation", "attestation_path": None, "attestation_sha256": None, "formal_write_count": 0}
-    core = {"schema_version": "producer_binding_attestation_v1", "subject": subject, "capture_id": capture_id, "capture_content_sha256": capture_content_sha256, "foreground_skill": descriptor["foreground_skill"], "producer": descriptor["producer"], "capture_contract": descriptor["capture_contract"], "binding_descriptor_sha256": sha256_file(descriptor_path), "attestation_required_after": descriptor["attestation_required_after"], "formal_write_count": 0}
+        return {
+            "status": "historical_pre_attestation",
+            "attestation_path": None,
+            "attestation_sha256": None,
+            "formal_write_count": 0,
+        }
+    core = {
+        "schema_version": "producer_binding_attestation_v1",
+        "subject": subject,
+        "capture_id": capture_id,
+        "capture_content_sha256": capture_content_sha256,
+        "foreground_skill": descriptor["foreground_skill"],
+        "producer": descriptor["producer"],
+        "capture_contract": descriptor["capture_contract"],
+        "binding_descriptor_sha256": sha256_file(descriptor_path),
+        "attestation_required_after": descriptor["attestation_required_after"],
+        "formal_write_count": 0,
+    }
     _assert_release_neutral(core)
     attestation = {**core, "attestation_sha256": sha256_value(core)}
-    path = repo_root.resolve() / descriptor["attestation_relative_root"] / f"{capture_id}.json"
+    root = repo_root.resolve() / descriptor["attestation_relative_root"]
+    path = root / f"{capture_id}.json"
     _atomic_no_clobber(path, attestation)
-    return {"status": "attested", "attestation_path": str(path), "attestation_sha256": sha256_file(path), "formal_write_count": 0}
+    return {
+        "status": "attested",
+        "attestation_path": str(path),
+        "attestation_sha256": sha256_file(path),
+        "formal_write_count": 0,
+    }

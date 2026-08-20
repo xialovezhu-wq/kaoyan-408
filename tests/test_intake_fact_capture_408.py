@@ -31,6 +31,54 @@ class IntakeFactCaptureTests(unittest.TestCase):
         ],
     }
 
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls._binding_temp = tempfile.TemporaryDirectory(
+            prefix="cs408-producer-binding-"
+        )
+        root = Path(cls._binding_temp.name)
+        authoritative = (
+            PROJECT_ROOT
+            / "codex-skill-sources"
+            / "kaoyan-408-wrong-intake"
+            / "SKILL.md"
+        )
+        installed = root / "installed" / "SKILL.md"
+        installed.parent.mkdir(parents=True)
+        installed.write_bytes(authoritative.read_bytes())
+        descriptor = capture.build_descriptor(
+            subject="cs408",
+            attestation_required_after="2026-08-17T00:00:00+00:00",
+            authoritative_skill=authoritative,
+            installed_skill=installed,
+            producer_files=[
+                PROJECT_ROOT / "scripts" / "intake_fact_capture_408.py",
+                PROJECT_ROOT / "scripts" / "capture_hot_writer_408.py",
+                PROJECT_ROOT / "scripts" / "capture_commit_index_408.py",
+                PROJECT_ROOT / "scripts" / "bounded_jsonl_index_408.py",
+                PROJECT_ROOT / "scripts" / "intake_lib_408.py",
+                PROJECT_ROOT / "scripts" / "producer_binding_attestation_408.py",
+            ],
+            capture_contract_files=[
+                PROJECT_ROOT / "schema" / "current-question-evidence-bundle-v3.md",
+                PROJECT_ROOT / "schema" / "morning-review-backflow-policy-v1.json",
+                PROJECT_ROOT
+                / "schema"
+                / "producer-binding-v1.example.json",
+                authoritative,
+            ],
+            attestation_relative_root=".producer-binding-attestations",
+        )
+        cls._descriptor_path = root / "producer-binding-v1.json"
+        capture.write_descriptor(cls._descriptor_path, descriptor)
+        cls._original_descriptor_path = capture.PRODUCER_BINDING_DESCRIPTOR_PATH
+        capture.PRODUCER_BINDING_DESCRIPTOR_PATH = cls._descriptor_path
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        capture.PRODUCER_BINDING_DESCRIPTOR_PATH = cls._original_descriptor_path
+        cls._binding_temp.cleanup()
+
     def _payload(self, **overrides: object) -> dict[str, object]:
         value: dict[str, object] = {
             "schema": capture.SCHEMA,

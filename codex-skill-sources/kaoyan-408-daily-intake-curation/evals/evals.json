@@ -1,0 +1,11 @@
+{
+  "schema": "portable-skill-evals-v1",
+  "evals": [
+    {"name": "explicit_date_required"},
+    {"name": "consumer_exactly_once"},
+    {"name": "luna_status_matrix_fail_soft"},
+    {"name": "sol_field_level_decisions"},
+    {"name": "strict_serial_formal_writes"},
+    {"name": "minimal_next_morning_closeout"}
+  ]
+}

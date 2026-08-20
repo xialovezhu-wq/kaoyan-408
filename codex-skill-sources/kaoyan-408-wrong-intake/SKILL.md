@@ -43,7 +43,14 @@ resubmit attachments and reuses the first bundle's frozen attachment objects.
 `dialogue_only` has no attachments. `image_question` requires both `question_image`
 and `solution_image`; missing either fails before Capture creation.
 
+high-confidence, unprompted independent correct is an observation.
+
 ## First-answer split
+
+Correct with medium/low confidence is a capture. wrong, partial, blank, or
+uncertain is a capture under current_question_failure_standing_policy_v1 and
+returns awaiting_daily_curation. The current-question answer-current-and-next
+entry is receipt-bound to the navigation frontier.
 
 - High-confidence, unprompted `independent_correct`: one private
   `current-question-evidence-bundle-v3` bound to exactly one

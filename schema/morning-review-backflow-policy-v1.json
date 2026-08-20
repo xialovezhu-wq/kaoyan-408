@@ -1,0 +1,12 @@
+{
+  "schema": "morning_review_backflow_policy_v1",
+  "enabled": true,
+  "effective_date": "2026-07-12",
+  "timezone": "Asia/Shanghai",
+  "eligible_source": "morning_review",
+  "eligible_first_results": ["partial", "uncertain", "wrong"],
+  "fast_capture_formalization_authorized": true,
+  "formal_write_authorized": false,
+  "daily_curation_requires_explicit_date": true,
+  "authorization_basis": "current question failure evidence is retained for explicit-date Sol curation"
+}

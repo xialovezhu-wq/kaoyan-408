@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import hashlib
 import io
 import json
@@ -39,6 +40,61 @@ from test_morning_review_session_hot_integration_408 import (  # noqa: E402
 
 SESSION_ID = "MR-prepared-test"
 ITEM_ID = "MQ-01"
+_BINDING_TEMP: tempfile.TemporaryDirectory[str] | None = None
+_ORIGINAL_DESCRIPTOR_PATH: Path | None = None
+
+
+def setUpModule() -> None:
+    global _BINDING_TEMP, _ORIGINAL_DESCRIPTOR_PATH
+    _BINDING_TEMP = tempfile.TemporaryDirectory(
+        prefix="cs408-morning-producer-binding-"
+    )
+    binding_root = Path(_BINDING_TEMP.name)
+    authoritative = (
+        ROOT
+        / "codex-skill-sources"
+        / "kaoyan-408-wrong-intake"
+        / "SKILL.md"
+    )
+    installed = binding_root / "installed" / "SKILL.md"
+    installed.parent.mkdir(parents=True)
+    installed.write_bytes(authoritative.read_bytes())
+    descriptor = capture_model.build_descriptor(
+        subject="cs408",
+        attestation_required_after="2026-08-17T00:00:00+00:00",
+        authoritative_skill=authoritative,
+        installed_skill=installed,
+        producer_files=[
+            ROOT / "scripts" / "intake_fact_capture_408.py",
+            ROOT / "scripts" / "capture_hot_writer_408.py",
+            ROOT / "scripts" / "capture_commit_index_408.py",
+            ROOT / "scripts" / "bounded_jsonl_index_408.py",
+            ROOT / "scripts" / "intake_lib_408.py",
+            ROOT / "scripts" / "producer_binding_attestation_408.py",
+        ],
+        capture_contract_files=[
+            ROOT / "schema" / "current-question-evidence-bundle-v3.md",
+            ROOT / "schema" / "morning-review-backflow-policy-v1.json",
+            ROOT / "schema" / "producer-binding-v1.example.json",
+            authoritative,
+        ],
+        attestation_relative_root=".producer-binding-attestations",
+    )
+    descriptor_path = binding_root / "producer-binding-v1.json"
+    capture_model.write_descriptor(descriptor_path, descriptor)
+    _ORIGINAL_DESCRIPTOR_PATH = capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH
+    capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH = descriptor_path
+
+
+def tearDownModule() -> None:
+    if _ORIGINAL_DESCRIPTOR_PATH is not None:
+        capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH = (
+            _ORIGINAL_DESCRIPTOR_PATH
+        )
+    if _BINDING_TEMP is not None:
+        _BINDING_TEMP.cleanup()
+
+
 QUEUE = """---
 schema: morning_review_action_queue_v3
 review_date: 2026-07-31
@@ -1611,343 +1667,28 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             ),
         )
 
-    @unittest.skip("retired combined answer-turn")
-    def test_correct_answer_and_replay_stay_on_managed_hot_path(self) -> None:
-        args = self._answer_args(
-            learner_choice="C",
-            result="independent_correct",
-            choice_result="correct",
-            reasoning_result="sound",
-            first_break="not_observed",
-            first_break_provenance="not_observed",
-        )
-        formal_before = self._formal_snapshot()
-        with (
-            mock.patch.object(
-                morning,
-                "sync_session",
-                side_effect=AssertionError("managed turn used legacy session sync"),
-            ),
-            mock.patch.object(
-                morning,
-                "audit_review_loop",
-                side_effect=AssertionError("managed turn used full review audit"),
-            ),
-            mock.patch.object(
-                morning,
-                "audit_fact_capture",
-                side_effect=AssertionError("managed turn used full capture audit"),
-            ),
-        ):
-            first = morning.command_answer_turn(args)
-            after_first = (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            )
-            replay = morning.command_answer_turn(args)
-
-        self.assertTrue(first["managed_hot_path"])
-        self.assertEqual(first["review_audit"], "HOT_VERIFIED")
-        self.assertEqual(first["capture_status"], "not_eligible")
-        self.assertEqual(first["formal_write_count"], 0)
-        self.assertEqual(first["personalization"]["status"], "deferred_to_prepared_pack")
-        self.assertFalse(first["record_replayed"])
-        self.assertTrue(replay["record_replayed"])
-        self.assertTrue(replay["already_revealed"])
-        self.assertEqual(
-            after_first,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        self.assertEqual(self.capture_ledger.read_bytes(), b"")
-        self.assertEqual(self._formal_snapshot(), formal_before)
-
-    @unittest.skip("retired prepared-feedback reader; current turn uses frozen feedback")
-    def test_prepared_feedback_recovery_requires_exact_review_and_session_receipts(
-        self,
-    ) -> None:
-        args = self._answer_args(
-            learner_choice="C",
-            result="independent_correct",
-            choice_result="correct",
-            reasoning_result="sound",
-            first_break="not_observed",
-            first_break_provenance="not_observed",
-        )
-        first = morning.command_answer_turn(args)
-        ledgers_after_answer = (
-            self.session_ledger.read_bytes(),
-            self.review_ledger.read_bytes(),
-            self.capture_ledger.read_bytes(),
-        )
-
-        recovered = morning.command_reveal_feedback(args)
-        receipt_gate = recovered["feedback_gate"]["receipt_gate"]
-        self.assertTrue(recovered["already_revealed"])
-        self.assertEqual(
-            receipt_gate["canonical_event_id"], first["review_event_id"]
-        )
-        self.assertEqual(
-            receipt_gate["review_receipt_sha256"],
-            first["review_commit_receipt_sha256"],
-        )
-        self.assertEqual(
-            receipt_gate["session_binding_receipt_sha256"],
-            first["session_binding_receipt_sha256"],
-        )
-        self.assertEqual(
-            ledgers_after_answer,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-
-        review_receipt_path = (
-            self.repo
-            / review_hot.DEFAULT_STATE_RELATIVE
-            / first["review_commit_receipt_ref"]
-        )
-        review_receipt_raw = review_receipt_path.read_bytes()
-        review_receipt_path.write_bytes(b"{}\n")
-        with self.assertRaisesRegex(
-            morning.SessionError,
-            "review receipt lookup failed closed",
-        ):
-            morning.command_reveal_feedback(args)
-        self.assertEqual(
-            ledgers_after_answer,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        review_receipt_path.write_bytes(review_receipt_raw)
-
-        binding_receipt_path = Path(
-            first["session_binding_commit"]["receipt_ref"]
-        )
-        binding_receipt_path.unlink()
-        with self.assertRaisesRegex(
-            morning.SessionError,
-            "managed session receipt verification failed",
-        ):
-            morning.command_reveal_feedback(args)
-        self.assertEqual(
-            ledgers_after_answer,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-
-    @unittest.skip("legacy split prepared-feedback writer is retired")
-    def test_passed_receipt_hashes_are_reverified_before_prepared_feedback(
-        self,
-    ) -> None:
-        args = self._answer_args(
-            learner_choice="C",
-            result="independent_correct",
-            choice_result="correct",
-            reasoning_result="sound",
-            first_break="not_observed",
-            first_break_provenance="not_observed",
-        )
-        recorded = morning.command_record_first(args)
-        review_receipt_path = (
-            self.repo
-            / review_hot.DEFAULT_STATE_RELATIVE
-            / recorded["review_commit_receipt_ref"]
-        )
-        review_receipt_raw = review_receipt_path.read_bytes()
-        review_receipt_path.write_bytes(b"{}\n")
-        ledgers_before_reveal = (
-            self.session_ledger.read_bytes(),
-            self.review_ledger.read_bytes(),
-            self.capture_ledger.read_bytes(),
-        )
-        with self.assertRaisesRegex(
-            morning.SessionError,
-            "review receipt lookup failed closed",
-        ):
-            morning.command_reveal_feedback(
-                args,
-                review_receipt_sha256=recorded[
-                    "review_commit_receipt_sha256"
-                ],
-                session_binding_receipt_sha256=recorded[
-                    "session_binding_receipt_sha256"
-                ],
-            )
-        self.assertEqual(
-            ledgers_before_reveal,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        review_receipt_path.write_bytes(review_receipt_raw)
-
-        binding_receipt_path = Path(
-            recorded["session_binding_commit"]["receipt_ref"]
-        )
-        binding_receipt_raw = binding_receipt_path.read_bytes()
-        binding_receipt_path.write_bytes(b"{}\n")
-        with self.assertRaisesRegex(
-            morning.SessionError,
-            "managed session receipt verification failed",
-        ):
-            morning.command_reveal_feedback(
-                args,
-                review_receipt_sha256=recorded[
-                    "review_commit_receipt_sha256"
-                ],
-                session_binding_receipt_sha256=recorded[
-                    "session_binding_receipt_sha256"
-                ],
-            )
-        self.assertEqual(
-            ledgers_before_reveal,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        binding_receipt_path.write_bytes(binding_receipt_raw)
-
-    @unittest.skip("retired 20-turn acceptance target")
-    def test_twenty_managed_correct_replays_keep_p95_below_five_seconds(
-        self,
-    ) -> None:
-        args = self._answer_args(
-            learner_choice="C",
-            result="independent_correct",
-            choice_result="correct",
-            reasoning_result="sound",
-            first_break="not_observed",
-            first_break_provenance="not_observed",
-        )
-        first = morning.command_answer_turn(args)
-        self.assertTrue(first["managed_hot_path"])
-        ledgers_after_answer = (
-            self.session_ledger.read_bytes(),
-            self.review_ledger.read_bytes(),
-            self.capture_ledger.read_bytes(),
-        )
-        formal_after_answer = self._formal_snapshot()
-
-        samples_ms: list[float] = []
-        for _ in range(20):
-            started = time.perf_counter()
-            replay = morning.command_answer_turn(args)
-            samples_ms.append((time.perf_counter() - started) * 1000.0)
-            self.assertTrue(replay["managed_hot_path"])
-            self.assertTrue(replay["record_replayed"])
-            self.assertTrue(replay["already_revealed"])
-            self.assertEqual(replay["review_audit"], "HOT_VERIFIED")
-            self.assertEqual(replay["capture_status"], "not_eligible")
-            self.assertEqual(replay["formal_write_count"], 0)
-
-        ordered = sorted(samples_ms)
-        p95_index = max(0, (95 * len(ordered) + 99) // 100 - 1)
-        p95_ms = ordered[p95_index]
-        self.assertLess(
-            p95_ms,
-            5000.0,
-            f"managed idempotent answer-turn p95 was {p95_ms:.3f} ms",
-        )
-        self.assertEqual(
-            ledgers_after_answer,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        self.assertEqual(
-            len(self.session_ledger.read_text(encoding="utf-8").splitlines()),
-            4,
-        )
-        self.assertEqual(
-            len(self.review_ledger.read_text(encoding="utf-8").splitlines()),
-            1,
-        )
-        self.assertEqual(self.capture_ledger.read_bytes(), b"")
-        self.assertEqual(self._formal_snapshot(), formal_after_answer)
-
-    @unittest.skip("retired combined answer-turn")
-    def test_wrong_answer_and_replay_create_exactly_one_pending_capture(self) -> None:
-        args = self._answer_args(
-            learner_choice="A",
-            result="wrong",
-            choice_result="incorrect",
-            reasoning_result="diverged",
-            first_break="没有分别检查两个边界条件",
-            first_break_provenance="visible_evidence",
-        )
-        formal_before = self._formal_snapshot()
-        with (
-            mock.patch.object(
-                morning,
-                "sync_session",
-                side_effect=AssertionError("managed turn used legacy session sync"),
-            ),
-            mock.patch.object(
-                morning,
-                "audit_review_loop",
-                side_effect=AssertionError("managed turn used full review audit"),
-            ),
-            mock.patch.object(
-                morning,
-                "audit_fact_capture",
-                side_effect=AssertionError("managed turn used full capture audit"),
-            ),
-        ):
-            first = morning.command_answer_turn(args)
-            capture_after_first = self.capture_ledger.read_bytes()
-            all_after_first = (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                capture_after_first,
-            )
-            replay = morning.command_answer_turn(args)
-
-        self.assertTrue(first["managed_hot_path"])
-        self.assertEqual(first["review_audit"], "HOT_VERIFIED")
-        self.assertEqual(first["capture_audit"], "HOT_VERIFIED")
-        self.assertEqual(first["capture_status"], "awaiting_daily_curation")
-        self.assertEqual(first["capture_commit_status"], "CAPTURED")
-        self.assertEqual(first["formal_write_count"], 0)
-        self.assertEqual(len(capture_after_first.splitlines()), 1)
-        capture_state = json.loads(
-            (self.capture_root / "state.json").read_text(encoding="utf-8")
-        )
-        self.assertEqual(len(capture_state["captures"]), 1)
-        only_capture = next(iter(capture_state["captures"].values()))
-        self.assertEqual(only_capture["quality_status"], "awaiting_daily_curation")
-
-        self.assertTrue(replay["record_replayed"])
-        self.assertEqual(replay["capture_commit_status"], "ALREADY_COMMITTED")
-        self.assertEqual(replay["capture_id"], first["capture_id"])
-        self.assertEqual(
-            all_after_first,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        self.assertEqual(self._formal_snapshot(), formal_before)
-
+    def test_retired_combined_answer_turn_is_record_first_compatibility_only(self) -> None:
+        source = inspect.getsource(morning.command_answer_turn)
+        self.assertIn("return command_record_first(args)", source)
+        self.assertNotIn("sync_session", source)
+        self.assertNotIn("capture_hot", source)
+    def test_current_feedback_reader_is_receipt_bound_without_retired_reader(self) -> None:
+        source = inspect.getsource(morning.command_reveal_feedback)
+        self.assertIn("review receipt lookup failed closed", source)
+        self.assertIn("_verify_session_hot_event_receipt", source)
+        self.assertNotIn("prepared_feedback_reader", source)
+    def test_retired_split_feedback_writer_is_not_exported(self) -> None:
+        self.assertFalse(hasattr(morning, "command_write_prepared_feedback"))
+        self.assertFalse(hasattr(morning, "command_apply_prepared_feedback"))
+    def test_retired_twenty_turn_acceptance_target_is_not_runtime_policy(self) -> None:
+        source = inspect.getsource(morning)
+        self.assertNotIn("20-turn", source)
+        self.assertNotIn("twenty_turn_acceptance", source)
+    def test_retired_combined_wrong_answer_path_does_not_own_capture(self) -> None:
+        source = inspect.getsource(morning.command_answer_turn)
+        self.assertIn("return command_record_first(args)", source)
+        self.assertNotIn("capture_hot", source)
+        self.assertNotIn("capture_ledger", source)
 
 if __name__ == "__main__":
     unittest.main()

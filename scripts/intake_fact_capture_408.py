@@ -45,7 +45,9 @@ from review_feedback_loop import (
 )
 from producer_binding_attestation_408 import (
     ProducerBindingError,
+    build_descriptor,
     publish_attestation,
+    write_descriptor,
 )
 
 
@@ -151,6 +153,19 @@ DEFAULT_RUNTIME_ROOT = Path("~/.codex/kaoyan-408-intake").expanduser().resolve()
 PRODUCER_BINDING_DESCRIPTOR_PATH = (
     Path(__file__).resolve().parents[1] / "schema" / "producer-binding-v1.json"
 )
+PRODUCER_BINDING_DESCRIPTOR_ENV = "KAOYAN_408_PRODUCER_BINDING_DESCRIPTOR"
+
+
+def producer_binding_descriptor_path() -> Path:
+    configured = os.environ.get(PRODUCER_BINDING_DESCRIPTOR_ENV)
+    if configured is None:
+        return PRODUCER_BINDING_DESCRIPTOR_PATH
+    candidate = Path(configured).expanduser()
+    if not candidate.is_absolute():
+        raise ProducerBindingError(
+            "Producer binding descriptor 环境绑定必须是绝对路径"
+        )
+    return candidate
 NORMAL_RECEIPT_SCHEMA = "intake_batch_receipt_v1"
 NORMAL_WAL_SCHEMA = "intake_batch_wal_v1"
 MAX_NORMAL_RECEIPT_BYTES = 2 * 1024 * 1024
@@ -2279,7 +2294,7 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
             current = replay(events)["captures"][existing["capture_id"]]
             try:
                 producer_binding = publish_attestation(
-                    descriptor_path=PRODUCER_BINDING_DESCRIPTOR_PATH,
+                    descriptor_path=producer_binding_descriptor_path(),
                     repo_root=Path(repo_root),
                     subject="cs408",
                     capture_id=str(existing["capture_id"]),
@@ -2323,7 +2338,7 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
         _append_event(root, events, event)
         try:
             producer_binding = publish_attestation(
-                descriptor_path=PRODUCER_BINDING_DESCRIPTOR_PATH,
+                descriptor_path=producer_binding_descriptor_path(),
                 repo_root=Path(repo_root),
                 subject="cs408",
                 capture_id=capture_id,

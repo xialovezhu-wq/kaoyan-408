@@ -1,0 +1,28 @@
+{
+  "schema_version": "producer_binding_descriptor_v1.example",
+  "subject": "cs408",
+  "attestation_required_after": "${ATTESTATION_REQUIRED_AFTER}",
+  "foreground_skill": {
+    "authoritative_path": "${AUTHORITATIVE_SKILL_PATH}",
+    "installed_path": "${INSTALLED_SKILL_PATH}"
+  },
+  "producer": {
+    "source_files": [
+      "${INTAKE_FACT_CAPTURE_PATH}",
+      "${CAPTURE_HOT_WRITER_PATH}",
+      "${CAPTURE_COMMIT_INDEX_PATH}",
+      "${BOUNDED_JSONL_INDEX_PATH}",
+      "${INTAKE_LIB_PATH}",
+      "${PRODUCER_ATTESTATION_PATH}"
+    ]
+  },
+  "capture_contract": {
+    "files": [
+      "${EVIDENCE_BUNDLE_CONTRACT_PATH}",
+      "${BACKFLOW_POLICY_PATH}",
+      "${WRONG_INTAKE_SKILL_PATH}"
+    ]
+  },
+  "attestation_relative_root": ".producer-binding-attestations",
+  "formal_write_count": 0
+}

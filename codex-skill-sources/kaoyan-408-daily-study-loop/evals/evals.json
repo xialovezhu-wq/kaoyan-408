@@ -1,0 +1,15 @@
+{
+  "schema": "portable-skill-evals-v1",
+  "evals": [
+    {"name": "exact_single_entry_correct_and_next"},
+    {"name": "independent_correct_private_observation"},
+    {"name": "initial_wrong_holds_current_item"},
+    {"name": "receipt_failure_withholds_feedback"},
+    {"name": "hot_path_never_waits_for_luna"},
+    {"name": "explicit_date_sol_verification"},
+    {"name": "independent_correct_evidence_recovery_is_observation_only"},
+    {"name": "fragile_correct_recovery_closes_original_operation"},
+    {"name": "stale_advancing_receipt_cannot_skip_unresolved_item"},
+    {"name": "trace_canonical_choice_must_match_cli_choice"}
+  ]
+}
