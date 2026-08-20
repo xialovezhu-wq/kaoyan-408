@@ -146,6 +146,14 @@ def capture_fact(
     validated_payload: dict[str, Any],
 ) -> dict[str, Any]:
     ledger_path, state_file, derived = Path(ledger), Path(state_path), Path(hot_root)
+    try:
+        import intake_fact_capture_408 as capture_model
+
+        validated_payload = capture_model._validate_capture_payload(
+            validated_payload
+        )
+    except Exception as exc:
+        raise CaptureHotWriterError(f"capture admission validation failed: {exc}") from exc
     events = _read_events(ledger_path)
     key = str(validated_payload.get("idempotency_key") or "")
     payload_sha = _sha(validated_payload)

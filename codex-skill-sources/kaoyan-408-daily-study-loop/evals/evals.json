@@ -10,6 +10,12 @@
     {"name": "independent_correct_evidence_recovery_is_observation_only"},
     {"name": "fragile_correct_recovery_closes_original_operation"},
     {"name": "stale_advancing_receipt_cannot_skip_unresolved_item"},
-    {"name": "trace_canonical_choice_must_match_cli_choice"}
+    {"name": "trace_canonical_choice_must_match_cli_choice"},
+    {"name": "exact_phrase_nfkc_admission_matrix"},
+    {"name": "unauthorized_turn_has_three_zero_surfaces"},
+    {"name": "morning_first_correct_freezes_one_capture"},
+    {"name": "morning_wrong_then_correct_uses_ordered_buffer"},
+    {"name": "morning_durable_failure_is_retry_safe"},
+    {"name": "denied_admission_forbids_model_mcp_sol_calls"}
   ]
 }

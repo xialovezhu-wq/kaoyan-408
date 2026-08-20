@@ -112,6 +112,9 @@ class IntakeFactCaptureTests(unittest.TestCase):
             "answer_safe_context_anchor": "围绕状态转换事件判断执行时点的题目骨架",
             "missing_fields": ["formal_identity", "main_knowledge"],
             "formalization_authorized": True,
+            "capture_authorization": {
+                "current_user_message": "synthetic ordinary Capture 快速入库",
+            },
         }
         value.update(overrides)
         return value
@@ -120,6 +123,14 @@ class IntakeFactCaptureTests(unittest.TestCase):
         path = root / name
         path.write_text(json.dumps(value, ensure_ascii=False), encoding="utf-8")
         return path
+
+    @staticmethod
+    def _capture_ordinary_review_event(event_id: str, root: Path) -> dict[str, object]:
+        return capture.capture_ordinary_review_event(
+            event_id,
+            current_user_message="synthetic ordinary Capture 快速入库",
+            repo_root=root,
+        )
 
     def _prepare_global_audit_files(self, root: Path, batch_id: str) -> None:
         state = capture.status(None, repo_root=root)
@@ -590,33 +601,13 @@ class IntakeFactCaptureTests(unittest.TestCase):
         self.assertEqual(before, after)
         self.assertFalse(result.get("formal_write_authorized", False))
 
-    def test_morning_failure_event_becomes_one_authorized_fast_capture(self) -> None:
+    def test_legacy_morning_capture_entry_is_read_only(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_review_event(root)
-            first = capture.capture_review_event(event_id, repo_root=root)
-            second = capture.capture_review_event(event_id, repo_root=root)
-            current = capture.status("2026-07-19", repo_root=root)
-            report = capture.audit(repo_root=root)
-
-        self.assertEqual(first["quality_status"], "awaiting_daily_curation")
-        self.assertTrue(first["created"])
-        self.assertFalse(first["formal_write_authorized"])
-        self.assertEqual(second["status"], "ALREADY_CAPTURED")
-        self.assertEqual(second["capture_id"], first["capture_id"])
-        stored = current["captures"][first["capture_id"]]["capture"]
-        self.assertTrue(stored["formalization_authorized"])
-        self.assertEqual(stored["user_facts"]["user_error_entry"], "未观察到")
-        self.assertEqual(
-            {item["kind"] for item in stored["stable_evidence_refs"]},
-            {
-                "review_loop_event",
-                "morning_session_start",
-                "morning_session_first",
-                "morning_session_queue",
-            },
-        )
-        self.assertEqual(report["review_evidence_ref_count"], 4)
+            with self.assertRaisesRegex(capture.CaptureError, "窄读兼容"):
+                capture.capture_review_event(event_id, repo_root=root)
+            self.assertFalse(capture.capture_root(root).exists())
 
     def test_correct_morning_event_can_be_saved_neutrally_without_curation(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -694,8 +685,8 @@ class IntakeFactCaptureTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_ordinary_review_event(root)
-            first = capture.capture_ordinary_review_event(event_id, repo_root=root)
-            second = capture.capture_ordinary_review_event(event_id, repo_root=root)
+            first = self._capture_ordinary_review_event(event_id, root)
+            second = self._capture_ordinary_review_event(event_id, root)
             current = capture.status("2026-07-23", repo_root=root)
             report = capture.audit(repo_root=root)
 
@@ -727,7 +718,7 @@ class IntakeFactCaptureTests(unittest.TestCase):
             event_id = self._setup_ordinary_review_event(
                 root, source="evening_d0", provenance="visible_evidence"
             )
-            result = capture.capture_ordinary_review_event(event_id, repo_root=root)
+            result = self._capture_ordinary_review_event(event_id, root)
             stored = capture.status("2026-07-23", repo_root=root)["captures"][
                 result["capture_id"]
             ]["capture"]
@@ -744,7 +735,7 @@ class IntakeFactCaptureTests(unittest.TestCase):
             event_id = self._setup_ordinary_review_event(
                 root, provenance="derived_classification", formal_node_id=None
             )
-            result = capture.capture_ordinary_review_event(event_id, repo_root=root)
+            result = self._capture_ordinary_review_event(event_id, root)
             stored = capture.status("2026-07-23", repo_root=root)["captures"][
                 result["capture_id"]
             ]["capture"]
@@ -767,7 +758,7 @@ class IntakeFactCaptureTests(unittest.TestCase):
             review_ledger.write_text(
                 json.dumps(event, ensure_ascii=False) + "\n", encoding="utf-8"
             )
-            result = capture.capture_ordinary_review_event(event_id, repo_root=root)
+            result = self._capture_ordinary_review_event(event_id, root)
             stored = capture.status("2026-07-23", repo_root=root)["captures"][
                 result["capture_id"]
             ]["capture"]
@@ -783,8 +774,11 @@ class IntakeFactCaptureTests(unittest.TestCase):
             event_id = self._setup_ordinary_review_event(root)
             event = capture._review_event_by_id(root, event_id)
             payload = capture._ordinary_review_capture_payload(event)
+            payload["capture_authorization"] = {
+                "current_user_message": "synthetic ordinary Capture",
+            }
             payload["formalization_authorized"] = True
-            with self.assertRaisesRegex(capture.CaptureError, "不能自动授权"):
+            with self.assertRaisesRegex(capture.CaptureError, "连续短语"):
                 capture._capture_value(payload, repo_root=root)
             self.assertFalse(capture.capture_root(root).exists())
 
@@ -799,14 +793,14 @@ class IntakeFactCaptureTests(unittest.TestCase):
                 root = Path(tmp)
                 event_id = self._setup_ordinary_review_event(root, **overrides)
                 with self.assertRaises(capture.CaptureError):
-                    capture.capture_ordinary_review_event(event_id, repo_root=root)
+                    self._capture_ordinary_review_event(event_id, root)
                 self.assertFalse(capture.capture_root(root).exists())
 
     def test_ordinary_audit_rejects_event_hash_drift(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_ordinary_review_event(root)
-            capture.capture_ordinary_review_event(event_id, repo_root=root)
+            self._capture_ordinary_review_event(event_id, root)
             review_ledger = root / capture.REVIEW_LOOP_LEDGER_REL
             event = json.loads(review_ledger.read_text(encoding="utf-8"))
             event["confidence"] = "low"
@@ -850,6 +844,9 @@ class IntakeFactCaptureTests(unittest.TestCase):
                 event_id = self._setup_ordinary_review_event(root)
                 event = capture._review_event_by_id(root, event_id)
                 payload = capture._ordinary_review_capture_payload(event)
+                payload["capture_authorization"] = {
+                    "current_user_message": "synthetic ordinary Capture 快速入库",
+                }
                 payload["idempotency_key"] = f"ordinary:tamper:{label.replace(' ', '-')}"
                 mutate(payload)
                 capture._capture_value(payload, repo_root=root)
@@ -872,30 +869,21 @@ class IntakeFactCaptureTests(unittest.TestCase):
             )
 
             with self.assertRaisesRegex(
-                capture.CaptureError, "first_break_provenance"
+                capture.CaptureError, "窄读兼容"
             ):
                 capture.capture_review_event(event_id, repo_root=root)
 
             self.assertFalse(capture.capture_root(root).exists())
 
-    def test_matching_user_report_provenance_is_preserved(self) -> None:
+    def test_legacy_morning_user_report_capture_is_read_only(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_review_event(root, provenance="user_report")
-            result = capture.capture_review_event(event_id, repo_root=root)
-            current = capture.status("2026-07-19", repo_root=root)
+            with self.assertRaisesRegex(capture.CaptureError, "窄读兼容"):
+                capture.capture_review_event(event_id, repo_root=root)
+            self.assertFalse(capture.capture_root(root).exists())
 
-        stored = current["captures"][result["capture_id"]]["capture"]
-        self.assertEqual(
-            stored["user_facts"],
-            {
-                "user_error_entry": "混淆状态转换时点",
-                "user_error_provenance": "user_report",
-                "observed_at": "2026-07-19T07:01:00+08:00",
-            },
-        )
-
-    def test_legacy_missing_provenance_stays_answer_safe(self) -> None:
+    def test_legacy_missing_provenance_stays_read_only(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_review_event(root, provenance="not_observed")
@@ -922,20 +910,15 @@ class IntakeFactCaptureTests(unittest.TestCase):
                 json.dumps(event, ensure_ascii=False) + "\n", encoding="utf-8"
             )
 
-            result = capture.capture_review_event(event_id, repo_root=root)
-            current = capture.status("2026-07-19", repo_root=root)
-
-        stored = current["captures"][result["capture_id"]]["capture"]
-        self.assertEqual(stored["user_facts"]["user_error_entry"], "未观察到")
-        self.assertEqual(
-            stored["user_facts"]["user_error_provenance"], "not_observed"
-        )
+            with self.assertRaisesRegex(capture.CaptureError, "窄读兼容"):
+                capture.capture_review_event(event_id, repo_root=root)
+            self.assertFalse(capture.capture_root(root).exists())
 
     def test_morning_correct_event_is_not_fast_captured(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             event_id = self._setup_review_event(root, first_result="independent_correct")
-            with self.assertRaisesRegex(capture.CaptureError, "不属于快速捕获范围"):
+            with self.assertRaisesRegex(capture.CaptureError, "窄读兼容"):
                 capture.capture_review_event(event_id, repo_root=root)
             self.assertFalse(capture.capture_root(root).exists())
 
@@ -1530,11 +1513,13 @@ class IntakeFactCaptureTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             runtime = root / "runtime"
-            source_event_id = self._setup_review_event(
-                root, provenance="visible_evidence"
+            source_event_id = self._setup_ordinary_review_event(
+                root, provenance="visible_evidence", formal_node_id=None
             )
             review_ledger = root / capture.REVIEW_LOOP_LEDGER_REL
             source_event = json.loads(review_ledger.read_text(encoding="utf-8"))
+            source_event["event_time"] = "2026-07-19T20:10:00+08:00"
+            source_event["observed_date"] = "2026-07-19"
             candidate_id = "RC-needs-user-resolution"
             source_event["formal_node_id"] = None
             source_event["mapped_formal_node_ids"] = [
@@ -1555,8 +1540,15 @@ class IntakeFactCaptureTests(unittest.TestCase):
                 json.dumps(source_event, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
-            unresolved = capture.capture_review_event(
-                source_event_id, repo_root=root
+            unresolved_payload = capture._ordinary_review_capture_payload(
+                capture._review_event_by_id(root, source_event_id)
+            )
+            unresolved_payload["formalization_authorized"] = True
+            unresolved_payload["capture_authorization"] = {
+                "current_user_message": "synthetic ordinary Capture 快速入库",
+            }
+            unresolved = capture._capture_value(
+                unresolved_payload, repo_root=root
             )
             other_payload = self._payload(
                 study_date="2026-07-19",
@@ -1683,11 +1675,13 @@ class IntakeFactCaptureTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             runtime = root / "runtime"
-            source_event_id = self._setup_review_event(
-                root, provenance="visible_evidence"
+            source_event_id = self._setup_ordinary_review_event(
+                root, provenance="visible_evidence", formal_node_id=None
             )
             review_ledger = root / capture.REVIEW_LOOP_LEDGER_REL
             source_event = json.loads(review_ledger.read_text(encoding="utf-8"))
+            source_event["event_time"] = "2026-07-19T20:10:00+08:00"
+            source_event["observed_date"] = "2026-07-19"
             candidate_id = "RC-needs-user-negative"
             source_event["formal_node_id"] = None
             source_event["route"] = {
@@ -1699,8 +1693,15 @@ class IntakeFactCaptureTests(unittest.TestCase):
                 json.dumps(source_event, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
-            unresolved = capture.capture_review_event(
-                source_event_id, repo_root=root
+            unresolved_payload = capture._ordinary_review_capture_payload(
+                capture._review_event_by_id(root, source_event_id)
+            )
+            unresolved_payload["formalization_authorized"] = True
+            unresolved_payload["capture_authorization"] = {
+                "current_user_message": "synthetic ordinary Capture 快速入库",
+            }
+            unresolved = capture._capture_value(
+                unresolved_payload, repo_root=root
             )
             batch = capture.start_batch(
                 "2026-07-19", "batch:negative:A01", repo_root=root

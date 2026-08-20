@@ -19,6 +19,7 @@ import os
 import re
 import stat
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Any, Callable
 from zoneinfo import ZoneInfo
@@ -39,6 +40,9 @@ MAX_FEEDBACK_BYTES = 16 * 1024
 MAX_ATTACHMENTS_JSON_BYTES = 64 * 1024
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 CAPTURE_HOT_DIRNAME = ".capture-hot-writer-v1"
+CAPTURE_TRIGGER_PHRASE = "快速入库"
+CAPTURE_AUTHORIZATION_SCHEMA = "cs408-capture-authorization-v1"
+MAX_CAPTURE_AUTHORIZATION_MESSAGE_BYTES = 32 * 1024
 CANONICAL_PROMPT_LEVEL_MAP = {
     "none": "none",
     "L1": "minimal",
@@ -54,6 +58,71 @@ class ManagedCurrentTurnError(RuntimeError):
 
 
 FaultInjector = Callable[[str], None]
+
+
+def normalize_capture_authorization(
+    current_user_message: object,
+) -> dict[str, Any]:
+    """Return an invocation-only current-message admission proof.
+
+    Stable NFKC normalization is intentionally the only text transform.  The
+    raw message never enters context, operation, Capture, or receipt state.
+    """
+
+    if isinstance(current_user_message, dict) and set(current_user_message) == {
+        "current_user_message"
+    }:
+        current_user_message = current_user_message["current_user_message"]
+    if (
+        not isinstance(current_user_message, str)
+        or not current_user_message
+        or len(current_user_message.encode("utf-8"))
+        > MAX_CAPTURE_AUTHORIZATION_MESSAGE_BYTES
+    ):
+        return {
+            "authorized": False,
+            "reason": "current_user_message_invalid",
+            "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+            "source": "current_user_message",
+            "trigger_phrase": None,
+            "normalized_message_sha256": None,
+        }
+    normalized = unicodedata.normalize("NFKC", current_user_message)
+    digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+    if CAPTURE_TRIGGER_PHRASE not in normalized:
+        return {
+            "authorized": False,
+            "reason": "trigger_phrase_missing",
+            "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+            "source": "current_user_message",
+            "trigger_phrase": None,
+            "normalized_message_sha256": digest,
+        }
+    return {
+        "authorized": True,
+        "reason": "trigger_phrase_match",
+        "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+        "source": "current_user_message",
+        "trigger_phrase": CAPTURE_TRIGGER_PHRASE,
+        "normalized_message_sha256": digest,
+    }
+
+
+def _capture_admission(
+    context: dict[str, Any], current_user_message: object
+) -> dict[str, Any]:
+    """Resolve ordinary phrase admission or the narrow morning exception."""
+
+    if context.get("source") == "morning_review":
+        return {
+            "authorized": True,
+            "reason": "morning_session_buffer_exception",
+            "schema_version": capture_model.CAPTURE_AUTHORIZATION_SCHEMA,
+            "source": capture_model.MORNING_CAPTURE_AUTHORIZATION_SOURCE,
+            "trigger_phrase": None,
+            "normalized_message_sha256": None,
+        }
+    return normalize_capture_authorization(current_user_message)
 
 
 def _json_bytes(value: Any, *, pretty: bool = False) -> bytes:
@@ -172,7 +241,10 @@ def _direct_user_facts(context: dict[str, Any]) -> dict[str, str]:
 
 
 def _capture_payload(
-    context: dict[str, Any], evidence_receipt: dict[str, Any]
+    context: dict[str, Any],
+    evidence_receipt: dict[str, Any],
+    *,
+    capture_authorization: dict[str, Any],
 ) -> dict[str, Any]:
     if evidence_receipt.get("evidence_status") != "ready":
         raise ManagedCurrentTurnError("capture_evidence_receipt_not_ready")
@@ -214,11 +286,218 @@ def _capture_payload(
         ),
         "missing_fields": sorted(set(missing)),
         "formalization_authorized": True,
+        "capture_authorization": {
+            key: value
+            for key, value in capture_authorization.items()
+            if key != "authorized" and key != "reason"
+        },
         "authorization_policy": (
             capture_model.CURRENT_QUESTION_FAILURE_STANDING_POLICY
         ),
     }
     return capture_model._validate_capture_payload(raw)
+
+
+def _append_morning_answer_buffer(
+    root: Path,
+    *,
+    context: dict[str, Any],
+    attempt_key: str,
+    interaction_trace: dict[str, Any],
+) -> dict[str, Any]:
+    """Append a bounded answer trace to the current session hot buffer."""
+
+    try:
+        import morning_review_session as morning_session
+    except ImportError as exc:
+        raise ManagedCurrentTurnError("morning_session_module_unavailable") from exc
+    try:
+        return morning_session.append_answer_buffer(
+            root,
+            context["session_id"],
+            context["item_id"],
+            attempt_key=attempt_key,
+            result=str(context["classification"]["teaching_result"]),
+            choice_result=str(context["assessment"]["choice_result"]),
+            confidence=str(context["assessment"]["confidence"]),
+            prompt_level=str(context["assessment"]["prompt_level"]),
+            interaction_trace=interaction_trace,
+            recorded_at=str(context["event_time"]),
+        )
+    except morning_session.SessionError as exc:
+        raise ManagedCurrentTurnError(f"morning_answer_buffer_failed:{exc}") from exc
+
+
+def _freeze_morning_answer_buffer(
+    root: Path,
+    *,
+    context: dict[str, Any],
+    freeze_key: str,
+) -> dict[str, Any]:
+    try:
+        import morning_review_session as morning_session
+    except ImportError as exc:
+        raise ManagedCurrentTurnError("morning_session_module_unavailable") from exc
+    try:
+        return morning_session.freeze_answer_buffer(
+            root,
+            context["session_id"],
+            context["item_id"],
+            freeze_key=freeze_key,
+            recorded_at=str(context["event_time"]),
+        )
+    except morning_session.SessionError as exc:
+        raise ManagedCurrentTurnError(f"morning_answer_buffer_freeze_failed:{exc}") from exc
+
+
+def _publish_morning_frozen_bundle(
+    *,
+    first_context: dict[str, Any],
+    first_turn: dict[str, Any],
+    cumulative_trace: dict[str, Any],
+    private_root: str | Path | None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Publish one immutable full-dialogue bundle for the final morning Capture."""
+
+    locator = str(first_turn.get("evidence_locator") or "")
+    if not locator.startswith(private_evidence.LOCATOR_PREFIX):
+        raise ManagedCurrentTurnError("morning_frozen_evidence_locator_missing")
+    try:
+        _, original = private_evidence.read_bundle(locator, private_root=private_root)
+        attachments = [dict(row) for row in original.get("attachment_objects") or []]
+        frozen = {
+            **original,
+            "interaction_trace": cumulative_trace,
+            # publish_bundle is the sole attachment binder.  Re-open the
+            # original content references but leave writer-owned fields empty
+            # until it verifies the staged bytes again.
+            "attachment_objects": [],
+            "provenance": {
+                **original.get("provenance", {}),
+                "attachment_provenance": [],
+            },
+        }
+        receipt = private_evidence.publish_bundle(
+            frozen,
+            private_root=private_root,
+            staged_attachment_objects=attachments,
+        )
+        payload = _capture_payload(
+            first_context,
+            receipt,
+            capture_authorization=capture_model.morning_capture_authorization(),
+        )
+    except (private_evidence.CurrentQuestionEvidenceError, OSError) as exc:
+        raise ManagedCurrentTurnError(
+            f"morning_frozen_evidence_publish_failed:{exc}"
+        ) from exc
+    return receipt, payload
+
+
+def _morning_capture_commit(
+    root: Path,
+    *,
+    context: dict[str, Any],
+    payload: dict[str, Any],
+    evidence_receipt: dict[str, Any],
+    freeze: dict[str, Any],
+    cumulative_trace: dict[str, Any],
+    private_root: str | Path | None,
+    fault_injector: FaultInjector | None = None,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Commit one morning Capture and bind it to the frozen session buffer."""
+
+    expected_capture_id, background_handoff = _ensure_background_handoff_pending(
+        capture_payload=payload,
+        context=context,
+        evidence_manifest_sha256=str(evidence_receipt["manifest_sha256"]),
+        evidence_status=str(evidence_receipt.get("evidence_status") or "ready"),
+        private_root=private_root,
+    )
+    _fault(fault_injector, "before_capture_commit")
+    capture = _commit_capture(root, payload)
+    _fault(fault_injector, "after_capture_commit")
+    if capture.get("capture_id") != expected_capture_id:
+        raise ManagedCurrentTurnError("capture_background_handoff_id_drifted")
+    attestation = private_evidence.publish_metadata_object(
+        {
+            "schema": private_evidence.TURN_RECEIPT_SCHEMA,
+            "status": "morning_capture_frozen",
+            "attestation_schema": "morning-capture-freeze-attestation-v1",
+            "context_id": context["context_id"],
+            "session_id": context["session_id"],
+            "item_id": context["item_id"],
+            "capture_id": capture["capture_id"],
+            "capture_receipt_sha256": capture["receipt_sha256"],
+            "evidence_manifest_sha256": evidence_receipt["manifest_sha256"],
+            "buffer_freeze_receipt_sha256": freeze["session_freeze_receipt"][
+                "receipt_sha256"
+            ],
+            "interaction_trace_sha256": _interaction_trace_events_sha256(
+                {"interaction_trace": cumulative_trace}
+            ),
+            "event_time": context["event_time"],
+            "advance_allowed": False,
+            "formal_write_count": 0,
+        },
+        kind="turns",
+        private_root=private_root,
+    )
+    try:
+        import morning_review_session as morning_session
+    except ImportError as exc:
+        raise ManagedCurrentTurnError("morning_session_module_unavailable") from exc
+    trace_sha = _interaction_trace_events_sha256(
+        {"interaction_trace": cumulative_trace}
+    )
+    try:
+        session_commit = morning_session.mark_morning_capture_committed(
+            root,
+            context["session_id"],
+            context["item_id"],
+            capture_id=str(capture["capture_id"]),
+            capture_receipt_sha256=str(capture["receipt_sha256"]),
+            freeze_receipt_sha256=str(
+                freeze["session_freeze_receipt"]["receipt_sha256"]
+            ),
+            final_trace_sha256=trace_sha,
+        )
+    except morning_session.SessionError as exc:
+        raise ManagedCurrentTurnError(
+            f"morning_capture_session_commit_failed:{exc}"
+        ) from exc
+    if not SHA256_RE.fullmatch(
+        str((session_commit.get("session_commit") or {}).get("receipt_sha256") or "")
+    ):
+        raise ManagedCurrentTurnError("morning_capture_session_receipt_invalid")
+    ready = private_evidence.publish_background_handoff_ready(
+        private_root=private_root,
+        capture_id=str(capture["capture_id"]),
+        context_id=context["context_id"],
+        item_id=context["item_id"],
+        evidence_manifest_sha256=str(evidence_receipt["manifest_sha256"]),
+        capture_receipt_sha256=str(capture["receipt_sha256"]),
+        updated_at=str(context["event_time"]),
+        # Reuse the existing first-turn ready schema.  The morning-specific
+        # session commit and buffer hash carry the stronger finalization proof;
+        # no trace supplement is created.
+        completion_kind="first_turn_complete",
+        resolution_receipt_sha256=str(attestation["sha256"]),
+        interaction_trace_sha256=trace_sha,
+    )
+    background_handoff = {
+        **background_handoff,
+        **ready,
+        "status": "ready",
+        "completion_kind": "morning_session_complete",
+        "trace_supplement_locator": None,
+        "trace_supplement_object_sha256": None,
+        "session_resolution_receipt_sha256": str(
+            (session_commit.get("session_commit") or {}).get("receipt_sha256")
+            or ""
+        ),
+    }
+    return capture, background_handoff, attestation
 
 
 def _record_ordinary_first(
@@ -607,6 +886,7 @@ def _publish_recovery(
     evidence_bundle: dict[str, Any] | None,
     staged_attachment_objects: list[dict[str, Any]] | None,
     private_root: str | Path | None,
+    capture_authorization: dict[str, Any] | None = None,
 ) -> dict[str, str]:
     recovery_kind = {
         "first_answer": "first_answer_recovery",
@@ -634,6 +914,12 @@ def _publish_recovery(
         "reason_code": reason_code[:320],
         "formal_write_count": 0,
     }
+    if capture_authorization is not None:
+        recovery["capture_authorization"] = {
+            key: value
+            for key, value in capture_authorization.items()
+            if key not in {"authorized", "reason"}
+        }
     return private_evidence.publish_metadata_object(
         recovery, kind="recoveries", private_root=private_root
     )
@@ -702,6 +988,11 @@ def _turn_advance_allowed(
 ) -> bool:
     if not feedback_authorized:
         return False
+    if (
+        context.get("source") == "morning_review"
+        and capture_status == "awaiting_daily_curation"
+    ):
+        return True
     first_result = context["classification"]["teaching_result"]
     if first_result == "independent_correct":
         return (
@@ -726,6 +1017,7 @@ def _publish_turn_receipt(
     private_root: str | Path | None,
     observation: dict[str, Any] | None = None,
     observation_status: str = "not_applicable",
+    advance_allowed_override: bool | None = None,
 ) -> dict[str, str]:
     receipt = {
         "schema": private_evidence.TURN_RECEIPT_SCHEMA,
@@ -754,11 +1046,15 @@ def _publish_turn_receipt(
         "recovery_locator": recovery.get("locator") if recovery else None,
         "recovery_kind": recovery_kind,
         "feedback_authorized": feedback_authorized,
-        "advance_allowed": _turn_advance_allowed(
-            context=context,
-            capture_status=capture_status,
-            observation_status=observation_status,
-            feedback_authorized=feedback_authorized,
+        "advance_allowed": (
+            advance_allowed_override
+            if advance_allowed_override is not None
+            else _turn_advance_allowed(
+                context=context,
+                capture_status=capture_status,
+                observation_status=observation_status,
+                feedback_authorized=feedback_authorized,
+            )
         ),
         "next_display_receipt_sha256": None,
         "formal_write_count": 0,
@@ -777,6 +1073,7 @@ def run_current_question_turn(
     interaction_trace: object | None = None,
     attachments: list[dict[str, Any]] | None = None,
     question_mode: str | None = None,
+    current_user_message: object = None,
     private_root: str | Path | None = None,
     fault_injector: FaultInjector | None = None,
 ) -> dict[str, Any]:
@@ -797,7 +1094,21 @@ def run_current_question_turn(
         )
     )
     feedback, feedback_sha = _frozen_feedback(feedback_text)
-    capture_required = context["classification"]["capture_required"]
+    admission = _capture_admission(context, current_user_message)
+    morning_auto_capture = context["source"] == "morning_review"
+    classification_capture_required = context["classification"]["capture_required"]
+    capture_required = (
+        morning_auto_capture
+        or (
+            classification_capture_required
+            and bool(admission.get("authorized"))
+        )
+    )
+    observation_admitted = (
+        not morning_auto_capture
+        and not classification_capture_required
+        and bool(admission.get("authorized"))
+    )
     effective_trace = interaction_trace
     learner_choice = str(context["learner_evidence"].get("choice") or "").strip().upper()
     if capture_required and learner_choice in {"A", "B", "C", "D"}:
@@ -816,13 +1127,28 @@ def run_current_question_turn(
     capture_status = "not_eligible"
     observation: dict[str, Any] | None = None
     observation_status = "not_applicable"
+    if (
+        not morning_auto_capture
+        and classification_capture_required
+        and not admission.get("authorized")
+    ):
+        capture_status = "not_admitted"
+    elif (
+        not morning_auto_capture
+        and not classification_capture_required
+        and not admission.get("authorized")
+    ):
+        observation_status = "not_admitted"
     session_feedback: dict[str, Any] | None = None
     background_handoff: dict[str, Any] | None = None
     private_evidence_failure_reason: str | None = None
 
     if capture_required and not context["source_stable"]:
         capture_status = "capture_unavailable_unstable_evidence"
-    elif context["source_stable"]:
+    elif (
+        context["source_stable"]
+        and (capture_required or observation_admitted)
+    ):
         try:
             evidence_bundle = context_model.private_bundle(
                 context,
@@ -831,6 +1157,13 @@ def run_current_question_turn(
                 interaction_trace=effective_trace,
                 question_mode=question_mode,
             )
+            if morning_auto_capture:
+                context_model._require_capture_evidence_complete(
+                    evidence_bundle["current_question"],
+                    evidence_bundle["learner_evidence"],
+                    evidence_bundle["evaluation_evidence"],
+                    evidence_bundle["interaction_trace"],
+                )
             staged_attachment_objects = private_evidence.stage_attachments(
                 attachments,
                 private_root=private_root,
@@ -846,7 +1179,21 @@ def run_current_question_turn(
                 staged_attachment_objects=staged_attachment_objects,
             )
             if capture_required and evidence_receipt.get("evidence_status") == "ready":
-                capture_payload = _capture_payload(context, evidence_receipt)
+                if morning_auto_capture:
+                    # Morning's automatic exception uses the frozen session
+                    # buffer proof; the Capture is committed only for a
+                    # correct first answer or a final correction.
+                    capture_payload = _capture_payload(
+                        context,
+                        evidence_receipt,
+                        capture_authorization=capture_model.morning_capture_authorization(),
+                    )
+                else:
+                    capture_payload = _capture_payload(
+                        context,
+                        evidence_receipt,
+                        capture_authorization=admission,
+                    )
         except (context_model.CurrentQuestionContextError, private_evidence.CurrentQuestionEvidenceError) as exc:
             private_evidence_failure_reason = str(exc)
             if capture_required:
@@ -870,6 +1217,11 @@ def run_current_question_turn(
                     evidence_bundle=evidence_bundle,
                     staged_attachment_objects=staged_attachment_objects,
                     private_root=private_root,
+                    capture_authorization=(
+                        capture_model.morning_capture_authorization()
+                        if morning_auto_capture
+                        else admission
+                    ),
                 )
             except (private_evidence.CurrentQuestionEvidenceError, OSError):
                 recovery = None
@@ -961,6 +1313,11 @@ def run_current_question_turn(
                 evidence_bundle=evidence_bundle,
                 staged_attachment_objects=staged_attachment_objects,
                 private_root=private_root,
+                capture_authorization=(
+                    capture_model.morning_capture_authorization()
+                    if morning_auto_capture
+                    else admission
+                ),
             )
             capture_status = "session_feedback_pending_recovery"
             recovery_kind = "session_feedback_recovery"
@@ -993,6 +1350,69 @@ def run_current_question_turn(
                 "formal_write_count": 0,
             }
 
+    morning_buffer: dict[str, Any] | None = None
+    if morning_auto_capture:
+        try:
+            morning_buffer = _append_morning_answer_buffer(
+                root,
+                context=context,
+                attempt_key=f"first:{context['idempotency_key']}",
+                interaction_trace=context_model.normalize_interaction_trace(
+                    effective_trace
+                ),
+            )
+        except ManagedCurrentTurnError as exc:
+            # A first-answer receipt exists, but the ordered session buffer is
+            # not durable.  Keep the position and do not expose answer-bearing
+            # feedback or create any Capture/consumer handoff.
+            recovery = _publish_recovery(
+                context=context,
+                feedback_text=feedback,
+                feedback_sha256=feedback_sha,
+                evidence_receipt=evidence_receipt,
+                capture_payload=None,
+                failed_stage="session_feedback",
+                reason_code=str(exc),
+                first_answer=first_answer,
+                evidence_bundle=evidence_bundle,
+                staged_attachment_objects=staged_attachment_objects,
+                private_root=private_root,
+            )
+            turn_receipt = _publish_turn_receipt(
+                context=context,
+                feedback_sha256=feedback_sha,
+                first_answer=first_answer,
+                capture=None,
+                capture_status="morning_buffer_pending_recovery",
+                recovery=recovery,
+                feedback_authorized=False,
+                recovery_kind="morning_buffer_recovery",
+                private_root=private_root,
+            )
+            return {
+                "schema": TURN_SCHEMA,
+                "status": "recovery_required",
+                "reason_code": "morning_answer_buffer_commit_failed",
+                "context_id": context["context_id"],
+                "session_id": context["session_id"],
+                "item_id": context["item_id"],
+                "feedback_authorized": False,
+                "first_answer_committed": True,
+                "capture_status": "morning_buffer_pending_recovery",
+                "recovery_kind": "morning_buffer_recovery",
+                "recovery_locator": recovery["locator"],
+                "turn_receipt_locator": turn_receipt["locator"],
+                "turn_receipt_sha256": turn_receipt["sha256"],
+                "next_item_published": False,
+                "formal_write_count": 0,
+            }
+        if context["classification"]["teaching_result"] in {
+            "wrong",
+            "partial",
+            "uncertain",
+        }:
+            capture_status = "morning_buffered"
+
     if recovery_kind in {
         "capture_evidence_recovery",
         "observation_evidence_recovery",
@@ -1017,9 +1437,17 @@ def run_current_question_turn(
         except (private_evidence.CurrentQuestionEvidenceError, OSError):
             recovery = None
 
+    should_commit_capture = (
+        capture_required
+        and (
+            not morning_auto_capture
+            or context["classification"]["teaching_result"]
+            not in {"wrong", "partial", "uncertain"}
+        )
+    )
     if (
         first_answer is not None
-        and capture_required
+        and should_commit_capture
         and context["source_stable"]
         and capture_payload is not None
         and capture_status != "capture_unavailable_unstable_evidence"
@@ -1027,29 +1455,55 @@ def run_current_question_turn(
         try:
             if evidence_receipt is None or evidence_receipt.get("evidence_status") != "ready":
                 raise ManagedCurrentTurnError("capture_evidence_receipt_not_ready")
-            expected_capture_id, background_handoff = (
-                _ensure_background_handoff_pending(
-                    capture_payload=capture_payload,
+            if morning_auto_capture:
+                freeze = _freeze_morning_answer_buffer(
+                    root,
                     context=context,
-                    evidence_manifest_sha256=str(
-                        evidence_receipt["manifest_sha256"]
+                    freeze_key=f"capture:{context['idempotency_key']}",
+                )
+                frozen_receipt, frozen_payload = _publish_morning_frozen_bundle(
+                    first_context=context,
+                    first_turn={
+                        "evidence_locator": evidence_receipt["locator"],
+                    },
+                    cumulative_trace=context_model.normalize_interaction_trace(
+                        effective_trace
                     ),
-                    evidence_status=str(evidence_receipt["evidence_status"]),
                     private_root=private_root,
                 )
-            )
-            _fault(fault_injector, "before_capture_commit")
-            capture = _commit_capture(root, capture_payload)
-            _fault(fault_injector, "after_capture_commit")
-            if capture.get("capture_id") != expected_capture_id:
-                raise ManagedCurrentTurnError("capture_background_handoff_id_drifted")
-            if context["classification"]["teaching_result"] not in {
-                "wrong",
-                "partial",
-                "uncertain",
-            } and evidence_receipt.get("evidence_status") == "ready":
-                background_handoff = (
-                    _publish_first_turn_ready_handoff(
+                evidence_receipt = frozen_receipt
+                capture_payload = frozen_payload
+                capture, background_handoff, _ = _morning_capture_commit(
+                    root,
+                    context=context,
+                    payload=capture_payload,
+                    evidence_receipt=evidence_receipt,
+                    freeze=freeze,
+                    cumulative_trace=context_model.normalize_interaction_trace(
+                        effective_trace
+                    ),
+                    private_root=private_root,
+                    fault_injector=fault_injector,
+                )
+            else:
+                expected_capture_id, background_handoff = (
+                    _ensure_background_handoff_pending(
+                        capture_payload=capture_payload,
+                        context=context,
+                        evidence_manifest_sha256=str(
+                            evidence_receipt["manifest_sha256"]
+                        ),
+                        evidence_status=str(evidence_receipt["evidence_status"]),
+                        private_root=private_root,
+                    )
+                )
+                _fault(fault_injector, "before_capture_commit")
+                capture = _commit_capture(root, capture_payload)
+                _fault(fault_injector, "after_capture_commit")
+                if capture.get("capture_id") != expected_capture_id:
+                    raise ManagedCurrentTurnError("capture_background_handoff_id_drifted")
+                if evidence_receipt.get("evidence_status") == "ready":
+                    background_handoff = _publish_first_turn_ready_handoff(
                         context=context,
                         capture=capture,
                         evidence_manifest_sha256=str(
@@ -1058,7 +1512,6 @@ def run_current_question_turn(
                         evidence_bundle=evidence_bundle,
                         private_root=private_root,
                     )
-                )
             capture_status = "awaiting_daily_curation"
         except Exception as exc:
             try:
@@ -1129,6 +1582,14 @@ def run_current_question_turn(
         "feedback_text": feedback,
         "feedback_sha256": feedback_sha,
         "feedback_authorized": True,
+        "capture_admission": {
+            key: value
+            for key, value in admission.items()
+            if key not in {"reason", "authorized"}
+        },
+        "capture_admitted": bool(
+            morning_auto_capture or admission.get("authorized")
+        ),
         "first_answer_committed": first_answer is not None,
         "session_feedback_receipt_sha256": (
             ((session_feedback or {}).get("session_commit") or {}).get(
@@ -1497,6 +1958,8 @@ def _repair_answer_display_lifecycle_after_capture(
             "capture_status": "awaiting_daily_curation",
             "capture_id": capture["capture_id"],
             "capture_receipt_sha256": capture["receipt_sha256"],
+            "observation_status": "not_applicable",
+            "observation_id": None,
             "background_handoff_status": background_handoff["status"],
             "background_handoff_locator": background_handoff["locator"],
             "background_handoff": background_handoff,
@@ -1537,6 +2000,8 @@ def _complete_recovered_answer_operation(
     turn_receipt: dict[str, str],
     background_handoff: dict[str, Any] | None,
     private_root: str | Path | None,
+    first_result_override: str | None = None,
+    advance_allowed_override: bool | None = None,
 ) -> dict[str, Any] | None:
     operation_id = str(context.get("request_id") or "")
     display_digest = str(context.get("display_receipt_sha256") or "")
@@ -1596,12 +2061,16 @@ def _complete_recovered_answer_operation(
             raise ManagedCurrentTurnError(
                 "recovered_answer_operation_state_drifted"
             )
-        first_result = context["classification"]["teaching_result"]
-        advance_allowed = _turn_advance_allowed(
-            context=context,
-            capture_status=capture_status,
-            observation_status=observation_status,
-            feedback_authorized=True,
+        first_result = first_result_override or context["classification"]["teaching_result"]
+        advance_allowed = (
+            advance_allowed_override
+            if advance_allowed_override is not None
+            else _turn_advance_allowed(
+                context=context,
+                capture_status=capture_status,
+                observation_status=observation_status,
+                feedback_authorized=True,
+            )
         )
         following: dict[str, Any] | None = None
         if advance_allowed:
@@ -1667,7 +2136,11 @@ def recover_current_capture(
     first_answer = recovery.get("first_answer")
     if not isinstance(first_answer, dict):
         raise ManagedCurrentTurnError("capture_recovery_first_answer_receipt_missing")
-    _validate_first_answer_receipts(context, first_answer)
+    if not (
+        context["source"] == "morning_review"
+        and "canonical_event" not in first_answer
+    ):
+        _validate_first_answer_receipts(context, first_answer)
     evidence_manifest_sha = str(
         recovery.get("evidence_manifest_sha256") or ""
     )
@@ -1683,8 +2156,26 @@ def recover_current_capture(
             staged_attachment_objects=staged,
         )
         evidence_manifest_sha = str(evidence_receipt["manifest_sha256"])
-        if context["classification"]["capture_required"]:
-            payload = _capture_payload(context, evidence_receipt)
+        if (
+            context["classification"]["capture_required"]
+            or context["source"] == "morning_review"
+        ):
+            payload = _capture_payload(
+                context,
+                evidence_receipt,
+                capture_authorization=(
+                    capture_model.morning_capture_authorization()
+                    if context["source"] == "morning_review"
+                    else capture_model.normalize_capture_authorization(
+                        recovery.get("capture_authorization")
+                        or (
+                            payload.get("capture_authorization")
+                            if isinstance(payload, dict)
+                            else None
+                        )
+                    )
+                ),
+            )
     elif recovery.get("evidence_locator") and evidence_manifest_sha:
         _, reopened_bundle = private_evidence.read_bundle(
             str(recovery["evidence_locator"]), private_root=private_root
@@ -1695,6 +2186,112 @@ def recover_current_capture(
             "evidence_status": private_evidence.bundle_evidence_status(
                 reopened_bundle
             ),
+        }
+    if context["source"] == "morning_review" and isinstance(payload, dict):
+        if evidence_receipt is None:
+            locator = str(recovery.get("evidence_locator") or "")
+            if not locator.startswith(private_evidence.LOCATOR_PREFIX):
+                raise ManagedCurrentTurnError(
+                    "morning_capture_recovery_evidence_missing"
+                )
+            evidence_receipt = {
+                "locator": locator,
+                "manifest_sha256": evidence_manifest_sha,
+                "evidence_status": "ready",
+            }
+        try:
+            _, frozen_bundle = private_evidence.read_bundle(
+                str(evidence_receipt["locator"]), private_root=private_root
+            )
+        except private_evidence.CurrentQuestionEvidenceError as exc:
+            raise ManagedCurrentTurnError(
+                f"morning_capture_recovery_evidence_invalid:{exc}"
+            ) from exc
+        trace = frozen_bundle.get("interaction_trace")
+        if not isinstance(trace, dict):
+            raise ManagedCurrentTurnError("morning_capture_recovery_trace_missing")
+        freeze = _freeze_morning_answer_buffer(
+            root,
+            context=context,
+            freeze_key=f"capture:{context['idempotency_key']}",
+        )
+        capture, background_handoff, _ = _morning_capture_commit(
+            root,
+            context=context,
+            payload=payload,
+            evidence_receipt=evidence_receipt,
+            freeze=freeze,
+            cumulative_trace=trace,
+            private_root=private_root,
+        )
+        turn_receipt = _publish_turn_receipt(
+            context=context,
+            feedback_sha256=str(recovery["feedback_sha256"]),
+            first_answer=first_answer,
+            capture=capture,
+            capture_status="awaiting_daily_curation",
+            recovery=None,
+            feedback_authorized=True,
+            recovery_kind=None,
+            private_root=private_root,
+        )
+        display_lifecycle_repaired = _repair_answer_display_lifecycle_after_capture(
+            context=context,
+            recovery=recovery,
+            capture=capture,
+            turn_receipt=turn_receipt,
+            background_handoff=background_handoff,
+            evidence_bundle=frozen_bundle,
+            private_root=private_root,
+        )
+        operation_result = _complete_recovered_answer_operation(
+            root,
+            context=context,
+            recovery_locator=recovery_locator,
+            feedback_text=str(recovery["feedback_text"]),
+            capture_status="awaiting_daily_curation",
+            capture_id=str(capture["capture_id"]),
+            observation_status="not_applicable",
+            observation=None,
+            turn_receipt=turn_receipt,
+            background_handoff=background_handoff,
+            private_root=private_root,
+            first_result_override=str(
+                (freeze.get("buffer")[-1] if freeze.get("buffer") else {}).get(
+                    "result"
+                )
+                or context["classification"]["teaching_result"]
+            ),
+            advance_allowed_override=True,
+        )
+        following = (
+            operation_result.get("next_item")
+            if isinstance(operation_result, dict)
+            else None
+        )
+        return {
+            "schema": RECOVERY_RESULT_SCHEMA,
+            "status": "awaiting_daily_curation",
+            "context_id": context["context_id"],
+            "capture_status": "awaiting_daily_curation",
+            "capture_id": capture["capture_id"],
+            "capture_receipt_sha256": capture["receipt_sha256"],
+            "observation_status": "not_applicable",
+            "observation_id": None,
+            "background_handoff_status": background_handoff["status"],
+            "background_handoff": background_handoff,
+            "display_lifecycle_repaired": display_lifecycle_repaired,
+            "feedback_text": str(recovery["feedback_text"]),
+            "feedback_authorized": True,
+            "position_changed": bool(
+                isinstance(following, dict)
+                and following.get("status") == "published"
+            ),
+            "next_item": following,
+            "answer_operation_result": operation_result,
+            "turn_receipt_locator": turn_receipt["locator"],
+            "turn_receipt_sha256": turn_receipt["sha256"],
+            "formal_write_count": 0,
         }
     if not context["classification"]["capture_required"]:
         if failed_stage != "private_evidence" or evidence_receipt is None:
@@ -1966,6 +2563,35 @@ def next_item(
         prior_index = active_order.index(prior_item_id)
         if next_id is None:
             frontier_matches = prior_index == len(active_order) - 1
+            if not frontier_matches and prior.get("status") in {
+                "feedback_and_next_ready",
+                "feedback_ready_session_complete",
+            }:
+                item = state["items"][prior_item_id]
+                morning_commit = item.get("morning_capture_commit")
+                resolution_sha = str(
+                    prior.get("session_resolution_receipt_sha256") or ""
+                )
+                morning_matches = bool(
+                    item.get("resolution") == "morning_capture_committed"
+                    and isinstance(morning_commit, dict)
+                    and morning_commit.get("capture_id") == prior.get("capture_id")
+                    and morning_commit.get("capture_receipt_sha256")
+                    == prior.get("capture_receipt_sha256")
+                    and morning_commit.get("receipt_sha256") == resolution_sha
+                    and SHA256_RE.fullmatch(resolution_sha)
+                )
+                if morning_matches:
+                    try:
+                        morning_session._verify_session_hot_event_receipt(
+                            session_dir,
+                            resolution_sha,
+                            event_type="morning_capture_committed",
+                            item_id=prior_item_id,
+                        )
+                    except morning_session.SessionError:
+                        morning_matches = False
+                frontier_matches = morning_matches
             if not frontier_matches and prior.get("status") == "teaching_resolved":
                 item = state["items"][prior_item_id]
                 resolution = item.get("teaching_resolution")
@@ -2205,6 +2831,7 @@ def _answer_result(
     learner_evidence_write_count: int,
     trace_supplement: dict[str, Any] | None = None,
     background_handoff: dict[str, Any] | None = None,
+    session_resolution_receipt_sha256: str | None = None,
 ) -> dict[str, Any]:
     return {
         "schema": ANSWER_AND_NEXT_SCHEMA,
@@ -2226,6 +2853,7 @@ def _answer_result(
         "next_item": following,
         "recovery_locator": recovery_locator,
         "trace_supplement": trace_supplement,
+        "session_resolution_receipt_sha256": session_resolution_receipt_sha256,
         "background_handoff": background_handoff,
         "learner_evidence_write_count": learner_evidence_write_count,
         "luna_call_count": 0,
@@ -2242,6 +2870,7 @@ def answer_current_and_next(
     prompt_level: str,
     interaction_trace: object | None = None,
     attachments_json: object | None = None,
+    current_user_message: object = None,
     private_root: str | Path | None = None,
 ) -> dict[str, Any]:
     """Commit one first answer; advance only after the current item is resolved."""
@@ -2262,6 +2891,7 @@ def answer_current_and_next(
     question_mode, attachment_rows, attachment_identity = _normalize_attachments_json(
         attachments_json
     )
+    admission = normalize_capture_authorization(current_user_message)
     if not isinstance(display_receipt_locator, str) or not display_receipt_locator.startswith(
         private_evidence.TURN_LOCATOR_PREFIX
     ):
@@ -2279,6 +2909,11 @@ def answer_current_and_next(
         "interaction_trace": normalized_trace,
         "question_mode": question_mode,
         "attachments": attachment_identity,
+        "capture_admission": {
+            key: value
+            for key, value in admission.items()
+            if key not in {"reason", "authorized"}
+        },
     }
     input_sha = _sha256(_json_bytes(operation_material))
     operation_id = "AON-" + input_sha.upper()
@@ -2367,11 +3002,38 @@ def answer_current_and_next(
             prepared = operation["prepared"]
             followup = prepared["followup"]
             first_turn = lifecycle["first_turn"]
+            first_operation = private_evidence.read_answer_operation(
+                str(lifecycle.get("first_operation_id") or ""),
+                private_root=private_root,
+            )
+            first_context_raw = (
+                (first_operation or {}).get("prepared") or {}
+            ).get("context")
+            if not isinstance(first_context_raw, dict):
+                raise ManagedCurrentTurnError("morning_first_context_missing")
+            first_context = context_model.validate_context(first_context_raw)
+            # A pre-Phase-2 morning lifecycle may already contain a durable
+            # Capture.  Keep that old surface narrow-read compatible and do
+            # not reinterpret it as the new buffer-only flow.
+            morning_lifecycle = (
+                first_context["source"] == "morning_review"
+                and not first_turn.get("capture_id")
+            )
             if (
-                first_turn.get("capture_status") != "awaiting_daily_curation"
-                or not first_turn.get("capture_id")
-                or not SHA256_RE.fullmatch(
-                    str(first_turn.get("capture_receipt_sha256") or "")
+                first_turn.get("capture_status")
+                not in (
+                    {"morning_buffered", "awaiting_daily_curation"}
+                    if morning_lifecycle
+                    else {"awaiting_daily_curation"}
+                )
+                or (
+                    not morning_lifecycle
+                    and (
+                        not first_turn.get("capture_id")
+                        or not SHA256_RE.fullmatch(
+                            str(first_turn.get("capture_receipt_sha256") or "")
+                        )
+                    )
                 )
             ):
                 raise ManagedCurrentTurnError(
@@ -2380,12 +3042,63 @@ def answer_current_and_next(
             cumulative_trace = _merge_interaction_traces(
                 lifecycle["interaction_trace"], prepared["interaction_trace"]
             )
+            if morning_lifecycle:
+                buffer_context = {
+                    **first_context,
+                    "assessment": {
+                        **first_context["assessment"],
+                        "choice_result": str(followup.get("choice_result") or ""),
+                    },
+                    "classification": {
+                        **first_context["classification"],
+                        "teaching_result": str(
+                            followup.get("first_result") or "uncertain"
+                        ),
+                    },
+                }
+                buffer_result = _append_morning_answer_buffer(
+                    root,
+                    context=buffer_context,
+                    attempt_key=f"followup:{operation_id}",
+                    interaction_trace=prepared["interaction_trace"],
+                )
+                lifecycle = {
+                    **lifecycle,
+                    "first_turn": {
+                        **first_turn,
+                        "morning_buffer_sequence": buffer_result.get(
+                            "buffer_sequence"
+                        ),
+                    },
+                }
             if cumulative_trace != lifecycle["interaction_trace"]:
                 lifecycle = {**lifecycle, "interaction_trace": cumulative_trace}
                 private_evidence.write_answer_display_lifecycle(
                     lifecycle, private_root=private_root
                 )
             if followup.get("choice_result") != "correct":
+                if morning_lifecycle:
+                    result = _answer_result(
+                        operation_id=operation_id,
+                        status="feedback_ready_continue_current",
+                        feedback_text=followup["feedback_text"],
+                        first_result=lifecycle["first_result"],
+                        capture_status="morning_buffered",
+                        capture_id=None,
+                        observation_status="not_applicable",
+                        observation_id=None,
+                        observation_locator=None,
+                        turn_receipt_locator=first_turn.get(
+                            "turn_receipt_locator"
+                        ),
+                        following=None,
+                        recovery_locator=None,
+                        learner_evidence_write_count=0,
+                        background_handoff=None,
+                    )
+                    return _complete_answer_operation(
+                        operation, result, private_root=private_root
+                    )
                 result = _answer_result(
                     operation_id=operation_id,
                     status="feedback_ready_continue_current",
@@ -2401,6 +3114,160 @@ def answer_current_and_next(
                     recovery_locator=None,
                     learner_evidence_write_count=0,
                     background_handoff=first_turn.get("background_handoff"),
+                )
+                return _complete_answer_operation(
+                    operation, result, private_root=private_root
+                )
+
+            if morning_lifecycle:
+                freeze = _freeze_morning_answer_buffer(
+                    root,
+                    context=first_context,
+                    freeze_key=f"capture:{first_context['idempotency_key']}",
+                )
+                frozen_receipt, frozen_payload = _publish_morning_frozen_bundle(
+                    first_context=first_context,
+                    first_turn=first_turn,
+                    cumulative_trace=cumulative_trace,
+                    private_root=private_root,
+                )
+                try:
+                    capture, background_handoff, _ = _morning_capture_commit(
+                        root,
+                        context=first_context,
+                        payload=frozen_payload,
+                        evidence_receipt=frozen_receipt,
+                        freeze=freeze,
+                        cumulative_trace=cumulative_trace,
+                        private_root=private_root,
+                    )
+                except Exception as exc:
+                    recovery = _publish_recovery(
+                        context=first_context,
+                        feedback_text=str(followup["feedback_text"]),
+                        feedback_sha256=_sha256(
+                            str(followup["feedback_text"]).encode("utf-8")
+                        ),
+                        evidence_receipt=frozen_receipt,
+                        capture_payload=frozen_payload,
+                        failed_stage="capture",
+                        reason_code=str(exc),
+                        first_answer={
+                            "review_commit_receipt_sha256": first_turn.get(
+                                "first_answer_receipt_sha256"
+                            )
+                        },
+                        evidence_bundle=None,
+                        staged_attachment_objects=[],
+                        private_root=private_root,
+                        capture_authorization=capture_model.morning_capture_authorization(),
+                    )
+                    failed_turn = _publish_turn_receipt(
+                        context=first_context,
+                        feedback_sha256=_sha256(
+                            str(followup["feedback_text"]).encode("utf-8")
+                        ),
+                        first_answer={
+                            "review_commit_receipt_sha256": first_turn.get(
+                                "first_answer_receipt_sha256"
+                            )
+                        },
+                        capture=None,
+                        capture_status="capture_pending_recovery",
+                        recovery=recovery,
+                        feedback_authorized=False,
+                        recovery_kind="capture_recovery",
+                        private_root=private_root,
+                    )
+                    result = _answer_result(
+                        operation_id=operation_id,
+                        status="feedback_ready_recovery_required",
+                        feedback_text=None,
+                        first_result=lifecycle["first_result"],
+                        capture_status="capture_pending_recovery",
+                        capture_id=None,
+                        observation_status="not_applicable",
+                        observation_id=None,
+                        observation_locator=None,
+                        turn_receipt_locator=failed_turn["locator"],
+                        following=None,
+                        recovery_locator=recovery["locator"],
+                        learner_evidence_write_count=0,
+                        background_handoff=None,
+                    )
+                    return _complete_answer_operation(
+                        operation, result, private_root=private_root
+                    )
+                first_answer_for_receipt = {
+                    "review_commit_receipt_sha256": first_turn.get(
+                        "first_answer_receipt_sha256"
+                    )
+                }
+                final_turn = _publish_turn_receipt(
+                    context=first_context,
+                    feedback_sha256=_sha256(
+                        str(followup["feedback_text"]).encode("utf-8")
+                    ),
+                    first_answer=first_answer_for_receipt,
+                    capture=capture,
+                    capture_status="awaiting_daily_curation",
+                    recovery=None,
+                    feedback_authorized=True,
+                    recovery_kind=None,
+                    private_root=private_root,
+                    advance_allowed_override=True,
+                )
+                following = next_item(
+                    root,
+                    prior_turn_receipt_locator=final_turn["locator"],
+                    private_root=private_root,
+                )
+                result = _answer_result(
+                    operation_id=operation_id,
+                    status=(
+                        "feedback_ready_session_complete"
+                        if following.get("status") == "complete"
+                        else "feedback_and_next_ready"
+                    ),
+                    feedback_text=followup["feedback_text"],
+                    first_result=lifecycle["first_result"],
+                    capture_status="awaiting_daily_curation",
+                    capture_id=capture["capture_id"],
+                    observation_status="not_applicable",
+                    observation_id=None,
+                    observation_locator=None,
+                    turn_receipt_locator=final_turn["locator"],
+                    following=following,
+                    recovery_locator=None,
+                    learner_evidence_write_count=0,
+                    background_handoff=background_handoff,
+                    session_resolution_receipt_sha256=background_handoff.get(
+                        "session_resolution_receipt_sha256"
+                    ),
+                )
+                private_evidence.write_answer_display_lifecycle(
+                    {
+                        **lifecycle,
+                        "status": "resolved",
+                        "first_turn": {
+                            **lifecycle["first_turn"],
+                            "capture_status": "awaiting_daily_curation",
+                            "capture_id": capture["capture_id"],
+                            "capture_receipt_sha256": capture[
+                                "receipt_sha256"
+                            ],
+                            "background_handoff": background_handoff,
+                            "background_handoff_status": "ready",
+                            "background_handoff_locator": background_handoff[
+                                "locator"
+                            ],
+                        },
+                        "resolution": {
+                            "turn_receipt": final_turn,
+                            "result": result,
+                        },
+                    },
+                    private_root=private_root,
                 )
                 return _complete_answer_operation(
                     operation, result, private_root=private_root
@@ -2677,6 +3544,7 @@ def answer_current_and_next(
             interaction_trace=prepared["interaction_trace"],
             attachments=attachment_rows,
             question_mode=question_mode,
+            current_user_message=current_user_message,
             private_root=private_root,
         )
         needs_teaching_lifecycle = (
@@ -2685,7 +3553,10 @@ def answer_current_and_next(
         )
         hold_for_teaching = (
             needs_teaching_lifecycle
-            and current.get("capture_status") == "awaiting_daily_curation"
+            and (
+                current.get("capture_status")
+                in {"awaiting_daily_curation", "morning_buffered"}
+            )
         )
         following: dict[str, Any] | None = None
         if current.get("advance_allowed") is True and not hold_for_teaching:
@@ -2726,7 +3597,10 @@ def answer_current_and_next(
             learner_evidence_write_count=1,
             background_handoff=current.get("background_handoff"),
         )
-        if needs_teaching_lifecycle:
+        if needs_teaching_lifecycle and (
+            current.get("capture_status")
+            in {"awaiting_daily_curation", "morning_buffered"}
+        ):
             private_evidence.write_answer_display_lifecycle(
                 {
                     "schema": private_evidence.ANSWER_DISPLAY_LIFECYCLE_SCHEMA,
@@ -2809,6 +3683,11 @@ def _parser() -> argparse.ArgumentParser:
         default='{"question_mode":"dialogue_only","attachments":[]}',
         help="Bounded private attachment descriptors; paths never enter stored evidence",
     )
+    answer_next.add_argument(
+        "--current-user-message",
+        default=None,
+        help="Invocation-only current user message used for exact Capture admission",
+    )
     return parser
 
 
@@ -2836,6 +3715,7 @@ def main(argv: list[str] | None = None) -> int:
                 prompt_level=args.prompt_level,
                 interaction_trace=json.loads(args.trace_json),
                 attachments_json=args.attachments_json,
+                current_user_message=args.current_user_message,
                 private_root=args.private_root,
             )
     except (KeyError, json.JSONDecodeError, ValueError, RuntimeError) as exc:

@@ -1,6 +1,6 @@
 ---
 name: kaoyan-408-wrong-intake
-description: "408 当前题的答案安全快速捕获与正式事务边界。预处理题包中的选项作答只走 answer-current-and-next；独立正确生成私有 observation，失败题生成 bundle v3/capture，wrong 类在同一题纠正后补齐 trace supplement；Luna v2 只提候选，显式日期后由 Sol 核验。"
+description: "408 当前题的答案安全快速捕获与正式事务边界。普通场景只在当前用户消息经稳定 NFKC 后含连续短语 快速入库 时 Capture；拆分、标点、做错、评分、复发和模型判断均不授权。晨间错误只进入当前 session 有序 buffer，第一次正确或错误后最终正确才冻结完整对话并生成一个 release-neutral Capture；不创建 wrong Capture 或 later supplement。"
 ---
 
 # Kaoyan 408 Wrong Intake
@@ -11,12 +11,34 @@ Preserve the first answer and the bounded teaching exchange without slowing stud
 Knowledge classification, history matching, relations, Luna execution, and formal
 writes stay outside the learner turn.
 
+## Producer admission
+
+For ordinary new, old, or wrong questions, Capture admission is determined only
+from the current user message after Unicode NFKC normalization. The normalized
+message must contain the exact contiguous phrase `快速入库`. `快速 入库`,
+标点拆分或 other punctuation-separated wording, a wrong answer, low-confidence correctness,
+recurrence, scoring, warmup state, or model/MCP/Sol inference never substitutes
+for the phrase. The raw message is invocation-only; the producer persists only
+the normalized-message SHA-256, trigger phrase, and source role.
+
+Without admission, Capture, central study observation, consumer handoff, model or
+MCP/Sol calls, and formal writes are all zero. The answer-safe current turn may
+still return bounded feedback, but it does not silently create a candidate.
+
+Morning review is the only automatic exception. A wrong, partial, blank, or
+uncertain answer appends only to the current session's ordered answer buffer and
+retains the item. The first correct answer, or a final correct answer after one
+or more errors, freezes that complete ordered buffer and creates exactly one
+release-neutral Capture. A durable Capture/session receipt is required before a
+single navigation advance. Retries are idempotent; no new wrong Capture and no
+trace supplement are created. Historical formats are read-only compatibility.
+
 ## Exact entry
 
 For every first or correction A-D reply call exactly once:
 
 ```text
-python3 scripts/managed_408_current_turn.py --repo <repo> --private-root <root> answer-current-and-next --display-receipt-locator <current-question-turn://sha256/...> --choice <A|B|C|D> --confidence <high|medium|low> --prompt-level <none|L1|L2|L3|L4|L5> --trace-json '<JSON list>' --attachments-json '<JSON object>'
+python3 scripts/managed_408_current_turn.py --repo <repo> --private-root <root> answer-current-and-next --display-receipt-locator <current-question-turn://sha256/...> --choice <A|B|C|D> --confidence <high|medium|low> --prompt-level <none|L1|L2|L3|L4|L5> --trace-json '<JSON list>' --attachments-json '<JSON object>' --current-user-message '<CURRENT USER MESSAGE>'
 ```
 
 The external schema is `managed-408-answer-current-and-next-v1`. Do not separately
@@ -43,14 +65,17 @@ resubmit attachments and reuses the first bundle's frozen attachment objects.
 `dialogue_only` has no attachments. `image_question` requires both `question_image`
 and `solution_image`; missing either fails before Capture creation.
 
-high-confidence, unprompted independent correct is an observation.
+High-confidence, unprompted independent correct is an observation only when the
+ordinary current-message admission phrase is present.
 
 ## First-answer split
 
-Correct with medium/low confidence is a capture. wrong, partial, blank, or
-uncertain is a capture under current_question_failure_standing_policy_v1 and
-returns awaiting_daily_curation. The current-question answer-current-and-next
-entry is receipt-bound to the navigation frontier.
+Correct with medium/low confidence is a Capture only after ordinary phrase
+admission. wrong, partial, blank, or uncertain is a Capture under
+current_question_failure_standing_policy_v1 only after that admission and
+returns awaiting_daily_curation. Without admission, Capture, observation, and
+handoff are all zero. The current-question answer-current-and-next entry is
+receipt-bound to the navigation frontier.
 
 - High-confidence, unprompted `independent_correct`: one private
   `current-question-evidence-bundle-v3` bound to exactly one
@@ -61,11 +86,10 @@ entry is receipt-bound to the navigation frontier.
   one answer-safe `awaiting_daily_curation` capture. With complete evidence its
   background handoff becomes `ready` with `completion_kind=first_turn_complete`,
   then receipt-gated advancement. An image-role gap fails before Capture creation.
-- `wrong|partial|uncertain`: no observation; the same bundle-v3/capture pair under
-  `current_question_failure_standing_policy_v1`, but the result is
-  `feedback_ready_continue_current`; handoff stays `teaching_pending`, the first-turn
-  receipt has `advance_allowed=false`, and the
-  same display receipt is retained for the next correction answer.
+- `wrong|partial|uncertain`: with ordinary phrase admission, one bundle-v3/capture
+  pair under `current_question_failure_standing_policy_v1`; without admission,
+  no Capture, observation, or handoff is created. In morning review the first
+  failure is buffer-only until a final correct answer freezes the complete trace.
 
 All branches have `luna_call_count=0` and `formal_write_count=0`. An observation is
 positive study evidence, not mastery. A capture is a durable fact handoff, not a
@@ -78,21 +102,23 @@ The sidecar binds this foreground Skill, the Producer closure and Capture contra
 but remains release-neutral and contains no release, activation, Dispatcher or MCP
 authority identity.
 Every completed item produces exactly one background candidate: its study observation
-or its one Capture with the final ready handoff. Corrections only append the original
-trace supplement and cannot create another candidate, bundle, or Capture.
+or its one Capture with the final ready handoff. Ordinary corrections cannot create
+another candidate, bundle, or Capture. Morning corrections stay in the session
+buffer and are folded into the one final bundle; they never append a trace supplement.
 
 ## Same-question correction
 
-Use the same command and display receipt for each correction answer.
+Use the same command and display receipt for each correction answer. Pass the
+current user message through `--current-user-message`; never synthesize it from
+the answer, score, or assistant text.
 
 - Still wrong: return the prepared correction, retain the item, and merge this turn's
-  private trace. Do not repeat the immutable first outcome, bundle, or capture.
-- Correct after teaching: publish one `teaching-resolution-attestation-v1`, one
-  `current-question-trace-supplement-v1` bound to the original capture/evidence
-  manifest, and one session resolution `relearn_required`. It explicitly records
-  `mastery_effect=none`, `retention_effect=none`, and
-  `independent_repair=false`. Complete evidence then atomically promotes the handoff
-  to `ready` with `completion_kind=teaching_resolved`. Navigation stays receipt-gated.
+  private trace. In morning review append only the current session buffer row; do
+  not create a Capture or handoff.
+- Correct after teaching: in ordinary phrase-authorized flow, retain the original
+  Capture contract. In morning review freeze the complete ordered buffer, create
+  one Capture and one ready handoff with no trace supplement, then advance only
+  after the durable session/Capture receipt.
 
 This resolution says only that the immediate correction was completed. It never
 rewrites the original failure into independent correct.

@@ -5,8 +5,10 @@ the same question or formal ID.
 
 ## Phase decision
 
-1. Active current-question learning: the managed turn applies the standing-policy
-   matrix and conditionally writes only the fast capture before returning to study.
+1. Active current-question learning: the managed turn first applies the exact
+   current-message NFKC admission phrase. Ordinary Capture is conditional on
+   that proof; morning failures use only the existing session buffer until final
+   correctness freezes one Capture before returning to study.
 2. A capture frozen by the explicit-date daily-curation skill: `curate_one`, then choose
    A/B/C from the current evidence.
 3. Existing formal maintenance or read-only review: choose D-G directly.

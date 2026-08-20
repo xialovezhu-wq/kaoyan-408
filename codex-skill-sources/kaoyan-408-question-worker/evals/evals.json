@@ -8,6 +8,11 @@
     {"name": "capture_recovery_does_not_repeat_outcome"},
     {"name": "unified_navigation_retains_unresolved_item"},
     {"name": "independent_correct_recovery_is_observation_only"},
-    {"name": "trace_choice_conflict_fails_closed"}
+    {"name": "trace_choice_conflict_fails_closed"},
+    {"name": "exact_phrase_nfkc_admission_matrix"},
+    {"name": "unauthorized_capture_observation_handoff_are_zero"},
+    {"name": "morning_first_correct_capture_is_single"},
+    {"name": "morning_wrong_then_correct_has_no_supplement"},
+    {"name": "forbidden_calls_are_never_inferred"}
   ]
 }

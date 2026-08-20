@@ -59,6 +59,381 @@ def _write_state(session_dir: Path, state: dict[str, Any]) -> None:
     session_hot.bootstrap(session_dir, state)
 
 
+def _buffer_receipt(
+    directory: Path,
+    *,
+    event: dict[str, Any],
+    prefix: str = "morning-buffer",
+) -> dict[str, Any]:
+    """Create the durable receipt for one ordered hot-session buffer event."""
+
+    return _receipt_file(
+        directory,
+        {
+            "event_id": event["event_id"],
+            "event_type": event["event_type"],
+            "item_id": event["payload"].get("item_id"),
+            "attempt_key": event["payload"].get("attempt_key"),
+            "sequence": event["sequence"],
+        },
+        prefix=prefix,
+    )
+
+
+def append_answer_buffer(
+    repo: str | Path,
+    session_id: str,
+    item_id: str,
+    *,
+    attempt_key: str,
+    result: str,
+    choice_result: str,
+    confidence: str,
+    prompt_level: str,
+    interaction_trace: dict[str, Any],
+    recorded_at: str,
+) -> dict[str, Any]:
+    """Append one answer to the existing ordered morning session buffer.
+
+    This is deliberately a session-local hot-state operation.  It never writes
+    the Capture ledger, creates a consumer handoff, or changes formal state.
+    ``attempt_key`` makes retries return the original receipt without adding a
+    duplicate ordered attempt.
+    """
+
+    if not isinstance(interaction_trace, dict) or not isinstance(
+        interaction_trace.get("events"), list
+    ):
+        raise SessionError("morning answer buffer trace invalid")
+    if not str(attempt_key).strip():
+        raise SessionError("morning answer buffer attempt key required")
+    root = Path(repo).resolve()
+    directory = _session_dir(root, str(session_id))
+    with session_lock(directory):
+        state = _load_state(directory, str(session_id))
+        _ensure_active(state)
+        item = state["items"].get(str(item_id))
+        if not isinstance(item, dict):
+            raise SessionError("morning answer buffer item missing")
+        existing_event: dict[str, Any] | None = None
+        events_path = directory / "events.jsonl"
+        if events_path.exists():
+            for raw in events_path.read_text(encoding="utf-8").splitlines():
+                if not raw.strip():
+                    continue
+                candidate = json.loads(raw)
+                if (
+                    candidate.get("event_type") == "answer_buffered"
+                    and candidate.get("payload", {}).get("attempt_key")
+                    == str(attempt_key)
+                ):
+                    existing_event = candidate
+                    break
+        if existing_event is not None:
+            buffer = item.setdefault("answer_buffer", [])
+            if not isinstance(buffer, list):
+                raise SessionError("morning answer buffer state invalid")
+            if not any(
+                isinstance(row, dict)
+                and row.get("attempt_key") == str(attempt_key)
+                for row in buffer
+            ):
+                buffer.append(
+                    {
+                        key: value
+                        for key, value in existing_event["payload"].items()
+                        if key != "_timestamp"
+                    }
+                )
+                state["updated_at"] = str(recorded_at)
+                _write_state(directory, state)
+            receipt = _buffer_receipt(directory, event=existing_event)
+            return {
+                "status": "ALREADY_BUFFERED",
+                "item_id": str(item_id),
+                "attempt_key": str(attempt_key),
+                "buffer_sequence": existing_event["payload"].get(
+                    "buffer_sequence"
+                ),
+                "session_buffer_receipt": receipt,
+                "formal_write_count": 0,
+            }
+
+        buffer = item.setdefault("answer_buffer", [])
+        if not isinstance(buffer, list):
+            raise SessionError("morning answer buffer state invalid")
+        buffer_sequence = len(buffer) + 1
+        payload = {
+            "item_id": str(item_id),
+            "attempt_key": str(attempt_key),
+            "buffer_sequence": buffer_sequence,
+            "result": str(result),
+            "choice_result": str(choice_result),
+            "confidence": str(confidence),
+            "prompt_level": str(prompt_level),
+            "interaction_trace": json.loads(
+                json.dumps(interaction_trace, ensure_ascii=False, sort_keys=True)
+            ),
+            "_timestamp": str(recorded_at),
+        }
+        event = _append_session_event(
+            directory, state, "answer_buffered", payload
+        )
+        buffer.append(
+            {
+                key: value
+                for key, value in event["payload"].items()
+                if key != "_timestamp"
+            }
+        )
+        state["updated_at"] = str(recorded_at)
+        _write_state(directory, state)
+        receipt = _buffer_receipt(directory, event=event)
+        return {
+            "status": "BUFFERED",
+            "item_id": str(item_id),
+            "attempt_key": str(attempt_key),
+            "buffer_sequence": buffer_sequence,
+            "session_buffer_receipt": receipt,
+            "formal_write_count": 0,
+        }
+
+
+def freeze_answer_buffer(
+    repo: str | Path,
+    session_id: str,
+    item_id: str,
+    *,
+    freeze_key: str,
+    recorded_at: str,
+) -> dict[str, Any]:
+    """Freeze the complete ordered session buffer before one final Capture."""
+
+    root = Path(repo).resolve()
+    directory = _session_dir(root, str(session_id))
+    with session_lock(directory):
+        state = _load_state(directory, str(session_id))
+        _ensure_active(state)
+        item = state["items"].get(str(item_id))
+        if not isinstance(item, dict):
+            raise SessionError("morning answer buffer item missing")
+        existing = item.get("answer_buffer_freeze")
+        if existing is None:
+            events_path = directory / "events.jsonl"
+            if events_path.exists():
+                for raw in events_path.read_text(encoding="utf-8").splitlines():
+                    if not raw.strip():
+                        continue
+                    candidate = json.loads(raw)
+                    if (
+                        candidate.get("event_type") == "answer_buffer_frozen"
+                        and candidate.get("payload", {}).get("freeze_key")
+                        == str(freeze_key)
+                        and candidate.get("payload", {}).get("item_id")
+                        == str(item_id)
+                    ):
+                        payload = candidate["payload"]
+                        receipt = _buffer_receipt(
+                            directory,
+                            event=candidate,
+                            prefix="morning-freeze",
+                        )
+                        existing = {
+                            "freeze_key": str(freeze_key),
+                            "buffer_sha256": str(payload.get("buffer_sha256") or ""),
+                            "buffer_count": int(payload.get("buffer_count") or 0),
+                            "receipt_sha256": receipt["receipt_sha256"],
+                        }
+                        item["answer_buffer_freeze"] = existing
+                        state["updated_at"] = str(recorded_at)
+                        _write_state(directory, state)
+                        break
+        if isinstance(existing, dict) and existing.get("freeze_key") == str(
+            freeze_key
+        ):
+            receipt_sha = str(existing.get("receipt_sha256") or "")
+            if receipt_sha:
+                receipt = _verify_session_hot_event_receipt(
+                    directory,
+                    receipt_sha,
+                    event_type="answer_buffer_frozen",
+                    item_id=str(item_id),
+                )
+                return {
+                    "status": "ALREADY_FROZEN",
+                    "item_id": str(item_id),
+                    "freeze_key": str(freeze_key),
+                    "buffer_sha256": str(existing.get("buffer_sha256") or ""),
+                    "buffer": list(item.get("answer_buffer") or []),
+                    "session_freeze_receipt": receipt,
+                    "formal_write_count": 0,
+                }
+        if existing is not None:
+            raise SessionError("morning answer buffer freeze identity drifted")
+        buffer = item.get("answer_buffer") or []
+        canonical = json.dumps(
+            buffer, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        ).encode("utf-8")
+        buffer_sha = hashlib.sha256(canonical).hexdigest()
+        event = _append_session_event(
+            directory,
+            state,
+            "answer_buffer_frozen",
+            {
+                "item_id": str(item_id),
+                "freeze_key": str(freeze_key),
+                "buffer_sha256": buffer_sha,
+                "buffer_count": len(buffer),
+                "_timestamp": str(recorded_at),
+            },
+        )
+        receipt = _buffer_receipt(directory, event=event, prefix="morning-freeze")
+        item["answer_buffer_freeze"] = {
+            "freeze_key": str(freeze_key),
+            "buffer_sha256": buffer_sha,
+            "buffer_count": len(buffer),
+            "receipt_sha256": receipt["receipt_sha256"],
+        }
+        state["updated_at"] = str(recorded_at)
+        _write_state(directory, state)
+        return {
+            "status": "FROZEN",
+            "item_id": str(item_id),
+            "freeze_key": str(freeze_key),
+            "buffer_sha256": buffer_sha,
+            "buffer": list(buffer),
+            "session_freeze_receipt": {
+                "status": "pass",
+                "receipt_sha256": receipt["receipt_sha256"],
+            },
+            "formal_write_count": 0,
+        }
+
+
+def mark_morning_capture_committed(
+    repo: str | Path,
+    session_id: str,
+    item_id: str,
+    *,
+    capture_id: str,
+    capture_receipt_sha256: str,
+    freeze_receipt_sha256: str,
+    final_trace_sha256: str,
+) -> dict[str, Any]:
+    """Bind one durable Capture to the frozen morning buffer.
+
+    Unlike the retired teaching-resolution path this records no trace
+    supplement and never mutates an existing Capture.
+    """
+
+    root = Path(repo).resolve()
+    directory = _session_dir(root, session_id)
+    with session_lock(directory):
+        state = _load_state(directory, session_id)
+        _ensure_active(state)
+        item = state["items"].get(item_id)
+        if not isinstance(item, dict) or not item.get("answer_buffer_freeze"):
+            raise SessionError("morning Capture requires frozen answer buffer")
+        existing = item.get("morning_capture_commit")
+        if existing is None:
+            events_path = directory / "events.jsonl"
+            if events_path.exists():
+                for raw in events_path.read_text(encoding="utf-8").splitlines():
+                    if not raw.strip():
+                        continue
+                    candidate = json.loads(raw)
+                    payload = candidate.get("payload") or {}
+                    if (
+                        candidate.get("event_type") == "morning_capture_committed"
+                        and payload.get("item_id") == item_id
+                        and payload.get("capture_id") == capture_id
+                        and payload.get("capture_receipt_sha256")
+                        == capture_receipt_sha256
+                    ):
+                        receipt = _receipt_file(
+                            directory,
+                            {
+                                "event_id": candidate["event_id"],
+                                "event_type": candidate["event_type"],
+                                "item_id": item_id,
+                                "capture_id": capture_id,
+                            },
+                            prefix="morning-capture",
+                        )
+                        existing = {
+                            "capture_id": capture_id,
+                            "capture_receipt_sha256": capture_receipt_sha256,
+                            "freeze_receipt_sha256": str(
+                                payload.get("freeze_receipt_sha256") or ""
+                            ),
+                            "final_trace_sha256": str(
+                                payload.get("final_trace_sha256") or ""
+                            ),
+                            "receipt_sha256": receipt["receipt_sha256"],
+                        }
+                        item["resolution"] = "morning_capture_committed"
+                        item["morning_capture_commit"] = existing
+                        state["updated_at"] = _now_for_date(state["review_date"])
+                        _write_state(directory, state)
+                        break
+        if isinstance(existing, dict):
+            if existing.get("capture_id") != capture_id or existing.get(
+                "capture_receipt_sha256"
+            ) != capture_receipt_sha256:
+                raise SessionError("morning Capture commit identity drifted")
+            receipt = _verify_session_hot_event_receipt(
+                directory,
+                str(existing.get("receipt_sha256") or ""),
+                event_type="morning_capture_committed",
+                item_id=item_id,
+            )
+            return {
+                "status": "ALREADY_COMMITTED",
+                "capture_id": capture_id,
+                "session_commit": receipt,
+                "formal_write_count": 0,
+            }
+        event = _append_session_event(
+            directory,
+            state,
+            "morning_capture_committed",
+            {
+                "item_id": item_id,
+                "capture_id": capture_id,
+                "capture_receipt_sha256": capture_receipt_sha256,
+                "freeze_receipt_sha256": freeze_receipt_sha256,
+                "final_trace_sha256": final_trace_sha256,
+                "_timestamp": _now_for_date(state["review_date"]),
+            },
+        )
+        receipt = _receipt_file(
+            directory,
+            {
+                "event_id": event["event_id"],
+                "event_type": event["event_type"],
+                "item_id": item_id,
+                "capture_id": capture_id,
+            },
+            prefix="morning-capture",
+        )
+        item["resolution"] = "morning_capture_committed"
+        item["morning_capture_commit"] = {
+            "capture_id": capture_id,
+            "capture_receipt_sha256": capture_receipt_sha256,
+            "freeze_receipt_sha256": freeze_receipt_sha256,
+            "final_trace_sha256": final_trace_sha256,
+            "receipt_sha256": receipt["receipt_sha256"],
+        }
+        state["updated_at"] = _now_for_date(state["review_date"])
+        _write_state(directory, state)
+        return {
+            "status": "COMMITTED",
+            "capture_id": capture_id,
+            "session_commit": receipt,
+            "formal_write_count": 0,
+        }
+
+
 def _ensure_active(state: dict[str, Any]) -> None:
     if state.get("status") != "in_progress":
         raise SessionError("morning session is not active")
@@ -140,7 +515,7 @@ def command_start(args: Any) -> dict[str, Any]:
     for row in manifest.get("items", []):
         item_id = str(row.get("item_id"))
         order.append(item_id)
-        items[item_id] = {"first": None, "resolution": None, "teaching_resolution": None, "source_id": row.get("source_id"), "item_kind": row.get("item_kind")}
+        items[item_id] = {"first": None, "resolution": None, "teaching_resolution": None, "answer_buffer": [], "source_id": row.get("source_id"), "item_kind": row.get("item_kind")}
     state = {"schema": "morning_review_session_state_v1", "status": "in_progress", "session_id": session_id, "review_date": str(manifest.get("study_date") or "2026-07-31"), "item_order": order, "items": items, "prepared_manifest_ref": str(manifest_path), "queue_path": str(queue), "queue_sha256": hashlib.sha256(queue.read_bytes()).hexdigest(), "updated_at": _now_for_date(str(manifest.get("study_date") or "2026-07-31")), "formal_write_count": 0}
     (directory / "events.jsonl").write_text("", encoding="utf-8")
     _write_state(directory, state)

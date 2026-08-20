@@ -547,7 +547,7 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
                 "attachment_sha256s": [],
             },
             "learner_evidence": {
-                "answer_text": "C，分别检查两个条件。",
+                "answer_text": "C",
                 "choice": "C",
                 "confidence": "high",
                 "first_action": "分别检查两个条件",
@@ -605,7 +605,8 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         self.assertRegex(
             result["session_feedback_receipt_sha256"], r"^[0-9a-f]{64}$"
         )
-        self.assertEqual("not_eligible", result["capture_status"])
+        self.assertEqual("awaiting_daily_curation", result["capture_status"])
+        self.assertRegex(result["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
         self.assertFalse(result["next_item_published"])
         ordered = sorted(timings)
         p95 = ordered[max(0, int(len(ordered) * 0.95) - 1)]
@@ -643,7 +644,14 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             private_root=private_root,
         )
         self.assertEqual("feedback_ready", result["status"])
-        self.assertEqual("not_eligible", result["capture_status"])
+        self.assertEqual("awaiting_daily_curation", result["capture_status"])
+        self.assertRegex(result["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
+        handoff_binding, handoff = current_evidence.read_background_handoff_for_capture(
+            result["capture_id"], private_root=private_root
+        )
+        self.assertEqual("ready", handoff_binding["status"])
+        self.assertEqual("first_turn_complete", handoff["completion_kind"])
+        self.assertIsNone(handoff["trace_supplement_locator"])
         self.assertTrue(result["first_answer_committed"])
         self.assertFalse(result["next_item_published"])
 
@@ -725,30 +733,20 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         first_ms = (time.perf_counter() - started) * 1000.0
         self.assertEqual("feedback_and_next_ready", first["status"])
         self.assertFalse(first["idempotent_replay"])
-        self.assertEqual("not_eligible", first["capture_status"])
-        self.assertEqual(
-            "awaiting_background_analysis", first["observation_status"]
-        )
-        self.assertRegex(first["observation_id"], r"^OBS-[0-9A-F]{24}$")
+        self.assertEqual("awaiting_daily_curation", first["capture_status"])
+        self.assertEqual("not_applicable", first["observation_status"])
+        self.assertRegex(first["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
         self.assertTrue(first["next_item_published"])
         self.assertEqual("MQ-02", first["next_item"]["item_id"])
         self.assertLess(first_ms, 1500.0)
-        observation = current_evidence.read_study_observation(
-            first["observation_locator"], private_root=private_root
+        handoff_binding, handoff = current_evidence.read_background_handoff_for_capture(
+            first["capture_id"], private_root=private_root
         )
-        _, bundle = current_evidence.read_bundle(
-            observation["evidence_locator"], private_root=private_root
-        )
-        self.assertEqual(
-            "current-question-evidence-bundle-v3", bundle["schema_version"]
-        )
-        self.assertEqual(3, bundle["interaction_trace"]["included_event_count"])
-        self.assertEqual(trace[0]["text"], bundle["interaction_trace"]["events"][0]["text"])
-        self.assertEqual("C", bundle["interaction_trace"]["events"][-1]["text"])
-        self.assertEqual(b"", self.capture_ledger.read_bytes())
-        self.assertNotIn(
-            trace[0]["text"], self.capture_ledger.read_text(encoding="utf-8")
-        )
+        self.assertEqual("ready", handoff_binding["status"])
+        self.assertEqual("ready", handoff["status"])
+        self.assertEqual("first_turn_complete", handoff["completion_kind"])
+        self.assertIsNone(handoff["trace_supplement_locator"])
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
         ledgers_after_first = (
             self.session_ledger.read_bytes(),
             self.review_ledger.read_bytes(),
@@ -792,7 +790,6 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
     def test_answer_current_and_next_wrong_retries_then_resolves_with_cumulative_trace(self) -> None:
         private_root = Path(self.tmp.name) / "private-answer-and-next-wrong"
         display = self._publish_current_display(private_root)
-        first_utterance = "第一轮我把两个边界误当成同一个条件了"
         first = current_turn.answer_current_and_next(
             self.repo,
             display_receipt_locator=display["locator"],
@@ -800,70 +797,17 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             confidence="high",
             prompt_level="none",
             interaction_trace=[
-                {
-                    "role": "learner",
-                    "kind": "reasoning",
-                    "text": first_utterance,
-                },
+                {"role": "learner", "kind": "reasoning", "text": "第一轮错误"}
             ],
             private_root=private_root,
         )
         self.assertEqual("feedback_ready_continue_current", first["status"])
-        self.assertEqual("awaiting_daily_curation", first["capture_status"])
+        self.assertEqual("morning_buffered", first["capture_status"])
+        self.assertIsNone(first["capture_id"])
+        self.assertIsNone(first["background_handoff"])
         self.assertFalse(first["next_item_published"])
-        pending_binding, pending_handoff = (
-            current_evidence.read_background_handoff_for_capture(
-                first["capture_id"], private_root=private_root
-            )
-        )
-        self.assertEqual("teaching_pending", pending_binding["status"])
-        self.assertEqual("teaching_pending", pending_handoff["status"])
-        self.assertIsNone(pending_handoff["capture_receipt_sha256"])
-        first_turn_receipt = current_evidence.read_metadata_object(
-            first["turn_receipt_locator"],
-            kind="turns",
-            private_root=private_root,
-        )
-        self.assertFalse(first_turn_receipt["advance_allowed"])
-        with self.assertRaisesRegex(
-            current_turn.ManagedCurrentTurnError, "recovery_required"
-        ):
-            current_turn.next_item(
-                self.repo,
-                prior_turn_receipt_locator=first["turn_receipt_locator"],
-                private_root=private_root,
-            )
-        ledgers_after_first = (
-            self.session_ledger.read_bytes(),
-            self.review_ledger.read_bytes(),
-            self.capture_ledger.read_bytes(),
-        )
-        replay = current_turn.answer_current_and_next(
-            self.repo,
-            display_receipt_locator=display["locator"],
-            choice="A",
-            confidence="high",
-            prompt_level="none",
-            interaction_trace=[
-                {
-                    "role": "learner",
-                    "kind": "reasoning",
-                    "text": first_utterance,
-                }
-            ],
-            private_root=private_root,
-        )
-        self.assertTrue(replay["idempotent_replay"])
-        self.assertEqual("feedback_ready_continue_current", replay["status"])
-        self.assertEqual(
-            ledgers_after_first,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        second_utterance = "第二轮我仍然只检查了条件乙"
+        self.assertEqual(b"", self.capture_ledger.read_bytes())
+
         second = current_turn.answer_current_and_next(
             self.repo,
             display_receipt_locator=display["locator"],
@@ -871,34 +815,17 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             confidence="medium",
             prompt_level="L2",
             interaction_trace=[
-                {
-                    "role": "assistant",
-                    "kind": "hint",
-                    "text": "把条件甲和条件乙分开写",
-                },
-                {
-                    "role": "learner",
-                    "kind": "reasoning",
-                    "text": second_utterance,
-                },
+                {"role": "assistant", "kind": "hint", "text": "分开检查"},
+                {"role": "learner", "kind": "reasoning", "text": "第二轮错误"},
             ],
             private_root=private_root,
         )
         self.assertEqual("feedback_ready_continue_current", second["status"])
+        self.assertEqual("morning_buffered", second["capture_status"])
+        self.assertIsNone(second["capture_id"])
         self.assertFalse(second["next_item_published"])
-        _, still_pending = current_evidence.read_background_handoff_for_capture(
-            first["capture_id"], private_root=private_root
-        )
-        self.assertEqual("teaching_pending", still_pending["status"])
-        self.assertEqual(
-            ledgers_after_first,
-            (
-                self.session_ledger.read_bytes(),
-                self.review_ledger.read_bytes(),
-                self.capture_ledger.read_bytes(),
-            ),
-        )
-        final_utterance = "第三轮拆开核对后选择 C"
+        self.assertEqual(b"", self.capture_ledger.read_bytes())
+
         resolved = current_turn.answer_current_and_next(
             self.repo,
             display_receipt_locator=display["locator"],
@@ -906,94 +833,53 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             confidence="high",
             prompt_level="L3",
             interaction_trace=[
-                {
-                    "role": "assistant",
-                    "kind": "correction",
-                    "text": "分别核对后再合并",
-                },
-                {
-                    "role": "learner",
-                    "kind": "answer",
-                    "text": final_utterance,
-                },
+                {"role": "assistant", "kind": "correction", "text": "分别核对"},
+                {"role": "learner", "kind": "answer", "text": "第三轮正确"},
             ],
             private_root=private_root,
         )
         self.assertEqual("feedback_and_next_ready", resolved["status"])
         self.assertTrue(resolved["next_item_published"])
         self.assertEqual("MQ-02", resolved["next_item"]["item_id"])
-        self.assertEqual(first["capture_id"], resolved["capture_id"])
-        binding, supplement = current_evidence.read_trace_supplement_for_capture(
-            first["capture_id"], private_root=private_root
-        )
-        supplement_text = "\n".join(row["text"] for row in supplement["events"])
-        self.assertIn(first_utterance, supplement_text)
-        self.assertIn(second_utterance, supplement_text)
-        self.assertIn(final_utterance, supplement_text)
-        self.assertEqual(
-            supplement["interaction_trace_sha256"],
-            resolved["trace_supplement"]["interaction_trace_sha256"],
-        )
-        self.assertEqual(binding["object_sha"], resolved["trace_supplement"]["object_sha"])
-        handoff_binding, handoff = (
-            current_evidence.read_background_handoff_for_capture(
-                first["capture_id"], private_root=private_root
-            )
+        self.assertRegex(resolved["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
+        handoff_binding, handoff = current_evidence.read_background_handoff_for_capture(
+            resolved["capture_id"], private_root=private_root
         )
         self.assertEqual("ready", handoff_binding["status"])
-        self.assertEqual("ready", handoff["status"])
-        self.assertEqual("teaching_resolved", handoff["completion_kind"])
-        self.assertEqual(binding["locator"], handoff["trace_supplement_locator"])
-        self.assertEqual(binding["object_sha"], handoff["trace_supplement_object_sha256"])
-        self.assertEqual(
-            supplement["interaction_trace_sha256"],
-            handoff["interaction_trace_sha256"],
-        )
-        self.assertEqual(
-            resolved["background_handoff"]["object_sha256"],
-            handoff_binding["object_sha256"],
-        )
-        resolved_turn_receipt = current_evidence.read_metadata_object(
-            resolved["turn_receipt_locator"],
-            kind="turns",
-            private_root=private_root,
-        )
-        self.assertTrue(resolved_turn_receipt["advance_allowed"])
-        public_capture = self.capture_ledger.read_text(encoding="utf-8")
-        self.assertNotIn(first_utterance, public_capture)
-        self.assertNotIn(second_utterance, public_capture)
-        self.assertNotIn(final_utterance, public_capture)
-        self.assertNotIn("interaction_trace", public_capture)
-        self.assertEqual(1, len(public_capture.splitlines()))
-        review_rows = [
-            json.loads(line)
-            for line in self.review_ledger.read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
-        self.assertEqual(1, len(review_rows))
-        self.assertEqual("outcome", review_rows[0]["event_kind"])
-        self.assertEqual("wrong", review_rows[0]["first_result"])
-        state = json.loads(
-            (self.session_dir / "state.json").read_text(encoding="utf-8")
-        )
+        self.assertEqual("first_turn_complete", handoff["completion_kind"])
+        self.assertIsNone(handoff["trace_supplement_locator"])
+        self.assertIsNone(resolved["trace_supplement"])
+        state = json.loads((self.session_dir / "state.json").read_text(encoding="utf-8"))
         item = state["items"][ITEM_ID]
-        self.assertEqual("wrong", item["first"]["result"])
-        self.assertEqual("relearn_required", item["resolution"])
-        self.assertFalse(item["teaching_resolution"]["independent_repair"])
-        self.assertEqual("none", item["teaching_resolution"]["mastery_effect"])
-        self.assertEqual("none", item["teaching_resolution"]["retention_effect"])
+        self.assertEqual("morning_capture_committed", item["resolution"])
+        self.assertEqual(3, len(item["answer_buffer"]))
         session_events = [
             json.loads(line)
             for line in self.session_ledger.read_text(encoding="utf-8").splitlines()
             if line.strip()
         ]
-        self.assertEqual(
-            1,
-            sum(event["event_type"] == "teaching_resolved" for event in session_events),
-        )
+        self.assertEqual(3, sum(event["event_type"] == "answer_buffered" for event in session_events))
+        self.assertEqual(0, sum(event["event_type"] == "teaching_resolved" for event in session_events))
 
-    def test_independent_correct_evidence_recovery_never_creates_capture(self) -> None:
-        private_root = Path(self.tmp.name) / "private-observation-recovery"
+        replay = current_turn.answer_current_and_next(
+            self.repo,
+            display_receipt_locator=display["locator"],
+            choice="C",
+            confidence="high",
+            prompt_level="L3",
+            interaction_trace=[
+                {"role": "assistant", "kind": "correction", "text": "分别核对"},
+                {"role": "learner", "kind": "answer", "text": "第三轮正确"},
+            ],
+            private_root=private_root,
+        )
+        self.assertTrue(replay["idempotent_replay"])
+        self.assertEqual(resolved["next_item"]["display_receipt_locator"], replay["next_item"]["display_receipt_locator"])
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
+
+    def test_morning_first_correct_evidence_recovery_creates_one_capture(self) -> None:
+        private_root = Path(self.tmp.name) / "private-morning-evidence-recovery"
         display = self._publish_current_display(private_root)
         original_publish_bundle = current_turn.private_evidence.publish_bundle
         calls = 0
@@ -1024,10 +910,8 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
                 private_root=private_root,
             )
         self.assertEqual("feedback_ready_recovery_required", failed["status"])
-        self.assertEqual("not_eligible", failed["capture_status"])
-        self.assertEqual(
-            "observation_pending_recovery", failed["observation_status"]
-        )
+        self.assertEqual("capture_pending_recovery", failed["capture_status"])
+        self.assertEqual("not_applicable", failed["observation_status"])
         self.assertFalse(failed["next_item_published"])
         self.assertEqual(b"", self.capture_ledger.read_bytes())
 
@@ -1036,15 +920,13 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             failed["recovery_locator"],
             private_root=private_root,
         )
-        self.assertEqual("observation_ready", recovered["status"])
-        self.assertEqual("not_eligible", recovered["capture_status"])
-        self.assertIsNone(recovered["capture_id"])
-        self.assertEqual(
-            "awaiting_background_analysis", recovered["observation_status"]
-        )
+        self.assertEqual("awaiting_daily_curation", recovered["status"])
+        self.assertEqual("awaiting_daily_curation", recovered["capture_status"])
+        self.assertRegex(recovered["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
+        self.assertEqual("not_applicable", recovered["observation_status"])
         self.assertTrue(recovered["position_changed"])
         self.assertEqual("MQ-02", recovered["next_item"]["item_id"])
-        self.assertEqual(b"", self.capture_ledger.read_bytes())
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
 
         replay = current_turn.answer_current_and_next(
             self.repo,
@@ -1060,7 +942,7 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         self.assertTrue(replay["idempotent_replay"])
         self.assertEqual("feedback_and_next_ready", replay["status"])
         self.assertEqual("MQ-02", replay["next_item"]["item_id"])
-        self.assertEqual(b"", self.capture_ledger.read_bytes())
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
 
     def test_fragile_correct_capture_recovery_closes_original_operation(self) -> None:
         private_root = Path(self.tmp.name) / "private-fragile-recovery"
@@ -1226,61 +1108,25 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             item_id="MQ-01",
         )
 
-    def test_wrong_capture_failure_recovery_then_same_display_corrects_once(self) -> None:
+    def test_wrong_buffer_then_correct_creates_one_capture(self) -> None:
         private_root = Path(self.tmp.name) / "private-answer-recovery-lifecycle"
         display = self._publish_current_display(private_root)
-        with mock.patch.object(
-            current_turn,
-            "_commit_capture",
-            side_effect=current_turn.ManagedCurrentTurnError(
-                "injected-capture-failure"
-            ),
-        ):
-            failed = current_turn.answer_current_and_next(
-                self.repo,
-                display_receipt_locator=display["locator"],
-                choice="A",
-                confidence="high",
-                prompt_level="none",
-                interaction_trace=[
-                    {
-                        "role": "learner",
-                        "kind": "reasoning",
-                        "text": "首答只检查条件甲",
-                    }
-                ],
-                private_root=private_root,
-            )
-        self.assertEqual("feedback_ready_recovery_required", failed["status"])
-        self.assertEqual("capture_pending_recovery", failed["capture_status"])
-        self.assertFalse(failed["next_item_published"])
-        lifecycle = current_evidence.read_answer_display_lifecycle(
-            display["sha256"], private_root=private_root
-        )
-        self.assertIsNotNone(lifecycle)
-        self.assertEqual(
-            "capture_pending_recovery",
-            lifecycle["first_turn"]["capture_status"],
-        )
-        self.assertFalse(lifecycle["first_turn"]["advance_allowed"])
-        self.assertEqual(1, len(self.review_ledger.read_text(encoding="utf-8").splitlines()))
-        self.assertEqual(b"", self.capture_ledger.read_bytes())
-
-        recovered = current_turn.recover_current_capture(
+        failed = current_turn.answer_current_and_next(
             self.repo,
-            failed["recovery_locator"],
+            display_receipt_locator=display["locator"],
+            choice="A",
+            confidence="high",
+            prompt_level="none",
+            interaction_trace=[
+                {"role": "learner", "kind": "reasoning", "text": "首答只检查条件甲"}
+            ],
             private_root=private_root,
         )
-        self.assertEqual("awaiting_daily_curation", recovered["status"])
-        self.assertTrue(recovered["display_lifecycle_repaired"])
-        repaired = current_evidence.read_answer_display_lifecycle(
-            display["sha256"], private_root=private_root
-        )
-        self.assertEqual(
-            "awaiting_daily_curation", repaired["first_turn"]["capture_status"]
-        )
-        self.assertEqual(recovered["capture_id"], repaired["first_turn"]["capture_id"])
-        self.assertFalse(repaired["first_turn"]["advance_allowed"])
+        self.assertEqual("feedback_ready_continue_current", failed["status"])
+        self.assertEqual("morning_buffered", failed["capture_status"])
+        self.assertIsNone(failed["capture_id"])
+        self.assertFalse(failed["next_item_published"])
+        self.assertEqual(b"", self.capture_ledger.read_bytes())
 
         resolved = current_turn.answer_current_and_next(
             self.repo,
@@ -1289,43 +1135,30 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             confidence="high",
             prompt_level="L2",
             interaction_trace=[
-                {
-                    "role": "assistant",
-                    "kind": "correction",
-                    "text": "分开核对两个条件",
-                },
-                {
-                    "role": "learner",
-                    "kind": "answer",
-                    "text": "纠正后选择 C",
-                },
+                {"role": "assistant", "kind": "correction", "text": "分开核对两个条件"},
+                {"role": "learner", "kind": "answer", "text": "纠正后选择 C"},
             ],
             private_root=private_root,
         )
         self.assertEqual("feedback_and_next_ready", resolved["status"])
         self.assertTrue(resolved["next_item_published"])
         self.assertEqual("MQ-02", resolved["next_item"]["item_id"])
-        self.assertEqual(recovered["capture_id"], resolved["capture_id"])
-        self.assertEqual(
-            1, len(self.review_ledger.read_text(encoding="utf-8").splitlines())
+        self.assertRegex(resolved["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
+        self.assertEqual(1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines()))
+        self.assertIsNone(resolved["trace_supplement"])
+        _, handoff = current_evidence.read_background_handoff_for_capture(
+            resolved["capture_id"], private_root=private_root
         )
-        self.assertEqual(
-            1, len(self.capture_ledger.read_text(encoding="utf-8").splitlines())
-        )
+        self.assertEqual("ready", handoff["status"])
+        self.assertEqual("first_turn_complete", handoff["completion_kind"])
+        self.assertIsNone(handoff["trace_supplement_locator"])
         session_events = [
             json.loads(line)
             for line in self.session_ledger.read_text(encoding="utf-8").splitlines()
             if line.strip()
         ]
-        self.assertEqual(
-            1,
-            sum(event["event_type"] == "teaching_resolved" for event in session_events),
-        )
-        _, handoff = current_evidence.read_background_handoff_for_capture(
-            recovered["capture_id"], private_root=private_root
-        )
-        self.assertEqual("ready", handoff["status"])
-        self.assertEqual("teaching_resolved", handoff["completion_kind"])
+        self.assertEqual(2, sum(event["event_type"] == "answer_buffered" for event in session_events))
+        self.assertEqual(0, sum(event["event_type"] == "teaching_resolved" for event in session_events))
 
     def test_prompt_dependent_capture_recovery_uses_canonical_partial_lifecycle(self) -> None:
         private_root = Path(self.tmp.name) / "private-fragile-recovery-lifecycle"
@@ -1564,6 +1397,8 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             },
         )
         self.assertEqual("feedback_ready_continue_current", wrong["status"])
+        self.assertEqual("morning_buffered", wrong["capture_status"])
+        self.assertIsNone(wrong["capture_id"])
         self.assertFalse(wrong["next_item_published"])
         resolved, resolved_ms = self._run_answer_cli(
             private_root=private_root,
@@ -1587,18 +1422,20 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         self.assertEqual("feedback_and_next_ready", resolved["status"])
         self.assertTrue(resolved["next_item_published"])
         self.assertEqual("MQ-02", resolved["next_item"]["item_id"])
-        self.assertEqual(wrong["capture_id"], resolved["capture_id"])
-        binding, supplement = current_evidence.read_trace_supplement_for_capture(
-            str(resolved["capture_id"]), private_root=private_root
+        self.assertRegex(resolved["capture_id"], r"^CAP-\d{8}-[0-9a-f]{12}$")
+        self.assertIsNone(resolved["trace_supplement"])
+        _, handoff = current_evidence.read_background_handoff_for_capture(
+            resolved["capture_id"], private_root=private_root
         )
-        repeated_positions = [
-            index
-            for index, event in enumerate(supplement["events"])
-            if event["text"] == repeated_text
+        self.assertEqual("first_turn_complete", handoff["completion_kind"])
+        self.assertIsNone(handoff["trace_supplement_locator"])
+        state = json.loads((self.session_dir / "state.json").read_text(encoding="utf-8"))
+        buffered_texts = [
+            event["text"]
+            for attempt in state["items"][ITEM_ID]["answer_buffer"]
+            for event in attempt["interaction_trace"]["events"]
         ]
-        self.assertEqual(2, len(repeated_positions))
-        self.assertLess(repeated_positions[0], repeated_positions[1])
-        self.assertEqual("resolved_trace", binding["supplement_kind"])
+        self.assertEqual(2, buffered_texts.count(repeated_text))
         capture_rows = [
             json.loads(line)
             for line in self.capture_ledger.read_text(encoding="utf-8").splitlines()
@@ -1607,7 +1444,6 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         self.assertEqual(1, len(capture_rows))
         self.assertEqual(0, wrong["formal_write_count"])
         self.assertEqual(0, resolved["formal_write_count"])
-        self.assertEqual(0, supplement["formal_write_count"])
         private_json = "\n".join(
             path.read_text(encoding="utf-8")
             for path in private_root.rglob("*.json")

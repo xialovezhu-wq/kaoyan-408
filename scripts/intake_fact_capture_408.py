@@ -21,6 +21,7 @@ import stat
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator
@@ -86,6 +87,10 @@ CURRENT_QUESTION_EVIDENCE_REF_KIND = "current_question_evidence_bundle_v1"
 CURRENT_QUESTION_FAILURE_STANDING_POLICY = (
     "current_question_failure_standing_policy_v1"
 )
+CAPTURE_AUTHORIZATION_SCHEMA = "cs408-capture-authorization-v1"
+CAPTURE_TRIGGER_PHRASE = "快速入库"
+MORNING_CAPTURE_AUTHORIZATION_SOURCE = "morning_session_buffer"
+MAX_CAPTURE_AUTHORIZATION_MESSAGE_BYTES = 32 * 1024
 REVIEW_FIRST_BREAK_PROVENANCES = {
     "user_report",
     "visible_evidence",
@@ -406,6 +411,81 @@ def _stable_locator(value: object, label: str) -> str:
     return _assert_answer_safe(label, text)
 
 
+def normalize_capture_authorization(value: Any) -> dict[str, Any]:
+    """Normalize the current-message admission proof without retaining text.
+
+    The raw user message is invocation-only.  A morning session may provide
+    the narrow automatic exception after its ordered buffer is frozen; that
+    proof is explicit and cannot be confused with a user phrase.
+    """
+
+    if isinstance(value, dict) and set(value) == {"current_user_message"}:
+        message = value.get("current_user_message")
+        if (
+            not isinstance(message, str)
+            or not message
+            or len(message.encode("utf-8"))
+            > MAX_CAPTURE_AUTHORIZATION_MESSAGE_BYTES
+        ):
+            raise CaptureError("capture authorization 当前用户消息无效")
+        normalized_message = unicodedata.normalize("NFKC", message)
+        if CAPTURE_TRIGGER_PHRASE not in normalized_message:
+            raise CaptureError(
+                "当前用户消息没有连续短语“快速入库”，Capture 未获授权"
+            )
+        return {
+            "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+            "source": "current_user_message",
+            "trigger_phrase": CAPTURE_TRIGGER_PHRASE,
+            "normalized_message_sha256": hashlib.sha256(
+                normalized_message.encode("utf-8")
+            ).hexdigest(),
+        }
+    if isinstance(value, dict) and set(value) == {
+        "schema_version",
+        "source",
+        "trigger_phrase",
+        "normalized_message_sha256",
+    }:
+        source = str(value.get("source") or "")
+        trigger = value.get("trigger_phrase")
+        digest = str(value.get("normalized_message_sha256") or "")
+        if source == MORNING_CAPTURE_AUTHORIZATION_SOURCE:
+            if trigger is not None or digest not in {"", "none"}:
+                raise CaptureError("morning Capture authorization invalid")
+            return {
+                "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+                "source": MORNING_CAPTURE_AUTHORIZATION_SOURCE,
+                "trigger_phrase": None,
+                "normalized_message_sha256": None,
+            }
+        if (
+            source == "current_user_message"
+            and trigger == CAPTURE_TRIGGER_PHRASE
+            and SHA256_RE.fullmatch(digest)
+        ):
+            return {
+                "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+                "source": source,
+                "trigger_phrase": trigger,
+                "normalized_message_sha256": digest,
+            }
+    raise CaptureError(
+        "fresh Capture 需要当前用户消息中的连续短语“快速入库”授权"
+    )
+
+
+def morning_capture_authorization() -> dict[str, Any]:
+    """Return the only automatic admission proof, for a frozen morning item."""
+
+    return {
+        "schema_version": CAPTURE_AUTHORIZATION_SCHEMA,
+        "source": MORNING_CAPTURE_AUTHORIZATION_SOURCE,
+        "trigger_phrase": None,
+        "normalized_message_sha256": None,
+    }
+
+
 def _validate_capture_payload(raw: Any) -> dict[str, Any]:
     if not isinstance(raw, dict):
         raise CaptureError("capture 输入必须是 JSON object")
@@ -423,6 +503,7 @@ def _validate_capture_payload(raw: Any) -> dict[str, Any]:
         "missing_fields",
         "formalization_authorized",
         "authorization_policy",
+        "capture_authorization",
     }
     unknown = sorted(set(raw) - allowed)
     if unknown:
@@ -524,17 +605,26 @@ def _validate_capture_payload(raw: Any) -> dict[str, Any]:
     authorized = raw.get("formalization_authorized")
     if not isinstance(authorized, bool):
         raise CaptureError("formalization_authorized 必须显式为 boolean")
-    if (
-        any(ref["kind"] == ORDINARY_REVIEW_REF_KIND for ref in normalized_refs)
-        and authorized
-    ):
-        raise CaptureError("ordinary review event 不能自动授权 formalization")
-
     current_question_refs = [
         ref
         for ref in normalized_refs
         if ref["kind"] == CURRENT_QUESTION_EVIDENCE_REF_KIND
     ]
+    authorization = None
+    if "capture_authorization" in raw:
+        authorization = normalize_capture_authorization(
+            raw.get("capture_authorization")
+        )
+    if authorization is None:
+        raise CaptureError(
+            "fresh Capture 需要当前用户消息中的连续短语“快速入库”授权"
+        )
+    if (
+        any(ref["kind"] == ORDINARY_REVIEW_REF_KIND for ref in normalized_refs)
+        and authorized
+        and authorization.get("source") != "current_user_message"
+    ):
+        raise CaptureError("ordinary review event 不能自动授权 formalization")
     authorization_policy = str(raw.get("authorization_policy") or "").strip()
     if current_question_refs:
         if len(current_question_refs) != 1 or len(normalized_refs) != 1:
@@ -561,6 +651,8 @@ def _validate_capture_payload(raw: Any) -> dict[str, Any]:
     }
     if authorization_policy:
         normalized["authorization_policy"] = authorization_policy
+    if authorization is not None:
+        normalized["capture_authorization"] = authorization
     return normalized
 
 
@@ -2384,12 +2476,22 @@ def capture(payload_path: str | Path, *, repo_root: str | Path = ".") -> dict[st
 
 
 def capture_review_event(
-    event_id: str, *, repo_root: str | Path = "."
+    event_id: str,
+    *,
+    current_user_message: str | None = None,
+    repo_root: str | Path = ".",
 ) -> dict[str, Any]:
     repo = _resolve_repo(repo_root)
     policy = _load_backflow_policy(repo)
     event = _review_event_by_id(repo, event_id)
+    if event.get("source") == "morning_review":
+        raise CaptureError(
+            "历史 morning review Capture 入口仅保留窄读兼容；请使用 managed session buffer"
+        )
     payload = _review_capture_payload(repo, event, policy)
+    payload["capture_authorization"] = normalize_capture_authorization(
+        {"current_user_message": current_user_message}
+    )
     result = _capture_value(payload, repo_root=repo)
     return {
         **result,
@@ -2599,13 +2701,19 @@ def save_neutral_review_event(
 
 
 def capture_ordinary_review_event(
-    event_id: str, *, repo_root: str | Path = "."
+    event_id: str,
+    *,
+    current_user_message: str | None = None,
+    repo_root: str | Path = ".",
 ) -> dict[str, Any]:
     """Capture ordinary review evidence without inferring curation authority."""
 
     repo = _resolve_repo(repo_root)
     event = _review_event_by_id(repo, event_id)
     payload = _ordinary_review_capture_payload(event)
+    payload["capture_authorization"] = normalize_capture_authorization(
+        {"current_user_message": current_user_message}
+    )
     result = _capture_value(payload, repo_root=repo)
     return {
         **result,
@@ -4177,7 +4285,14 @@ def _audit_ordinary_review_binding(
     if _sha256_value(event) != expected_sha:
         raise CaptureError(f"{capture_id} 的 ordinary_review_loop_event SHA-256 不一致")
 
-    expected = _validate_capture_payload(_ordinary_review_capture_payload(event))
+    expected_raw = _ordinary_review_capture_payload(event)
+    expected_raw["capture_authorization"] = stored_capture.get(
+        "capture_authorization"
+    )
+    expected_raw["formalization_authorized"] = bool(
+        stored_capture.get("formalization_authorized")
+    )
+    expected = _validate_capture_payload(expected_raw)
     if stored_capture.get("study_date") != expected["study_date"]:
         raise CaptureError(f"{capture_id} 的 study_date 与 ordinary review event 不一致")
     if (
@@ -4189,8 +4304,10 @@ def _audit_ordinary_review_binding(
         raise CaptureError(f"{capture_id} 的 formal identity 与 ordinary review event 不一致")
     if stored_capture.get("user_facts") != expected["user_facts"]:
         raise CaptureError(f"{capture_id} 的直接 provenance 与 ordinary review event 不一致")
-    if stored_capture.get("formalization_authorized") is not False:
-        raise CaptureError(f"{capture_id} 不得由 ordinary review event 自动授权正式编纂")
+    if stored_capture.get("formalization_authorized") is True:
+        authorization = stored_capture.get("capture_authorization") or {}
+        if authorization.get("source") != "current_user_message":
+            raise CaptureError(f"{capture_id} 不得由 ordinary review event 自动授权正式编纂")
     if stored_capture != expected:
         raise CaptureError(f"{capture_id} 的 ordinary review capture 载荷与事件绑定不一致")
     return 1

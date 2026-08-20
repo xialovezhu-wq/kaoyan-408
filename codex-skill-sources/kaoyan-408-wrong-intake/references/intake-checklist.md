@@ -2,6 +2,17 @@
 
 ## Fast capture
 
+- [ ] Ordinary admission is proven by the current user message after stable NFKC
+      normalization and the contiguous phrase `快速入库`; split, punctuated,
+      inferred, score-, recurrence-, and model-derived intent is rejected.
+- [ ] The raw authorization message is not persisted; only its normalized hash,
+      trigger phrase, and source role remain in the admission proof.
+- [ ] Without admission, Capture, central observation, consumer handoff, and
+      model/MCP/Sol/formal writes are zero.
+- [ ] Morning failures are session-buffer-only; first/final correctness freezes
+      the ordered buffer for exactly one release-neutral Capture with no later
+      trace supplement.
+
 - [ ] One validated current-question context and one opaque grader capsule are bound.
 - [ ] The local study date/timezone and stable source SHA-256 are explicit.
 - [ ] Feedback was frozen before any write.
