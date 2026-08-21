@@ -5,21 +5,6 @@ It is not a formal-node package.
 
 ## Eligibility
 
-Ordinary Producer admission is separate from result classification: the current
-user message is normalized with Unicode NFKC and must contain the exact contiguous
-phrase `快速入库`. `快速 入库`, punctuation/newline splits, wrong answers,
-low-confidence correctness, recurrence, scoring, warmup state, and model-derived
-intent do not authorize a Capture. The raw message is invocation-only; persist
-only its normalized SHA-256, trigger phrase, and `current_user_message` source
-role. A denied ordinary turn has zero Capture, central observation, and consumer
-handoff.
-
-Morning review is the sole automatic exception. Failures append only to the
-current session's ordered buffer. The first correct or final correct answer
-freezes that complete buffer and emits one release-neutral Capture; no wrong
-Capture or later trace supplement is written. Historical pre-Phase-2 rows remain
-read-only compatibility.
-
 Use `current_question_failure_standing_policy_v1`:
 
 - no capture for high-confidence, unprompted, independently correct reasoning with no
@@ -89,8 +74,6 @@ The capture ledger may store only:
 - directly supported answer-safe source and learner facts with provenance;
 - answer-safe first-break label when supported;
 - explicit gaps, idempotency key, and receipt hashes;
-- normalized current-message admission proof (`capture_authorization`) without
-  the raw user message;
 - `formalization_authorized=true` and `formal_write_count=0`.
 
 It must not store a complete stem, answer, options, full response, full reasoning,
