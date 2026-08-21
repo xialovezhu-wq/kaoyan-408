@@ -1,0 +1,162 @@
+{
+  "schema_version": "study-intake-historical-source-closure-v1",
+  "subject": "cs408",
+  "bundle_sha256": "8a0067b3b9d3aa3342fcdeb8186343181467d3daa98f7549924d8359b4848428",
+  "ordered_raw_bytes_algorithm": {
+    "name": "sha256-file-lines-v1",
+    "file_bytes": "Read each file as raw bytes; do not normalize, decode, or re-encode file contents.",
+    "record": "<file_sha256><two spaces><repo-relative-path><LF>",
+    "aggregate": "SHA-256 of the UTF-8 bytes of all records concatenated in ordered_paths order.",
+    "ordering": "Use ordered_paths exactly; do not sort or repackage."
+  },
+  "ordered_paths": [
+    "scripts/capture_hot_writer_408.py",
+    "scripts/review_outcome_hot_408.py",
+    "scripts/image_integrity_408.py",
+    "scripts/intake_lib_408.py",
+    "scripts/bounded_jsonl_index_408.py",
+    "scripts/linked_practice_source_408.py",
+    "scripts/question_source_attestation_408.py",
+    "scripts/review_feedback_loop.py",
+    "scripts/review_hot_state_408.py",
+    "scripts/review_hot_projection_408.py",
+    "scripts/capture_commit_index_408.py",
+    "scripts/morning_review_session.py",
+    "scripts/morning_session_hot_state_408.py",
+    "scripts/morning_review_prepared_pack_408.py",
+    "schema/morning-review-backflow-policy-v1.json",
+    "tests/test_morning_review_session_hot_integration_408.py"
+  ],
+  "file_count": 16,
+  "total_bytes": 1028860,
+  "files": [
+    {
+      "path": "scripts/capture_hot_writer_408.py",
+      "file_sha256": "cbd1fc4ed0e75641bf69e6a4c12c8c85ef25f80b5c37fd75aef149fcd7f57724",
+      "size": 110871,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/morning_review_session.py:15; scripts/managed_408_current_turn.py:27; tests/test_intake_fact_capture_408.py:18",
+      "replacement_reference": "scripts/capture_hot_writer_408.py"
+    },
+    {
+      "path": "scripts/review_outcome_hot_408.py",
+      "file_sha256": "fe5c0bb2ba491ad4550fdf69bf08a9631417a79233e392a5b71aeb2811bb0ed6",
+      "size": 40843,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/managed_408_current_turn.py:31; tests/test_morning_review_prepared_pack_managed_hot_408.py:26",
+      "replacement_reference": "scripts/review_outcome_hot_408.py"
+    },
+    {
+      "path": "scripts/image_integrity_408.py",
+      "file_sha256": "f3d9219b2d08a8c493dbc034b040bc6374aabbf3885c191b42eb3ccc67a99cc1",
+      "size": 9135,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/current_question_evidence_408.py:23; tests/test_image_integrity_408.py:13-14",
+      "replacement_reference": "scripts/image_integrity_408.py"
+    },
+    {
+      "path": "scripts/intake_lib_408.py",
+      "file_sha256": "43b2c1da7c032ec0771fdba40d99c3186b8529160d95b6a96540d67f0c2101fa",
+      "size": 16496,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/intake_fact_capture_408.py:30; tests/test_intake_fact_capture_408.py:59",
+      "replacement_reference": "scripts/intake_lib_408.py"
+    },
+    {
+      "path": "scripts/bounded_jsonl_index_408.py",
+      "file_sha256": "f6136517b324faf6180ed3c29e97eac0e87281d1f51f22adaf9305d2a8ff10df",
+      "size": 48721,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/intake_fact_capture_408.py:31; tests/test_intake_fact_capture_408.py:58",
+      "replacement_reference": "scripts/bounded_jsonl_index_408.py"
+    },
+    {
+      "path": "scripts/linked_practice_source_408.py",
+      "file_sha256": "8f2edd46af7c129a2f3c204ac4a09b28fa1823c3a7c4d961b7887dc789aeef8e",
+      "size": 43671,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/intake_fact_capture_408.py:35",
+      "replacement_reference": "scripts/linked_practice_source_408.py"
+    },
+    {
+      "path": "scripts/question_source_attestation_408.py",
+      "file_sha256": "8794e8323fae8f9e5856064103542fd2718f5e094290cc98c02e31a4dc781b5b",
+      "size": 25071,
+      "classification": "evidence_only",
+      "active_caller_or_reference": "No exact caller found; current source manifest/attestation references are in scripts/intake_fact_capture_408.py:764,2388-2469",
+      "replacement_reference": null
+    },
+    {
+      "path": "scripts/review_feedback_loop.py",
+      "file_sha256": "ab61d654ce15e8b126cc08ca42c96cf0770835b27e44e8e50e49d361ea31d411",
+      "size": 197955,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/morning_review_session.py:18; scripts/intake_fact_capture_408.py:42; scripts/review_outcome_hot_408.py:10",
+      "replacement_reference": "scripts/review_feedback_loop.py"
+    },
+    {
+      "path": "scripts/review_hot_state_408.py",
+      "file_sha256": "7a6efbaaf496d40a469e3b2964892a9820f2e0b86aace238dcd261af438094db",
+      "size": 91975,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/morning_review_session.py:20; scripts/review_outcome_hot_408.py:11; scripts/intake_fact_capture_408.py:709",
+      "replacement_reference": "scripts/review_hot_state_408.py"
+    },
+    {
+      "path": "scripts/review_hot_projection_408.py",
+      "file_sha256": "8913b4ad02fe11cace9940c8c431b1f3db5ac22d3d56609fba74eeda4089453e",
+      "size": 47928,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/morning_review_session.py:19; tests/test_morning_review_prepared_pack_managed_hot_408.py:31",
+      "replacement_reference": "scripts/review_hot_projection_408.py"
+    },
+    {
+      "path": "scripts/capture_commit_index_408.py",
+      "file_sha256": "9ff8e6f7a24e017fe4c75dc97f321cebb46775212a7df6b460a0cfe8d33233e3",
+      "size": 43489,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/intake_fact_capture_408.py:2788; tests/test_intake_fact_capture_408.py:19",
+      "replacement_reference": "scripts/capture_commit_index_408.py"
+    },
+    {
+      "path": "scripts/morning_review_session.py",
+      "file_sha256": "21c8ffeacd3fa32e39f84d31299ade573d98908dab85cb57b1e746bfb7c9b3ee",
+      "size": 207642,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/managed_408_current_turn.py:311; tests/test_morning_review_prepared_pack_managed_hot_408.py:28",
+      "replacement_reference": "scripts/morning_review_session.py"
+    },
+    {
+      "path": "scripts/morning_session_hot_state_408.py",
+      "file_sha256": "fdf07cb8831da07678d2e1d52eb1719528af8a49267d8a87241e5c9f85bd702f",
+      "size": 54763,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/morning_review_session.py:17; scripts/morning_review_prepared_pack_408.py:14",
+      "replacement_reference": "scripts/morning_session_hot_state_408.py"
+    },
+    {
+      "path": "scripts/morning_review_prepared_pack_408.py",
+      "file_sha256": "e194e6beb5233148beac9aac47878d9002df1ecf83ad65b7311bf3419cf1f8fd",
+      "size": 73063,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/managed_408_current_turn.py:2465,2532,2966; tests/test_morning_review_prepared_pack_managed_hot_408.py:27",
+      "replacement_reference": "scripts/morning_review_prepared_pack_408.py"
+    },
+    {
+      "path": "schema/morning-review-backflow-policy-v1.json",
+      "file_sha256": "77345d42dfbc4d2a1560a0b0d7e9a31a81184a20f438759a8b60d7721fd04017",
+      "size": 543,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "scripts/intake_fact_capture_408.py:64; tests/test_intake_fact_capture_408.py:64",
+      "replacement_reference": "schema/morning-review-backflow-policy-v1.json"
+    },
+    {
+      "path": "tests/test_morning_review_session_hot_integration_408.py",
+      "file_sha256": "014983fa3fbf8a63e0db99b673b217bf38d4fb4411854470dff1e2db4d95059d",
+      "size": 16694,
+      "classification": "replaced_by_current",
+      "active_caller_or_reference": "tests/test_morning_review_prepared_pack_managed_hot_408.py:33",
+      "replacement_reference": "tests/test_morning_review_prepared_pack_managed_hot_408.py"
+    }
+  ]
+}
