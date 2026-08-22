@@ -61,12 +61,13 @@ def setUpModule() -> None:
     installed.write_bytes(authoritative.read_bytes())
     descriptor = capture_model.build_descriptor(
         subject="cs408",
-        attestation_required_after="2026-08-17T00:00:00+00:00",
+        attestation_required_after="2026-07-01T00:00:00+00:00",
         authoritative_skill=authoritative,
         installed_skill=installed,
         producer_files=[
             ROOT / "scripts" / "intake_fact_capture_408.py",
             ROOT / "scripts" / "capture_hot_writer_408.py",
+            ROOT / "scripts" / "managed_408_current_turn.py",
             ROOT / "scripts" / "capture_commit_index_408.py",
             ROOT / "scripts" / "bounded_jsonl_index_408.py",
             ROOT / "scripts" / "intake_lib_408.py",
@@ -652,6 +653,24 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
         self.assertEqual("ready", handoff_binding["status"])
         self.assertEqual("first_turn_complete", handoff["completion_kind"])
         self.assertIsNone(handoff["trace_supplement_locator"])
+        sidecar = (
+            self.repo
+            / ".producer-binding-attestations"
+            / f"{result['capture_id']}.json"
+        )
+        self.assertTrue(sidecar.is_file())
+        self.assertRegex(
+            result["producer_binding_attestation_sha256"],
+            r"^[0-9a-f]{64}$",
+        )
+        self.assertEqual(
+            handoff["producer_binding_attestation_sha256"],
+            result["producer_binding_attestation_sha256"],
+        )
+        self.assertEqual(
+            hashlib.sha256(sidecar.read_bytes()).hexdigest(),
+            result["producer_binding_attestation_file_sha256"],
+        )
         self.assertTrue(result["first_answer_committed"])
         self.assertFalse(result["next_item_published"])
 
