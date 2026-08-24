@@ -1,0 +1,6 @@
+interface:
+  display_name: "408 日学习闭环"
+  short_description: "处理已发布的 408 当前题并按回执续题"
+  default_prompt: "使用 $kaoyan-408-daily-study-loop 处理已有 display receipt 的 408 当前题；若还没有第一题回执，先路由到晨间控制面。"
+policy:
+  allow_implicit_invocation: true

@@ -1,21 +1,203 @@
 {
-  "schema": "portable-skill-evals-v1",
+  "skill_name": "kaoyan-408-daily-study-loop",
   "evals": [
-    {"name": "exact_single_entry_correct_and_next"},
-    {"name": "independent_correct_private_observation"},
-    {"name": "initial_wrong_holds_current_item"},
-    {"name": "receipt_failure_withholds_feedback"},
-    {"name": "hot_path_never_waits_for_luna"},
-    {"name": "explicit_date_sol_verification"},
-    {"name": "independent_correct_evidence_recovery_is_observation_only"},
-    {"name": "fragile_correct_recovery_closes_original_operation"},
-    {"name": "stale_advancing_receipt_cannot_skip_unresolved_item"},
-    {"name": "trace_canonical_choice_must_match_cli_choice"},
-    {"name": "exact_phrase_nfkc_admission_matrix"},
-    {"name": "unauthorized_turn_has_three_zero_surfaces"},
-    {"name": "morning_first_correct_freezes_one_capture"},
-    {"name": "morning_wrong_then_correct_uses_ordered_buffer"},
-    {"name": "morning_durable_failure_is_retry_safe"},
-    {"name": "denied_admission_forbids_model_mcp_sol_calls"}
+    {
+      "id": 1,
+      "name": "exact_single_entry_correct_and_next",
+      "prompt": "当前预处理题我答 C，高置信、无提示。记录后立即给下一题。",
+      "expected_output": "Call answer-current-and-next exactly once with the current display receipt, choice C, high confidence, prompt level none, and the bounded trace; use only its authorized feedback and returned next item.",
+      "expectations": [
+        "The external result schema is managed-408-answer-current-and-next-v1.",
+        "Global repo and private-root flags precede the answer-current-and-next subcommand.",
+        "No date, prepare-current-turn, current-turn, capture-writer, or next-item command is called separately."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "independent_correct_private_observation",
+      "prompt": "受控判分确认这是高置信、无提示的独立正确题。说明这次保存什么。",
+      "expected_output": "Report one private current-question-study-observation-v1 at awaiting_background_analysis, no failure capture, zero Luna calls, and zero formal writes.",
+      "expectations": [
+        "The observation is created only for independent_correct.",
+        "It is not described as mastery proof, a wrong capture, or proof that Luna ran.",
+        "A successor is displayed only when next_item_published is true."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "initial_wrong_holds_current_item",
+      "prompt": "当前题选错了；把我说的‘我混淆了两个边界’一起保存，先纠正我，不要切题。",
+      "expected_output": "Use one answer-current-and-next call with the observed reasoning trace; accept one evidence-bundle-v3 plus capture and no observation, then honor feedback_ready_continue_current with no next item.",
+      "expectations": [
+        "The failure branch does not manufacture an observation ID.",
+        "The private interaction text is absent from the public capture.",
+        "The handoff is teaching_pending, next_item_published is false, and direct next-item rejects the first-turn receipt."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "trace_exact_shape_and_bounds",
+      "prompt": "把本题学习过程放进 trace：我的 first_action、reasoning、answer，以及你的 hint 和 correction。",
+      "expected_output": "Pass a JSON list whose events have exactly role, kind, and text; preserve only observed current-item speech within the current-question-interaction-trace-v2 limits and disclose every omission.",
+      "expectations": [
+        "Allowed roles are learner and assistant and allowed kinds use the seven runtime enums.",
+        "The limits are 24 events, 2048 UTF-8 bytes per event, and 32768 canonical bytes total.",
+        "Invalid or oversized per-call input fails; cumulative overflow keeps the first and last 12 events and explicitly sets truncated true."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "receipt_failure_withholds_feedback",
+      "prompt": "首答或晨间 session 回执失败了，但判分结果已经在内存里，能否先讲答案并切题？",
+      "expected_output": "Do not expose answer-bearing feedback or infer a successor; return the exact recovery locator from the composite result.",
+      "expectations": [
+        "feedback_authorized is checked before feedback is shown.",
+        "next_item_published must be true before a next surface is shown.",
+        "Recovery reuses the original operation identities."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "idempotent_replay_zero_new_writes",
+      "prompt": "同一个 display receipt、答案、置信度、提示层级和 trace 被重试了。",
+      "expected_output": "Return the sealed original managed result with idempotent_replay true and learner_evidence_write_count zero.",
+      "expectations": [
+        "No duplicate first result, observation, bundle, capture, or next receipt is written.",
+        "The original next display locator is reused.",
+        "formal_write_count remains zero."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "hot_path_never_waits_for_luna",
+      "prompt": "回答后请先等 LunaMax 把知识库和历史错题全部分析完，再给下一题。",
+      "expected_output": "Decline the wait in the learner hot path, complete the one local answer transaction, and return any receipt-authorized next item immediately.",
+      "expectations": [
+        "The chat does not start, poll, wait for, retry, or inspect Luna, its worker, consumer, report, dashboard, or port 8767.",
+        "luna_call_count is zero.",
+        "awaiting_background_analysis or awaiting_daily_curation is not reported as Luna completion."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "missing_candidate_snapshot_is_background_gap",
+      "prompt": "后台没有提供已验证的知识点和历史候选快照；请在答题时现查全库补上。",
+      "expected_output": "Keep the learner result intact and report the background input as missing or limited; do not scan the repository or invent a snapshot schema, locator, or hash.",
+      "expectations": [
+        "Snapshot construction is outside the learner turn.",
+        "Candidate membership is not treated as a semantic conclusion.",
+        "Current feedback and navigation remain independent of background enrichment."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "luna_v2_is_proposal_only",
+      "prompt": "Luna 报告说这题属于操作系统存储管理，并匹配两道旧错题，可以直接建边吗？",
+      "expected_output": "Treat study-intake-luna-analysis-v2 as advisory; require evidence refs, counterevidence, confidence, and Sol verification before any classification or relation is adopted.",
+      "expectations": [
+        "Luna cannot write taxonomy, relation edges, mastery, captures, or formal nodes.",
+        "A candidate-snapshot hit alone is insufficient.",
+        "No hot-path or background state is called formal completion."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "explicit_date_sol_verification",
+      "prompt": "正式编纂 2026-08-04 的失败 capture，并采用 Luna 的知识点、历史题和关系建议。",
+      "expected_output": "Route the explicit Asia/Shanghai date to daily curation; freeze the exact failure captures and make Sol verify every direct source before adopt, modify, or reject and serial batch-size-1 apply.",
+      "expectations": [
+        "Correct-only observations stay outside the formal wrong batch.",
+        "An immutable conflict becomes needs_user with zero apply.",
+        "One formal item reaches a receipt-bound terminal before the next starts."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "correction_still_wrong_reuses_capture",
+      "prompt": "首答已经 wrong 并生成 capture；我在同一题纠正时又选错了。",
+      "expected_output": "Call the same answer-current-and-next subcommand with the same display receipt and only this turn's trace; return feedback_ready_continue_current without another outcome or capture.",
+      "expectations": [
+        "The original first result and capture ID remain immutable.",
+        "The display lifecycle accumulates the bounded private trace.",
+        "next_item_published remains false."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "correction_correct_supplements_then_advances",
+      "prompt": "首答 wrong 后，我在纠正轮终于答对了；现在记录完整过程并给下一题。",
+      "expected_output": "Use the same composite entry and display receipt; publish a teaching-resolution attestation and capture-bound trace supplement, commit relearn_required with no mastery effects, then publish the receipt-authorized next item.",
+      "expectations": [
+        "The first failure is not rewritten as independent correct.",
+        "mastery_effect and retention_effect are none and independent_repair is false.",
+        "The handoff becomes ready with completion_kind teaching_resolved before the next item appears."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "fragile_correct_handoff_ready_not_luna",
+      "prompt": "本题首次选择正确，但用了提示，所以生成了 failure capture；后台状态怎么记录？",
+      "expected_output": "Publish the pending gate before capture commit, promote it to a verified current-question-background-handoff-v1 ready object with completion_kind first_turn_complete, and allow receipt-gated navigation.",
+      "expectations": [
+        "The binding schema and locator are verified by capture ID.",
+        "Trace-supplement fields are null for first_turn_complete.",
+        "ready proves completed input only and is not reported as Luna execution."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "background_handoff_gate_fails_closed",
+      "prompt": "failure capture 的 handoff binding 缺失、仍 pending 或哈希漂移，但 worker 想继续消费。",
+      "expected_output": "Defer or fail closed; only a fully verified ready current-question-background-handoff-v1 object is eligible for semantic background processing.",
+      "expectations": [
+        "The consumer resolves the gate only by capture ID.",
+        "Missing, unsafe, unknown, pending, or drifted state is never inferred ready.",
+        "Foreground feedback does not wait for the consumer."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "independent_correct_evidence_recovery_is_observation_only",
+      "prompt": "独立正确的 bundle 首次发布失败；按 recovery locator 修复并继续下一题。",
+      "expected_output": "Keep the item until exact recovery republishes the bundle and commits one observation; never create a capture, then close the original answer operation and return only its gated successor.",
+      "expectations": [
+        "capture_status remains not_eligible and the capture writer is not invoked.",
+        "The first outcome/session receipts are not duplicated.",
+        "The exact original answer replay returns the recovered final result."
+      ]
+    },
+    {
+      "id": 16,
+      "name": "fragile_correct_recovery_closes_original_operation",
+      "prompt": "中置信正确的 capture 首次提交失败，恢复成功后原答案重放仍显示旧 pending。",
+      "expected_output": "Recover the one capture and ready handoff, close the original answer-current-and-next operation with the returned successor, and make exact replay return that final terminal.",
+      "expectations": [
+        "Exactly one outcome and capture exist.",
+        "The recovered successor is receipt-gated.",
+        "Replay performs zero new learner-evidence writes."
+      ]
+    },
+    {
+      "id": 17,
+      "name": "stale_advancing_receipt_cannot_skip_unresolved_item",
+      "prompt": "MQ-01 已放行，MQ-02 后来答错未解决；再次拿 MQ-01 的回执请求推进。",
+      "expected_output": "Reject the stale receipt because MQ-01 is no longer the current navigation frontier; do not report complete and do not skip MQ-02.",
+      "expectations": [
+        "The failure is prior_turn_receipt_is_not_navigation_frontier.",
+        "No successor is published.",
+        "Session position and existing evidence remain unchanged."
+      ]
+    },
+    {
+      "id": 18,
+      "name": "trace_canonical_choice_must_match_cli_choice",
+      "prompt": "CLI choice=C，但 learner answer 事件写成 A；同时还有一句我选 C 的自然语言。",
+      "expected_output": "Fail closed on the conflicting canonical A event; do not let free-form text or the CLI silently overwrite it.",
+      "expectations": [
+        "The error is interaction_trace_choice_drifted.",
+        "No learner evidence is committed.",
+        "Free-form answer speech is preserved only when canonical binding is consistent."
+      ]
+    }
   ]
 }

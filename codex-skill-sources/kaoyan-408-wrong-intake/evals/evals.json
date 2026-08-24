@@ -209,61 +209,6 @@
         "The foreground capture remains formal_write_count zero.",
         "A missing or non-ready report does not prove Luna completion."
       ]
-    },
-    {
-      "id": 20,
-      "name": "exact_phrase_nfkc_admission_matrix",
-      "prompt": "Only a current user message containing contiguous 快速入库 after NFKC may admit an ordinary Capture.",
-      "expected_output": "Accept NFKC-equivalent contiguous wording and reject spaces, punctuation, newlines, missing messages, wrong answers, scores, recurrences, and model-derived intent.",
-      "expectations": [
-        "The raw authorization message is never persisted.",
-        "The normalized message SHA-256 and trigger phrase are the only retained proof.",
-        "A denied ordinary turn creates zero Capture, observation, and handoff."
-      ]
-    },
-    {
-      "id": 21,
-      "name": "morning_first_correct_one_capture",
-      "prompt": "The first morning answer is correct.",
-      "expected_output": "Freeze the ordered session buffer, create exactly one release-neutral Capture and ready handoff, and publish one successor only after durable receipts.",
-      "expectations": [
-        "No wrong Capture is created.",
-        "No trace supplement is created.",
-        "Exact replay creates no second Capture or successor."
-      ]
-    },
-    {
-      "id": 22,
-      "name": "morning_wrong_then_correct_buffer_closeout",
-      "prompt": "Morning answers are wrong, wrong, then correct on the same display receipt.",
-      "expected_output": "Append each attempt to the ordered session buffer, keep Capture at zero until final correctness, then freeze the complete dialogue and create one Capture.",
-      "expectations": [
-        "No wrong Capture or later trace supplement exists.",
-        "Only one release-neutral consumer handoff is ready.",
-        "The next item is published once after the final session receipt."
-      ]
-    },
-    {
-      "id": 23,
-      "name": "morning_durable_failure_safe_retry",
-      "prompt": "A synthetic Capture commit fails durably during morning finalization.",
-      "expected_output": "Keep the frozen buffer and current position, then recover the same Capture identity without duplicate ledger rows or successor publication.",
-      "expectations": [
-        "No partial success is reported before the Capture receipt is durable.",
-        "Recovery is idempotent and remains formal_write_count=0.",
-        "No model, MCP, Sol, or consumer call occurs in the producer."
-      ]
-    },
-    {
-      "id": 24,
-      "name": "forbidden_calls_on_denied_admission",
-      "prompt": "A denied ordinary message asks to save based on a wrong answer, score, or model judgment.",
-      "expected_output": "Fail closed at Producer admission and keep Capture, central observation, consumer handoff, and all model/MCP/Sol calls at zero.",
-      "expectations": [
-        "No queue is created.",
-        "No formal write occurs.",
-        "The denial is deterministic across replay."
-      ]
     }
   ]
 }
