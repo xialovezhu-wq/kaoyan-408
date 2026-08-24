@@ -2052,6 +2052,10 @@ class IntakeFactCaptureTests(unittest.TestCase):
                     repo_root=root,
                 )
             self.assertEqual(receipt["producer_binding_status"], "attested")
+            self.assertRegex(receipt["receipt_sha256"], r"^[0-9a-f]{64}$")
+            self.assertEqual(
+                receipt["recorded_at"], "2026-08-17T07:00:00+00:00"
+            )
             self.assertRegex(
                 receipt["producer_binding_attestation_sha256"],
                 r"^[0-9a-f]{64}$",
@@ -2063,6 +2067,14 @@ class IntakeFactCaptureTests(unittest.TestCase):
             self.assertEqual(value["capture_id"], receipt["capture_id"])
             self.assertEqual(
                 value["capture_content_sha256"], receipt["payload_sha256"]
+            )
+            self.assertEqual(
+                value["attestation_sha256"],
+                receipt["producer_binding_attestation_sha256"],
+            )
+            self.assertEqual(
+                hashlib.sha256(sidecar.read_bytes()).hexdigest(),
+                receipt["producer_binding_attestation_file_sha256"],
             )
             self.assertEqual(value["formal_write_count"], 0)
             self.assertFalse(
@@ -2126,6 +2138,29 @@ class IntakeFactCaptureTests(unittest.TestCase):
                     "capture_receipt_sha256": receipt["receipt_sha256"],
                 },
             )
+            for changed in (
+                {"capture_content_sha256": "e" * 64},
+                {"capture_receipt_sha256": "e" * 64},
+                {"recorded_at": "2026-08-17T07:00:01+00:00"},
+            ):
+                inputs = {
+                    "descriptor_path": self._descriptor_path,
+                    "repo_root": root,
+                    "subject": "cs408",
+                    "capture_id": str(receipt["capture_id"]),
+                    "capture_content_sha256": str(receipt["payload_sha256"]),
+                    "capture_receipt_sha256": str(receipt["receipt_sha256"]),
+                    "recorded_at": str(receipt["recorded_at"]),
+                    "recovered": True,
+                }
+                inputs.update(changed)
+                with self.subTest(changed=changed), self.assertRaisesRegex(
+                    producer_binding.ProducerBindingError,
+                    "capture ledger binding mismatch",
+                ):
+                    producer_binding.commit_capture_with_producer_attestation(
+                        **inputs
+                    )
             sidecar = Path(second["producer_attestation_path"])
             sidecar.write_text("{}\n", encoding="utf-8")
             with self.assertRaisesRegex(

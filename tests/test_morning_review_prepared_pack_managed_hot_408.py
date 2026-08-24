@@ -5,6 +5,7 @@ import inspect
 import hashlib
 import io
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -42,10 +43,11 @@ SESSION_ID = "MR-prepared-test"
 ITEM_ID = "MQ-01"
 _BINDING_TEMP: tempfile.TemporaryDirectory[str] | None = None
 _ORIGINAL_DESCRIPTOR_PATH: Path | None = None
+_ORIGINAL_DESCRIPTOR_ENV: str | None = None
 
 
 def setUpModule() -> None:
-    global _BINDING_TEMP, _ORIGINAL_DESCRIPTOR_PATH
+    global _BINDING_TEMP, _ORIGINAL_DESCRIPTOR_PATH, _ORIGINAL_DESCRIPTOR_ENV
     _BINDING_TEMP = tempfile.TemporaryDirectory(
         prefix="cs408-morning-producer-binding-"
     )
@@ -85,12 +87,24 @@ def setUpModule() -> None:
     capture_model.write_descriptor(descriptor_path, descriptor)
     _ORIGINAL_DESCRIPTOR_PATH = capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH
     capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH = descriptor_path
+    _ORIGINAL_DESCRIPTOR_ENV = os.environ.get(
+        capture_model.PRODUCER_BINDING_DESCRIPTOR_ENV
+    )
+    os.environ[capture_model.PRODUCER_BINDING_DESCRIPTOR_ENV] = str(
+        descriptor_path
+    )
 
 
 def tearDownModule() -> None:
     if _ORIGINAL_DESCRIPTOR_PATH is not None:
         capture_model.PRODUCER_BINDING_DESCRIPTOR_PATH = (
             _ORIGINAL_DESCRIPTOR_PATH
+        )
+    if _ORIGINAL_DESCRIPTOR_ENV is None:
+        os.environ.pop(capture_model.PRODUCER_BINDING_DESCRIPTOR_ENV, None)
+    else:
+        os.environ[capture_model.PRODUCER_BINDING_DESCRIPTOR_ENV] = (
+            _ORIGINAL_DESCRIPTOR_ENV
         )
     if _BINDING_TEMP is not None:
         _BINDING_TEMP.cleanup()
@@ -667,10 +681,41 @@ class PreparedPackManagedHotPath408Tests(unittest.TestCase):
             handoff["producer_binding_attestation_sha256"],
             result["producer_binding_attestation_sha256"],
         )
+        sidecar_value = json.loads(sidecar.read_text(encoding="utf-8"))
+        self.assertEqual(
+            sidecar_value["attestation_sha256"],
+            result["producer_binding_attestation_sha256"],
+        )
         self.assertEqual(
             hashlib.sha256(sidecar.read_bytes()).hexdigest(),
             result["producer_binding_attestation_file_sha256"],
         )
+        raw_handoff_path = (
+            private_root
+            / "background-handoffs"
+            / "objects"
+            / f"{handoff_binding['object_sha256']}.json"
+        )
+        raw_handoff = json.loads(raw_handoff_path.read_text(encoding="utf-8"))
+        self.assertEqual(set(raw_handoff), current_evidence.BACKGROUND_HANDOFF_KEYS)
+        self.assertNotIn("producer_binding_attestation_sha256", raw_handoff)
+        replayed_ready = current_evidence.publish_background_handoff_ready(
+            private_root=private_root,
+            capture_id=result["capture_id"],
+            context_id=handoff["context_id"],
+            item_id=handoff["item_id"],
+            evidence_manifest_sha256=handoff["evidence_manifest_sha256"],
+            capture_receipt_sha256=result["capture_receipt_sha256"],
+            updated_at=handoff["updated_at"],
+            completion_kind=handoff["completion_kind"],
+            resolution_receipt_sha256=handoff[
+                "resolution_receipt_sha256"
+            ],
+            interaction_trace_sha256=handoff[
+                "interaction_trace_sha256"
+            ],
+        )
+        self.assertEqual("ready", replayed_ready["status"])
         self.assertTrue(result["first_answer_committed"])
         self.assertFalse(result["next_item_published"])
 

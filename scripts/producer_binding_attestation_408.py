@@ -6,6 +6,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 import tempfile
 from pathlib import Path
 from typing import Any, Mapping
@@ -17,6 +18,12 @@ FORBIDDEN_KEYS = {
     "mcp_authority_fingerprint", "mcp_release_id",
     "producer_authority_fingerprint",
 }
+CAPTURE_LEDGER_RELATIVE_PATH = Path(
+    "wiki/study_vaults/408-full/state/intake-curation/events.jsonl"
+)
+CAPTURE_EVENT_SCHEMA = "intake_fact_capture_event_v1"
+MAX_CAPTURE_LEDGER_BYTES = 64 * 1024 * 1024
+CAPTURE_ID_RE = re.compile(r"^CAP-\d{8}-[0-9a-f]{12}$")
 
 
 class ProducerBindingError(RuntimeError):
@@ -39,6 +46,15 @@ def sha256_value(value: Any) -> str:
     return hashlib.sha256(canonical_bytes(value)).hexdigest()
 
 
+def capture_receipt_sha256(value: Any) -> str:
+    """Hash one canonical ledger event using the Producer writer contract."""
+
+    raw = json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
 def _assert_release_neutral(value: Any) -> None:
     if isinstance(value, Mapping):
         for key, nested in value.items():
@@ -51,7 +67,16 @@ def _assert_release_neutral(value: Any) -> None:
 
 
 def _timestamp(value: str) -> dt.datetime:
-    parsed = dt.datetime.fromisoformat(value[:-1] + "+00:00" if value.endswith("Z") else value)
+    if not isinstance(value, str) or not value:
+        raise ProducerBindingError("producer binding timestamp is invalid")
+    try:
+        parsed = dt.datetime.fromisoformat(
+            value[:-1] + "+00:00" if value.endswith("Z") else value
+        )
+    except (TypeError, ValueError) as exc:
+        raise ProducerBindingError(
+            "producer binding timestamp is invalid"
+        ) from exc
     if parsed.tzinfo is None or parsed.utcoffset() is None:
         raise ProducerBindingError("producer binding timestamp must include timezone")
     return parsed.astimezone(dt.timezone.utc)
@@ -225,6 +250,7 @@ def publish_attestation(
             "status": "historical_pre_attestation",
             "attestation_path": None,
             "attestation_sha256": None,
+            "attestation_file_sha256": None,
             "formal_write_count": 0,
         }
     core = {
@@ -247,6 +273,215 @@ def publish_attestation(
     return {
         "status": "attested",
         "attestation_path": str(path),
-        "attestation_sha256": sha256_file(path),
+        "attestation_sha256": attestation["attestation_sha256"],
+        "attestation_file_sha256": sha256_file(path),
+        "formal_write_count": 0,
+    }
+
+
+def _read_capture_ledger(repo_root: Path) -> list[dict[str, Any]]:
+    ledger = repo_root.resolve() / CAPTURE_LEDGER_RELATIVE_PATH
+    try:
+        before = ledger.lstat()
+    except OSError as exc:
+        raise ProducerBindingError("capture ledger unavailable") from exc
+    if (
+        ledger.is_symlink()
+        or not ledger.is_file()
+        or before.st_size <= 0
+        or before.st_size > MAX_CAPTURE_LEDGER_BYTES
+    ):
+        raise ProducerBindingError("capture ledger unsafe")
+    try:
+        with ledger.open("rb") as handle:
+            opened = os.fstat(handle.fileno())
+            if (
+                opened.st_dev != before.st_dev
+                or opened.st_ino != before.st_ino
+                or opened.st_size != before.st_size
+            ):
+                raise ProducerBindingError("capture ledger drifted before reopen")
+            raw = handle.read(MAX_CAPTURE_LEDGER_BYTES + 1)
+            after = os.fstat(handle.fileno())
+    except OSError as exc:
+        raise ProducerBindingError("capture ledger unavailable") from exc
+    if (
+        len(raw) != before.st_size
+        or len(raw) > MAX_CAPTURE_LEDGER_BYTES
+        or after.st_dev != before.st_dev
+        or after.st_ino != before.st_ino
+        or after.st_size != before.st_size
+        or after.st_mtime_ns != before.st_mtime_ns
+    ):
+        raise ProducerBindingError("capture ledger drifted during reopen")
+    try:
+        text = raw.decode("utf-8")
+    except UnicodeError as exc:
+        raise ProducerBindingError("capture ledger is not UTF-8") from exc
+    rows: list[dict[str, Any]] = []
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            value = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ProducerBindingError(
+                f"capture ledger row {line_number} is invalid"
+            ) from exc
+        if not isinstance(value, dict):
+            raise ProducerBindingError(
+                f"capture ledger row {line_number} is invalid"
+            )
+        rows.append(value)
+    return rows
+
+
+def _reopen_capture_identity(
+    *,
+    repo_root: Path,
+    capture_id: str,
+    capture_content_sha256: str,
+    capture_receipt_sha256_value: str,
+    recorded_at: str,
+) -> dict[str, Any]:
+    if (
+        not isinstance(capture_id, str)
+        or not CAPTURE_ID_RE.fullmatch(capture_id)
+    ):
+        raise ProducerBindingError("capture identity invalid")
+    for value, label in (
+        (capture_content_sha256, "capture payload hash"),
+        (capture_receipt_sha256_value, "capture receipt hash"),
+    ):
+        if (
+            not isinstance(value, str)
+            or len(value) != 64
+            or any(character not in "0123456789abcdef" for character in value)
+        ):
+            raise ProducerBindingError(f"{label} invalid")
+    _timestamp(recorded_at)
+    matches = [
+        row
+        for row in _read_capture_ledger(repo_root)
+        if row.get("event_type") == "fact_captured"
+        and row.get("capture_id") == capture_id
+    ]
+    if len(matches) != 1:
+        raise ProducerBindingError("capture ledger identity is not unique")
+    event = matches[0]
+    capture = event.get("capture")
+    idempotency_key = (
+        str(capture.get("idempotency_key") or "")
+        if isinstance(capture, dict)
+        else ""
+    )
+    study_date = (
+        str(capture.get("study_date") or "")
+        if isinstance(capture, dict)
+        else ""
+    )
+    expected_capture_id = (
+        f"CAP-{study_date.replace('-', '')}-"
+        f"{hashlib.sha256(idempotency_key.encode()).hexdigest()[:12]}"
+    )
+    if (
+        event.get("schema") != CAPTURE_EVENT_SCHEMA
+        or event.get("capture_id") != capture_id
+        or event.get("payload_sha256") != capture_content_sha256
+        or event.get("created_at") != recorded_at
+        or capture_receipt_sha256(event) != capture_receipt_sha256_value
+        or not isinstance(capture, dict)
+        or expected_capture_id != capture_id
+        or capture_receipt_sha256(capture) != capture_content_sha256
+    ):
+        raise ProducerBindingError("capture ledger binding mismatch")
+    return event
+
+
+def commit_capture_with_producer_attestation(
+    *,
+    descriptor_path: Path,
+    repo_root: Path,
+    subject: str,
+    capture_id: str,
+    capture_content_sha256: str,
+    capture_receipt_sha256: str,
+    recorded_at: str,
+    recovered: bool,
+) -> dict[str, Any]:
+    """Reopen one committed Capture before publishing its immutable sidecar.
+
+    This is the shared finalizer for both the ordinary and managed-hot 408
+    Producer paths.  The ledger is authoritative; caller-returned values never
+    authorize an attestation on their own.
+    """
+
+    if subject != "cs408" or not isinstance(recovered, bool):
+        raise ProducerBindingError("capture finalizer inputs invalid")
+    repo = repo_root.expanduser().resolve()
+    if not repo.is_dir():
+        raise ProducerBindingError("capture repository unavailable")
+    event = _reopen_capture_identity(
+        repo_root=repo,
+        capture_id=capture_id,
+        capture_content_sha256=capture_content_sha256,
+        capture_receipt_sha256_value=capture_receipt_sha256,
+        recorded_at=recorded_at,
+    )
+    attestation_recorded_at = recorded_at
+    if recorded_at == "1970-01-01T00:00:00+00:00":
+        observed_at = str(
+            ((event.get("capture") or {}).get("user_facts") or {}).get(
+                "observed_at"
+            )
+            or ""
+        )
+        _timestamp(observed_at)
+        attestation_recorded_at = observed_at
+    descriptor = load_descriptor(descriptor_path, subject=subject)
+    sidecar_path = (
+        repo / str(descriptor["attestation_relative_root"]) / f"{capture_id}.json"
+    )
+    existed_before = sidecar_path.exists() or sidecar_path.is_symlink()
+    published = publish_attestation(
+        descriptor_path=descriptor_path,
+        repo_root=repo,
+        subject=subject,
+        capture_id=capture_id,
+        capture_content_sha256=capture_content_sha256,
+        recorded_at=attestation_recorded_at,
+    )
+    if published["status"] == "attested":
+        try:
+            value = json.loads(sidecar_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+            raise ProducerBindingError("producer attestation reopen failed") from exc
+        if (
+            not isinstance(value, dict)
+            or value.get("capture_id") != capture_id
+            or value.get("capture_content_sha256") != capture_content_sha256
+            or value.get("attestation_sha256")
+            != published["attestation_sha256"]
+            or sha256_file(sidecar_path) != published["attestation_file_sha256"]
+        ):
+            raise ProducerBindingError("producer attestation reopen mismatch")
+    return {
+        "status": "finalized",
+        "producer_binding_status": published["status"],
+        "producer_attestation_path": published["attestation_path"],
+        "producer_attestation_sha256": published["attestation_sha256"],
+        "producer_attestation_file_sha256": published[
+            "attestation_file_sha256"
+        ],
+        "capture_identity": {
+            "capture_id": capture_id,
+            "capture_content_sha256": capture_content_sha256,
+            "capture_receipt_sha256": capture_receipt_sha256,
+        },
+        "recorded_at": recorded_at,
+        "attestation_recorded_at": attestation_recorded_at,
+        "idempotent": bool(existed_before),
+        "recovered": recovered,
+        "handoff_ready_allowed": published["status"] == "attested",
         "formal_write_count": 0,
     }
