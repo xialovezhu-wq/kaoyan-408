@@ -153,6 +153,7 @@ and a Sol verification action.
 
 ## Explicit-date Sol curation
 
+This is the explicit-date Sol batch boundary.
 Only an explicit user-specified `Asia/Shanghai` date freezes failure captures. Sol
 reopens raw capture, bundle, resolved trace, pinned snapshot, and at most one Luna v2
 report, then records adopt/modify/reject before one serial batch-size-1 transaction.

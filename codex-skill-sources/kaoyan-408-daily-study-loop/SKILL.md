@@ -5,21 +5,11 @@ description: "408 已发布当前题的晨间复盘、普通讲题和晚间 D0 �
 
 # Kaoyan 408 Daily Study Loop
 
-## Outcome
-
-Record, grade, teach, and navigate one prepared current question through
-one external entry. Return frozen feedback quickly. Never wait for Luna or formal
-curation.
-
 ## Entry boundary
 
-Without a display receipt, “开始今天的晨间复盘” routes to
-`kaoyan-408-morning-control`, which owns active-session closeout, the dated queue,
-Sol author/verifier, immutable pack, unique session, and first display.
-
-Enter this skill only after a `current-question-turn://sha256/...` display receipt
-has been published. Never create a pack, repair a lifecycle projection, invoke a
-model, or start a session from this current-question hot path.
+Without a `current-question-turn://sha256/...` display receipt, route “开始今天的晨间复盘”
+to `kaoyan-408-morning-control`. This skill starts only after that receipt exists;
+it never creates a pack/session, repairs lifecycle state, or invokes a model.
 
 ## Hot-path context
 
@@ -51,14 +41,11 @@ Keep the same display receipt during correction. Trace events contain exactly
 `A|B|C|D` must match `--choice` or fail as `interaction_trace_choice_drifted`.
 Free-form answer speech is preserved and receives a separate canonical choice binding.
 
-`--attachments-json` is the only attachment input. Its default is
-`{"question_mode":"dialogue_only","attachments":[]}`. The top level contains only
-`question_mode` and `attachments`; each attachment contains only `path`, `sha256`,
-`mime_type`, `role`, and `label`. The private path is read for this invocation only
-and never enters the operation, bundle, Capture, or output. A correction must not
-resubmit attachments and reuses the first bundle's frozen attachment objects.
-`dialogue_only` has no attachments. `image_question` requires both `question_image`
-and `solution_image`; missing either fails before Capture creation.
+`--attachments-json` is the only attachment input; default:
+`{"question_mode":"dialogue_only","attachments":[]}`. Only `question_mode` and
+`attachments` are top-level; attachment fields are `path`, `sha256`, `mime_type`,
+`role`, `label`. Paths are invocation-only. Corrections reuse frozen attachments.
+`image_question` requires both `question_image` and `solution_image` before Capture.
 
 The command validates one prepared display/evaluator, freezes feedback, commits the
 applicable receipts, and retains the item or returns one successor. Do not separately call
@@ -71,7 +58,7 @@ Its external result schema is `managed-408-answer-current-and-next-v1`.
 The runtime applies `current_question_failure_standing_policy_v1` exactly once per
 first answer:
 
-- First high-confidence unprompted `independent_correct`: one private
+- First high-confidence, unprompted `independent_correct`: one private
   `current-question-evidence-bundle-v3` bound to exactly one
   `current-question-study-observation-v1` at `awaiting_background_analysis`. This is
   one central-consumable Luna candidate with zero failure Captures and stays outside
@@ -82,7 +69,7 @@ first answer:
   `ready` with `completion_kind=first_turn_complete`. An image-role, integrity, or
   required question-evidence gap fails before Capture creation with zero model calls;
   navigation remains receipt-gated.
-- First `wrong|partial|uncertain` with a stable capture:
+- First wrong, partial, blank, or uncertain answer with a stable capture:
   handoff `status=teaching_pending`, answer
   `status=feedback_ready_continue_current`, and `next_item_published=false`. Its
   first-turn receipt has `advance_allowed=false`. Show the prepared first-break
@@ -107,12 +94,11 @@ original trace supplement and cannot create another candidate, bundle, or Captur
 
 ## Trace boundary
 
-Private `current-question-interaction-trace-v2` keeps at most 24 included events,
-2048 UTF-8 bytes per event, and 32 KiB canonical total. It always records original,
-included, and omitted counts, exact omitted ordinal ranges, the truncation reason,
-and the full-trace SHA-256. Any omission is an explicit evidence gap. First-turn trace
-stays in bundle v3; resolved cumulative trace uses a private capture-bound supplement.
-Public captures contain no full trace text.
+Private `current-question-interaction-trace-v2` caps included events at 24, each at
+2048 UTF-8 bytes, and canonical total at 32 KiB. It records original/included/omitted
+counts, omitted ordinal ranges, truncation reason, and full-trace SHA-256. First-turn
+trace stays in bundle v3; resolved trace uses a private capture-bound supplement.
+Public captures omit trace text.
 
 ## Recovery
 
@@ -130,7 +116,7 @@ item. Never duplicate outcome, observation, capture, resolution, supplement, or 
 `current-question-background-handoff://sha256/<object_sha256>`. Missing, drifted, or
 `teaching_pending` fails closed; verified `ready` proves input completion, not Luna execution.
 The chat never starts, waits for, polls, or inspects Luna, worker, report, or port 8767.
-Background candidate snapshots are bounded and pinned; missing bindings remain gaps.
+Snapshots are bounded and pinned; missing bindings remain gaps.
 `study-intake-luna-analysis-v2` is proposal-only and cannot write facts or formal state.
 Only the current immutable preprocessor release may consume a verified bundle-v3 and
 trace-v2 handoff; every background stage requests `gpt-5.6-luna` with
