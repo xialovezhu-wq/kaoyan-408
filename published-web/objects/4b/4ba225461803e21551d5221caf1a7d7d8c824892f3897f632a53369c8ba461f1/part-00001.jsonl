@@ -1,0 +1,3 @@
+{"offset":0,"data":"# CO_2012_003\n\n来源定位：VISUAL_PENDING / 未提取\n\n正式节点：CO_2012_003\n来源 ID：VISUAL_PENDING\n科目：计算机组成原理\n主知识点：CO05-21 中断处理\n核心考点：中断处理与子程序调用的现场保护差异\n匹配方式：正式ID标题匹配：CO_2012_003\n\n## MarginNote 链接\n\n- 未提取\n\n> [!question] 题目\n> ![[assets/CO_2012_003/question-01.png]]\n\n> [!answer]- 解析\n> ![[assets/CO_2012_003/solution-01.png]]\n>\n> 解析文字待补充\n\n## 图片 QA 记录\n\n- 2026-07-04：已直接查看 `question-01.png` 和 `solution-01.png`。题图清晰，中断处理与子程序调用的现场保护对比主题可读；解析图与题图为同一道现场保护判断题，未发现串题。\n- 当前状态：`solution-01.png` 可作为折叠解析来源；解析文字仍待后续补全。\n- Tutor 安全范围：`CO05-21 中断处理`。仅进入中断现场保护、PSW/通用寄存器保存边界和子程序调用差异检测，不向 Tutor 输入题图、完整题面、答案"}
+{"offset":1023,"data":"或选项字母。\n"}
+{"eof":true,"sha256":"4ba225461803e21551d5221caf1a7d7d8c824892f3897f632a53369c8ba461f1","bytes":1042,"records":2}

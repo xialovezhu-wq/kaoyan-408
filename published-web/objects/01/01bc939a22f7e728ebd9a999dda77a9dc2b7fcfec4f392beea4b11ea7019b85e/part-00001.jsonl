@@ -1,0 +1,2 @@
+{"offset":0,"data":"from enum import IntEnum\n\n\nclass Rating(IntEnum):\n    \"\"\"\n    Enum representing the four possible ratings when reviewing a card.\n    \"\"\"\n\n    Again = 1\n    Hard = 2\n    Good = 3\n    Easy = 4\n\n\n__all__ = [\"Rating\"]\n"}
+{"eof":true,"sha256":"01bc939a22f7e728ebd9a999dda77a9dc2b7fcfec4f392beea4b11ea7019b85e","bytes":214,"records":1}

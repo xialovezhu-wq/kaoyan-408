@@ -1,0 +1,2 @@
+{"offset":0,"data":"from enum import IntEnum\n\n\nclass State(IntEnum):\n    \"\"\"\n    Enum representing the learning state of a Card object.\n    \"\"\"\n\n    Learning = 1\n    Review = 2\n    Relearning = 3\n\n\n__all__ = [\"State\"]\n"}
+{"eof":true,"sha256":"3ed5d9c98cad65f3fd8e3a31d1904eddc88ee3b6a7ead22585d850ce27fc51f4","bytes":198,"records":1}

@@ -4,7 +4,7 @@
   "repository": "xialovezhu-wq/kaoyan-408",
   "branch": "main",
   "local_version": "2e6a51a9b25e6694f9549edd5ec0bfad9141648b49fe5f3df866b000b0118e50",
-  "event_id": "R11-baseline-20260907",
+  "event_id": "R11-web-read-repair-20260907-408-01",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -807,12 +807,13 @@
     "historical_questions": "历史错题归档/定位索引.md",
     "knowledge_points": "知识点标签表.md",
     "learning_events": "learning-state/review-loop/events.jsonl",
-    "review_units": "复习单元总表.md"
+    "review_units": "复习单元总表.md",
+    "due_support": "support/d408/manifest.json"
   },
   "counts": {
-    "files": 4604,
-    "bytes": 668402496,
-    "current_files": 4604,
+    "files": 4621,
+    "bytes": 668739233,
+    "current_files": 4621,
     "retained_files": 0,
     "lfs_files": 0
   },
@@ -5252,12 +5253,18 @@
     "temporary/backup authoring",
     "unrelated textbooks/global prompts"
   ],
+  "web_read": {
+    "schema": "study-web-read-v1",
+    "entrypoint": "WEB_READ_START.json",
+    "status": "NOT_YET_VERIFIED",
+    "fetch_max_lines": 8
+  },
   "file_inventory": [
     {
       "path": "published-inventory/cdb4ee2aea69-001.jsonl",
-      "sha256": "3fad8c124b161030591b7da377f554283a89f786283c302b57268b8db4ff226e",
+      "sha256": "c466e2138bade6d3e077bd7e202fba374868345a1c51cf6b6226cf8240e43945",
       "count": 471,
-      "bytes": 112446,
+      "bytes": 112821,
       "source_directory": "."
     },
     {
@@ -5283,9 +5290,9 @@
     },
     {
       "path": "published-inventory/b2a8e3338e08-001.jsonl",
-      "sha256": "e370d9a6ed49cc5f0e001c59186dc2a438eb872543a139a183a1189a97bac427",
+      "sha256": "dfa4777b8aead11038abd8f594579b4e7abd3d577e6997a6885d2acbd91b44b9",
       "count": 23,
-      "bytes": 7985,
+      "bytes": 8485,
       "source_directory": "learning-state"
     },
     {
@@ -5301,6 +5308,20 @@
       "count": 817,
       "bytes": 450255,
       "source_directory": "raw-conversations"
+    },
+    {
+      "path": "published-inventory/8c5967fd8486-001.jsonl",
+      "sha256": "ff885813ce6f20e4575111e9457184c3ceb65b940a7ae36e5eada9970a72aa84",
+      "count": 1,
+      "bytes": 483,
+      "source_directory": "scripts"
+    },
+    {
+      "path": "published-inventory/a18603086e5b-001.jsonl",
+      "sha256": "8ad229d46f600eb62afbd0a49843d619afb8831b951c4ba47586c056d7d99ffd",
+      "count": 16,
+      "bytes": 7701,
+      "source_directory": "support"
     },
     {
       "path": "published-inventory/12a435ec8454-001.jsonl",

@@ -1,0 +1,79 @@
+{
+  "schema": "study-web-catalog-v1",
+  "count": 4640,
+  "parts": [
+    {
+      "path": "published-web/catalog/part-00001.jsonl",
+      "sha256": "4a6e4e3b9d1886b571cf4dfe2e76a6a29528631f94b89299f26a95417a63da1e",
+      "bytes": 262047,
+      "count": 613,
+      "first_path": "CN_2009_001.md",
+      "last_path": "details/assets/CO_2018_003/question-01.png"
+    },
+    {
+      "path": "published-web/catalog/part-00002.jsonl",
+      "sha256": "e5779a6ce92dae81a1cc6d4ad6f996bd6a16ee9b5fc0458ae1e8c79e815257f8",
+      "bytes": 261857,
+      "count": 576,
+      "first_path": "details/assets/CO_2018_003/question-a2ad21632cb3dcb5.png",
+      "last_path": "details/cards/CO_UNK_021.md"
+    },
+    {
+      "path": "published-web/catalog/part-00003.jsonl",
+      "sha256": "f5f78bde25cc0e3ad8b1bb1d807935167d9c4a8ff1eaec8ac50aa80a093edf1c",
+      "bytes": 262076,
+      "count": 532,
+      "first_path": "details/cards/CO_UNK_022.md",
+      "last_path": "details/corpus/408统考真题/assets-preprocessed/4975584e9db90eb2947d5c3bce3e968ee1ec27a244bf4c81ced8ef9190ec1470/2013/EXAM408-2013-Q12/question-01.png"
+    },
+    {
+      "path": "published-web/catalog/part-00004.jsonl",
+      "sha256": "f590e76e5f8728cd0f0b8bafb97a83cb4f8deb84448a00174a2e2f0015ae12fa",
+      "bytes": 261675,
+      "count": 474,
+      "first_path": "details/corpus/408统考真题/assets-preprocessed/4975584e9db90eb2947d5c3bce3e968ee1ec27a244bf4c81ced8ef9190ec1470/2013/EXAM408-2013-Q12/solution-01.png",
+      "last_path": "details/corpus/408统考真题/assets-preprocessed/4975584e9db90eb2947d5c3bce3e968ee1ec27a244bf4c81ced8ef9190ec1470/2022/EXAM408-2022-Q10/solution-01.png"
+    },
+    {
+      "path": "published-web/catalog/part-00005.jsonl",
+      "sha256": "ad545ee28d45ec4d58a711e81d3bac28935fad3d2f9c75b3dbbb776b99e13bff",
+      "bytes": 261817,
+      "count": 492,
+      "first_path": "details/corpus/408统考真题/assets-preprocessed/4975584e9db90eb2947d5c3bce3e968ee1ec27a244bf4c81ced8ef9190ec1470/2022/EXAM408-2022-Q11/question-01.png",
+      "last_path": "details/corpus/408统考真题/assets/2012/EXAM408-2012-Q16/solution-01.png"
+    },
+    {
+      "path": "published-web/catalog/part-00006.jsonl",
+      "sha256": "f9e343cd8f246ea79df154b810c451a6c4ac2b4f2354d09add9ff569e09fc485",
+      "bytes": 261893,
+      "count": 552,
+      "first_path": "details/corpus/408统考真题/assets/2012/EXAM408-2012-Q17/solution-01.png",
+      "last_path": "details/corpus/408统考真题/assets/2025/EXAM408-2025-Q46/solution-02.png"
+    },
+    {
+      "path": "published-web/catalog/part-00007.jsonl",
+      "sha256": "93bf1330d806eb42b7ce9bca951bedf362f7470fd495725716140a8320b73bd2",
+      "bytes": 261891,
+      "count": 509,
+      "first_path": "details/corpus/408统考真题/assets/2025/EXAM408-2025-Q47/question-01.png",
+      "last_path": "raw-conversations/CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c/archive-receipt.json"
+    },
+    {
+      "path": "published-web/catalog/part-00008.jsonl",
+      "sha256": "283bc41cfe483de1b81241df802b7656747071c4c13f8847db0ad8bb6d523e69",
+      "bytes": 261996,
+      "count": 490,
+      "first_path": "raw-conversations/CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c/manifest.json",
+      "last_path": "wiki/study_vaults/408-full/input/DS-数据结构安全概念源.md"
+    },
+    {
+      "path": "published-web/catalog/part-00009.jsonl",
+      "sha256": "db736966ec105ea72aa306fbf6a33d7459de5c35ad7a6a61fab5c74dbbedaf08",
+      "bytes": 173478,
+      "count": 402,
+      "first_path": "wiki/study_vaults/408-full/input/OS-操作系统安全概念源.md",
+      "last_path": "错题日期索引.md"
+    }
+  ],
+  "eof": true
+}
