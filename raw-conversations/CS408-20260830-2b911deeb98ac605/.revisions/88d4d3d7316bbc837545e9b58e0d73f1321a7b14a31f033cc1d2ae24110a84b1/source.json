@@ -1,0 +1,37 @@
+{
+  "item_id": "SQI-39b87bf9a42a90f0ba5dc28d",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": null,
+  "source": {
+    "entry_kind": "standalone_question_intake",
+    "options": [
+      {
+        "label": "A",
+        "text": "A. 24 位"
+      },
+      {
+        "label": "B",
+        "text": "B. 26 位"
+      },
+      {
+        "label": "C",
+        "text": "C. 28 位"
+      },
+      {
+        "label": "D",
+        "text": "D. 32 位"
+      }
+    ],
+    "question": "某计算机按字节编址，指令字长固定且只有两种指令格式，其中三地址指令 29 条、二地址指令 107 条，每个地址字段为 6 位，则指令字长至少应该是（ ）。",
+    "question_identity_hint": "",
+    "source": {
+      "source_id": "EXAM408-2017-Q15"
+    },
+    "standalone_item_id": "SQI-39b87bf9a42a90f0ba5dc28d",
+    "standalone_item_identity_sha256": "39b87bf9a42a90f0ba5dc28d4b75cc109c4218d78bee5e4d047a5b3b3233161f"
+  },
+  "source_id": "SQISRC-f37cf54834ca42d4-REQ-0c38c950054ebac3",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

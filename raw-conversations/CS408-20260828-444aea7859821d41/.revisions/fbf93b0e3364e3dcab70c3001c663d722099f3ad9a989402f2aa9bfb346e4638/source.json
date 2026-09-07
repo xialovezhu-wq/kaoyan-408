@@ -1,0 +1,69 @@
+{
+  "item_id": "MQ-03",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-28-c5366c1c",
+  "source": {
+    "assessment": {
+      "choice_result": "incorrect",
+      "confidence": "high",
+      "first_action": "先用最大文件长度除以磁盘块大小，再根据每簇包含两个磁盘块换算簇数。",
+      "first_action_provenance": "user_report",
+      "first_break": "该容量相当于每个表项只计 1 B，无法容纳 65536 个簇所需的 16 位簇号。",
+      "first_break_provenance": "derived_classification",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "B",
+      "grader_basis": "每簇包含 2 个 4 KB 磁盘块，因此每簇为 8 KB；512 MB 可包含 65536 个簇，簇号字段至少需要 16 位，按完整字节为 2 B。整张 FAT 有 65536 个表项，总大小为 128 KB。",
+      "grader_capsule_id": "MRGC-DB216D797AE40A26E1E3537F",
+      "grader_result": "incorrect",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "每簇包含 2 个 4 KB 磁盘块，因此每簇为 8 KB；512 MB 可包含 65536 个簇，簇号字段至少需要 16 位，按完整字节为 2 B。整张 FAT 有 65536 个表项，总大小为 128 KB。"
+    },
+    "learner_evidence": {
+      "answer_text": "A",
+      "choice": "A",
+      "confidence": "high",
+      "first_action": "先用最大文件长度除以磁盘块大小，再根据每簇包含两个磁盘块换算簇数。",
+      "observed_at": "2026-08-28T19:48:09.074662+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [
+        "025c9a00e2fdcdbc0b6a5ce3a4e2d99955ccb17baa42443b53553f82cec57cd7"
+      ],
+      "options": [
+        {
+          "label": "A",
+          "text": "题图中的第一项"
+        },
+        {
+          "label": "B",
+          "text": "题图中的第二项"
+        },
+        {
+          "label": "C",
+          "text": "题图中的第三项"
+        },
+        {
+          "label": "D",
+          "text": "题图中的第四项"
+        }
+      ],
+      "public_surface_sha256": "259b4308a28b6747a97e4d5d9315533574d02de56bb8c649d021ed6843408e4f",
+      "public_text": "请查看所绑定的原题图片，并按题图要求选择其中一项。",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "image_question",
+    "source_binding_sha256": "259b4308a28b6747a97e4d5d9315533574d02de56bb8c649d021ed6843408e4f",
+    "source_kind": "morning_review"
+  },
+  "source_id": "RU_OS04_FAT_LOCATION",
+  "study_date": "2026-08-28",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

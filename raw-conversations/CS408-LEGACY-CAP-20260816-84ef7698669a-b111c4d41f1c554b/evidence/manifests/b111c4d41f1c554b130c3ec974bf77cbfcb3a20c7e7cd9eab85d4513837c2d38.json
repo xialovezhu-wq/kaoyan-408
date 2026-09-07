@@ -1,0 +1,85 @@
+{
+  "answer_safe_manifest": true,
+  "attachment_objects": [
+    {
+      "byte_count": 5464598,
+      "detected_format": "ooxml-docx",
+      "label_sha256": "c145bf41e5c19a2526730d1ddc99b9460f89d5134c2896e640f84921b3ce851a",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "object_ref": "current-question-attachment://sha256/0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997",
+      "ordinal": 1,
+      "role": "source_document",
+      "sha256": "0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997",
+      "source_part": "document.docx"
+    },
+    {
+      "byte_count": 328762,
+      "detected_format": "png",
+      "label_sha256": "8c65c33ae5c43323425dfd26563b89731a6187b148a10d7e6b812547f462301c",
+      "media_type": "image/png",
+      "object_ref": "current-question-attachment://sha256/2bd465ac72036f0d843a9222f84ab1d01b82e1b772e50ee76a4697b617ef7aa9",
+      "ordinal": 2,
+      "role": "question_image",
+      "sha256": "2bd465ac72036f0d843a9222f84ab1d01b82e1b772e50ee76a4697b617ef7aa9",
+      "source_part": "word/media/image4.png"
+    },
+    {
+      "byte_count": 1030703,
+      "detected_format": "png",
+      "label_sha256": "22ae6b4c92cf52c1366d22632c260ae607a7df522d3f6d32c890c39b86efef37",
+      "media_type": "image/png",
+      "object_ref": "current-question-attachment://sha256/dcc79dd66e712ae2bbe581fd0cc694a87168cc557cc8d81b88a2daadf1cc88e0",
+      "ordinal": 3,
+      "role": "solution_image",
+      "sha256": "dcc79dd66e712ae2bbe581fd0cc694a87168cc557cc8d81b88a2daadf1cc88e0",
+      "source_part": "word/media/image5.png"
+    },
+    {
+      "byte_count": 1506885,
+      "detected_format": "png",
+      "label_sha256": "8c4d85b2d28a8b68db62d7dafe25cda9fd3a6f374cd707d36d9416fd2b7fca5d",
+      "media_type": "image/png",
+      "object_ref": "current-question-attachment://sha256/eee046a3313ec19b7a1b8f60fc8b7593388fbe534499923cb6b8b3ab14338a27",
+      "ordinal": 4,
+      "role": "interaction_diagram",
+      "sha256": "eee046a3313ec19b7a1b8f60fc8b7593388fbe534499923cb6b8b3ab14338a27",
+      "source_part": "word/media/image6.png"
+    },
+    {
+      "byte_count": 1382858,
+      "detected_format": "png",
+      "label_sha256": "6668ea43ed7f479dadf5c410ea496e6c9b70ddbf987b3387c8d5d820b22f9144",
+      "media_type": "image/png",
+      "object_ref": "current-question-attachment://sha256/1578ba0e89cb31c658271136fe0dfc6536379849fd5e27ca26d666ce62b9ba5b",
+      "ordinal": 5,
+      "role": "interaction_diagram_corrected",
+      "sha256": "1578ba0e89cb31c658271136fe0dfc6536379849fd5e27ca26d666ce62b9ba5b",
+      "source_part": "word/media/image7.png"
+    },
+    {
+      "byte_count": 176365,
+      "detected_format": "png",
+      "label_sha256": "8ce4bcc27400121bf77e27370810712d40003d4d84348c9cf4173cfdfe11c5dd",
+      "media_type": "image/png",
+      "object_ref": "current-question-attachment://sha256/c211df3a80421caacdeb005dd268352c5433525ba3e03578b87be62b96299f6d",
+      "ordinal": 6,
+      "role": "learner_code_image",
+      "sha256": "c211df3a80421caacdeb005dd268352c5433525ba3e03578b87be62b96299f6d",
+      "source_part": "word/media/image8.png"
+    }
+  ],
+  "bundle_schema_version": "current-question-evidence-bundle-v4",
+  "context_id": "FPDOC-6304CFEF928DB613F90AD8DF",
+  "created_at": "2026-08-16T00:00:00+08:00",
+  "formal_write_count": 0,
+  "item_id": "FPDOC-ITEM-PART2",
+  "object_sha256": "b97ec8ed90eaa8ae57de7b0b0038fdae54f5d0537ab4abf32e6b653af59c175d",
+  "object_size_bytes": 92917,
+  "request_id": "FPDOC-REQUEST-6304CFEF928DB613F90AD8DF",
+  "schema_version": "current-question-evidence-manifest-v1",
+  "session_id": null,
+  "source_binding_sha256": "41650029f88b6d9753955a1a3b441b83c05309afc893f2ce17946897da0e1bb9",
+  "source_id": "formal-problem-document:0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997:part2",
+  "source_kind": "formal_problem_document",
+  "study_date": "2026-08-16"
+}

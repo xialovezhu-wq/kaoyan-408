@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-03",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source": {
+    "assessment": {
+      "choice_result": "incorrect",
+      "confidence": "medium",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "把访问需求与文件逻辑结构混成同一层次，并把索引物理分配当成逻辑结构。",
+      "first_break_provenance": "derived_classification",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "逻辑记录结构、访问方式和外存物理组织属于不同层次。索引分配可提供直接定位，而逻辑上的有序记录不能推出磁盘块必须连续；连续分配还存在扩展受限边界。",
+      "grader_capsule_id": "MRGC-CA457C503B9F34354F9658EF",
+      "grader_result": "incorrect",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "逻辑记录结构、访问方式和外存物理组织属于不同层次。索引分配可提供直接定位，而逻辑上的有序记录不能推出磁盘块必须连续；连续分配还存在扩展受限边界。"
+    },
+    "learner_evidence": {
+      "answer_text": "B",
+      "choice": "B",
+      "confidence": "medium",
+      "first_action": null,
+      "observed_at": "2026-08-30T11:30:08.410286+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "逻辑记录有序，因此外存块只能采用连续分配"
+        },
+        {
+          "label": "B",
+          "text": "程序需要随机访问，因此文件逻辑结构必须改成索引结构"
+        },
+        {
+          "label": "C",
+          "text": "可考虑用索引分配提供直接定位，并将逻辑记录顺序与磁盘块布局分开判断"
+        },
+        {
+          "label": "D",
+          "text": "文件会频繁增长，因此应优先采用扩展不受限制的连续分配"
+        }
+      ],
+      "public_surface_sha256": "2eb5e805399fa5bf5c8f5e6ea69677b53969c422ca27519228632ab6270d0ed8",
+      "public_text": "某文件在用户视角中由有序记录组成，程序需要随机访问，且文件会频繁增长；所用存储介质具有直接存取特性。选择外存物理组织时，哪项判断最符合这些层次与适配关系？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "2eb5e805399fa5bf5c8f5e6ea69677b53969c422ca27519228632ab6270d0ed8",
+    "source_kind": "morning_review"
+  },
+  "source_id": "RU_OS04_PHYSICAL_ORGANIZATION",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

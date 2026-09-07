@@ -1,0 +1,69 @@
+{
+  "item_id": "MQ-05",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-28-c5366c1c",
+  "source": {
+    "assessment": {
+      "choice_result": "correct",
+      "confidence": "high",
+      "first_action": "先把 f 插入 a 与 e 之间，更新 a 指向 f、f 指向 e。",
+      "first_action_provenance": "user_report",
+      "first_break": "未观察到",
+      "first_break_provenance": "not_observed",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "绑定原题的权威答案字段明确指定该项；判定时应先沿 next 域恢复逻辑次序，再把局部插入关系落实为各结点的链接字段。详情正文中的历史答案叙述不得覆盖该权威字段。",
+      "grader_capsule_id": "MRGC-42C11AEBC5EC99F649580730",
+      "grader_result": "correct",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "绑定原题的权威答案字段明确指定该项；判定时应先沿 next 域恢复逻辑次序，再把局部插入关系落实为各结点的链接字段。详情正文中的历史答案叙述不得覆盖该权威字段。"
+    },
+    "learner_evidence": {
+      "answer_text": "C",
+      "choice": "C",
+      "confidence": "high",
+      "first_action": "先把 f 插入 a 与 e 之间，更新 a 指向 f、f 指向 e。",
+      "observed_at": "2026-08-28T20:04:17.997203+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [
+        "e56a95cae9fb78b23f514b64729753930c3f1c196e57f988e54776636bd8cc50"
+      ],
+      "options": [
+        {
+          "label": "A",
+          "text": "原图中的首个备选项"
+        },
+        {
+          "label": "B",
+          "text": "原图中的第二个备选项"
+        },
+        {
+          "label": "C",
+          "text": "原图中的第三个备选项"
+        },
+        {
+          "label": "D",
+          "text": "原图中的第四个备选项"
+        }
+      ],
+      "public_surface_sha256": "d440cd519140e0e364fdbbf64243b1d915e33fce3584b7321a0552f14e9beb22",
+      "public_text": "请阅读绑定的原题图片，并从图中四个备选项中选出一个。",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "image_question",
+    "source_binding_sha256": "d440cd519140e0e364fdbbf64243b1d915e33fce3584b7321a0552f14e9beb22",
+    "source_kind": "morning_review"
+  },
+  "source_id": "RU_DS02_LINKED_INSERT",
+  "study_date": "2026-08-28",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

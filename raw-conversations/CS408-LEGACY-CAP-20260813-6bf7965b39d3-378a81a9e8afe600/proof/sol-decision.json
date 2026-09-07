@@ -1,0 +1,36 @@
+{
+  "batch_id": "CUR-20260813-7f9264d7d450-A01",
+  "capture_id": "CAP-20260813-6bf7965b39d3",
+  "capture_original_evidence_sha256": "378a81a9e8afe60034ee991bc6b3a0d2a4c91b00739dda3f1e4134a86ccaec42",
+  "capture_payload_sha256": "1c16745c4db64508c04f6f80c7dd2f4d5b58f79a767259ba491eff7ca93a8a13",
+  "capture_set_sha256": "7f9264d7d450ff53d859ce276cd71def23f7f8f8eee23ee5f82e0ca7976a9f08",
+  "decision": {
+    "basis": [
+      "已重开完整的 2026-08-13 date-correction evidence bundle，题图、解析图和文本唯一对应 EXAM408-2009-Q42。",
+      "当前正式节点 DS_2009_004 已精确包含数组映射方案、链表结点定义断点、头结点起点、k 越界与复杂度口径，并保持双指针为讲解后理解而非独立掌握。",
+      "正式节点首次与最近学习日期均为 2026-08-13，和本次纠正后的权威学习日一致。"
+    ],
+    "canonical_package": null,
+    "confidence": "high",
+    "counterevidence": [
+      "没有无提示独立重写双指针代码的证据；当前正式节点也未作该掌握声明。",
+      "同源 2026-08-12 捕获只是被日期纠正的旧记录，本决策不把两个日期合并成一次跨日写入。"
+    ],
+    "decision": "already_current",
+    "evidence_refs": [
+      {
+        "locator": "current-question-evidence://sha256/378a81a9e8afe60034ee991bc6b3a0d2a4c91b00739dda3f1e4134a86ccaec42",
+        "sha256": "378a81a9e8afe60034ee991bc6b3a0d2a4c91b00739dda3f1e4134a86ccaec42"
+      }
+    ],
+    "formal_id": "DS_2009_004",
+    "unresolved_gaps": []
+  },
+  "evidence_kind": "legacy_current_question_evidence",
+  "evidence_locator": "current-question-evidence://sha256/378a81a9e8afe60034ee991bc6b3a0d2a4c91b00739dda3f1e4134a86ccaec42",
+  "formal_write_count": 0,
+  "processing_mode": "sol_direct_evidence",
+  "reopened_evidence_sha256": "378a81a9e8afe60034ee991bc6b3a0d2a4c91b00739dda3f1e4134a86ccaec42",
+  "schema_version": "sol-curation-decision-408-v2",
+  "subject": "cs408"
+}

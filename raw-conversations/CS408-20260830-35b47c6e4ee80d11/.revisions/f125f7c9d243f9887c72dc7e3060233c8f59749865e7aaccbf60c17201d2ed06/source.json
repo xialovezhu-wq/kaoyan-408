@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-02",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source": {
+    "assessment": {
+      "choice_result": "incorrect",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "停在被管理簇数或位图 bit 数，把被管理对象数量当成位图自身占用的簇数。",
+      "first_break_provenance": "derived_classification",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "B",
+      "grader_basis": "分区共有 2 621 441 个被管理簇，对应同样数量的 bit。位图需向上取整为 327 681 Byte，再按每簇 4096 Byte 向上取整，占用 81 个簇。",
+      "grader_capsule_id": "MRGC-C1C3FDA8575E9961AA6E1743",
+      "grader_result": "incorrect",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "分区共有 2 621 441 个被管理簇，对应同样数量的 bit。位图需向上取整为 327 681 Byte，再按每簇 4096 Byte 向上取整，占用 81 个簇。"
+    },
+    "learner_evidence": {
+      "answer_text": "D",
+      "choice": "D",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-30T11:15:53.853625+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "80 个簇"
+        },
+        {
+          "label": "B",
+          "text": "81 个簇"
+        },
+        {
+          "label": "C",
+          "text": "327 681 个簇"
+        },
+        {
+          "label": "D",
+          "text": "2 621 441 个簇"
+        }
+      ],
+      "public_surface_sha256": "ddc1d5dcd3f58cdfa5e42390980ad09c002c37d48ce4743a44da88fd5442ba8e",
+      "public_text": "某磁盘分区的可管理容量为 10 GB 加 4 KB，簇大小为 4 KB。位示图按每个被管理簇对应 1 bit 记录状态。规定 1 GB 等于 2 的 30 次方 Byte，1 KB 等于 2 的 10 次方 Byte。位示图本身至少占用多少个簇？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "ddc1d5dcd3f58cdfa5e42390980ad09c002c37d48ce4743a44da88fd5442ba8e",
+    "source_kind": "morning_review"
+  },
+  "source_id": "RU_OS_2014_004",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

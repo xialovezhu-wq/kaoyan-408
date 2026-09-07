@@ -1,0 +1,30 @@
+---
+type: raw_archive_locator
+subject: cs408
+archive_package_type: legacy_current_question_evidence
+package_id: CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b
+capture_id: CAP-20260725-da4d028a4b24
+archive_mode: ledger_only_reference_files
+terminal_proof_kind: canonical_ledger_terminal_facts
+terminal_object_locator: wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-def9d477df58e8c71f4d
+terminal_object_sha256: e0de886dd1022c5578a747f129800bc708536ed84b40d56530d9d27688ebc2be
+ledger_terminal_event_locator: wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-def9d477df58e8c71f4d
+ledger_terminal_event_sha256: e0de886dd1022c5578a747f129800bc708536ed84b40d56530d9d27688ebc2be
+legacy_evidence_locator: cs408-ledger-only://sha256/c5feceb73a50cd2bded6755ddd58e80f0b40bfd9beb20792f75655d7f02d09b0
+canonical_package: false
+conversation_complete: false
+conversation_complete_basis: no_complete_conversation_evidence_available
+resolved_reference_file_count: 4
+unresolved_reference_count: 0
+terminal_outcome: curated
+formal_ids:
+  - CO_2018_003
+archive_volume: T9-Data
+raw_archive_relpath: 01_408/资料库/原始会话资料/2026-07-25/CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b
+raw_archive_manifest_sha256: ecf43a639f5972cf523251062ceb5ca6a691f5c849f018939d4e5ec283a7e23b
+raw_archive_package_sha256: 48f104123dc1fdc21277899ae4c489fcecd2ba1d6a5e68020127f6af5ea00f43
+archive_verified_at: 2026-08-27T11:41:17+00:00
+archive_status: verified
+---
+
+408 历史原始证据已按原字节归档；此页不宣称它是完整会话包。

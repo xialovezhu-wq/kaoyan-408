@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-05",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source": {
+    "assessment": {
+      "choice_result": "correct",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "未观察到",
+      "first_break_provenance": "not_observed",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "第 5 次连续冲突尚未达到截断上限 6，退避指数为 5，因而有 32 个从 0 开始的候选整数；集合末项是 31，所以最长等待为 31 个争用时间片。",
+      "grader_capsule_id": "MRGC-B26E464D34DCCDE735B60EB8",
+      "grader_result": "correct",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "第 5 次连续冲突尚未达到截断上限 6，退避指数为 5，因而有 32 个从 0 开始的候选整数；集合末项是 31，所以最长等待为 31 个争用时间片。"
+    },
+    "learner_evidence": {
+      "answer_text": "C",
+      "choice": "C",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-30T12:02:24.619256+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "32 个争用时间片"
+        },
+        {
+          "label": "B",
+          "text": "15 个争用时间片"
+        },
+        {
+          "label": "C",
+          "text": "31 个争用时间片"
+        },
+        {
+          "label": "D",
+          "text": "63 个争用时间片"
+        }
+      ],
+      "public_surface_sha256": "064b22d50edaaf7c41ee2c58f3d266ecc95bf3ee972e18af422817009742a313",
+      "public_text": "某用于演示 CSMA/CD 的实验网络采用截断二进制指数退避。退避指数取连续冲突次数与截断上限 6 中的较小值。退避系数的候选集合从 0 开始连续取整数，候选个数等于 2 的退避指数次方。某网卡刚发生第 5 次连续冲突。以争用时间片为单位，它再次尝试发送前最长可能等待多少个争用时间片？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "064b22d50edaaf7c41ee2c58f3d266ecc95bf3ee972e18af422817009742a313",
+    "source_kind": "morning_review"
+  },
+  "source_id": "EXAM408-2023-Q36",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

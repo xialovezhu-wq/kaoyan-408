@@ -1,0 +1,5371 @@
+{
+  "schema_version": 1,
+  "subject": "408",
+  "repository": "xialovezhu-wq/kaoyan-408",
+  "branch": "main",
+  "local_version": "2e6a51a9b25e6694f9549edd5ec0bfad9141648b49fe5f3df866b000b0118e50",
+  "event_id": "R11-baseline-20260907",
+  "history_index": [
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2016_001"
+      ],
+      "manifest_sha256": "081a43abca6023e6852526691fffe336d246e4348d6233d59f9e042373f02150",
+      "package_id": "CS408-20260828-06a7fea3c9c1e73c",
+      "publish_root": "raw-conversations/CS408-20260828-06a7fea3c9c1e73c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-444aea7859821d41.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "OS_UNK_077"
+      ],
+      "manifest_sha256": "52bc7ba0b1c3fa4cd767c9f2d9e2321fe258b8609e3b1efc7d01890adaa30d75",
+      "package_id": "CS408-20260828-444aea7859821d41",
+      "publish_root": "raw-conversations/CS408-20260828-444aea7859821d41"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-805159aaf9938263.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CO_2018_003"
+      ],
+      "manifest_sha256": "d1a48b6ed14d3a49ec89dd4b9182c69973276ed84b44eee74b2e5cd8d9d3f5d2",
+      "package_id": "CS408-20260828-805159aaf9938263",
+      "publish_root": "raw-conversations/CS408-20260828-805159aaf9938263"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-9dd26dbf18fc7e1e.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2016_001"
+      ],
+      "manifest_sha256": "a9b2d0f9daa5523499aeb9d3ae10c9f2967f61ec3a8ae27973c524600ae89672",
+      "package_id": "CS408-20260828-9dd26dbf18fc7e1e",
+      "publish_root": "raw-conversations/CS408-20260828-9dd26dbf18fc7e1e"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-bbf2955c0c17a656.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2014_001",
+        "CN_UNK_017"
+      ],
+      "manifest_sha256": "266a4ae4548af3b505e27b6c2ceda3b7ddc86a13ad58e77fa78bf209cf72d00a",
+      "package_id": "CS408-20260828-bbf2955c0c17a656",
+      "publish_root": "raw-conversations/CS408-20260828-bbf2955c0c17a656"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-c0b0a0de733927f5.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_UNK_053"
+      ],
+      "manifest_sha256": "48cd6e9b1691c573b9c3b3f865a6ca6e9a5e875b13ae9f3b4e35cb5d42ac5623",
+      "package_id": "CS408-20260828-c0b0a0de733927f5",
+      "publish_root": "raw-conversations/CS408-20260828-c0b0a0de733927f5"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-d515320376d1e25e.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2016_001"
+      ],
+      "manifest_sha256": "de9f003a7c09d82bcd3a56e8f8d66cdb2f85e5c2f4aaa5bb1fd394de91ad0c69",
+      "package_id": "CS408-20260828-d515320376d1e25e",
+      "publish_root": "raw-conversations/CS408-20260828-d515320376d1e25e"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260828-eb3c40264eb66ce7.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2016_001"
+      ],
+      "manifest_sha256": "b79dbab9a306443f4ad95fe63de29b046792b699e541fd166f68e51c9571b2f4",
+      "package_id": "CS408-20260828-eb3c40264eb66ce7",
+      "publish_root": "raw-conversations/CS408-20260828-eb3c40264eb66ce7"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260829-370363443fb17ee1.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2014_002"
+      ],
+      "manifest_sha256": "e99bf214af9df3a62298a7c7050ece9168985d3869b5aca8809dd874113e3391",
+      "package_id": "CS408-20260829-370363443fb17ee1",
+      "publish_root": "raw-conversations/CS408-20260829-370363443fb17ee1"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260829-47b20e0464490445.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "OS_UNK_077"
+      ],
+      "manifest_sha256": "e893b582e736abe27e2314878698489bbb5d7dd6b56828270ade99843a774316",
+      "package_id": "CS408-20260829-47b20e0464490445",
+      "publish_root": "raw-conversations/CS408-20260829-47b20e0464490445"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260829-cace51bff93c11cb.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_UNK_053"
+      ],
+      "manifest_sha256": "431ff751efb2741a3af6a67079b4f170c9bd11c34bd7ad90ce67c98201183504",
+      "package_id": "CS408-20260829-cace51bff93c11cb",
+      "publish_root": "raw-conversations/CS408-20260829-cace51bff93c11cb"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-2b911deeb98ac605.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CO_2017_002"
+      ],
+      "manifest_sha256": "49decbf08331958a131c50ee3b6a0962969a433a7f3f0910ee3c215befa2d81b",
+      "package_id": "CS408-20260830-2b911deeb98ac605",
+      "publish_root": "raw-conversations/CS408-20260830-2b911deeb98ac605"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-35b47c6e4ee80d11.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "OS_2014_004"
+      ],
+      "manifest_sha256": "d66d6d9006a80ab461be1ca0bbd4f33b9261209228704b8ffd3eb12bc1c4f52c",
+      "package_id": "CS408-20260830-35b47c6e4ee80d11",
+      "publish_root": "raw-conversations/CS408-20260830-35b47c6e4ee80d11"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-6a7d59ec342b6f1c.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "manifest_sha256": "2407e4f813a41d19dec3af26032aa1008d617ff19565345b0e4d49fa7a905e57",
+      "package_id": "CS408-20260830-6a7d59ec342b6f1c",
+      "publish_root": "raw-conversations/CS408-20260830-6a7d59ec342b6f1c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-ad8c71f600d34543.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2018_001"
+      ],
+      "manifest_sha256": "b3a228cd04dea685b6a4eb80e8f346143fb7e13f46f36707994171257144b425",
+      "package_id": "CS408-20260830-ad8c71f600d34543",
+      "publish_root": "raw-conversations/CS408-20260830-ad8c71f600d34543"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-ea088917f73a6fe9.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "manifest_sha256": "ae31c3326017579da7c9f4e079a039c45ae4aec413d113f3409b56a643015e0c",
+      "package_id": "CS408-20260830-ea088917f73a6fe9",
+      "publish_root": "raw-conversations/CS408-20260830-ea088917f73a6fe9"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260830-ed68ee9892d81608.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "OS_UNK_073"
+      ],
+      "manifest_sha256": "a4413230317f951d99dc8e281ded6adf119a62de693ed0333cca211a2886f963",
+      "package_id": "CS408-20260830-ed68ee9892d81608",
+      "publish_root": "raw-conversations/CS408-20260830-ed68ee9892d81608"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260902-3fe155dee3efc9af.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2009_001"
+      ],
+      "manifest_sha256": "f9b0d9f1a315fc9e3627f37d82c99089d0b22b49c5de08bd4a256630bdd0f13e",
+      "package_id": "CS408-20260902-3fe155dee3efc9af",
+      "publish_root": "raw-conversations/CS408-20260902-3fe155dee3efc9af"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260902-4797b121e0f8a025.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "manifest_sha256": "c5ad411ef15bfe8f782913c06e4cb74970fb11f3252912202e033ab633ec4a7b",
+      "package_id": "CS408-20260902-4797b121e0f8a025",
+      "publish_root": "raw-conversations/CS408-20260902-4797b121e0f8a025"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260902-4ab99f8e028958cd.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2023_001"
+      ],
+      "manifest_sha256": "4a23177f2ad8d95542f9669c55fc87f89d07425bf6868eec76d01e68257deba7",
+      "package_id": "CS408-20260902-4ab99f8e028958cd",
+      "publish_root": "raw-conversations/CS408-20260902-4ab99f8e028958cd"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260902-8c1c2382cc3c5121.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2020_001"
+      ],
+      "manifest_sha256": "30348181fd26b73bf57cb767a301538207bb8c3733428d666f7585af6e476dd0",
+      "package_id": "CS408-20260902-8c1c2382cc3c5121",
+      "publish_root": "raw-conversations/CS408-20260902-8c1c2382cc3c5121"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_085"
+      ],
+      "manifest_sha256": "36b2de354f44ee00bcd7afb2790c84debe13323311de6de33fb9b54b7b04b756",
+      "package_id": "CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260718-4955454ad050-ea1f06b29a9da645.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_082"
+      ],
+      "manifest_sha256": "b5a524e5d6806bb5e0f8e010577894a6f41e43e8fd49c6c6801d25e42a9a75e5",
+      "package_id": "CS408-LEGACY-CAP-20260718-4955454ad050-ea1f06b29a9da645",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260718-4955454ad050-ea1f06b29a9da645"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260718-6414162cd9ea-70bd5a2c277d46dd.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_076"
+      ],
+      "manifest_sha256": "e96fc20d90fe850c1d2ad7ed995882e239a603e4193908236d206ff99533b1b4",
+      "package_id": "CS408-LEGACY-CAP-20260718-6414162cd9ea-70bd5a2c277d46dd",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260718-6414162cd9ea-70bd5a2c277d46dd"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2014_002"
+      ],
+      "manifest_sha256": "e92515a4c3f07f42e645bba06c733e9a4832aaac8bd6adf0d8d27ee616913b83",
+      "package_id": "CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260719-ded9ffb61dcf-4959bd43f563e4ee.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CO_2012_004"
+      ],
+      "manifest_sha256": "8540359eb03ff242e78125995e6a2f7de5b6b2f2e8c654eda64a169f002c1c4b",
+      "package_id": "CS408-LEGACY-CAP-20260719-ded9ffb61dcf-4959bd43f563e4ee",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260719-ded9ffb61dcf-4959bd43f563e4ee"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "DS_2016_001"
+      ],
+      "manifest_sha256": "569406d06503d028242391b90df1926c0677bb375b13eb0f50876421e9bb58a9",
+      "package_id": "CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "manifest_sha256": "f57f87c3687fd4c841676e22c93f0627f1b94d253e75fb1eb1e4e9d248cde69e",
+      "package_id": "CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260720-7cb2073faacd-f881cd165e58e58c.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "manifest_sha256": "d9371b44bad7ec12090085e4c1e12644391ae531aca6d2124a48eeca6a31c406",
+      "package_id": "CS408-LEGACY-CAP-20260720-7cb2073faacd-f881cd165e58e58c",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260720-7cb2073faacd-f881cd165e58e58c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260720-d6144ffb662a-1fa2227f82435744.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "manifest_sha256": "557c8868eb27907af6cb6945a602b5c302babecc8a9496fce3ad65c9a0e16e3d",
+      "package_id": "CS408-LEGACY-CAP-20260720-d6144ffb662a-1fa2227f82435744",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260720-d6144ffb662a-1fa2227f82435744"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260723-ca32305a53b6-f9911dfb391ce787.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "manifest_sha256": "065369a8fa488e3ae741fd7b3df62177b1df506c37356513a5c877d04e144cd2",
+      "package_id": "CS408-LEGACY-CAP-20260723-ca32305a53b6-f9911dfb391ce787",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260723-ca32305a53b6-f9911dfb391ce787"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260724-051cab42b3e9-ebac1e3624393ab3.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_085"
+      ],
+      "manifest_sha256": "af3277a1dbce16ee3c50149c5127bcaf5e511334ed7ce8ff80b310e36848f6ec",
+      "package_id": "CS408-LEGACY-CAP-20260724-051cab42b3e9-ebac1e3624393ab3",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260724-051cab42b3e9-ebac1e3624393ab3"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260724-3ad387730c4d-24da641edb4446c3.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "manifest_sha256": "fd2f8e6b988604441311c08f1c43ec40ac72babc12a60571c0170eab6c1890f9",
+      "package_id": "CS408-LEGACY-CAP-20260724-3ad387730c4d-24da641edb4446c3",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260724-3ad387730c4d-24da641edb4446c3"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260724-5d344afa4916-baec11d51b1c23a2.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "manifest_sha256": "31382a4bdf4d968cfcf274c45b253ab6da6934bc7a683a2e2403e5bb20e01f75",
+      "package_id": "CS408-LEGACY-CAP-20260724-5d344afa4916-baec11d51b1c23a2",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260724-5d344afa4916-baec11d51b1c23a2"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-18280ed3c931-10e2b840df025c4b.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "manifest_sha256": "dd655bdbf22622911d0bd3b6b52488f9735e669449b6b9e6d8c4b3919a1e4be0",
+      "package_id": "CS408-LEGACY-CAP-20260725-18280ed3c931-10e2b840df025c4b",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-18280ed3c931-10e2b840df025c4b"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-775b948e272f-d73153d7928e73dc.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_075"
+      ],
+      "manifest_sha256": "5ceba366fa6769b7142c36696cd52c51c0ad80d1bdd362dce31d92a1a137df6e",
+      "package_id": "CS408-LEGACY-CAP-20260725-775b948e272f-d73153d7928e73dc",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-775b948e272f-d73153d7928e73dc"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-84ea965f8aed-c21acfd6cc6ff885.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_086"
+      ],
+      "manifest_sha256": "3a1f6bac235ed54c986f92f630b99b7f1fc928a12464fa8d71f509e34a9ecf09",
+      "package_id": "CS408-LEGACY-CAP-20260725-84ea965f8aed-c21acfd6cc6ff885",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-84ea965f8aed-c21acfd6cc6ff885"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-92015bd02cf6-648d538aa31f4302.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2014_001"
+      ],
+      "manifest_sha256": "2f10134a14cfb1bcdec300fb82c9487098b8cc031453348e1b90a6d9469602ef",
+      "package_id": "CS408-LEGACY-CAP-20260725-92015bd02cf6-648d538aa31f4302",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-92015bd02cf6-648d538aa31f4302"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-9789937ae98e-c6465a1cf1f9e414.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_014"
+      ],
+      "manifest_sha256": "772c6bd54bd5e1481af997d934c3ff34fae9a69855f322f58b0e2e26d21574a8",
+      "package_id": "CS408-LEGACY-CAP-20260725-9789937ae98e-c6465a1cf1f9e414",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-9789937ae98e-c6465a1cf1f9e414"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-c4ec209e44c9-a0a8b3d304209c7e.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_076"
+      ],
+      "manifest_sha256": "e188dc05e87837f42bd1f87486fcec187f73a3eeae8072b3b1437038e02fc47f",
+      "package_id": "CS408-LEGACY-CAP-20260725-c4ec209e44c9-a0a8b3d304209c7e",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-c4ec209e44c9-a0a8b3d304209c7e"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CO_2018_003"
+      ],
+      "manifest_sha256": "ecf43a639f5972cf523251062ceb5ca6a691f5c849f018939d4e5ec283a7e23b",
+      "package_id": "CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-08bfbb986790-541a7e0218983fb6.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2014_003"
+      ],
+      "manifest_sha256": "b009aee57dcf2e3fca6f74f9f3b9576b1abb304647ad3461808fd5abc598f690",
+      "package_id": "CS408-LEGACY-CAP-20260726-08bfbb986790-541a7e0218983fb6",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-08bfbb986790-541a7e0218983fb6"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-0df4edab2284-b0f38da4f124e17f.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2020_002"
+      ],
+      "manifest_sha256": "2cb5956efd30adecd5c8ca951592b55b7bde9e2d9684aa17edcac288b203d7bb",
+      "package_id": "CS408-LEGACY-CAP-20260726-0df4edab2284-b0f38da4f124e17f",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-0df4edab2284-b0f38da4f124e17f"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-23406b8f3f9d-6ec30f1e563068f1.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "manifest_sha256": "1874f1516b2f971ba854b5567c077b8f364c115234f9bea531d5b48d4edc7a76",
+      "package_id": "CS408-LEGACY-CAP-20260726-23406b8f3f9d-6ec30f1e563068f1",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-23406b8f3f9d-6ec30f1e563068f1"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-2d5f3f4b94c1-2ed04646edd041c4.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "manifest_sha256": "98e6ea346b6541fd91563c228a20c6752539da671aab50b027ae931ca8042cc2",
+      "package_id": "CS408-LEGACY-CAP-20260726-2d5f3f4b94c1-2ed04646edd041c4",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-2d5f3f4b94c1-2ed04646edd041c4"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-38a41e91e7ca-1bc6f2a9efd121a0.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2024_003"
+      ],
+      "manifest_sha256": "9734564272a1b354e0096e52deb389d26d6f1248dae17c12cde7ef08680b1c86",
+      "package_id": "CS408-LEGACY-CAP-20260726-38a41e91e7ca-1bc6f2a9efd121a0",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-38a41e91e7ca-1bc6f2a9efd121a0"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-463d04cfc981-862ebd06635c7198.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_047"
+      ],
+      "manifest_sha256": "f377bf745589e7a73e96781bcab274189e7f64c46934a907e65865fb1fd20797",
+      "package_id": "CS408-LEGACY-CAP-20260726-463d04cfc981-862ebd06635c7198",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-463d04cfc981-862ebd06635c7198"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-4cc31d01ff21-ee6e5ec806d5df03.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "manifest_sha256": "d5ba64a43266d013211c9ea6f2894fb38d8ffdd66a47d9b2a64f01129eaeb4f0",
+      "package_id": "CS408-LEGACY-CAP-20260726-4cc31d01ff21-ee6e5ec806d5df03",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-4cc31d01ff21-ee6e5ec806d5df03"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-9e7054810d3f-6581a7d09be69c48.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "manifest_sha256": "c6854a372b2ffb14b6292e0002c7bfc8dc82c9e714e6227c7d7b2b89d7f116e1",
+      "package_id": "CS408-LEGACY-CAP-20260726-9e7054810d3f-6581a7d09be69c48",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-9e7054810d3f-6581a7d09be69c48"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-a92dbe671646-f9b640c3835ff6fe.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "manifest_sha256": "fc3793fa76ecc3a707a21c963d9ea2d7280ddad17128d649483c47110aff6ed8",
+      "package_id": "CS408-LEGACY-CAP-20260726-a92dbe671646-f9b640c3835ff6fe",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-a92dbe671646-f9b640c3835ff6fe"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2018_001"
+      ],
+      "manifest_sha256": "dc7e65e8d2e4f5c115db55929ba0bb1a118722e921ee37183ca87ed0514d156d",
+      "package_id": "CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-f5a7990ed97f-9769f5ff381eb3be.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_049"
+      ],
+      "manifest_sha256": "0438c0ace8f77ddaef0149234c957ea4069c35423032130c87bec884c64ee895",
+      "package_id": "CS408-LEGACY-CAP-20260726-f5a7990ed97f-9769f5ff381eb3be",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-f5a7990ed97f-9769f5ff381eb3be"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260726-f7bcff6986d4-70ffe934c3547a0e.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "manifest_sha256": "9f011ed4d1bcdda8fd3d02e20ee623ec351168d41325e9540c454f824690a3e5",
+      "package_id": "CS408-LEGACY-CAP-20260726-f7bcff6986d4-70ffe934c3547a0e",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260726-f7bcff6986d4-70ffe934c3547a0e"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260728-160534aeacfa-e59d758b5956c8e1.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "manifest_sha256": "096b5380db6feca2a8c3fae3044f09995b14e2db6eb0797aa9fbf95505a80d06",
+      "package_id": "CS408-LEGACY-CAP-20260728-160534aeacfa-e59d758b5956c8e1",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260728-160534aeacfa-e59d758b5956c8e1"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260728-5805d21226aa-f46d3bc84d6e953d.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "manifest_sha256": "efeb230af7375c984e68447db29edf782188d4bac20ec0bfb046ca39a661a76d",
+      "package_id": "CS408-LEGACY-CAP-20260728-5805d21226aa-f46d3bc84d6e953d",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260728-5805d21226aa-f46d3bc84d6e953d"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260728-9fc219f297b6-4d220986fc7fd5a7.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2014_003"
+      ],
+      "manifest_sha256": "a5c9fe4d6ae1de31a4beae0f4332130808d6266444cfa15ab670c5f13099db95",
+      "package_id": "CS408-LEGACY-CAP-20260728-9fc219f297b6-4d220986fc7fd5a7",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260728-9fc219f297b6-4d220986fc7fd5a7"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-018339e282e6-15159b7b07cae9a6.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_047"
+      ],
+      "manifest_sha256": "b011f987500bcdd9bda92e3f993f5e29c8ff1facbcd8255b3124a35d43de336f",
+      "package_id": "CS408-LEGACY-CAP-20260801-018339e282e6-15159b7b07cae9a6",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-018339e282e6-15159b7b07cae9a6"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-273d78088ff0-d7ef1ff28c2963df.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_049"
+      ],
+      "manifest_sha256": "5d516346f96cd4136676b302b4862d2b15acc3d680000d96fe06984da8cbd48c",
+      "package_id": "CS408-LEGACY-CAP-20260801-273d78088ff0-d7ef1ff28c2963df",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-273d78088ff0-d7ef1ff28c2963df"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-64575392e84c-446dac703516060a.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "manifest_sha256": "7512fc2ca5cb035abdfc53df4fc5c1640c22fdde9504e30e8ff7c5fa34406cbe",
+      "package_id": "CS408-LEGACY-CAP-20260801-64575392e84c-446dac703516060a",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-64575392e84c-446dac703516060a"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-6cc63725c6a2-c882915c72ebca60.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "manifest_sha256": "40ce6f6785a22f2088ea6b6332123d56ca657fdb156b544a3d87979f73b11e90",
+      "package_id": "CS408-LEGACY-CAP-20260801-6cc63725c6a2-c882915c72ebca60",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-6cc63725c6a2-c882915c72ebca60"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-c7fff2134f7b-91cceeca2aae70db.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "OS_UNK_123"
+      ],
+      "manifest_sha256": "e58b3d3b43dbb2accf452f418aa654365f730882cc2c3398b27fada726592eee",
+      "package_id": "CS408-LEGACY-CAP-20260801-c7fff2134f7b-91cceeca2aae70db",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-c7fff2134f7b-91cceeca2aae70db"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-db51167509a7-3fd9279c3e244b8a.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "manifest_sha256": "1e591f124e00024e6e773b29b16e765a273fcdecf39cfa4c0e70b52aa3cd634f",
+      "package_id": "CS408-LEGACY-CAP-20260801-db51167509a7-3fd9279c3e244b8a",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-db51167509a7-3fd9279c3e244b8a"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260801-f07f10dc0aee-1631ffb6dd57e322.md",
+      "conversation_complete": false,
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "manifest_sha256": "a9101df86a41f26132e4de3e108381e74aa1e1d3b923449946d0a78a94ae0160",
+      "package_id": "CS408-LEGACY-CAP-20260801-f07f10dc0aee-1631ffb6dd57e322",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260801-f07f10dc0aee-1631ffb6dd57e322"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260805-11146615e4a1-64d663d43920ff52.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "manifest_sha256": "fa4f9f9e38efa20d7f7a7c266f62677c728c2832dd32cff395f13ecf0eb23d8c",
+      "package_id": "CS408-LEGACY-CAP-20260805-11146615e4a1-64d663d43920ff52",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260805-11146615e4a1-64d663d43920ff52"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260805-98c36856f10a-0a59a284e52ab38d.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "OS_2014_004"
+      ],
+      "manifest_sha256": "f6a79494804506bf2d6a215d99fda511c43b0d727487cc3192cc15375a459b9d",
+      "package_id": "CS408-LEGACY-CAP-20260805-98c36856f10a-0a59a284e52ab38d",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260805-98c36856f10a-0a59a284e52ab38d"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260805-ff229c4a59a8-58f967dd4c62b729.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "manifest_sha256": "7e6b7e5d8dcfb720138424181d2774c2e7d478b98df5137964b33e77d81a7a8d",
+      "package_id": "CS408-LEGACY-CAP-20260805-ff229c4a59a8-58f967dd4c62b729",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260805-ff229c4a59a8-58f967dd4c62b729"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260812-c523feab924a-3f60aa920316c4da.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2009_004"
+      ],
+      "manifest_sha256": "b3f4bc56b9dfc499559da67bf8136fdec245678633c1781b2ec18170eb61844c",
+      "package_id": "CS408-LEGACY-CAP-20260812-c523feab924a-3f60aa920316c4da",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260812-c523feab924a-3f60aa920316c4da"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260813-6bf7965b39d3-378a81a9e8afe600.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2009_004"
+      ],
+      "manifest_sha256": "6f850e1e1764b1eb4299c5de358e33e863caaf8e4899c0842ee6189ec97e38a9",
+      "package_id": "CS408-LEGACY-CAP-20260813-6bf7965b39d3-378a81a9e8afe600",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260813-6bf7965b39d3-378a81a9e8afe600"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2019_003"
+      ],
+      "manifest_sha256": "138ff50c5105b70626b961a976fcbb0fdf41354999e20ec2f3a5857dfddcf5ad",
+      "package_id": "CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2015_006"
+      ],
+      "manifest_sha256": "b69acd6314b924aa8a9725728b520604c8ba08f036c88b20d1f37495a1fa25fa",
+      "package_id": "CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704",
+      "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "17beb1479d0f057d52d6dc645e8c864a62bee68677ab6ab11da340343d273b41",
+      "package_id": "CS408-20260901-2add6815c4d2af5d",
+      "publish_root": "raw-conversations/CS408-20260901-2add6815c4d2af5d"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "c8267091804ae2b728f016ef7029bdc7035c1070e2c72e743701a9fd2922b47a",
+      "package_id": "CS408-20260903-03c79dcc6519e6fc",
+      "publish_root": "raw-conversations/CS408-20260903-03c79dcc6519e6fc"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "497ac17179e8bf5496ac2f3017fa23a4303597e086f448c2e5d7ca02e0523465",
+      "package_id": "CS408-20260903-0700ddabbf35ab56",
+      "publish_root": "raw-conversations/CS408-20260903-0700ddabbf35ab56"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "15db774cf19034f41ecbf78776ad42675923e5d1129c2125e7dae1fa48e87152",
+      "package_id": "CS408-20260903-2e1244246ddcc07c",
+      "publish_root": "raw-conversations/CS408-20260903-2e1244246ddcc07c"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "9400dfb4ad294ba5f46dbe944a4533311d7d20622fd85ac1f82d0b3ff6fc02e2",
+      "package_id": "CS408-20260903-3f21a4e7119afeab",
+      "publish_root": "raw-conversations/CS408-20260903-3f21a4e7119afeab"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "4f1fc3691513a2e83a84b44a3a647926af89e84cecf71e17c8770c5a86e290bc",
+      "package_id": "CS408-20260903-5fe50c199931c37c",
+      "publish_root": "raw-conversations/CS408-20260903-5fe50c199931c37c"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "090c3c0308e7ba1c3fe9a05f8942809ee4490b6136a432b71fd00f0de28a9245",
+      "package_id": "CS408-20260903-72b10b26e50e7849",
+      "publish_root": "raw-conversations/CS408-20260903-72b10b26e50e7849"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "e289b06d6851958943f73ee1b656aa96bb13dacffcdf1f4abf27458312dd751a",
+      "package_id": "CS408-20260903-8b04d47230051aa5",
+      "publish_root": "raw-conversations/CS408-20260903-8b04d47230051aa5"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "b51c8cf1ff2623b3582ce302bcf98a0402c31c8191a7f9cc2e669e8bdc1b85ca",
+      "package_id": "CS408-20260903-b33b59879ab80f2d",
+      "publish_root": "raw-conversations/CS408-20260903-b33b59879ab80f2d"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "e1df95bdbcc2bc22dd842c659fd9bceb521db2574a3e3345ff4418df8a9531d6",
+      "package_id": "CS408-20260903-b9135ff79ae90eee",
+      "publish_root": "raw-conversations/CS408-20260903-b9135ff79ae90eee"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "df974b17a2b79ad803a7fc4c67db417c82b790741d4b69636c5dcfdb79af6d9f",
+      "package_id": "CS408-20260903-e4bdb9e60814570d",
+      "publish_root": "raw-conversations/CS408-20260903-e4bdb9e60814570d"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "cb49eca1d5640336073550bca948c67fdb334778577629d7d301d7577d57e0bf",
+      "package_id": "CS408-20260903-edd38e2373e3bce5",
+      "publish_root": "raw-conversations/CS408-20260903-edd38e2373e3bce5"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "a4f78da7ad65495deb2d43cf8aba9e7b370daf30ae1e967c2d2eae992ac4a8eb",
+      "package_id": "CS408-20260903-f85801d9be7b0aa4",
+      "publish_root": "raw-conversations/CS408-20260903-f85801d9be7b0aa4"
+    }
+  ],
+  "entrypoints": {
+    "canonical_exam_index": "details/corpus/408统考真题/indexes/question-index.csv",
+    "complete_question_and_history_mapping": "PUBLISHED_LIBRARY.json",
+    "concepts": "概念词典.md",
+    "formal_nodes": "节点总表.md",
+    "historical_questions": "历史错题归档/定位索引.md",
+    "knowledge_points": "知识点标签表.md",
+    "learning_events": "learning-state/review-loop/events.jsonl",
+    "review_units": "复习单元总表.md"
+  },
+  "counts": {
+    "files": 4604,
+    "bytes": 668402496,
+    "current_files": 4604,
+    "retained_files": 0,
+    "lfs_files": 0
+  },
+  "source_counts": {
+    "formal_node_count": 454,
+    "canonical_exam_count": 799
+  },
+  "saved_materials_status": "ALL_DECLARED_EXISTING_FILES_INCLUDED",
+  "coverage_status": "PARTIAL",
+  "coverage_scope": "declared-existing-subject-history-and-originals",
+  "web_read_status": "NOT_YET_VERIFIED",
+  "gaps": [
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_085"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_082"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260718-4955454ad050-ea1f06b29a9da645"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_076"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260718-6414162cd9ea-70bd5a2c277d46dd"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2014_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CO_2012_004"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260719-ded9ffb61dcf-4959bd43f563e4ee"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "DS_2016_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260720-7cb2073faacd-f881cd165e58e58c"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260720-d6144ffb662a-1fa2227f82435744"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260723-ca32305a53b6-f9911dfb391ce787"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_085"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260724-051cab42b3e9-ebac1e3624393ab3"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260724-3ad387730c4d-24da641edb4446c3"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260724-5d344afa4916-baec11d51b1c23a2"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2023_004"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-18280ed3c931-10e2b840df025c4b"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_075"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-775b948e272f-d73153d7928e73dc"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_086"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-84ea965f8aed-c21acfd6cc6ff885"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2014_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-92015bd02cf6-648d538aa31f4302"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_014"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-9789937ae98e-c6465a1cf1f9e414"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_076"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-c4ec209e44c9-a0a8b3d304209c7e"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CO_2018_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2014_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-08bfbb986790-541a7e0218983fb6"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2020_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-0df4edab2284-b0f38da4f124e17f"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-23406b8f3f9d-6ec30f1e563068f1"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-2d5f3f4b94c1-2ed04646edd041c4"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2024_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-38a41e91e7ca-1bc6f2a9efd121a0"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_047"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-463d04cfc981-862ebd06635c7198"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-4cc31d01ff21-ee6e5ec806d5df03"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-9e7054810d3f-6581a7d09be69c48"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-a92dbe671646-f9b640c3835ff6fe"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2018_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_049"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-f5a7990ed97f-9769f5ff381eb3be"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_2015_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260726-f7bcff6986d4-70ffe934c3547a0e"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2016_002"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260728-160534aeacfa-e59d758b5956c8e1"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2023_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260728-5805d21226aa-f46d3bc84d6e953d"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2014_003"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260728-9fc219f297b6-4d220986fc7fd5a7"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_047"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-018339e282e6-15159b7b07cae9a6"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_049"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-273d78088ff0-d7ef1ff28c2963df"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_052"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-64575392e84c-446dac703516060a"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-6cc63725c6a2-c882915c72ebca60"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "OS_UNK_123"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-c7fff2134f7b-91cceeca2aae70db"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_2017_001"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-db51167509a7-3fd9279c3e244b8a"
+    },
+    {
+      "code": "HISTORICAL_CONVERSATION_INCOMPLETE",
+      "formal_ids": [
+        "CN_UNK_017"
+      ],
+      "package_id": "CS408-LEGACY-CAP-20260801-f07f10dc0aee-1631ffb6dd57e322"
+    },
+    {
+      "code": "HISTORICAL_ID_NOT_IN_CURRENT_FORMAL_COHORT",
+      "retained_in": "历史错题归档/定位索引.md",
+      "source_id": "HOS_0040"
+    }
+  ],
+  "question_refs": {
+    "CN_2009_001": {
+      "canonical_ids": [
+        "EXAM408-2009-Q33"
+      ],
+      "detail_card": "details/cards/CN_2009_001.md",
+      "formal_id": "CN_2009_001",
+      "raw_packages": [],
+      "safe_card": "CN_2009_001.md",
+      "source_id": "EXAM408-2009-Q33"
+    },
+    "CN_2009_002": {
+      "canonical_ids": [
+        "EXAM408-2009-Q34"
+      ],
+      "detail_card": "details/cards/CN_2009_002.md",
+      "formal_id": "CN_2009_002",
+      "raw_packages": [],
+      "safe_card": "CN_2009_002.md",
+      "source_id": "HCN_0030"
+    },
+    "CN_2009_003": {
+      "canonical_ids": [
+        "EXAM408-2009-Q35"
+      ],
+      "detail_card": "details/cards/CN_2009_003.md",
+      "formal_id": "CN_2009_003",
+      "raw_packages": [],
+      "safe_card": "CN_2009_003.md",
+      "source_id": "EXAM408-2009-Q35"
+    },
+    "CN_2010_001": {
+      "canonical_ids": [
+        "EXAM408-2010-Q34"
+      ],
+      "detail_card": "details/cards/CN_2010_001.md",
+      "formal_id": "CN_2010_001",
+      "raw_packages": [],
+      "safe_card": "CN_2010_001.md",
+      "source_id": "HCN_0020"
+    },
+    "CN_2012_001": {
+      "canonical_ids": [
+        "EXAM408-2012-Q36"
+      ],
+      "detail_card": "details/cards/CN_2012_001.md",
+      "formal_id": "CN_2012_001",
+      "raw_packages": [],
+      "safe_card": "CN_2012_001.md",
+      "source_id": "EXAM408-2012-Q36"
+    },
+    "CN_2013_001": {
+      "canonical_ids": [
+        "EXAM408-2023-Q37"
+      ],
+      "detail_card": "details/cards/CN_2013_001.md",
+      "formal_id": "CN_2013_001",
+      "raw_packages": [],
+      "safe_card": "CN_2013_001.md",
+      "source_id": "HCN_0065"
+    },
+    "CN_2013_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2013_002.md",
+      "formal_id": "CN_2013_002",
+      "raw_packages": [],
+      "safe_card": "CN_2013_002.md",
+      "source_id": "EXAM408-2013-Q38"
+    },
+    "CN_2014_001": {
+      "canonical_ids": [
+        "EXAM408-2014-Q35"
+      ],
+      "detail_card": "details/cards/CN_2014_001.md",
+      "formal_id": "CN_2014_001",
+      "raw_packages": [
+        "CS408-20260828-bbf2955c0c17a656",
+        "CS408-LEGACY-CAP-20260725-92015bd02cf6-648d538aa31f4302"
+      ],
+      "safe_card": "CN_2014_001.md",
+      "source_id": "HCN_0040"
+    },
+    "CN_2014_002": {
+      "canonical_ids": [
+        "EXAM408-2014-Q36"
+      ],
+      "detail_card": "details/cards/CN_2014_002.md",
+      "formal_id": "CN_2014_002",
+      "raw_packages": [
+        "CS408-20260829-370363443fb17ee1",
+        "CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55"
+      ],
+      "safe_card": "CN_2014_002.md",
+      "source_id": "EXAM408-2014-Q36"
+    },
+    "CN_2014_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2014_003.md",
+      "formal_id": "CN_2014_003",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-08bfbb986790-541a7e0218983fb6",
+        "CS408-LEGACY-CAP-20260728-9fc219f297b6-4d220986fc7fd5a7"
+      ],
+      "safe_card": "CN_2014_003.md",
+      "source_id": "EXAM408-2014-Q37"
+    },
+    "CN_2014_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2014_004.md",
+      "formal_id": "CN_2014_004",
+      "raw_packages": [],
+      "safe_card": "CN_2014_004.md",
+      "source_id": "EXAM408-2014-Q34"
+    },
+    "CN_2015_001": {
+      "canonical_ids": [
+        "EXAM408-2015-Q34"
+      ],
+      "detail_card": "details/cards/CN_2015_001.md",
+      "formal_id": "CN_2015_001",
+      "raw_packages": [],
+      "safe_card": "CN_2015_001.md",
+      "source_id": "EXAM408-2015-Q34"
+    },
+    "CN_2015_002": {
+      "canonical_ids": [
+        "EXAM408-2015-Q35"
+      ],
+      "detail_card": "details/cards/CN_2015_002.md",
+      "formal_id": "CN_2015_002",
+      "raw_packages": [],
+      "safe_card": "CN_2015_002.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CN_2015_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2015_003.md",
+      "formal_id": "CN_2015_003",
+      "raw_packages": [],
+      "safe_card": "CN_2015_003.md",
+      "source_id": "EXAM408-2015-Q37"
+    },
+    "CN_2016_001": {
+      "canonical_ids": [
+        "EXAM408-2016-Q34"
+      ],
+      "detail_card": "details/cards/CN_2016_001.md",
+      "formal_id": "CN_2016_001",
+      "raw_packages": [
+        "CS408-20260828-9dd26dbf18fc7e1e",
+        "CS408-20260828-eb3c40264eb66ce7"
+      ],
+      "safe_card": "CN_2016_001.md",
+      "source_id": "EXAM408-2016-Q34"
+    },
+    "CN_2016_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2016_002.md",
+      "formal_id": "CN_2016_002",
+      "raw_packages": [
+        "CS408-20260830-ea088917f73a6fe9",
+        "CS408-LEGACY-CAP-20260726-4cc31d01ff21-ee6e5ec806d5df03",
+        "CS408-LEGACY-CAP-20260728-160534aeacfa-e59d758b5956c8e1",
+        "CS408-LEGACY-CAP-20260805-ff229c4a59a8-58f967dd4c62b729"
+      ],
+      "safe_card": "CN_2016_002.md",
+      "source_id": "EXAM408-2016-Q36"
+    },
+    "CN_2016_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2016_003.md",
+      "formal_id": "CN_2016_003",
+      "raw_packages": [],
+      "safe_card": "CN_2016_003.md",
+      "source_id": "EXAM408-2016-Q35"
+    },
+    "CN_2017_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2017_001.md",
+      "formal_id": "CN_2017_001",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-2d5f3f4b94c1-2ed04646edd041c4",
+        "CS408-LEGACY-CAP-20260801-6cc63725c6a2-c882915c72ebca60",
+        "CS408-LEGACY-CAP-20260801-db51167509a7-3fd9279c3e244b8a"
+      ],
+      "safe_card": "CN_2017_001.md",
+      "source_id": "EXAM408-2017-Q35"
+    },
+    "CN_2018_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2018_001.md",
+      "formal_id": "CN_2018_001",
+      "raw_packages": [
+        "CS408-20260830-ad8c71f600d34543",
+        "CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7"
+      ],
+      "safe_card": "CN_2018_001.md",
+      "source_id": "EXAM408-2018-Q35"
+    },
+    "CN_2019_001": {
+      "canonical_ids": [
+        "EXAM408-2019-Q35"
+      ],
+      "detail_card": "details/cards/CN_2019_001.md",
+      "formal_id": "CN_2019_001",
+      "raw_packages": [],
+      "safe_card": "CN_2019_001.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CN_2019_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2019_002.md",
+      "formal_id": "CN_2019_002",
+      "raw_packages": [],
+      "safe_card": "CN_2019_002.md",
+      "source_id": "EXAM408-2019-Q34"
+    },
+    "CN_2020_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2020_001.md",
+      "formal_id": "CN_2020_001",
+      "raw_packages": [],
+      "safe_card": "CN_2020_001.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CN_2020_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2020_002.md",
+      "formal_id": "CN_2020_002",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-0df4edab2284-b0f38da4f124e17f"
+      ],
+      "safe_card": "CN_2020_002.md",
+      "source_id": "EXAM408-2020-Q37"
+    },
+    "CN_2023_001": {
+      "canonical_ids": [
+        "EXAM408-2023-Q33"
+      ],
+      "detail_card": "details/cards/CN_2023_001.md",
+      "formal_id": "CN_2023_001",
+      "raw_packages": [],
+      "safe_card": "CN_2023_001.md",
+      "source_id": "HCN_0021"
+    },
+    "CN_2023_002": {
+      "canonical_ids": [
+        "EXAM408-2023-Q35"
+      ],
+      "detail_card": "details/cards/CN_2023_002.md",
+      "formal_id": "CN_2023_002",
+      "raw_packages": [],
+      "safe_card": "CN_2023_002.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CN_2023_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2023_003.md",
+      "formal_id": "CN_2023_003",
+      "raw_packages": [
+        "CS408-20260830-6a7d59ec342b6f1c",
+        "CS408-LEGACY-CAP-20260726-a92dbe671646-f9b640c3835ff6fe",
+        "CS408-LEGACY-CAP-20260728-5805d21226aa-f46d3bc84d6e953d",
+        "CS408-LEGACY-CAP-20260805-11146615e4a1-64d663d43920ff52"
+      ],
+      "safe_card": "CN_2023_003.md",
+      "source_id": "EXAM408-2023-Q36"
+    },
+    "CN_2024_001": {
+      "canonical_ids": [
+        "EXAM408-2024-Q33"
+      ],
+      "detail_card": "details/cards/CN_2024_001.md",
+      "formal_id": "CN_2024_001",
+      "raw_packages": [],
+      "safe_card": "CN_2024_001.md",
+      "source_id": "EXAM408-2024-Q33"
+    },
+    "CN_2024_002": {
+      "canonical_ids": [
+        "EXAM408-2024-Q34"
+      ],
+      "detail_card": "details/cards/CN_2024_002.md",
+      "formal_id": "CN_2024_002",
+      "raw_packages": [],
+      "safe_card": "CN_2024_002.md",
+      "source_id": "EXAM408-2024-Q34"
+    },
+    "CN_2024_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_2024_003.md",
+      "formal_id": "CN_2024_003",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-38a41e91e7ca-1bc6f2a9efd121a0"
+      ],
+      "safe_card": "CN_2024_003.md",
+      "source_id": "EXAM408-2024-Q36"
+    },
+    "CN_UNK_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_001.md",
+      "formal_id": "CN_UNK_001",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_001.md",
+      "source_id": "HCN_0001"
+    },
+    "CN_UNK_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_002.md",
+      "formal_id": "CN_UNK_002",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_002.md",
+      "source_id": "HCN_0002"
+    },
+    "CN_UNK_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_003.md",
+      "formal_id": "CN_UNK_003",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_003.md",
+      "source_id": "HCN_0003"
+    },
+    "CN_UNK_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_004.md",
+      "formal_id": "CN_UNK_004",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_004.md",
+      "source_id": "HCN_0004"
+    },
+    "CN_UNK_005": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_005.md",
+      "formal_id": "CN_UNK_005",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_005.md",
+      "source_id": "HCN_0005"
+    },
+    "CN_UNK_006": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_006.md",
+      "formal_id": "CN_UNK_006",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_006.md",
+      "source_id": "HCN_0006"
+    },
+    "CN_UNK_007": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_007.md",
+      "formal_id": "CN_UNK_007",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_007.md",
+      "source_id": "HCN_0007"
+    },
+    "CN_UNK_008": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_008.md",
+      "formal_id": "CN_UNK_008",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_008.md",
+      "source_id": "HCN_0008"
+    },
+    "CN_UNK_009": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_009.md",
+      "formal_id": "CN_UNK_009",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_009.md",
+      "source_id": "HCN_0009"
+    },
+    "CN_UNK_010": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_010.md",
+      "formal_id": "CN_UNK_010",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_010.md",
+      "source_id": "HCN_0010"
+    },
+    "CN_UNK_011": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_011.md",
+      "formal_id": "CN_UNK_011",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_011.md",
+      "source_id": "HCN_0011"
+    },
+    "CN_UNK_012": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_012.md",
+      "formal_id": "CN_UNK_012",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_012.md",
+      "source_id": "HCN_0012"
+    },
+    "CN_UNK_013": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_013.md",
+      "formal_id": "CN_UNK_013",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_013.md",
+      "source_id": "HCN_0013"
+    },
+    "CN_UNK_014": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_014.md",
+      "formal_id": "CN_UNK_014",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_014.md",
+      "source_id": "HCN_0014"
+    },
+    "CN_UNK_015": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_015.md",
+      "formal_id": "CN_UNK_015",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_015.md",
+      "source_id": "HCN_0015"
+    },
+    "CN_UNK_016": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_016.md",
+      "formal_id": "CN_UNK_016",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_016.md",
+      "source_id": "HCN_0016"
+    },
+    "CN_UNK_017": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_017.md",
+      "formal_id": "CN_UNK_017",
+      "raw_packages": [
+        "CS408-20260828-bbf2955c0c17a656",
+        "CS408-LEGACY-CAP-20260720-7cb2073faacd-f881cd165e58e58c",
+        "CS408-LEGACY-CAP-20260723-ca32305a53b6-f9911dfb391ce787",
+        "CS408-LEGACY-CAP-20260801-f07f10dc0aee-1631ffb6dd57e322"
+      ],
+      "safe_card": "CN_UNK_017.md",
+      "source_id": "HCN_0017"
+    },
+    "CN_UNK_018": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_018.md",
+      "formal_id": "CN_UNK_018",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_018.md",
+      "source_id": "HCN_0018"
+    },
+    "CN_UNK_019": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_019.md",
+      "formal_id": "CN_UNK_019",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_019.md",
+      "source_id": "HCN_0019"
+    },
+    "CN_UNK_022": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_022.md",
+      "formal_id": "CN_UNK_022",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_022.md",
+      "source_id": "HCN_0022"
+    },
+    "CN_UNK_023": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_023.md",
+      "formal_id": "CN_UNK_023",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_023.md",
+      "source_id": "HCN_0023"
+    },
+    "CN_UNK_024": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_024.md",
+      "formal_id": "CN_UNK_024",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_024.md",
+      "source_id": "HCN_0024"
+    },
+    "CN_UNK_025": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_025.md",
+      "formal_id": "CN_UNK_025",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_025.md",
+      "source_id": "HCN_0025"
+    },
+    "CN_UNK_026": {
+      "canonical_ids": [
+        "EXAM408-2012-Q34"
+      ],
+      "detail_card": "details/cards/CN_UNK_026.md",
+      "formal_id": "CN_UNK_026",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_026.md",
+      "source_id": "HCN_0026"
+    },
+    "CN_UNK_027": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_027.md",
+      "formal_id": "CN_UNK_027",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_027.md",
+      "source_id": "HCN_0027"
+    },
+    "CN_UNK_028": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_028.md",
+      "formal_id": "CN_UNK_028",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_028.md",
+      "source_id": "HCN_0028"
+    },
+    "CN_UNK_029": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_029.md",
+      "formal_id": "CN_UNK_029",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_029.md",
+      "source_id": "HCN_0029"
+    },
+    "CN_UNK_031": {
+      "canonical_ids": [
+        "EXAM408-2011-Q34"
+      ],
+      "detail_card": "details/cards/CN_UNK_031.md",
+      "formal_id": "CN_UNK_031",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_031.md",
+      "source_id": "HCN_0031"
+    },
+    "CN_UNK_032": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_032.md",
+      "formal_id": "CN_UNK_032",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_032.md",
+      "source_id": "HCN_0032"
+    },
+    "CN_UNK_033": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_033.md",
+      "formal_id": "CN_UNK_033",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_033.md",
+      "source_id": "HCN_0033"
+    },
+    "CN_UNK_034": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_034.md",
+      "formal_id": "CN_UNK_034",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_034.md",
+      "source_id": "HCN_0034"
+    },
+    "CN_UNK_035": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_035.md",
+      "formal_id": "CN_UNK_035",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_035.md",
+      "source_id": "HCN_0035"
+    },
+    "CN_UNK_036": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_036.md",
+      "formal_id": "CN_UNK_036",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_036.md",
+      "source_id": "HCN_0036"
+    },
+    "CN_UNK_037": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_037.md",
+      "formal_id": "CN_UNK_037",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_037.md",
+      "source_id": "HCN_0037"
+    },
+    "CN_UNK_038": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_038.md",
+      "formal_id": "CN_UNK_038",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_038.md",
+      "source_id": "HCN_0038"
+    },
+    "CN_UNK_039": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_039.md",
+      "formal_id": "CN_UNK_039",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_039.md",
+      "source_id": "HCN_0039"
+    },
+    "CN_UNK_041": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_041.md",
+      "formal_id": "CN_UNK_041",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_041.md",
+      "source_id": "HCN_0041"
+    },
+    "CN_UNK_042": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_042.md",
+      "formal_id": "CN_UNK_042",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_042.md",
+      "source_id": "HCN_0042"
+    },
+    "CN_UNK_043": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_043.md",
+      "formal_id": "CN_UNK_043",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_043.md",
+      "source_id": "HCN_0043"
+    },
+    "CN_UNK_044": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_044.md",
+      "formal_id": "CN_UNK_044",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_044.md",
+      "source_id": "HCN_0044"
+    },
+    "CN_UNK_045": {
+      "canonical_ids": [
+        "EXAM408-2009-Q36"
+      ],
+      "detail_card": "details/cards/CN_UNK_045.md",
+      "formal_id": "CN_UNK_045",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_045.md",
+      "source_id": "HCN_0045"
+    },
+    "CN_UNK_046": {
+      "canonical_ids": [
+        "EXAM408-2009-Q37"
+      ],
+      "detail_card": "details/cards/CN_UNK_046.md",
+      "formal_id": "CN_UNK_046",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_046.md",
+      "source_id": "HCN_0046"
+    },
+    "CN_UNK_047": {
+      "canonical_ids": [
+        "EXAM408-2019-Q36"
+      ],
+      "detail_card": "details/cards/CN_UNK_047.md",
+      "formal_id": "CN_UNK_047",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-463d04cfc981-862ebd06635c7198",
+        "CS408-LEGACY-CAP-20260801-018339e282e6-15159b7b07cae9a6"
+      ],
+      "safe_card": "CN_UNK_047.md",
+      "source_id": "HCN_0047"
+    },
+    "CN_UNK_048": {
+      "canonical_ids": [
+        "EXAM408-2011-Q36"
+      ],
+      "detail_card": "details/cards/CN_UNK_048.md",
+      "formal_id": "CN_UNK_048",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_048.md",
+      "source_id": "HCN_0048"
+    },
+    "CN_UNK_049": {
+      "canonical_ids": [
+        "EXAM408-2012-Q35"
+      ],
+      "detail_card": "details/cards/CN_UNK_049.md",
+      "formal_id": "CN_UNK_049",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-f5a7990ed97f-9769f5ff381eb3be",
+        "CS408-LEGACY-CAP-20260801-273d78088ff0-d7ef1ff28c2963df"
+      ],
+      "safe_card": "CN_UNK_049.md",
+      "source_id": "HCN_0049"
+    },
+    "CN_UNK_050": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_050.md",
+      "formal_id": "CN_UNK_050",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_050.md",
+      "source_id": "HCN_0050"
+    },
+    "CN_UNK_051": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_051.md",
+      "formal_id": "CN_UNK_051",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_051.md",
+      "source_id": "HCN_0051"
+    },
+    "CN_UNK_052": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_052.md",
+      "formal_id": "CN_UNK_052",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260726-23406b8f3f9d-6ec30f1e563068f1",
+        "CS408-LEGACY-CAP-20260726-9e7054810d3f-6581a7d09be69c48",
+        "CS408-LEGACY-CAP-20260801-64575392e84c-446dac703516060a"
+      ],
+      "safe_card": "CN_UNK_052.md",
+      "source_id": "HCN_0052"
+    },
+    "CN_UNK_053": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_053.md",
+      "formal_id": "CN_UNK_053",
+      "raw_packages": [
+        "CS408-20260828-c0b0a0de733927f5",
+        "CS408-20260829-cace51bff93c11cb"
+      ],
+      "safe_card": "CN_UNK_053.md",
+      "source_id": "HCN_0053"
+    },
+    "CN_UNK_054": {
+      "canonical_ids": [
+        "EXAM408-2020-Q36"
+      ],
+      "detail_card": "details/cards/CN_UNK_054.md",
+      "formal_id": "CN_UNK_054",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_054.md",
+      "source_id": "HCN_0054"
+    },
+    "CN_UNK_055": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_055.md",
+      "formal_id": "CN_UNK_055",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_055.md",
+      "source_id": "HCN_0055"
+    },
+    "CN_UNK_056": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_056.md",
+      "formal_id": "CN_UNK_056",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_056.md",
+      "source_id": "HCN_0056"
+    },
+    "CN_UNK_057": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_057.md",
+      "formal_id": "CN_UNK_057",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_057.md",
+      "source_id": "HCN_0057"
+    },
+    "CN_UNK_058": {
+      "canonical_ids": [
+        "EXAM408-2011-Q35"
+      ],
+      "detail_card": "details/cards/CN_UNK_058.md",
+      "formal_id": "CN_UNK_058",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_058.md",
+      "source_id": "HCN_0058"
+    },
+    "CN_UNK_059": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CN_UNK_059.md",
+      "formal_id": "CN_UNK_059",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_059.md",
+      "source_id": "HCN_0059"
+    },
+    "CN_UNK_060": {
+      "canonical_ids": [
+        "EXAM408-2011-Q33"
+      ],
+      "detail_card": "details/cards/CN_UNK_060.md",
+      "formal_id": "CN_UNK_060",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_060.md",
+      "source_id": "HCN_0060"
+    },
+    "CN_UNK_061": {
+      "canonical_ids": [
+        "EXAM408-2020-Q34"
+      ],
+      "detail_card": "details/cards/CN_UNK_061.md",
+      "formal_id": "CN_UNK_061",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_061.md",
+      "source_id": "HCN_0061"
+    },
+    "CN_UNK_062": {
+      "canonical_ids": [
+        "EXAM408-2022-Q37"
+      ],
+      "detail_card": "details/cards/CN_UNK_062.md",
+      "formal_id": "CN_UNK_062",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_062.md",
+      "source_id": "HCN_0062"
+    },
+    "CN_UNK_063": {
+      "canonical_ids": [
+        "EXAM408-2018-Q37"
+      ],
+      "detail_card": "details/cards/CN_UNK_063.md",
+      "formal_id": "CN_UNK_063",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_063.md",
+      "source_id": "HCN_0063"
+    },
+    "CN_UNK_064": {
+      "canonical_ids": [
+        "EXAM408-2022-Q35"
+      ],
+      "detail_card": "details/cards/CN_UNK_064.md",
+      "formal_id": "CN_UNK_064",
+      "raw_packages": [],
+      "safe_card": "CN_UNK_064.md",
+      "source_id": "HCN_0064"
+    },
+    "CO_2009_001": {
+      "canonical_ids": [
+        "EXAM408-2009-Q13"
+      ],
+      "detail_card": "details/cards/CO_2009_001.md",
+      "formal_id": "CO_2009_001",
+      "raw_packages": [],
+      "safe_card": "CO_2009_001.md",
+      "source_id": "EXAM408-2009-Q13"
+    },
+    "CO_2009_002": {
+      "canonical_ids": [
+        "EXAM408-2009-Q15"
+      ],
+      "detail_card": "details/cards/CO_2009_002.md",
+      "formal_id": "CO_2009_002",
+      "raw_packages": [],
+      "safe_card": "CO_2009_002.md",
+      "source_id": "EXAM408-2009-Q15"
+    },
+    "CO_2009_003": {
+      "canonical_ids": [
+        "EXAM408-2009-Q14"
+      ],
+      "detail_card": "details/cards/CO_2009_003.md",
+      "formal_id": "CO_2009_003",
+      "raw_packages": [],
+      "safe_card": "CO_2009_003.md",
+      "source_id": "CO03-Q116"
+    },
+    "CO_2010_001": {
+      "canonical_ids": [
+        "EXAM408-2010-Q12"
+      ],
+      "detail_card": "details/cards/CO_2010_001.md",
+      "formal_id": "CO_2010_001",
+      "raw_packages": [],
+      "safe_card": "CO_2010_001.md",
+      "source_id": "EXAM408-2010-Q12"
+    },
+    "CO_2010_002": {
+      "canonical_ids": [
+        "EXAM408-2010-Q16"
+      ],
+      "detail_card": "details/cards/CO_2010_002.md",
+      "formal_id": "CO_2010_002",
+      "raw_packages": [],
+      "safe_card": "CO_2010_002.md",
+      "source_id": "EXAM408-2010-Q16"
+    },
+    "CO_2010_003": {
+      "canonical_ids": [
+        "EXAM408-2010-Q15"
+      ],
+      "detail_card": "details/cards/CO_2010_003.md",
+      "formal_id": "CO_2010_003",
+      "raw_packages": [],
+      "safe_card": "CO_2010_003.md",
+      "source_id": "EXAM408-2010-Q15"
+    },
+    "CO_2010_004": {
+      "canonical_ids": [
+        "EXAM408-2010-Q17"
+      ],
+      "detail_card": "details/cards/CO_2010_004.md",
+      "formal_id": "CO_2010_004",
+      "raw_packages": [],
+      "safe_card": "CO_2010_004.md",
+      "source_id": "CO03-Q143"
+    },
+    "CO_2011_001": {
+      "canonical_ids": [
+        "EXAM408-2011-Q13"
+      ],
+      "detail_card": "details/cards/CO_2011_001.md",
+      "formal_id": "CO_2011_001",
+      "raw_packages": [],
+      "safe_card": "CO_2011_001.md",
+      "source_id": "EXAM408-2011-Q13"
+    },
+    "CO_2011_002": {
+      "canonical_ids": [
+        "EXAM408-2011-Q15"
+      ],
+      "detail_card": "details/cards/CO_2011_002.md",
+      "formal_id": "CO_2011_002",
+      "raw_packages": [],
+      "safe_card": "CO_2011_002.md",
+      "source_id": "EXAM408-2011-Q15"
+    },
+    "CO_2012_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2012_001.md",
+      "formal_id": "CO_2012_001",
+      "raw_packages": [],
+      "safe_card": "CO_2012_001.md",
+      "source_id": "HCO_0063"
+    },
+    "CO_2012_002": {
+      "canonical_ids": [
+        "EXAM408-2012-Q12"
+      ],
+      "detail_card": "details/cards/CO_2012_002.md",
+      "formal_id": "CO_2012_002",
+      "raw_packages": [],
+      "safe_card": "CO_2012_002.md",
+      "source_id": "EXAM408-2012-Q12"
+    },
+    "CO_2012_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2012_003.md",
+      "formal_id": "CO_2012_003",
+      "raw_packages": [],
+      "safe_card": "CO_2012_003.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_2012_004": {
+      "canonical_ids": [
+        "EXAM408-2012-Q14"
+      ],
+      "detail_card": "details/cards/CO_2012_004.md",
+      "formal_id": "CO_2012_004",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260719-ded9ffb61dcf-4959bd43f563e4ee"
+      ],
+      "safe_card": "CO_2012_004.md",
+      "source_id": "EXAM408-2012-Q14"
+    },
+    "CO_2012_005": {
+      "canonical_ids": [
+        "EXAM408-2012-Q15"
+      ],
+      "detail_card": "details/cards/CO_2012_005.md",
+      "formal_id": "CO_2012_005",
+      "raw_packages": [],
+      "safe_card": "CO_2012_005.md",
+      "source_id": "EXAM408-2012-Q15"
+    },
+    "CO_2012_006": {
+      "canonical_ids": [
+        "EXAM408-2012-Q17"
+      ],
+      "detail_card": "details/cards/CO_2012_006.md",
+      "formal_id": "CO_2012_006",
+      "raw_packages": [],
+      "safe_card": "CO_2012_006.md",
+      "source_id": "CO03-Q117"
+    },
+    "CO_2013_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2013_001.md",
+      "formal_id": "CO_2013_001",
+      "raw_packages": [],
+      "safe_card": "CO_2013_001.md",
+      "source_id": "HCO_0069"
+    },
+    "CO_2013_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2013_002.md",
+      "formal_id": "CO_2013_002",
+      "raw_packages": [],
+      "safe_card": "CO_2013_002.md",
+      "source_id": "HCO_0080"
+    },
+    "CO_2013_003": {
+      "canonical_ids": [
+        "EXAM408-2013-Q12"
+      ],
+      "detail_card": "details/cards/CO_2013_003.md",
+      "formal_id": "CO_2013_003",
+      "raw_packages": [],
+      "safe_card": "CO_2013_003.md",
+      "source_id": "EXAM408-2013-Q12"
+    },
+    "CO_2013_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2013_004.md",
+      "formal_id": "CO_2013_004",
+      "raw_packages": [],
+      "safe_card": "CO_2013_004.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_2013_005": {
+      "canonical_ids": [
+        "EXAM408-2013-Q21"
+      ],
+      "detail_card": "details/cards/CO_2013_005.md",
+      "formal_id": "CO_2013_005",
+      "raw_packages": [],
+      "safe_card": "CO_2013_005.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_2013_006": {
+      "canonical_ids": [
+        "EXAM408-2013-Q20"
+      ],
+      "detail_card": "details/cards/CO_2013_006.md",
+      "formal_id": "CO_2013_006",
+      "raw_packages": [],
+      "safe_card": "CO_2013_006.md",
+      "source_id": "CO03-Q084"
+    },
+    "CO_2014_001": {
+      "canonical_ids": [
+        "EXAM408-2014-Q15"
+      ],
+      "detail_card": "details/cards/CO_2014_001.md",
+      "formal_id": "CO_2014_001",
+      "raw_packages": [],
+      "safe_card": "CO_2014_001.md",
+      "source_id": "EXAM408-2014-Q15"
+    },
+    "CO_2015_001": {
+      "canonical_ids": [
+        "EXAM408-2015-Q12"
+      ],
+      "detail_card": "details/cards/CO_2015_001.md",
+      "formal_id": "CO_2015_001",
+      "raw_packages": [],
+      "safe_card": "CO_2015_001.md",
+      "source_id": "EXAM408-2015-Q12"
+    },
+    "CO_2015_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2015_002.md",
+      "formal_id": "CO_2015_002",
+      "raw_packages": [],
+      "safe_card": "CO_2015_002.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_2015_003": {
+      "canonical_ids": [
+        "EXAM408-2015-Q14"
+      ],
+      "detail_card": "details/cards/CO_2015_003.md",
+      "formal_id": "CO_2015_003",
+      "raw_packages": [],
+      "safe_card": "CO_2015_003.md",
+      "source_id": "EXAM408-2015-Q14"
+    },
+    "CO_2015_004": {
+      "canonical_ids": [
+        "EXAM408-2015-Q17"
+      ],
+      "detail_card": "details/cards/CO_2015_004.md",
+      "formal_id": "CO_2015_004",
+      "raw_packages": [],
+      "safe_card": "CO_2015_004.md",
+      "source_id": "EXAM408-2015-Q17"
+    },
+    "CO_2015_005": {
+      "canonical_ids": [
+        "EXAM408-2015-Q18"
+      ],
+      "detail_card": "details/cards/CO_2015_005.md",
+      "formal_id": "CO_2015_005",
+      "raw_packages": [],
+      "safe_card": "CO_2015_005.md",
+      "source_id": "EXAM408-2015-Q18"
+    },
+    "CO_2015_006": {
+      "canonical_ids": [
+        "EXAM408-2015-Q20"
+      ],
+      "detail_card": "details/cards/CO_2015_006.md",
+      "formal_id": "CO_2015_006",
+      "raw_packages": [],
+      "safe_card": "CO_2015_006.md",
+      "source_id": "EXAM408-2015-Q20"
+    },
+    "CO_2015_007": {
+      "canonical_ids": [
+        "EXAM408-2015-Q16"
+      ],
+      "detail_card": "details/cards/CO_2015_007.md",
+      "formal_id": "CO_2015_007",
+      "raw_packages": [],
+      "safe_card": "CO_2015_007.md",
+      "source_id": "EXAM408-2015-Q16"
+    },
+    "CO_2015_008": {
+      "canonical_ids": [
+        "EXAM408-2015-Q15"
+      ],
+      "detail_card": "details/cards/CO_2015_008.md",
+      "formal_id": "CO_2015_008",
+      "raw_packages": [],
+      "safe_card": "CO_2015_008.md",
+      "source_id": "EXAM408-2015-Q15"
+    },
+    "CO_2016_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2016_001.md",
+      "formal_id": "CO_2016_001",
+      "raw_packages": [],
+      "safe_card": "CO_2016_001.md",
+      "source_id": "HCO_0062"
+    },
+    "CO_2016_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2016_002.md",
+      "formal_id": "CO_2016_002",
+      "raw_packages": [],
+      "safe_card": "CO_2016_002.md",
+      "source_id": "HCO_0083"
+    },
+    "CO_2016_003": {
+      "canonical_ids": [
+        "EXAM408-2016-Q12"
+      ],
+      "detail_card": "details/cards/CO_2016_003.md",
+      "formal_id": "CO_2016_003",
+      "raw_packages": [],
+      "safe_card": "CO_2016_003.md",
+      "source_id": "EXAM408-2016-Q12"
+    },
+    "CO_2016_005": {
+      "canonical_ids": [
+        "EXAM408-2016-Q15"
+      ],
+      "detail_card": "details/cards/CO_2016_005.md",
+      "formal_id": "CO_2016_005",
+      "raw_packages": [],
+      "safe_card": "CO_2016_005.md",
+      "source_id": "EXAM408-2016-Q15"
+    },
+    "CO_2017_001": {
+      "canonical_ids": [
+        "EXAM408-2017-Q13"
+      ],
+      "detail_card": "details/cards/CO_2017_001.md",
+      "formal_id": "CO_2017_001",
+      "raw_packages": [],
+      "safe_card": "CO_2017_001.md",
+      "source_id": "EXAM408-2017-Q13"
+    },
+    "CO_2017_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2017_002.md",
+      "formal_id": "CO_2017_002",
+      "raw_packages": [
+        "CS408-20260830-2b911deeb98ac605"
+      ],
+      "safe_card": "CO_2017_002.md",
+      "source_id": "EXAM408-2017-Q16"
+    },
+    "CO_2018_001": {
+      "canonical_ids": [
+        "EXAM408-2018-Q12"
+      ],
+      "detail_card": "details/cards/CO_2018_001.md",
+      "formal_id": "CO_2018_001",
+      "raw_packages": [],
+      "safe_card": "CO_2018_001.md",
+      "source_id": "EXAM408-2018-Q12"
+    },
+    "CO_2018_002": {
+      "canonical_ids": [
+        "EXAM408-2018-Q19"
+      ],
+      "detail_card": "details/cards/CO_2018_002.md",
+      "formal_id": "CO_2018_002",
+      "raw_packages": [],
+      "safe_card": "CO_2018_002.md",
+      "source_id": "EXAM408-2018-Q19"
+    },
+    "CO_2018_003": {
+      "canonical_ids": [
+        "EXAM408-2018-Q14"
+      ],
+      "detail_card": "details/cards/CO_2018_003.md",
+      "formal_id": "CO_2018_003",
+      "raw_packages": [
+        "CS408-20260828-805159aaf9938263",
+        "CS408-LEGACY-CAP-20260725-da4d028a4b24-c5feceb73a50cd2b"
+      ],
+      "safe_card": "CO_2018_003.md",
+      "source_id": "EXAM408-2018-Q14"
+    },
+    "CO_2018_004": {
+      "canonical_ids": [
+        "EXAM408-2018-Q15"
+      ],
+      "detail_card": "details/cards/CO_2018_004.md",
+      "formal_id": "CO_2018_004",
+      "raw_packages": [],
+      "safe_card": "CO_2018_004.md",
+      "source_id": "EXAM408-2018-Q15"
+    },
+    "CO_2018_005": {
+      "canonical_ids": [
+        "EXAM408-2018-Q17"
+      ],
+      "detail_card": "details/cards/CO_2018_005.md",
+      "formal_id": "CO_2018_005",
+      "raw_packages": [],
+      "safe_card": "CO_2018_005.md",
+      "source_id": "EXAM408-2018-Q17"
+    },
+    "CO_2019_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2019_001.md",
+      "formal_id": "CO_2019_001",
+      "raw_packages": [],
+      "safe_card": "CO_2019_001.md",
+      "source_id": "HCO_0077"
+    },
+    "CO_2019_002": {
+      "canonical_ids": [
+        "EXAM408-2019-Q12"
+      ],
+      "detail_card": "details/cards/CO_2019_002.md",
+      "formal_id": "CO_2019_002",
+      "raw_packages": [],
+      "safe_card": "CO_2019_002.md",
+      "source_id": "EXAM408-2019-Q12"
+    },
+    "CO_2019_003": {
+      "canonical_ids": [
+        "EXAM408-2019-Q20"
+      ],
+      "detail_card": "details/cards/CO_2019_003.md",
+      "formal_id": "CO_2019_003",
+      "raw_packages": [],
+      "safe_card": "CO_2019_003.md",
+      "source_id": "EXAM408-2019-Q20"
+    },
+    "CO_2020_001": {
+      "canonical_ids": [
+        "EXAM408-2020-Q12"
+      ],
+      "detail_card": "details/cards/CO_2020_001.md",
+      "formal_id": "CO_2020_001",
+      "raw_packages": [],
+      "safe_card": "CO_2020_001.md",
+      "source_id": "EXAM408-2020-Q12"
+    },
+    "CO_2021_001": {
+      "canonical_ids": [
+        "EXAM408-2021-Q12"
+      ],
+      "detail_card": "details/cards/CO_2021_001.md",
+      "formal_id": "CO_2021_001",
+      "raw_packages": [],
+      "safe_card": "CO_2021_001.md",
+      "source_id": "EXAM408-2021-Q12"
+    },
+    "CO_2021_002": {
+      "canonical_ids": [
+        "EXAM408-2021-Q16"
+      ],
+      "detail_card": "details/cards/CO_2021_002.md",
+      "formal_id": "CO_2021_002",
+      "raw_packages": [],
+      "safe_card": "CO_2021_002.md",
+      "source_id": "EXAM408-2021-Q16"
+    },
+    "CO_2022_001": {
+      "canonical_ids": [
+        "EXAM408-2022-Q21"
+      ],
+      "detail_card": "details/cards/CO_2022_001.md",
+      "formal_id": "CO_2022_001",
+      "raw_packages": [],
+      "safe_card": "CO_2022_001.md",
+      "source_id": "HCO_0071"
+    },
+    "CO_2022_002": {
+      "canonical_ids": [
+        "EXAM408-2022-Q20"
+      ],
+      "detail_card": "details/cards/CO_2022_002.md",
+      "formal_id": "CO_2022_002",
+      "raw_packages": [],
+      "safe_card": "CO_2022_002.md",
+      "source_id": "EXAM408-2022-Q20"
+    },
+    "CO_2022_003": {
+      "canonical_ids": [
+        "EXAM408-2023-Q12"
+      ],
+      "detail_card": "details/cards/CO_2022_003.md",
+      "formal_id": "CO_2022_003",
+      "raw_packages": [],
+      "safe_card": "CO_2022_003.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_2022_004": {
+      "canonical_ids": [
+        "EXAM408-2022-Q16"
+      ],
+      "detail_card": "details/cards/CO_2022_004.md",
+      "formal_id": "CO_2022_004",
+      "raw_packages": [],
+      "safe_card": "CO_2022_004.md",
+      "source_id": "EXAM408-2022-Q16"
+    },
+    "CO_2022_005": {
+      "canonical_ids": [
+        "EXAM408-2022-Q15"
+      ],
+      "detail_card": "details/cards/CO_2022_005.md",
+      "formal_id": "CO_2022_005",
+      "raw_packages": [],
+      "safe_card": "CO_2022_005.md",
+      "source_id": "EXAM408-2022-Q15"
+    },
+    "CO_2023_001": {
+      "canonical_ids": [
+        "EXAM408-2023-Q22"
+      ],
+      "detail_card": "details/cards/CO_2023_001.md",
+      "formal_id": "CO_2023_001",
+      "raw_packages": [],
+      "safe_card": "CO_2023_001.md",
+      "source_id": "HCO_0070"
+    },
+    "CO_2023_002": {
+      "canonical_ids": [
+        "EXAM408-2023-Q21"
+      ],
+      "detail_card": "details/cards/CO_2023_002.md",
+      "formal_id": "CO_2023_002",
+      "raw_packages": [],
+      "safe_card": "CO_2023_002.md",
+      "source_id": "HCO_0072"
+    },
+    "CO_2023_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2023_003.md",
+      "formal_id": "CO_2023_003",
+      "raw_packages": [],
+      "safe_card": "CO_2023_003.md",
+      "source_id": "HCO_0079"
+    },
+    "CO_2023_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2023_004.md",
+      "formal_id": "CO_2023_004",
+      "raw_packages": [],
+      "safe_card": "CO_2023_004.md",
+      "source_id": "HCO_0082"
+    },
+    "CO_2023_005": {
+      "canonical_ids": [
+        "EXAM408-2023-Q16"
+      ],
+      "detail_card": "details/cards/CO_2023_005.md",
+      "formal_id": "CO_2023_005",
+      "raw_packages": [],
+      "safe_card": "CO_2023_005.md",
+      "source_id": "EXAM408-2023-Q16"
+    },
+    "CO_2023_006": {
+      "canonical_ids": [
+        "EXAM408-2023-Q15"
+      ],
+      "detail_card": "details/cards/CO_2023_006.md",
+      "formal_id": "CO_2023_006",
+      "raw_packages": [],
+      "safe_card": "CO_2023_006.md",
+      "source_id": "EXAM408-2023-Q15"
+    },
+    "CO_2024_001": {
+      "canonical_ids": [
+        "EXAM408-2024-Q22"
+      ],
+      "detail_card": "details/cards/CO_2024_001.md",
+      "formal_id": "CO_2024_001",
+      "raw_packages": [],
+      "safe_card": "CO_2024_001.md",
+      "source_id": "HCO_0065"
+    },
+    "CO_2024_002": {
+      "canonical_ids": [
+        "EXAM408-2024-Q21"
+      ],
+      "detail_card": "details/cards/CO_2024_002.md",
+      "formal_id": "CO_2024_002",
+      "raw_packages": [],
+      "safe_card": "CO_2024_002.md",
+      "source_id": "HCO_0073"
+    },
+    "CO_2024_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2024_003.md",
+      "formal_id": "CO_2024_003",
+      "raw_packages": [],
+      "safe_card": "CO_2024_003.md",
+      "source_id": "HCO_0078"
+    },
+    "CO_2024_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_2024_004.md",
+      "formal_id": "CO_2024_004",
+      "raw_packages": [],
+      "safe_card": "CO_2024_004.md",
+      "source_id": "EXAM408-2024-Q15"
+    },
+    "CO_2024_005": {
+      "canonical_ids": [
+        "EXAM408-2024-Q16"
+      ],
+      "detail_card": "details/cards/CO_2024_005.md",
+      "formal_id": "CO_2024_005",
+      "raw_packages": [],
+      "safe_card": "CO_2024_005.md",
+      "source_id": "EXAM408-2024-Q16"
+    },
+    "CO_UNK_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_001.md",
+      "formal_id": "CO_UNK_001",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_001.md",
+      "source_id": "HCO_0001"
+    },
+    "CO_UNK_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_002.md",
+      "formal_id": "CO_UNK_002",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_002.md",
+      "source_id": "HCO_0002"
+    },
+    "CO_UNK_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_003.md",
+      "formal_id": "CO_UNK_003",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_003.md",
+      "source_id": "HCO_0003"
+    },
+    "CO_UNK_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_004.md",
+      "formal_id": "CO_UNK_004",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_004.md",
+      "source_id": "HCO_0004"
+    },
+    "CO_UNK_005": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_005.md",
+      "formal_id": "CO_UNK_005",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_005.md",
+      "source_id": "HCO_0005"
+    },
+    "CO_UNK_006": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_006.md",
+      "formal_id": "CO_UNK_006",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_006.md",
+      "source_id": "HCO_0006"
+    },
+    "CO_UNK_007": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_007.md",
+      "formal_id": "CO_UNK_007",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_007.md",
+      "source_id": "HCO_0007"
+    },
+    "CO_UNK_008": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_008.md",
+      "formal_id": "CO_UNK_008",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_008.md",
+      "source_id": "HCO_0008"
+    },
+    "CO_UNK_009": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_009.md",
+      "formal_id": "CO_UNK_009",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_009.md",
+      "source_id": "HCO_0009"
+    },
+    "CO_UNK_010": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_010.md",
+      "formal_id": "CO_UNK_010",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_010.md",
+      "source_id": "HCO_0010"
+    },
+    "CO_UNK_011": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_011.md",
+      "formal_id": "CO_UNK_011",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_011.md",
+      "source_id": "HCO_0011"
+    },
+    "CO_UNK_013": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_013.md",
+      "formal_id": "CO_UNK_013",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_013.md",
+      "source_id": "HCO_0013"
+    },
+    "CO_UNK_015": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_015.md",
+      "formal_id": "CO_UNK_015",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_015.md",
+      "source_id": "HCO_0015"
+    },
+    "CO_UNK_016": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_016.md",
+      "formal_id": "CO_UNK_016",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_016.md",
+      "source_id": "HCO_0016"
+    },
+    "CO_UNK_017": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_017.md",
+      "formal_id": "CO_UNK_017",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_017.md",
+      "source_id": "HCO_0017"
+    },
+    "CO_UNK_018": {
+      "canonical_ids": [
+        "EXAM408-2018-Q18"
+      ],
+      "detail_card": "details/cards/CO_UNK_018.md",
+      "formal_id": "CO_UNK_018",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_018.md",
+      "source_id": "HCO_0018"
+    },
+    "CO_UNK_019": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_019.md",
+      "formal_id": "CO_UNK_019",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_019.md",
+      "source_id": "HCO_0019"
+    },
+    "CO_UNK_020": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_020.md",
+      "formal_id": "CO_UNK_020",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_020.md",
+      "source_id": "HCO_0020"
+    },
+    "CO_UNK_021": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_021.md",
+      "formal_id": "CO_UNK_021",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_021.md",
+      "source_id": "HCO_0021"
+    },
+    "CO_UNK_022": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_022.md",
+      "formal_id": "CO_UNK_022",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_022.md",
+      "source_id": "HCO_0022"
+    },
+    "CO_UNK_023": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_023.md",
+      "formal_id": "CO_UNK_023",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_023.md",
+      "source_id": "HCO_0023"
+    },
+    "CO_UNK_024": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_024.md",
+      "formal_id": "CO_UNK_024",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_024.md",
+      "source_id": "HCO_0024"
+    },
+    "CO_UNK_025": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_025.md",
+      "formal_id": "CO_UNK_025",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_025.md",
+      "source_id": "HCO_0025"
+    },
+    "CO_UNK_026": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_026.md",
+      "formal_id": "CO_UNK_026",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_026.md",
+      "source_id": "HCO_0026"
+    },
+    "CO_UNK_027": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_027.md",
+      "formal_id": "CO_UNK_027",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_027.md",
+      "source_id": "HCO_0027"
+    },
+    "CO_UNK_028": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_028.md",
+      "formal_id": "CO_UNK_028",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_028.md",
+      "source_id": "HCO_0028"
+    },
+    "CO_UNK_029": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_029.md",
+      "formal_id": "CO_UNK_029",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_029.md",
+      "source_id": "HCO_0029"
+    },
+    "CO_UNK_030": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_030.md",
+      "formal_id": "CO_UNK_030",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_030.md",
+      "source_id": "HCO_0030"
+    },
+    "CO_UNK_031": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_031.md",
+      "formal_id": "CO_UNK_031",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_031.md",
+      "source_id": "HCO_0031"
+    },
+    "CO_UNK_032": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_032.md",
+      "formal_id": "CO_UNK_032",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_032.md",
+      "source_id": "HCO_0032"
+    },
+    "CO_UNK_033": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_033.md",
+      "formal_id": "CO_UNK_033",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_033.md",
+      "source_id": "HCO_0033"
+    },
+    "CO_UNK_034": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_034.md",
+      "formal_id": "CO_UNK_034",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_034.md",
+      "source_id": "HCO_0034"
+    },
+    "CO_UNK_035": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_035.md",
+      "formal_id": "CO_UNK_035",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_035.md",
+      "source_id": "HCO_0035"
+    },
+    "CO_UNK_036": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_036.md",
+      "formal_id": "CO_UNK_036",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_036.md",
+      "source_id": "HCO_0036"
+    },
+    "CO_UNK_037": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_037.md",
+      "formal_id": "CO_UNK_037",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_037.md",
+      "source_id": "HCO_0037"
+    },
+    "CO_UNK_038": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_038.md",
+      "formal_id": "CO_UNK_038",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_038.md",
+      "source_id": "HCO_0038"
+    },
+    "CO_UNK_039": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_039.md",
+      "formal_id": "CO_UNK_039",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_039.md",
+      "source_id": "HCO_0039"
+    },
+    "CO_UNK_040": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_040.md",
+      "formal_id": "CO_UNK_040",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_040.md",
+      "source_id": "HCO_0040"
+    },
+    "CO_UNK_041": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_041.md",
+      "formal_id": "CO_UNK_041",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_041.md",
+      "source_id": "HCO_0041"
+    },
+    "CO_UNK_042": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_042.md",
+      "formal_id": "CO_UNK_042",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_042.md",
+      "source_id": "HCO_0042"
+    },
+    "CO_UNK_043": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_043.md",
+      "formal_id": "CO_UNK_043",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_043.md",
+      "source_id": "HCO_0043"
+    },
+    "CO_UNK_044": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_044.md",
+      "formal_id": "CO_UNK_044",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_044.md",
+      "source_id": "HCO_0044"
+    },
+    "CO_UNK_045": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_045.md",
+      "formal_id": "CO_UNK_045",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_045.md",
+      "source_id": "HCO_0045"
+    },
+    "CO_UNK_046": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_046.md",
+      "formal_id": "CO_UNK_046",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_046.md",
+      "source_id": "HCO_0046"
+    },
+    "CO_UNK_047": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_047.md",
+      "formal_id": "CO_UNK_047",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_047.md",
+      "source_id": "HCO_0047"
+    },
+    "CO_UNK_048": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_048.md",
+      "formal_id": "CO_UNK_048",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_048.md",
+      "source_id": "HCO_0048"
+    },
+    "CO_UNK_049": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_049.md",
+      "formal_id": "CO_UNK_049",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_049.md",
+      "source_id": "HCO_0049"
+    },
+    "CO_UNK_050": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_050.md",
+      "formal_id": "CO_UNK_050",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_050.md",
+      "source_id": "HCO_0050"
+    },
+    "CO_UNK_051": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_051.md",
+      "formal_id": "CO_UNK_051",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_051.md",
+      "source_id": "HCO_0051"
+    },
+    "CO_UNK_052": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_052.md",
+      "formal_id": "CO_UNK_052",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_052.md",
+      "source_id": "HCO_0052"
+    },
+    "CO_UNK_053": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_053.md",
+      "formal_id": "CO_UNK_053",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_053.md",
+      "source_id": "HCO_0053"
+    },
+    "CO_UNK_054": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_054.md",
+      "formal_id": "CO_UNK_054",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_054.md",
+      "source_id": "HCO_0054"
+    },
+    "CO_UNK_055": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_055.md",
+      "formal_id": "CO_UNK_055",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_055.md",
+      "source_id": "HCO_0055"
+    },
+    "CO_UNK_056": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_056.md",
+      "formal_id": "CO_UNK_056",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_056.md",
+      "source_id": "HCO_0056"
+    },
+    "CO_UNK_057": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_057.md",
+      "formal_id": "CO_UNK_057",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_057.md",
+      "source_id": "HCO_0057"
+    },
+    "CO_UNK_058": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_058.md",
+      "formal_id": "CO_UNK_058",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_058.md",
+      "source_id": "HCO_0058"
+    },
+    "CO_UNK_059": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_059.md",
+      "formal_id": "CO_UNK_059",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_059.md",
+      "source_id": "HCO_0059"
+    },
+    "CO_UNK_060": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_060.md",
+      "formal_id": "CO_UNK_060",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_060.md",
+      "source_id": "HCO_0060"
+    },
+    "CO_UNK_061": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_061.md",
+      "formal_id": "CO_UNK_061",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_061.md",
+      "source_id": "HCO_0061"
+    },
+    "CO_UNK_062": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_062.md",
+      "formal_id": "CO_UNK_062",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_062.md",
+      "source_id": "HCO_0064"
+    },
+    "CO_UNK_063": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_063.md",
+      "formal_id": "CO_UNK_063",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_063.md",
+      "source_id": "HCO_0066"
+    },
+    "CO_UNK_064": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_064.md",
+      "formal_id": "CO_UNK_064",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_064.md",
+      "source_id": "HCO_0067"
+    },
+    "CO_UNK_065": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_065.md",
+      "formal_id": "CO_UNK_065",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_065.md",
+      "source_id": "HCO_0068"
+    },
+    "CO_UNK_066": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_066.md",
+      "formal_id": "CO_UNK_066",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_066.md",
+      "source_id": "HCO_0074"
+    },
+    "CO_UNK_067": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_067.md",
+      "formal_id": "CO_UNK_067",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_067.md",
+      "source_id": "HCO_0075"
+    },
+    "CO_UNK_068": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_068.md",
+      "formal_id": "CO_UNK_068",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_068.md",
+      "source_id": "HCO_0076"
+    },
+    "CO_UNK_069": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_069.md",
+      "formal_id": "CO_UNK_069",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_069.md",
+      "source_id": "HCO_0081"
+    },
+    "CO_UNK_070": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_070.md",
+      "formal_id": "CO_UNK_070",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_070.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "CO_UNK_071": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/CO_UNK_071.md",
+      "formal_id": "CO_UNK_071",
+      "raw_packages": [],
+      "safe_card": "CO_UNK_071.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "DS_2009_001": {
+      "canonical_ids": [
+        "EXAM408-2009-Q05"
+      ],
+      "detail_card": "details/cards/DS_2009_001.md",
+      "formal_id": "DS_2009_001",
+      "raw_packages": [
+        "CS408-20260902-3fe155dee3efc9af"
+      ],
+      "safe_card": "DS_2009_001.md",
+      "source_id": "EXAM408-2009-Q05"
+    },
+    "DS_2009_002": {
+      "canonical_ids": [
+        "EXAM408-2009-Q09"
+      ],
+      "detail_card": "details/cards/DS_2009_002.md",
+      "formal_id": "DS_2009_002",
+      "raw_packages": [],
+      "safe_card": "DS_2009_002.md",
+      "source_id": "EXAM408-2009-Q09"
+    },
+    "DS_2009_003": {
+      "canonical_ids": [
+        "EXAM408-2009-Q10"
+      ],
+      "detail_card": "details/cards/DS_2009_003.md",
+      "formal_id": "DS_2009_003",
+      "raw_packages": [],
+      "safe_card": "DS_2009_003.md",
+      "source_id": "EXAM408-2009-Q10"
+    },
+    "DS_2009_004": {
+      "canonical_ids": [
+        "EXAM408-2009-Q42"
+      ],
+      "detail_card": "details/cards/DS_2009_004.md",
+      "formal_id": "DS_2009_004",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260812-c523feab924a-3f60aa920316c4da",
+        "CS408-LEGACY-CAP-20260813-6bf7965b39d3-378a81a9e8afe600"
+      ],
+      "safe_card": "DS_2009_004.md",
+      "source_id": "EXAM408-2009-Q42"
+    },
+    "DS_2010_001": {
+      "canonical_ids": [
+        "EXAM408-2010-Q05"
+      ],
+      "detail_card": "details/cards/DS_2010_001.md",
+      "formal_id": "DS_2010_001",
+      "raw_packages": [],
+      "safe_card": "DS_2010_001.md",
+      "source_id": "EXAM408-2010-Q05"
+    },
+    "DS_2010_002": {
+      "canonical_ids": [
+        "EXAM408-2010-Q07"
+      ],
+      "detail_card": "details/cards/DS_2010_002.md",
+      "formal_id": "DS_2010_002",
+      "raw_packages": [],
+      "safe_card": "DS_2010_002.md",
+      "source_id": "EXAM408-2010-Q07"
+    },
+    "DS_2010_003": {
+      "canonical_ids": [
+        "EXAM408-2010-Q10"
+      ],
+      "detail_card": "details/cards/DS_2010_003.md",
+      "formal_id": "DS_2010_003",
+      "raw_packages": [],
+      "safe_card": "DS_2010_003.md",
+      "source_id": "EXAM408-2010-Q10"
+    },
+    "DS_2010_004": {
+      "canonical_ids": [
+        "EXAM408-2010-Q42"
+      ],
+      "detail_card": "details/cards/DS_2010_004.md",
+      "formal_id": "DS_2010_004",
+      "raw_packages": [],
+      "safe_card": "DS_2010_004.md",
+      "source_id": "EXAM408-2010-Q42"
+    },
+    "DS_2011_001": {
+      "canonical_ids": [
+        "EXAM408-2011-Q03"
+      ],
+      "detail_card": "details/cards/DS_2011_001.md",
+      "formal_id": "DS_2011_001",
+      "raw_packages": [],
+      "safe_card": "DS_2011_001.md",
+      "source_id": "HDS_0007"
+    },
+    "DS_2011_002": {
+      "canonical_ids": [
+        "EXAM408-2011-Q05"
+      ],
+      "detail_card": "details/cards/DS_2011_002.md",
+      "formal_id": "DS_2011_002",
+      "raw_packages": [],
+      "safe_card": "DS_2011_002.md",
+      "source_id": "EXAM408-2011-Q05"
+    },
+    "DS_2011_003": {
+      "canonical_ids": [
+        "EXAM408-2011-Q06"
+      ],
+      "detail_card": "details/cards/DS_2011_003.md",
+      "formal_id": "DS_2011_003",
+      "raw_packages": [],
+      "safe_card": "DS_2011_003.md",
+      "source_id": "EXAM408-2011-Q06"
+    },
+    "DS_2012_001": {
+      "canonical_ids": [
+        "EXAM408-2012-Q03"
+      ],
+      "detail_card": "details/cards/DS_2012_001.md",
+      "formal_id": "DS_2012_001",
+      "raw_packages": [],
+      "safe_card": "DS_2012_001.md",
+      "source_id": "EXAM408-2012-Q03"
+    },
+    "DS_2012_002": {
+      "canonical_ids": [
+        "EXAM408-2012-Q08"
+      ],
+      "detail_card": "details/cards/DS_2012_002.md",
+      "formal_id": "DS_2012_002",
+      "raw_packages": [],
+      "safe_card": "DS_2012_002.md",
+      "source_id": "EXAM408-2012-Q08"
+    },
+    "DS_2012_003": {
+      "canonical_ids": [
+        "EXAM408-2012-Q06"
+      ],
+      "detail_card": "details/cards/DS_2012_003.md",
+      "formal_id": "DS_2012_003",
+      "raw_packages": [],
+      "safe_card": "DS_2012_003.md",
+      "source_id": "EXAM408-2012-Q06"
+    },
+    "DS_2012_004": {
+      "canonical_ids": [
+        "EXAM408-2012-Q04"
+      ],
+      "detail_card": "details/cards/DS_2012_004.md",
+      "formal_id": "DS_2012_004",
+      "raw_packages": [],
+      "safe_card": "DS_2012_004.md",
+      "source_id": "EXAM408-2012-Q04"
+    },
+    "DS_2012_005": {
+      "canonical_ids": [
+        "EXAM408-2012-Q09"
+      ],
+      "detail_card": "details/cards/DS_2012_005.md",
+      "formal_id": "DS_2012_005",
+      "raw_packages": [],
+      "safe_card": "DS_2012_005.md",
+      "source_id": "EXAM408-2012-Q09"
+    },
+    "DS_2012_006": {
+      "canonical_ids": [
+        "EXAM408-2012-Q42"
+      ],
+      "detail_card": "details/cards/DS_2012_006.md",
+      "formal_id": "DS_2012_006",
+      "raw_packages": [],
+      "safe_card": "DS_2012_006.md",
+      "source_id": "EXAM408-2012-Q42"
+    },
+    "DS_2013_001": {
+      "canonical_ids": [
+        "EXAM408-2013-Q09"
+      ],
+      "detail_card": "details/cards/DS_2013_001.md",
+      "formal_id": "DS_2013_001",
+      "raw_packages": [],
+      "safe_card": "DS_2013_001.md",
+      "source_id": "EXAM408-2013-Q09"
+    },
+    "DS_2013_002": {
+      "canonical_ids": [
+        "EXAM408-2013-Q10"
+      ],
+      "detail_card": "details/cards/DS_2013_002.md",
+      "formal_id": "DS_2013_002",
+      "raw_packages": [],
+      "safe_card": "DS_2013_002.md",
+      "source_id": "EXAM408-2013-Q10"
+    },
+    "DS_2014_002": {
+      "canonical_ids": [
+        "EXAM408-2014-Q03"
+      ],
+      "detail_card": "details/cards/DS_2014_002.md",
+      "formal_id": "DS_2014_002",
+      "raw_packages": [],
+      "safe_card": "DS_2014_002.md",
+      "source_id": "HDS_0006"
+    },
+    "DS_2014_003": {
+      "canonical_ids": [
+        "EXAM408-2014-Q04"
+      ],
+      "detail_card": "details/cards/DS_2014_003.md",
+      "formal_id": "DS_2014_003",
+      "raw_packages": [],
+      "safe_card": "DS_2014_003.md",
+      "source_id": "EXAM408-2014-Q04"
+    },
+    "DS_2014_004": {
+      "canonical_ids": [
+        "EXAM408-2014-Q09"
+      ],
+      "detail_card": "details/cards/DS_2014_004.md",
+      "formal_id": "DS_2014_004",
+      "raw_packages": [],
+      "safe_card": "DS_2014_004.md",
+      "source_id": "EXAM408-2014-Q09"
+    },
+    "DS_2014_005": {
+      "canonical_ids": [
+        "EXAM408-2014-Q08"
+      ],
+      "detail_card": "details/cards/DS_2014_005.md",
+      "formal_id": "DS_2014_005",
+      "raw_packages": [],
+      "safe_card": "DS_2014_005.md",
+      "source_id": "EXAM408-2014-Q08"
+    },
+    "DS_2015_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2015_001.md",
+      "formal_id": "DS_2015_001",
+      "raw_packages": [],
+      "safe_card": "DS_2015_001.md",
+      "source_id": "EXAM408-2015-Q02"
+    },
+    "DS_2015_002": {
+      "canonical_ids": [
+        "EXAM408-2015-Q05"
+      ],
+      "detail_card": "details/cards/DS_2015_002.md",
+      "formal_id": "DS_2015_002",
+      "raw_packages": [],
+      "safe_card": "DS_2015_002.md",
+      "source_id": "EXAM408-2015-Q05"
+    },
+    "DS_2015_003": {
+      "canonical_ids": [
+        "EXAM408-2015-Q04"
+      ],
+      "detail_card": "details/cards/DS_2015_003.md",
+      "formal_id": "DS_2015_003",
+      "raw_packages": [],
+      "safe_card": "DS_2015_003.md",
+      "source_id": "EXAM408-2015-Q04"
+    },
+    "DS_2015_004": {
+      "canonical_ids": [
+        "EXAM408-2015-Q10"
+      ],
+      "detail_card": "details/cards/DS_2015_004.md",
+      "formal_id": "DS_2015_004",
+      "raw_packages": [],
+      "safe_card": "DS_2015_004.md",
+      "source_id": "EXAM408-2015-Q10"
+    },
+    "DS_2015_005": {
+      "canonical_ids": [
+        "EXAM408-2015-Q09"
+      ],
+      "detail_card": "details/cards/DS_2015_005.md",
+      "formal_id": "DS_2015_005",
+      "raw_packages": [],
+      "safe_card": "DS_2015_005.md",
+      "source_id": "EXAM408-2015-Q09"
+    },
+    "DS_2015_006": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2015_006.md",
+      "formal_id": "DS_2015_006",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704"
+      ],
+      "safe_card": "DS_2015_006.md",
+      "source_id": "EXAM408-2015-Q41"
+    },
+    "DS_2016_001": {
+      "canonical_ids": [
+        "EXAM408-2016-Q01"
+      ],
+      "detail_card": "details/cards/DS_2016_001.md",
+      "formal_id": "DS_2016_001",
+      "raw_packages": [
+        "CS408-20260828-06a7fea3c9c1e73c",
+        "CS408-20260828-d515320376d1e25e",
+        "CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381"
+      ],
+      "safe_card": "DS_2016_001.md",
+      "source_id": "HDS_0004"
+    },
+    "DS_2016_002": {
+      "canonical_ids": [
+        "EXAM408-2016-Q05"
+      ],
+      "detail_card": "details/cards/DS_2016_002.md",
+      "formal_id": "DS_2016_002",
+      "raw_packages": [
+        "CS408-20260902-4797b121e0f8a025"
+      ],
+      "safe_card": "DS_2016_002.md",
+      "source_id": "EXAM408-2016-Q05"
+    },
+    "DS_2017_001": {
+      "canonical_ids": [
+        "EXAM408-2017-Q07"
+      ],
+      "detail_card": "details/cards/DS_2017_001.md",
+      "formal_id": "DS_2017_001",
+      "raw_packages": [],
+      "safe_card": "DS_2017_001.md",
+      "source_id": "EXAM408-2017-Q07"
+    },
+    "DS_2017_002": {
+      "canonical_ids": [
+        "EXAM408-2017-Q08"
+      ],
+      "detail_card": "details/cards/DS_2017_002.md",
+      "formal_id": "DS_2017_002",
+      "raw_packages": [],
+      "safe_card": "DS_2017_002.md",
+      "source_id": "EXAM408-2017-Q08"
+    },
+    "DS_2017_003": {
+      "canonical_ids": [
+        "EXAM408-2017-Q09"
+      ],
+      "detail_card": "details/cards/DS_2017_003.md",
+      "formal_id": "DS_2017_003",
+      "raw_packages": [],
+      "safe_card": "DS_2017_003.md",
+      "source_id": "EXAM408-2017-Q09"
+    },
+    "DS_2017_004": {
+      "canonical_ids": [
+        "EXAM408-2017-Q11"
+      ],
+      "detail_card": "details/cards/DS_2017_004.md",
+      "formal_id": "DS_2017_004",
+      "raw_packages": [],
+      "safe_card": "DS_2017_004.md",
+      "source_id": "EXAM408-2017-Q11"
+    },
+    "DS_2018_001": {
+      "canonical_ids": [
+        "EXAM408-2018-Q08"
+      ],
+      "detail_card": "details/cards/DS_2018_001.md",
+      "formal_id": "DS_2018_001",
+      "raw_packages": [],
+      "safe_card": "DS_2018_001.md",
+      "source_id": "EXAM408-2018-Q08"
+    },
+    "DS_2018_002": {
+      "canonical_ids": [
+        "EXAM408-2018-Q11"
+      ],
+      "detail_card": "details/cards/DS_2018_002.md",
+      "formal_id": "DS_2018_002",
+      "raw_packages": [],
+      "safe_card": "DS_2018_002.md",
+      "source_id": "EXAM408-2018-Q11"
+    },
+    "DS_2018_003": {
+      "canonical_ids": [
+        "EXAM408-2018-Q41"
+      ],
+      "detail_card": "details/cards/DS_2018_003.md",
+      "formal_id": "DS_2018_003",
+      "raw_packages": [],
+      "safe_card": "DS_2018_003.md",
+      "source_id": "EXAM408-2018-Q41"
+    },
+    "DS_2019_001": {
+      "canonical_ids": [
+        "EXAM408-2019-Q06"
+      ],
+      "detail_card": "details/cards/DS_2019_001.md",
+      "formal_id": "DS_2019_001",
+      "raw_packages": [],
+      "safe_card": "DS_2019_001.md",
+      "source_id": "EXAM408-2019-Q06"
+    },
+    "DS_2019_002": {
+      "canonical_ids": [
+        "EXAM408-2019-Q08"
+      ],
+      "detail_card": "details/cards/DS_2019_002.md",
+      "formal_id": "DS_2019_002",
+      "raw_packages": [],
+      "safe_card": "DS_2019_002.md",
+      "source_id": "EXAM408-2019-Q08"
+    },
+    "DS_2019_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2019_003.md",
+      "formal_id": "DS_2019_003",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b"
+      ],
+      "safe_card": "DS_2019_003.md",
+      "source_id": "EXAM408-2019-Q41"
+    },
+    "DS_2020_001": {
+      "canonical_ids": [
+        "EXAM408-2020-Q01"
+      ],
+      "detail_card": "details/cards/DS_2020_001.md",
+      "formal_id": "DS_2020_001",
+      "raw_packages": [
+        "CS408-20260902-8c1c2382cc3c5121"
+      ],
+      "safe_card": "DS_2020_001.md",
+      "source_id": "HDS_0002"
+    },
+    "DS_2020_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2020_002.md",
+      "formal_id": "DS_2020_002",
+      "raw_packages": [],
+      "safe_card": "DS_2020_002.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "DS_2020_003": {
+      "canonical_ids": [
+        "EXAM408-2020-Q10"
+      ],
+      "detail_card": "details/cards/DS_2020_003.md",
+      "formal_id": "DS_2020_003",
+      "raw_packages": [],
+      "safe_card": "DS_2020_003.md",
+      "source_id": "EXAM408-2020-Q10"
+    },
+    "DS_2020_004": {
+      "canonical_ids": [
+        "EXAM408-2020-Q41"
+      ],
+      "detail_card": "details/cards/DS_2020_004.md",
+      "formal_id": "DS_2020_004",
+      "raw_packages": [],
+      "safe_card": "DS_2020_004.md",
+      "source_id": "EXAM408-2020-Q41"
+    },
+    "DS_2021_001": {
+      "canonical_ids": [
+        "EXAM408-2021-Q06"
+      ],
+      "detail_card": "details/cards/DS_2021_001.md",
+      "formal_id": "DS_2021_001",
+      "raw_packages": [],
+      "safe_card": "DS_2021_001.md",
+      "source_id": "EXAM408-2021-Q06"
+    },
+    "DS_2021_002": {
+      "canonical_ids": [
+        "EXAM408-2021-Q09"
+      ],
+      "detail_card": "details/cards/DS_2021_002.md",
+      "formal_id": "DS_2021_002",
+      "raw_packages": [],
+      "safe_card": "DS_2021_002.md",
+      "source_id": "EXAM408-2021-Q09"
+    },
+    "DS_2022_001": {
+      "canonical_ids": [
+        "EXAM408-2022-Q08"
+      ],
+      "detail_card": "details/cards/DS_2022_001.md",
+      "formal_id": "DS_2022_001",
+      "raw_packages": [],
+      "safe_card": "DS_2022_001.md",
+      "source_id": "EXAM408-2022-Q08"
+    },
+    "DS_2022_002": {
+      "canonical_ids": [
+        "EXAM408-2022-Q11"
+      ],
+      "detail_card": "details/cards/DS_2022_002.md",
+      "formal_id": "DS_2022_002",
+      "raw_packages": [],
+      "safe_card": "DS_2022_002.md",
+      "source_id": "EXAM408-2022-Q11"
+    },
+    "DS_2023_001": {
+      "canonical_ids": [
+        "EXAM408-2023-Q03"
+      ],
+      "detail_card": "details/cards/DS_2023_001.md",
+      "formal_id": "DS_2023_001",
+      "raw_packages": [
+        "CS408-20260902-4ab99f8e028958cd"
+      ],
+      "safe_card": "DS_2023_001.md",
+      "source_id": "HDS_0003"
+    },
+    "DS_2023_002": {
+      "canonical_ids": [
+        "EXAM408-2023-Q01"
+      ],
+      "detail_card": "details/cards/DS_2023_002.md",
+      "formal_id": "DS_2023_002",
+      "raw_packages": [],
+      "safe_card": "DS_2023_002.md",
+      "source_id": "HDS_0005"
+    },
+    "DS_2023_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2023_003.md",
+      "formal_id": "DS_2023_003",
+      "raw_packages": [],
+      "safe_card": "DS_2023_003.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "DS_2023_004": {
+      "canonical_ids": [
+        "EXAM408-2023-Q07"
+      ],
+      "detail_card": "details/cards/DS_2023_004.md",
+      "formal_id": "DS_2023_004",
+      "raw_packages": [],
+      "safe_card": "DS_2023_004.md",
+      "source_id": "EXAM408-2023-Q07"
+    },
+    "DS_2023_005": {
+      "canonical_ids": [
+        "EXAM408-2023-Q09"
+      ],
+      "detail_card": "details/cards/DS_2023_005.md",
+      "formal_id": "DS_2023_005",
+      "raw_packages": [],
+      "safe_card": "DS_2023_005.md",
+      "source_id": "EXAM408-2023-Q09"
+    },
+    "DS_2024_001": {
+      "canonical_ids": [
+        "EXAM408-2024-Q03"
+      ],
+      "detail_card": "details/cards/DS_2024_001.md",
+      "formal_id": "DS_2024_001",
+      "raw_packages": [],
+      "safe_card": "DS_2024_001.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "DS_2024_002": {
+      "canonical_ids": [
+        "EXAM408-2024-Q05"
+      ],
+      "detail_card": "details/cards/DS_2024_002.md",
+      "formal_id": "DS_2024_002",
+      "raw_packages": [],
+      "safe_card": "DS_2024_002.md",
+      "source_id": "EXAM408-2024-Q05"
+    },
+    "OS_2009_001": {
+      "canonical_ids": [
+        "EXAM408-2009-Q23"
+      ],
+      "detail_card": "details/cards/OS_2009_001.md",
+      "formal_id": "OS_2009_001",
+      "raw_packages": [],
+      "safe_card": "OS_2009_001.md",
+      "source_id": "EXAM408-2009-Q23"
+    },
+    "OS_2009_002": {
+      "canonical_ids": [
+        "EXAM408-2009-Q26"
+      ],
+      "detail_card": "details/cards/OS_2009_002.md",
+      "formal_id": "OS_2009_002",
+      "raw_packages": [],
+      "safe_card": "OS_2009_002.md",
+      "source_id": "EXAM408-2009-Q26"
+    },
+    "OS_2009_003": {
+      "canonical_ids": [
+        "EXAM408-2009-Q28"
+      ],
+      "detail_card": "details/cards/OS_2009_003.md",
+      "formal_id": "OS_2009_003",
+      "raw_packages": [],
+      "safe_card": "OS_2009_003.md",
+      "source_id": "EXAM408-2009-Q28"
+    },
+    "OS_2010_001": {
+      "canonical_ids": [
+        "EXAM408-2010-Q23"
+      ],
+      "detail_card": "details/cards/OS_2010_001.md",
+      "formal_id": "OS_2010_001",
+      "raw_packages": [],
+      "safe_card": "OS_2010_001.md",
+      "source_id": "EXAM408-2010-Q23"
+    },
+    "OS_2010_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2010_002.md",
+      "formal_id": "OS_2010_002",
+      "raw_packages": [],
+      "safe_card": "OS_2010_002.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "OS_2010_003": {
+      "canonical_ids": [
+        "EXAM408-2010-Q29"
+      ],
+      "detail_card": "details/cards/OS_2010_003.md",
+      "formal_id": "OS_2010_003",
+      "raw_packages": [],
+      "safe_card": "OS_2010_003.md",
+      "source_id": "EXAM408-2010-Q29"
+    },
+    "OS_2010_004": {
+      "canonical_ids": [
+        "EXAM408-2010-Q30"
+      ],
+      "detail_card": "details/cards/OS_2010_004.md",
+      "formal_id": "OS_2010_004",
+      "raw_packages": [],
+      "safe_card": "OS_2010_004.md",
+      "source_id": "EXAM408-2010-Q30"
+    },
+    "OS_2011_001": {
+      "canonical_ids": [
+        "EXAM408-2011-Q30"
+      ],
+      "detail_card": "details/cards/OS_2011_001.md",
+      "formal_id": "OS_2011_001",
+      "raw_packages": [],
+      "safe_card": "OS_2011_001.md",
+      "source_id": "EXAM408-2011-Q30"
+    },
+    "OS_2012_001": {
+      "canonical_ids": [
+        "EXAM408-2012-Q31"
+      ],
+      "detail_card": "details/cards/OS_2012_001.md",
+      "formal_id": "OS_2012_001",
+      "raw_packages": [],
+      "safe_card": "OS_2012_001.md",
+      "source_id": "EXAM408-2012-Q31"
+    },
+    "OS_2012_002": {
+      "canonical_ids": [
+        "EXAM408-2012-Q30"
+      ],
+      "detail_card": "details/cards/OS_2012_002.md",
+      "formal_id": "OS_2012_002",
+      "raw_packages": [],
+      "safe_card": "OS_2012_002.md",
+      "source_id": "EXAM408-2012-Q30"
+    },
+    "OS_2013_001": {
+      "canonical_ids": [
+        "EXAM408-2013-Q32"
+      ],
+      "detail_card": "details/cards/OS_2013_001.md",
+      "formal_id": "OS_2013_001",
+      "raw_packages": [],
+      "safe_card": "OS_2013_001.md",
+      "source_id": "HOS_0034"
+    },
+    "OS_2013_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2013_002.md",
+      "formal_id": "OS_2013_002",
+      "raw_packages": [],
+      "safe_card": "OS_2013_002.md",
+      "source_id": "HOS_0047"
+    },
+    "OS_2013_003": {
+      "canonical_ids": [
+        "EXAM408-2013-Q26"
+      ],
+      "detail_card": "details/cards/OS_2013_003.md",
+      "formal_id": "OS_2013_003",
+      "raw_packages": [],
+      "safe_card": "OS_2013_003.md",
+      "source_id": "EXAM408-2013-Q26"
+    },
+    "OS_2014_001": {
+      "canonical_ids": [
+        "EXAM408-2014-Q25"
+      ],
+      "detail_card": "details/cards/OS_2014_001.md",
+      "formal_id": "OS_2014_001",
+      "raw_packages": [],
+      "safe_card": "OS_2014_001.md",
+      "source_id": "EXAM408-2014-Q25"
+    },
+    "OS_2014_002": {
+      "canonical_ids": [
+        "EXAM408-2014-Q26"
+      ],
+      "detail_card": "details/cards/OS_2014_002.md",
+      "formal_id": "OS_2014_002",
+      "raw_packages": [],
+      "safe_card": "OS_2014_002.md",
+      "source_id": "EXAM408-2014-Q26"
+    },
+    "OS_2014_003": {
+      "canonical_ids": [
+        "EXAM408-2014-Q31"
+      ],
+      "detail_card": "details/cards/OS_2014_003.md",
+      "formal_id": "OS_2014_003",
+      "raw_packages": [],
+      "safe_card": "OS_2014_003.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "OS_2014_004": {
+      "canonical_ids": [
+        "EXAM408-2014-Q27"
+      ],
+      "detail_card": "details/cards/OS_2014_004.md",
+      "formal_id": "OS_2014_004",
+      "raw_packages": [
+        "CS408-20260830-35b47c6e4ee80d11",
+        "CS408-LEGACY-CAP-20260805-98c36856f10a-0a59a284e52ab38d"
+      ],
+      "safe_card": "OS_2014_004.md",
+      "source_id": "EXAM408-2014-Q27"
+    },
+    "OS_2015_001": {
+      "canonical_ids": [
+        "EXAM408-2015-Q26"
+      ],
+      "detail_card": "details/cards/OS_2015_001.md",
+      "formal_id": "OS_2015_001",
+      "raw_packages": [],
+      "safe_card": "OS_2015_001.md",
+      "source_id": "HOS_0035"
+    },
+    "OS_2015_002": {
+      "canonical_ids": [
+        "EXAM408-2015-Q29"
+      ],
+      "detail_card": "details/cards/OS_2015_002.md",
+      "formal_id": "OS_2015_002",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260720-d6144ffb662a-1fa2227f82435744",
+        "CS408-LEGACY-CAP-20260724-5d344afa4916-baec11d51b1c23a2",
+        "CS408-LEGACY-CAP-20260726-f7bcff6986d4-70ffe934c3547a0e"
+      ],
+      "safe_card": "OS_2015_002.md",
+      "source_id": "EXAM408-2015-Q29"
+    },
+    "OS_2015_003": {
+      "canonical_ids": [
+        "EXAM408-2015-Q31"
+      ],
+      "detail_card": "details/cards/OS_2015_003.md",
+      "formal_id": "OS_2015_003",
+      "raw_packages": [],
+      "safe_card": "OS_2015_003.md",
+      "source_id": "EXAM408-2015-Q31"
+    },
+    "OS_2016_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2016_001.md",
+      "formal_id": "OS_2016_001",
+      "raw_packages": [],
+      "safe_card": "OS_2016_001.md",
+      "source_id": "HOS_0015"
+    },
+    "OS_2016_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2016_002.md",
+      "formal_id": "OS_2016_002",
+      "raw_packages": [],
+      "safe_card": "OS_2016_002.md",
+      "source_id": "HOS_0016"
+    },
+    "OS_2016_003": {
+      "canonical_ids": [
+        "EXAM408-2016-Q25"
+      ],
+      "detail_card": "details/cards/OS_2016_003.md",
+      "formal_id": "OS_2016_003",
+      "raw_packages": [],
+      "safe_card": "OS_2016_003.md",
+      "source_id": "HOS_0036"
+    },
+    "OS_2016_004": {
+      "canonical_ids": [
+        "EXAM408-2024-Q32"
+      ],
+      "detail_card": "details/cards/OS_2016_004.md",
+      "formal_id": "OS_2016_004",
+      "raw_packages": [],
+      "safe_card": "OS_2016_004.md",
+      "source_id": "HOS_0139"
+    },
+    "OS_2017_001": {
+      "canonical_ids": [
+        "EXAM408-2017-Q27"
+      ],
+      "detail_card": "details/cards/OS_2017_001.md",
+      "formal_id": "OS_2017_001",
+      "raw_packages": [],
+      "safe_card": "OS_2017_001.md",
+      "source_id": "HOS_0051"
+    },
+    "OS_2017_002": {
+      "canonical_ids": [
+        "EXAM408-2017-Q25"
+      ],
+      "detail_card": "details/cards/OS_2017_002.md",
+      "formal_id": "OS_2017_002",
+      "raw_packages": [],
+      "safe_card": "OS_2017_002.md",
+      "source_id": "EXAM408-2017-Q25"
+    },
+    "OS_2017_003": {
+      "canonical_ids": [
+        "EXAM408-2017-Q30"
+      ],
+      "detail_card": "details/cards/OS_2017_003.md",
+      "formal_id": "OS_2017_003",
+      "raw_packages": [],
+      "safe_card": "OS_2017_003.md",
+      "source_id": "EXAM408-2017-Q30"
+    },
+    "OS_2017_004": {
+      "canonical_ids": [
+        "EXAM408-2017-Q26"
+      ],
+      "detail_card": "details/cards/OS_2017_004.md",
+      "formal_id": "OS_2017_004",
+      "raw_packages": [],
+      "safe_card": "OS_2017_004.md",
+      "source_id": "EXAM408-2017-Q26"
+    },
+    "OS_2018_001": {
+      "canonical_ids": [
+        "EXAM408-2018-Q28"
+      ],
+      "detail_card": "details/cards/OS_2018_001.md",
+      "formal_id": "OS_2018_001",
+      "raw_packages": [],
+      "safe_card": "OS_2018_001.md",
+      "source_id": "HOS_0017"
+    },
+    "OS_2018_003": {
+      "canonical_ids": [
+        "EXAM408-2018-Q24"
+      ],
+      "detail_card": "details/cards/OS_2018_003.md",
+      "formal_id": "OS_2018_003",
+      "raw_packages": [],
+      "safe_card": "OS_2018_003.md",
+      "source_id": "HOS_0048"
+    },
+    "OS_2018_005": {
+      "canonical_ids": [
+        "EXAM408-2018-Q32"
+      ],
+      "detail_card": "details/cards/OS_2018_005.md",
+      "formal_id": "OS_2018_005",
+      "raw_packages": [],
+      "safe_card": "OS_2018_005.md",
+      "source_id": "EXAM408-2018-Q32"
+    },
+    "OS_2019_001": {
+      "canonical_ids": [
+        "EXAM408-2019-Q30"
+      ],
+      "detail_card": "details/cards/OS_2019_001.md",
+      "formal_id": "OS_2019_001",
+      "raw_packages": [],
+      "safe_card": "OS_2019_001.md",
+      "source_id": "HOS_0018"
+    },
+    "OS_2019_002": {
+      "canonical_ids": [
+        "EXAM408-2019-Q32"
+      ],
+      "detail_card": "details/cards/OS_2019_002.md",
+      "formal_id": "OS_2019_002",
+      "raw_packages": [],
+      "safe_card": "OS_2019_002.md",
+      "source_id": "HOS_0079"
+    },
+    "OS_2019_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2019_003.md",
+      "formal_id": "OS_2019_003",
+      "raw_packages": [],
+      "safe_card": "OS_2019_003.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "OS_2019_004": {
+      "canonical_ids": [
+        "EXAM408-2019-Q23"
+      ],
+      "detail_card": "details/cards/OS_2019_004.md",
+      "formal_id": "OS_2019_004",
+      "raw_packages": [],
+      "safe_card": "OS_2019_004.md",
+      "source_id": "EXAM408-2019-Q23"
+    },
+    "OS_2019_005": {
+      "canonical_ids": [
+        "EXAM408-2019-Q29"
+      ],
+      "detail_card": "details/cards/OS_2019_005.md",
+      "formal_id": "OS_2019_005",
+      "raw_packages": [],
+      "safe_card": "OS_2019_005.md",
+      "source_id": "EXAM408-2019-Q29"
+    },
+    "OS_2019_006": {
+      "canonical_ids": [
+        "EXAM408-2019-Q28"
+      ],
+      "detail_card": "details/cards/OS_2019_006.md",
+      "formal_id": "OS_2019_006",
+      "raw_packages": [],
+      "safe_card": "OS_2019_006.md",
+      "source_id": "HOS_0080"
+    },
+    "OS_2020_001": {
+      "canonical_ids": [
+        "EXAM408-2020-Q32"
+      ],
+      "detail_card": "details/cards/OS_2020_001.md",
+      "formal_id": "OS_2020_001",
+      "raw_packages": [],
+      "safe_card": "OS_2020_001.md",
+      "source_id": "HOS_0019"
+    },
+    "OS_2020_002": {
+      "canonical_ids": [
+        "EXAM408-2020-Q29"
+      ],
+      "detail_card": "details/cards/OS_2020_002.md",
+      "formal_id": "OS_2020_002",
+      "raw_packages": [],
+      "safe_card": "OS_2020_002.md",
+      "source_id": "HOS_0055"
+    },
+    "OS_2020_003": {
+      "canonical_ids": [
+        "EXAM408-2020-Q23"
+      ],
+      "detail_card": "details/cards/OS_2020_003.md",
+      "formal_id": "OS_2020_003",
+      "raw_packages": [],
+      "safe_card": "OS_2020_003.md",
+      "source_id": "EXAM408-2020-Q23"
+    },
+    "OS_2020_004": {
+      "canonical_ids": [
+        "EXAM408-2020-Q24"
+      ],
+      "detail_card": "details/cards/OS_2020_004.md",
+      "formal_id": "OS_2020_004",
+      "raw_packages": [],
+      "safe_card": "OS_2020_004.md",
+      "source_id": "EXAM408-2020-Q24"
+    },
+    "OS_2021_001": {
+      "canonical_ids": [
+        "EXAM408-2021-Q28"
+      ],
+      "detail_card": "details/cards/OS_2021_001.md",
+      "formal_id": "OS_2021_001",
+      "raw_packages": [],
+      "safe_card": "OS_2021_001.md",
+      "source_id": "HOS_0142"
+    },
+    "OS_2021_002": {
+      "canonical_ids": [
+        "EXAM408-2021-Q23"
+      ],
+      "detail_card": "details/cards/OS_2021_002.md",
+      "formal_id": "OS_2021_002",
+      "raw_packages": [],
+      "safe_card": "OS_2021_002.md",
+      "source_id": "EXAM408-2021-Q23"
+    },
+    "OS_2021_003": {
+      "canonical_ids": [
+        "EXAM408-2021-Q32"
+      ],
+      "detail_card": "details/cards/OS_2021_003.md",
+      "formal_id": "OS_2021_003",
+      "raw_packages": [],
+      "safe_card": "OS_2021_003.md",
+      "source_id": "EXAM408-2021-Q32"
+    },
+    "OS_2021_004": {
+      "canonical_ids": [
+        "EXAM408-2021-Q29"
+      ],
+      "detail_card": "details/cards/OS_2021_004.md",
+      "formal_id": "OS_2021_004",
+      "raw_packages": [],
+      "safe_card": "OS_2021_004.md",
+      "source_id": "EXAM408-2021-Q29"
+    },
+    "OS_2022_001": {
+      "canonical_ids": [
+        "EXAM408-2022-Q25"
+      ],
+      "detail_card": "details/cards/OS_2022_001.md",
+      "formal_id": "OS_2022_001",
+      "raw_packages": [],
+      "safe_card": "OS_2022_001.md",
+      "source_id": "HOS_0052"
+    },
+    "OS_2022_002": {
+      "canonical_ids": [
+        "EXAM408-2022-Q23"
+      ],
+      "detail_card": "details/cards/OS_2022_002.md",
+      "formal_id": "OS_2022_002",
+      "raw_packages": [],
+      "safe_card": "OS_2022_002.md",
+      "source_id": "EXAM408-2022-Q23"
+    },
+    "OS_2022_003": {
+      "canonical_ids": [
+        "EXAM408-2022-Q31"
+      ],
+      "detail_card": "details/cards/OS_2022_003.md",
+      "formal_id": "OS_2022_003",
+      "raw_packages": [],
+      "safe_card": "OS_2022_003.md",
+      "source_id": "EXAM408-2022-Q31"
+    },
+    "OS_2023_001": {
+      "canonical_ids": [
+        "EXAM408-2023-Q29"
+      ],
+      "detail_card": "details/cards/OS_2023_001.md",
+      "formal_id": "OS_2023_001",
+      "raw_packages": [],
+      "safe_card": "OS_2023_001.md",
+      "source_id": "HOS_0049"
+    },
+    "OS_2023_002": {
+      "canonical_ids": [
+        "EXAM408-2023-Q28"
+      ],
+      "detail_card": "details/cards/OS_2023_002.md",
+      "formal_id": "OS_2023_002",
+      "raw_packages": [],
+      "safe_card": "OS_2023_002.md",
+      "source_id": "HOS_0063"
+    },
+    "OS_2023_003": {
+      "canonical_ids": [
+        "EXAM408-2011-Q29"
+      ],
+      "detail_card": "details/cards/OS_2023_003.md",
+      "formal_id": "OS_2023_003",
+      "raw_packages": [],
+      "safe_card": "OS_2023_003.md",
+      "source_id": "HOS_0140"
+    },
+    "OS_2023_004": {
+      "canonical_ids": [
+        "EXAM408-2023-Q31"
+      ],
+      "detail_card": "details/cards/OS_2023_004.md",
+      "formal_id": "OS_2023_004",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260720-657d203d985f-10890e4911ad845c",
+        "CS408-LEGACY-CAP-20260724-3ad387730c4d-24da641edb4446c3",
+        "CS408-LEGACY-CAP-20260725-18280ed3c931-10e2b840df025c4b"
+      ],
+      "safe_card": "OS_2023_004.md",
+      "source_id": "EXAM408-2023-Q31"
+    },
+    "OS_2023_005": {
+      "canonical_ids": [
+        "EXAM408-2023-Q25"
+      ],
+      "detail_card": "details/cards/OS_2023_005.md",
+      "formal_id": "OS_2023_005",
+      "raw_packages": [],
+      "safe_card": "OS_2023_005.md",
+      "source_id": "EXAM408-2023-Q25"
+    },
+    "OS_2024_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_2024_001.md",
+      "formal_id": "OS_2024_001",
+      "raw_packages": [],
+      "safe_card": "OS_2024_001.md",
+      "source_id": "HOS_0141"
+    },
+    "OS_UNK_001": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_001.md",
+      "formal_id": "OS_UNK_001",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_001.md",
+      "source_id": "HOS_0001"
+    },
+    "OS_UNK_002": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_002.md",
+      "formal_id": "OS_UNK_002",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_002.md",
+      "source_id": "HOS_0002"
+    },
+    "OS_UNK_003": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_003.md",
+      "formal_id": "OS_UNK_003",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_003.md",
+      "source_id": "HOS_0003"
+    },
+    "OS_UNK_004": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_004.md",
+      "formal_id": "OS_UNK_004",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_004.md",
+      "source_id": "HOS_0004"
+    },
+    "OS_UNK_005": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_005.md",
+      "formal_id": "OS_UNK_005",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_005.md",
+      "source_id": "HOS_0005"
+    },
+    "OS_UNK_006": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_006.md",
+      "formal_id": "OS_UNK_006",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_006.md",
+      "source_id": "HOS_0006"
+    },
+    "OS_UNK_007": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_007.md",
+      "formal_id": "OS_UNK_007",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_007.md",
+      "source_id": "HOS_0007"
+    },
+    "OS_UNK_008": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_008.md",
+      "formal_id": "OS_UNK_008",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_008.md",
+      "source_id": "HOS_0008"
+    },
+    "OS_UNK_009": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_009.md",
+      "formal_id": "OS_UNK_009",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_009.md",
+      "source_id": "HOS_0009"
+    },
+    "OS_UNK_010": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_010.md",
+      "formal_id": "OS_UNK_010",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_010.md",
+      "source_id": "HOS_0010"
+    },
+    "OS_UNK_011": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_011.md",
+      "formal_id": "OS_UNK_011",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_011.md",
+      "source_id": "HOS_0011"
+    },
+    "OS_UNK_012": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_012.md",
+      "formal_id": "OS_UNK_012",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_012.md",
+      "source_id": "HOS_0012"
+    },
+    "OS_UNK_013": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_013.md",
+      "formal_id": "OS_UNK_013",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_013.md",
+      "source_id": "HOS_0013"
+    },
+    "OS_UNK_014": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_014.md",
+      "formal_id": "OS_UNK_014",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260725-9789937ae98e-c6465a1cf1f9e414"
+      ],
+      "safe_card": "OS_UNK_014.md",
+      "source_id": "HOS_0014"
+    },
+    "OS_UNK_015": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_015.md",
+      "formal_id": "OS_UNK_015",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_015.md",
+      "source_id": "HOS_0020"
+    },
+    "OS_UNK_016": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_016.md",
+      "formal_id": "OS_UNK_016",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_016.md",
+      "source_id": "HOS_0021"
+    },
+    "OS_UNK_017": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_017.md",
+      "formal_id": "OS_UNK_017",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_017.md",
+      "source_id": "HOS_0022"
+    },
+    "OS_UNK_018": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_018.md",
+      "formal_id": "OS_UNK_018",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_018.md",
+      "source_id": "HOS_0023"
+    },
+    "OS_UNK_019": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_019.md",
+      "formal_id": "OS_UNK_019",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_019.md",
+      "source_id": "HOS_0024"
+    },
+    "OS_UNK_020": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_020.md",
+      "formal_id": "OS_UNK_020",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_020.md",
+      "source_id": "HOS_0025"
+    },
+    "OS_UNK_021": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_021.md",
+      "formal_id": "OS_UNK_021",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_021.md",
+      "source_id": "HOS_0026"
+    },
+    "OS_UNK_022": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_022.md",
+      "formal_id": "OS_UNK_022",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_022.md",
+      "source_id": "HOS_0027"
+    },
+    "OS_UNK_023": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_023.md",
+      "formal_id": "OS_UNK_023",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_023.md",
+      "source_id": "HOS_0028"
+    },
+    "OS_UNK_024": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_024.md",
+      "formal_id": "OS_UNK_024",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_024.md",
+      "source_id": "HOS_0029"
+    },
+    "OS_UNK_025": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_025.md",
+      "formal_id": "OS_UNK_025",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_025.md",
+      "source_id": "HOS_0030"
+    },
+    "OS_UNK_026": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_026.md",
+      "formal_id": "OS_UNK_026",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_026.md",
+      "source_id": "HOS_0031"
+    },
+    "OS_UNK_027": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_027.md",
+      "formal_id": "OS_UNK_027",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_027.md",
+      "source_id": "HOS_0032"
+    },
+    "OS_UNK_028": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_028.md",
+      "formal_id": "OS_UNK_028",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_028.md",
+      "source_id": "HOS_0033"
+    },
+    "OS_UNK_029": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_029.md",
+      "formal_id": "OS_UNK_029",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_029.md",
+      "source_id": "HOS_0037"
+    },
+    "OS_UNK_030": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_030.md",
+      "formal_id": "OS_UNK_030",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_030.md",
+      "source_id": "HOS_0038"
+    },
+    "OS_UNK_031": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_031.md",
+      "formal_id": "OS_UNK_031",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_031.md",
+      "source_id": "HOS_0039"
+    },
+    "OS_UNK_032": {
+      "canonical_ids": [
+        "EXAM408-2010-Q25"
+      ],
+      "detail_card": "details/cards/OS_UNK_032.md",
+      "formal_id": "OS_UNK_032",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_032.md",
+      "source_id": "HOS_0041"
+    },
+    "OS_UNK_033": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_033.md",
+      "formal_id": "OS_UNK_033",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_033.md",
+      "source_id": "HOS_0042"
+    },
+    "OS_UNK_034": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_034.md",
+      "formal_id": "OS_UNK_034",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_034.md",
+      "source_id": "HOS_0043"
+    },
+    "OS_UNK_035": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_035.md",
+      "formal_id": "OS_UNK_035",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_035.md",
+      "source_id": "HOS_0044"
+    },
+    "OS_UNK_036": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_036.md",
+      "formal_id": "OS_UNK_036",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_036.md",
+      "source_id": "HOS_0045"
+    },
+    "OS_UNK_037": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_037.md",
+      "formal_id": "OS_UNK_037",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_037.md",
+      "source_id": "HOS_0046"
+    },
+    "OS_UNK_038": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_038.md",
+      "formal_id": "OS_UNK_038",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_038.md",
+      "source_id": "HOS_0050"
+    },
+    "OS_UNK_039": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_039.md",
+      "formal_id": "OS_UNK_039",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_039.md",
+      "source_id": "HOS_0053"
+    },
+    "OS_UNK_040": {
+      "canonical_ids": [
+        "EXAM408-2016-Q27"
+      ],
+      "detail_card": "details/cards/OS_UNK_040.md",
+      "formal_id": "OS_UNK_040",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_040.md",
+      "source_id": "HOS_0054"
+    },
+    "OS_UNK_041": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_041.md",
+      "formal_id": "OS_UNK_041",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_041.md",
+      "source_id": "HOS_0056"
+    },
+    "OS_UNK_042": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_042.md",
+      "formal_id": "OS_UNK_042",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_042.md",
+      "source_id": "HOS_0057"
+    },
+    "OS_UNK_043": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_043.md",
+      "formal_id": "OS_UNK_043",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_043.md",
+      "source_id": "HOS_0058"
+    },
+    "OS_UNK_044": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_044.md",
+      "formal_id": "OS_UNK_044",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_044.md",
+      "source_id": "HOS_0059"
+    },
+    "OS_UNK_045": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_045.md",
+      "formal_id": "OS_UNK_045",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_045.md",
+      "source_id": "HOS_0060"
+    },
+    "OS_UNK_046": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_046.md",
+      "formal_id": "OS_UNK_046",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_046.md",
+      "source_id": "HOS_0061"
+    },
+    "OS_UNK_047": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_047.md",
+      "formal_id": "OS_UNK_047",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_047.md",
+      "source_id": "HOS_0062"
+    },
+    "OS_UNK_048": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_048.md",
+      "formal_id": "OS_UNK_048",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_048.md",
+      "source_id": "HOS_0064"
+    },
+    "OS_UNK_049": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_049.md",
+      "formal_id": "OS_UNK_049",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_049.md",
+      "source_id": "HOS_0065"
+    },
+    "OS_UNK_050": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_050.md",
+      "formal_id": "OS_UNK_050",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_050.md",
+      "source_id": "HOS_0066"
+    },
+    "OS_UNK_051": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_051.md",
+      "formal_id": "OS_UNK_051",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_051.md",
+      "source_id": "HOS_0067"
+    },
+    "OS_UNK_052": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_052.md",
+      "formal_id": "OS_UNK_052",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_052.md",
+      "source_id": "HOS_0068"
+    },
+    "OS_UNK_053": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_053.md",
+      "formal_id": "OS_UNK_053",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_053.md",
+      "source_id": "HOS_0069"
+    },
+    "OS_UNK_054": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_054.md",
+      "formal_id": "OS_UNK_054",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_054.md",
+      "source_id": "HOS_0070"
+    },
+    "OS_UNK_055": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_055.md",
+      "formal_id": "OS_UNK_055",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_055.md",
+      "source_id": "HOS_0071"
+    },
+    "OS_UNK_056": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_056.md",
+      "formal_id": "OS_UNK_056",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_056.md",
+      "source_id": "HOS_0072"
+    },
+    "OS_UNK_057": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_057.md",
+      "formal_id": "OS_UNK_057",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_057.md",
+      "source_id": "HOS_0073"
+    },
+    "OS_UNK_058": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_058.md",
+      "formal_id": "OS_UNK_058",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_058.md",
+      "source_id": "HOS_0074"
+    },
+    "OS_UNK_059": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_059.md",
+      "formal_id": "OS_UNK_059",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_059.md",
+      "source_id": "HOS_0075"
+    },
+    "OS_UNK_060": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_060.md",
+      "formal_id": "OS_UNK_060",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_060.md",
+      "source_id": "HOS_0076"
+    },
+    "OS_UNK_061": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_061.md",
+      "formal_id": "OS_UNK_061",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_061.md",
+      "source_id": "HOS_0077"
+    },
+    "OS_UNK_062": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_062.md",
+      "formal_id": "OS_UNK_062",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_062.md",
+      "source_id": "HOS_0078"
+    },
+    "OS_UNK_063": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_063.md",
+      "formal_id": "OS_UNK_063",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_063.md",
+      "source_id": "HOS_0081"
+    },
+    "OS_UNK_064": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_064.md",
+      "formal_id": "OS_UNK_064",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_064.md",
+      "source_id": "HOS_0082"
+    },
+    "OS_UNK_065": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_065.md",
+      "formal_id": "OS_UNK_065",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_065.md",
+      "source_id": "HOS_0083"
+    },
+    "OS_UNK_066": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_066.md",
+      "formal_id": "OS_UNK_066",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_066.md",
+      "source_id": "HOS_0084"
+    },
+    "OS_UNK_067": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_067.md",
+      "formal_id": "OS_UNK_067",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_067.md",
+      "source_id": "HOS_0085"
+    },
+    "OS_UNK_068": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_068.md",
+      "formal_id": "OS_UNK_068",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_068.md",
+      "source_id": "HOS_0086"
+    },
+    "OS_UNK_069": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_069.md",
+      "formal_id": "OS_UNK_069",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_069.md",
+      "source_id": "HOS_0087"
+    },
+    "OS_UNK_070": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_070.md",
+      "formal_id": "OS_UNK_070",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_070.md",
+      "source_id": "HOS_0088"
+    },
+    "OS_UNK_071": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_071.md",
+      "formal_id": "OS_UNK_071",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_071.md",
+      "source_id": "HOS_0089"
+    },
+    "OS_UNK_072": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_072.md",
+      "formal_id": "OS_UNK_072",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_072.md",
+      "source_id": "HOS_0090"
+    },
+    "OS_UNK_073": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_073.md",
+      "formal_id": "OS_UNK_073",
+      "raw_packages": [
+        "CS408-20260830-ed68ee9892d81608"
+      ],
+      "safe_card": "OS_UNK_073.md",
+      "source_id": "HOS_0091"
+    },
+    "OS_UNK_074": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_074.md",
+      "formal_id": "OS_UNK_074",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_074.md",
+      "source_id": "HOS_0092"
+    },
+    "OS_UNK_075": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_075.md",
+      "formal_id": "OS_UNK_075",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260725-775b948e272f-d73153d7928e73dc"
+      ],
+      "safe_card": "OS_UNK_075.md",
+      "source_id": "HOS_0093"
+    },
+    "OS_UNK_076": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_076.md",
+      "formal_id": "OS_UNK_076",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260718-6414162cd9ea-70bd5a2c277d46dd",
+        "CS408-LEGACY-CAP-20260725-c4ec209e44c9-a0a8b3d304209c7e"
+      ],
+      "safe_card": "OS_UNK_076.md",
+      "source_id": "HOS_0094"
+    },
+    "OS_UNK_077": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_077.md",
+      "formal_id": "OS_UNK_077",
+      "raw_packages": [
+        "CS408-20260828-444aea7859821d41",
+        "CS408-20260829-47b20e0464490445"
+      ],
+      "safe_card": "OS_UNK_077.md",
+      "source_id": "HOS_0095"
+    },
+    "OS_UNK_078": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_078.md",
+      "formal_id": "OS_UNK_078",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_078.md",
+      "source_id": "HOS_0096"
+    },
+    "OS_UNK_079": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_079.md",
+      "formal_id": "OS_UNK_079",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_079.md",
+      "source_id": "HOS_0097"
+    },
+    "OS_UNK_080": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_080.md",
+      "formal_id": "OS_UNK_080",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_080.md",
+      "source_id": "HOS_0098"
+    },
+    "OS_UNK_081": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_081.md",
+      "formal_id": "OS_UNK_081",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_081.md",
+      "source_id": "HOS_0099"
+    },
+    "OS_UNK_082": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_082.md",
+      "formal_id": "OS_UNK_082",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260718-4955454ad050-ea1f06b29a9da645"
+      ],
+      "safe_card": "OS_UNK_082.md",
+      "source_id": "HOS_0100"
+    },
+    "OS_UNK_083": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_083.md",
+      "formal_id": "OS_UNK_083",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_083.md",
+      "source_id": "HOS_0101"
+    },
+    "OS_UNK_084": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_084.md",
+      "formal_id": "OS_UNK_084",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_084.md",
+      "source_id": "HOS_0102"
+    },
+    "OS_UNK_085": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_085.md",
+      "formal_id": "OS_UNK_085",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f",
+        "CS408-LEGACY-CAP-20260724-051cab42b3e9-ebac1e3624393ab3"
+      ],
+      "safe_card": "OS_UNK_085.md",
+      "source_id": "HOS_0103"
+    },
+    "OS_UNK_086": {
+      "canonical_ids": [
+        "EXAM408-2017-Q31"
+      ],
+      "detail_card": "details/cards/OS_UNK_086.md",
+      "formal_id": "OS_UNK_086",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260725-84ea965f8aed-c21acfd6cc6ff885"
+      ],
+      "safe_card": "OS_UNK_086.md",
+      "source_id": "HOS_0104"
+    },
+    "OS_UNK_087": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_087.md",
+      "formal_id": "OS_UNK_087",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_087.md",
+      "source_id": "HOS_0105"
+    },
+    "OS_UNK_088": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_088.md",
+      "formal_id": "OS_UNK_088",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_088.md",
+      "source_id": "HOS_0106"
+    },
+    "OS_UNK_089": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_089.md",
+      "formal_id": "OS_UNK_089",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_089.md",
+      "source_id": "HOS_0107"
+    },
+    "OS_UNK_090": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_090.md",
+      "formal_id": "OS_UNK_090",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_090.md",
+      "source_id": "HOS_0108"
+    },
+    "OS_UNK_091": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_091.md",
+      "formal_id": "OS_UNK_091",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_091.md",
+      "source_id": "HOS_0109"
+    },
+    "OS_UNK_092": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_092.md",
+      "formal_id": "OS_UNK_092",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_092.md",
+      "source_id": "HOS_0110"
+    },
+    "OS_UNK_093": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_093.md",
+      "formal_id": "OS_UNK_093",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_093.md",
+      "source_id": "HOS_0111"
+    },
+    "OS_UNK_094": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_094.md",
+      "formal_id": "OS_UNK_094",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_094.md",
+      "source_id": "HOS_0112"
+    },
+    "OS_UNK_095": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_095.md",
+      "formal_id": "OS_UNK_095",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_095.md",
+      "source_id": "HOS_0113"
+    },
+    "OS_UNK_096": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_096.md",
+      "formal_id": "OS_UNK_096",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_096.md",
+      "source_id": "HOS_0114"
+    },
+    "OS_UNK_097": {
+      "canonical_ids": [
+        "EXAM408-2012-Q26"
+      ],
+      "detail_card": "details/cards/OS_UNK_097.md",
+      "formal_id": "OS_UNK_097",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_097.md",
+      "source_id": "HOS_0115"
+    },
+    "OS_UNK_098": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_098.md",
+      "formal_id": "OS_UNK_098",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_098.md",
+      "source_id": "HOS_0116"
+    },
+    "OS_UNK_099": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_099.md",
+      "formal_id": "OS_UNK_099",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_099.md",
+      "source_id": "HOS_0117"
+    },
+    "OS_UNK_100": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_100.md",
+      "formal_id": "OS_UNK_100",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_100.md",
+      "source_id": "HOS_0118"
+    },
+    "OS_UNK_101": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_101.md",
+      "formal_id": "OS_UNK_101",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_101.md",
+      "source_id": "HOS_0119"
+    },
+    "OS_UNK_102": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_102.md",
+      "formal_id": "OS_UNK_102",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_102.md",
+      "source_id": "HOS_0120"
+    },
+    "OS_UNK_103": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_103.md",
+      "formal_id": "OS_UNK_103",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_103.md",
+      "source_id": "HOS_0121"
+    },
+    "OS_UNK_104": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_104.md",
+      "formal_id": "OS_UNK_104",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_104.md",
+      "source_id": "HOS_0122"
+    },
+    "OS_UNK_105": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_105.md",
+      "formal_id": "OS_UNK_105",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_105.md",
+      "source_id": "HOS_0123"
+    },
+    "OS_UNK_106": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_106.md",
+      "formal_id": "OS_UNK_106",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_106.md",
+      "source_id": "HOS_0124"
+    },
+    "OS_UNK_107": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_107.md",
+      "formal_id": "OS_UNK_107",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_107.md",
+      "source_id": "HOS_0125"
+    },
+    "OS_UNK_108": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_108.md",
+      "formal_id": "OS_UNK_108",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_108.md",
+      "source_id": "HOS_0126"
+    },
+    "OS_UNK_109": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_109.md",
+      "formal_id": "OS_UNK_109",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_109.md",
+      "source_id": "HOS_0127"
+    },
+    "OS_UNK_110": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_110.md",
+      "formal_id": "OS_UNK_110",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_110.md",
+      "source_id": "HOS_0128"
+    },
+    "OS_UNK_111": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_111.md",
+      "formal_id": "OS_UNK_111",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_111.md",
+      "source_id": "HOS_0129"
+    },
+    "OS_UNK_112": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_112.md",
+      "formal_id": "OS_UNK_112",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_112.md",
+      "source_id": "HOS_0130"
+    },
+    "OS_UNK_113": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_113.md",
+      "formal_id": "OS_UNK_113",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_113.md",
+      "source_id": "HOS_0131"
+    },
+    "OS_UNK_114": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_114.md",
+      "formal_id": "OS_UNK_114",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_114.md",
+      "source_id": "HOS_0132"
+    },
+    "OS_UNK_115": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_115.md",
+      "formal_id": "OS_UNK_115",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_115.md",
+      "source_id": "HOS_0133"
+    },
+    "OS_UNK_116": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_116.md",
+      "formal_id": "OS_UNK_116",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_116.md",
+      "source_id": "HOS_0134"
+    },
+    "OS_UNK_117": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_117.md",
+      "formal_id": "OS_UNK_117",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_117.md",
+      "source_id": "HOS_0135"
+    },
+    "OS_UNK_118": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_118.md",
+      "formal_id": "OS_UNK_118",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_118.md",
+      "source_id": "HOS_0136"
+    },
+    "OS_UNK_119": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_119.md",
+      "formal_id": "OS_UNK_119",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_119.md",
+      "source_id": "HOS_0137"
+    },
+    "OS_UNK_120": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_120.md",
+      "formal_id": "OS_UNK_120",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_120.md",
+      "source_id": "HOS_0138"
+    },
+    "OS_UNK_121": {
+      "canonical_ids": [
+        "EXAM408-2019-Q30"
+      ],
+      "detail_card": "details/cards/OS_UNK_121.md",
+      "formal_id": "OS_UNK_121",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_121.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "OS_UNK_122": {
+      "canonical_ids": [
+        "EXAM408-2009-Q27"
+      ],
+      "detail_card": "details/cards/OS_UNK_122.md",
+      "formal_id": "OS_UNK_122",
+      "raw_packages": [],
+      "safe_card": "OS_UNK_122.md",
+      "source_id": "VISUAL_PENDING"
+    },
+    "OS_UNK_123": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/OS_UNK_123.md",
+      "formal_id": "OS_UNK_123",
+      "raw_packages": [
+        "CS408-LEGACY-CAP-20260801-c7fff2134f7b-91cceeca2aae70db"
+      ],
+      "safe_card": "OS_UNK_123.md",
+      "source_id": "2026-07-11-408晨间回滚安全队列.md#Q2"
+    }
+  },
+  "source_stability": {
+    "copy_requires_pre_post_source_stamp_check": true,
+    "source_locks": [
+      "/Users/xiazhibin/Documents/kaoyan-408/.git/codex-intake-408.lock",
+      "/Users/xiazhibin/Documents/kaoyan-408/wiki/study_vaults/408-full/state/review-loop/.lock"
+    ]
+  },
+  "exclusions": [
+    "credentials and machine configuration",
+    "runtime databases/locks/hot caches",
+    "private nonterminal drafts",
+    "temporary/backup authoring",
+    "unrelated textbooks/global prompts"
+  ],
+  "file_inventory": [
+    {
+      "path": "published-inventory/cdb4ee2aea69-001.jsonl",
+      "sha256": "3fad8c124b161030591b7da377f554283a89f786283c302b57268b8db4ff226e",
+      "count": 471,
+      "bytes": 112446,
+      "source_directory": "."
+    },
+    {
+      "path": "published-inventory/41ffd8b76afc-001.jsonl",
+      "sha256": "80cf39665fac429a03a836fe819ecdb433af5decadbd7c5ffe1eb93c201486ef",
+      "count": 1264,
+      "bytes": 524184,
+      "source_directory": "details"
+    },
+    {
+      "path": "published-inventory/41ffd8b76afc-002.jsonl",
+      "sha256": "48ca83c1034d7e3a6c4704a5aaa964db33ec416803432f28058330b2e94b4e08",
+      "count": 905,
+      "bytes": 523961,
+      "source_directory": "details"
+    },
+    {
+      "path": "published-inventory/41ffd8b76afc-003.jsonl",
+      "sha256": "de7435ef46b5062a8a7de31a0525a937c22be2ec1a585450ae27b7ce4b5ad059",
+      "count": 623,
+      "bytes": 270135,
+      "source_directory": "details"
+    },
+    {
+      "path": "published-inventory/b2a8e3338e08-001.jsonl",
+      "sha256": "e370d9a6ed49cc5f0e001c59186dc2a438eb872543a139a183a1189a97bac427",
+      "count": 23,
+      "bytes": 7985,
+      "source_directory": "learning-state"
+    },
+    {
+      "path": "published-inventory/9510c20607d2-001.jsonl",
+      "sha256": "f5c57b281d46c7dcda4ac31614d52eaca896cb0ac9cec594d40dcea162556989",
+      "count": 34,
+      "bytes": 22040,
+      "source_directory": "original-exams"
+    },
+    {
+      "path": "published-inventory/6eea70ab7f69-001.jsonl",
+      "sha256": "f9f26a1277a2c0b6f0257181e88ad8e486f95fd5c07678352e730979b0556034",
+      "count": 817,
+      "bytes": 450255,
+      "source_directory": "raw-conversations"
+    },
+    {
+      "path": "published-inventory/12a435ec8454-001.jsonl",
+      "sha256": "d97b3df21a4d3c3bedbd889217f509c2a3642767686cc1a8aa1c295ac09c3640",
+      "count": 83,
+      "bytes": 24194,
+      "source_directory": "wiki"
+    },
+    {
+      "path": "published-inventory/efbccca58f40-001.jsonl",
+      "sha256": "b4446fd004e5d585ec7efad54de13da0fad3f84a16489b89da05e1140854601a",
+      "count": 12,
+      "bytes": 3160,
+      "source_directory": "专题链"
+    },
+    {
+      "path": "published-inventory/6d7bbc768bea-001.jsonl",
+      "sha256": "8f1c4ad2da1b4c4f292e65b38fae62e894205aeb3f0e4101f74e46de44388120",
+      "count": 1,
+      "bytes": 278,
+      "source_directory": "历史复习单元归档"
+    },
+    {
+      "path": "published-inventory/67761501aa25-001.jsonl",
+      "sha256": "9fa4c9d42b5cfc0cfccade2a14d01b0161be44c531f62f7746a071a08910f2dc",
+      "count": 9,
+      "bytes": 2286,
+      "source_directory": "历史错题归档"
+    },
+    {
+      "path": "published-inventory/ad7bb5757216-001.jsonl",
+      "sha256": "df84099958f6dc8ad51ee8f268d31ab5802abec808ae0b4ee52a7de2e2a0b219",
+      "count": 326,
+      "bytes": 83115,
+      "source_directory": "复习单元卡"
+    },
+    {
+      "path": "published-inventory/f5cf1f47b66a-001.jsonl",
+      "sha256": "d66c9e4911ff16126bad146b923c0348b513ea3e71bacbf6f26f5058e737b2f5",
+      "count": 28,
+      "bytes": 7078,
+      "source_directory": "复盘输出"
+    },
+    {
+      "path": "published-inventory/ba052f9453dd-001.jsonl",
+      "sha256": "264d96143028ba9e60448843cedc0397d8596f81a5e85af0b5119d132b80834f",
+      "count": 4,
+      "bytes": 1036,
+      "source_directory": "知识体系"
+    },
+    {
+      "path": "published-inventory/08d3250fa5d5-001.jsonl",
+      "sha256": "7f8497da44ca06036b38488829361dddaf36249b25e21f2904e41caaca36acff",
+      "count": 4,
+      "bytes": 1004,
+      "source_directory": "节点库"
+    }
+  ],
+  "inventory_note": "Mechanical byte coverage. Use existing history_index and entrypoints for study evidence.",
+  "original_mapping_inventory": [
+    {
+      "path": "published-inventory/original-mappings-001.jsonl",
+      "sha256": "0bb364087eae2182d09450fdfc4175666a2f322aa0757c62e148e212cbd5f360",
+      "count": 799,
+      "bytes": 518699
+    }
+  ]
+}

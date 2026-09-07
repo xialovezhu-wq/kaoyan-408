@@ -1,0 +1,30 @@
+{
+  "active_run_mutation_count": 0,
+  "admission_receipt_sha256": "ed3c1d8961d17da7bc78f5ba9cacc64d9ec892d0a33d292563cc58f6e3218e28",
+  "campaign_cohort_sha256": "358a47cded9f513c1513af0ff71420783b2f58f66eb1309f5d0332b847c78d00",
+  "campaign_id": "RC-408-2026-110D",
+  "consumer": "root_sol_canonical_existing_node_forecast_consumer",
+  "current_master_sha256": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4",
+  "current_projection_cohort_sha256": "3c1bba499bfa099e13aefd700e0e71e1bb7a945ce2b0049c2cbb62d757cbf9e3",
+  "formal_node_id": "DS_2009_001",
+  "formal_write_count": 0,
+  "frozen_run_mutation_count": 0,
+  "products": [
+    {
+      "kind": "coverage_forecast",
+      "path": "/Users/xiazhibin/.codex/kaoyan-408-curation-work/2026-09-02-explicit-01a060b9/CAP-20260902-bf65d8cc86c2/coverage-forecast.json",
+      "sha256": "6bead9bb4cb9caaf61413682e5828d076b103f26018abc1cb32532a1d062b56b"
+    },
+    {
+      "kind": "next_unfrozen_due_run",
+      "path": "/Users/xiazhibin/.codex/kaoyan-408-curation-work/2026-09-02-explicit-01a060b9/CAP-20260902-bf65d8cc86c2/next-unfrozen-due-run.json",
+      "sha256": "c4df710af330ecc090331f16b2ac1e16847d30e01e62f28a1111ebb752c14340"
+    }
+  ],
+  "publication_state": "prospective_projections_only_no_new_session_started",
+  "request_sha256": "5e4d1cc7555b91e16d6f9b50d867b747407ac869ea0663c1a9770a222d100756",
+  "schema": "campaign_forecast_handoff_receipt_v1",
+  "source_membership_verified": true,
+  "status": "accepted",
+  "target_run_policy": "next_unfrozen_run_only"
+}

@@ -1,0 +1,80 @@
+{
+  "archive_mode": "ledger_only_reference_files",
+  "archive_package_type": "legacy_current_question_evidence",
+  "archive_verified_at": "2026-08-27T11:41:12+00:00",
+  "authorization": "CS408-LEGACY-ARCHIVE-1cf57d3f63fc71e631fcd3bfc2c3ae60ef9a8efae7929a27ad34fad5e0d22eb0",
+  "batch_id": "CUR-20260719-2148549a806c",
+  "canonical_package": false,
+  "capture_id": "CAP-20260719-9441569aeb6b",
+  "conversation_complete": false,
+  "conversation_complete_basis": "no_complete_conversation_evidence_available",
+  "decision_locator": null,
+  "decision_sha256": null,
+  "evidence_kind": "ledger_only_reference_files",
+  "evidence_locator": "cs408-ledger-only://sha256/c1bb9bf6e6c32d557b455eb675e516d2eba3c2e2247a665d0ff744eb6abcc143",
+  "evidence_schema_version": "ledger-only-reference-files-v1",
+  "evidence_sha256": "c1bb9bf6e6c32d557b455eb675e516d2eba3c2e2247a665d0ff744eb6abcc143",
+  "files": [
+    {
+      "byte_count": 1060,
+      "declared_ref_sha256": "42e20f92d19b689618cb52d87491322bacd98c908faa22f25bc33ea59039f9b1",
+      "relative_path": "reference-files/001/details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/evidence-manifest.json",
+      "role": "stable_evidence_reference_file",
+      "sha256": "42e20f92d19b689618cb52d87491322bacd98c908faa22f25bc33ea59039f9b1",
+      "source_locator": "/Users/xiazhibin/Documents/kaoyan-408-details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/evidence-manifest.json",
+      "source_path": "capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/evidence-manifest.json",
+      "source_path_scope": "allowlisted_external_details",
+      "source_relative_path": "allowlisted_external_details:capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/evidence-manifest.json",
+      "source_role": "protected_evidence_manifest",
+      "stable_ref_kind": "protected_evidence_manifest"
+    },
+    {
+      "byte_count": 1892,
+      "event_id": "CE-4b224a4d3c79db2691f1",
+      "relative_path": "proof/capture-event.jsonl",
+      "role": "canonical_capture_event",
+      "sha256": "a4b248651591519c976034992e3b6db1d5804807d7c329d2bd866007714ed41d"
+    },
+    {
+      "byte_count": 613,
+      "event_id": "CE-f2219bb70d1fd93bf5c1",
+      "relative_path": "proof/result-event.jsonl",
+      "role": "canonical_result_event",
+      "sha256": "f4d427cf3d43889b693a4999c94928c1901cbf0605a33555f57e7fa8c429f9de"
+    },
+    {
+      "byte_count": 467,
+      "event_id": "CE-aeb6b5a31f53a2459e6f",
+      "relative_path": "proof/closeout-event.jsonl",
+      "role": "canonical_closeout_event",
+      "sha256": "8fb09e6bd24db00b19a6ece6570612440850a029facbfd20721ed5829b9279db"
+    }
+  ],
+  "formal_apply_allowed": false,
+  "formal_ids": [
+    "CN_2014_002"
+  ],
+  "formal_write_count": 0,
+  "ledger_terminal_event_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-f2219bb70d1fd93bf5c1",
+  "ledger_terminal_event_sha256": "f4d427cf3d43889b693a4999c94928c1901cbf0605a33555f57e7fa8c429f9de",
+  "mark_result_count": 0,
+  "outcome": "curated",
+  "package_content_sha256": "d11da053268b4b8a8e780331b3c7bbf1ae7da38ab74d040d280dfbbdc8137603",
+  "package_id": "CS408-LEGACY-CAP-20260719-9441569aeb6b-c1bb9bf6e6c32d55",
+  "schema_version": "cs408-legacy-evidence-archive-package-v1",
+  "sealed": true,
+  "stable_evidence_refs": [
+    {
+      "kind": "protected_evidence_manifest",
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/evidence-manifest.json",
+      "sha256": "42e20f92d19b689618cb52d87491322bacd98c908faa22f25bc33ea59039f9b1"
+    }
+  ],
+  "study_date": "2026-07-19",
+  "subject": "cs408",
+  "terminal_binding_count": 0,
+  "terminal_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-f2219bb70d1fd93bf5c1",
+  "terminal_proof_kind": "canonical_ledger_terminal_facts",
+  "terminal_sha256": "f4d427cf3d43889b693a4999c94928c1901cbf0605a33555f57e7fa8c429f9de",
+  "unresolved_refs": []
+}

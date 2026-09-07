@@ -1,0 +1,116 @@
+{
+  "archive_mode": "ledger_only_reference_files",
+  "archive_package_type": "legacy_current_question_evidence",
+  "archive_verified_at": "2026-08-27T11:41:20+00:00",
+  "authorization": "CS408-LEGACY-ARCHIVE-cf6b17b6e4665186db3bd26b9f5814cd4712026a83073bdb6ca4dd0d7b29a2d9",
+  "batch_id": "CUR-20260726-1ad71260c69e-A01",
+  "canonical_package": false,
+  "capture_id": "CAP-20260726-dd788414b1ad",
+  "conversation_complete": false,
+  "conversation_complete_basis": "no_complete_conversation_evidence_available",
+  "decision_locator": null,
+  "decision_sha256": null,
+  "evidence_kind": "ledger_only_reference_files",
+  "evidence_locator": "cs408-ledger-only://sha256/c2d359dcd69f22e7bc04113b1c404b0ffc0a5a5f18ca19505b1aa9980c6d4be1",
+  "evidence_schema_version": "ledger-only-reference-files-v1",
+  "evidence_sha256": "c2d359dcd69f22e7bc04113b1c404b0ffc0a5a5f18ca19505b1aa9980c6d4be1",
+  "files": [
+    {
+      "byte_count": 2270,
+      "declared_ref_sha256": "3e4cb79075695d44df03682c09ecd42a63c426613423edcf43ff8763113aa524",
+      "relative_path": "reference-files/001/details/corpus/408统考真题/cards/EXAM408-2018-Q35.md",
+      "role": "stable_evidence_reference_file",
+      "sha256": "3e4cb79075695d44df03682c09ecd42a63c426613423edcf43ff8763113aa524",
+      "source_locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2018-Q35.md",
+      "source_path": "corpus/408统考真题/cards/EXAM408-2018-Q35.md",
+      "source_path_scope": "allowlisted_external_details",
+      "source_relative_path": "allowlisted_external_details:corpus/408统考真题/cards/EXAM408-2018-Q35.md",
+      "source_role": "details_card",
+      "stable_ref_kind": "details_card"
+    },
+    {
+      "byte_count": 70567,
+      "declared_ref_sha256": "ca1a13383d0823cbdd24164989de4d52ddb448ae14c1c821674c257db1ba09c7",
+      "relative_path": "reference-files/002/details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/question-01.png",
+      "role": "stable_evidence_reference_file",
+      "sha256": "ca1a13383d0823cbdd24164989de4d52ddb448ae14c1c821674c257db1ba09c7",
+      "source_locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/question-01.png",
+      "source_path": "corpus/408统考真题/assets/2018/EXAM408-2018-Q35/question-01.png",
+      "source_path_scope": "allowlisted_external_details",
+      "source_relative_path": "allowlisted_external_details:corpus/408统考真题/assets/2018/EXAM408-2018-Q35/question-01.png",
+      "source_role": "question_image",
+      "stable_ref_kind": "question_image"
+    },
+    {
+      "byte_count": 131993,
+      "declared_ref_sha256": "ffcf2c6edcfb62de552d5d8f351bde270f40f5e1c27b5be9d55759bebc31aef4",
+      "relative_path": "reference-files/003/details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/solution-01.png",
+      "role": "stable_evidence_reference_file",
+      "sha256": "ffcf2c6edcfb62de552d5d8f351bde270f40f5e1c27b5be9d55759bebc31aef4",
+      "source_locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/solution-01.png",
+      "source_path": "corpus/408统考真题/assets/2018/EXAM408-2018-Q35/solution-01.png",
+      "source_path_scope": "allowlisted_external_details",
+      "source_relative_path": "allowlisted_external_details:corpus/408统考真题/assets/2018/EXAM408-2018-Q35/solution-01.png",
+      "source_role": "solution_image",
+      "stable_ref_kind": "solution_image"
+    },
+    {
+      "byte_count": 2310,
+      "event_id": "CE-ff065083e0d7b13f1004",
+      "relative_path": "proof/capture-event.jsonl",
+      "role": "canonical_capture_event",
+      "sha256": "1151035c0ed8f332d3af786a60ee38ccdc6d52fb53cc08804ac51c612d2bdfe7"
+    },
+    {
+      "byte_count": 618,
+      "event_id": "CE-dd2b960fe5b72a755d91",
+      "relative_path": "proof/result-event.jsonl",
+      "role": "canonical_result_event",
+      "sha256": "eeb46fbbe83491b4942b974897a5216e0df702b90d89aadd3ad7a70ffb5c6fca"
+    },
+    {
+      "byte_count": 638,
+      "event_id": "CE-851bd543ca990e83a668",
+      "relative_path": "proof/closeout-event.jsonl",
+      "role": "canonical_closeout_event",
+      "sha256": "3f6d5b770722d8ab223b6e153ca041404a2ee323e98eff35b5772ba6b6ff418a"
+    }
+  ],
+  "formal_apply_allowed": false,
+  "formal_ids": [
+    "CN_2018_001"
+  ],
+  "formal_write_count": 0,
+  "ledger_terminal_event_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-dd2b960fe5b72a755d91",
+  "ledger_terminal_event_sha256": "eeb46fbbe83491b4942b974897a5216e0df702b90d89aadd3ad7a70ffb5c6fca",
+  "mark_result_count": 0,
+  "outcome": "curated",
+  "package_content_sha256": "d81f9705e2314e7e6849c68b2e2c134611debd89aa63bff972ed09a07129dfd9",
+  "package_id": "CS408-LEGACY-CAP-20260726-dd788414b1ad-c2d359dcd69f22e7",
+  "schema_version": "cs408-legacy-evidence-archive-package-v1",
+  "sealed": true,
+  "stable_evidence_refs": [
+    {
+      "kind": "details_card",
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2018-Q35.md",
+      "sha256": "3e4cb79075695d44df03682c09ecd42a63c426613423edcf43ff8763113aa524"
+    },
+    {
+      "kind": "question_image",
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/question-01.png",
+      "sha256": "ca1a13383d0823cbdd24164989de4d52ddb448ae14c1c821674c257db1ba09c7"
+    },
+    {
+      "kind": "solution_image",
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2018/EXAM408-2018-Q35/solution-01.png",
+      "sha256": "ffcf2c6edcfb62de552d5d8f351bde270f40f5e1c27b5be9d55759bebc31aef4"
+    }
+  ],
+  "study_date": "2026-07-26",
+  "subject": "cs408",
+  "terminal_binding_count": 0,
+  "terminal_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-dd2b960fe5b72a755d91",
+  "terminal_proof_kind": "canonical_ledger_terminal_facts",
+  "terminal_sha256": "eeb46fbbe83491b4942b974897a5216e0df702b90d89aadd3ad7a70ffb5c6fca",
+  "unresolved_refs": []
+}

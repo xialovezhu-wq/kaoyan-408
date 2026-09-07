@@ -1,0 +1,12 @@
+{
+  "background_processing": "none",
+  "canonical_sha256": "fbfc20a6edfd5bfa88e105f0d7a3fa1e25a12bf739b6e20e05bf995c15fdd1ba",
+  "formal_write_count": 0,
+  "locator": "cs408-conversation-package://CS408-20260903-e4bdb9e60814570d",
+  "package_id": "CS408-20260903-e4bdb9e60814570d",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-receipt-v1",
+  "sealed": true,
+  "status": "awaiting_sol_formalization",
+  "study_date": "2026-09-03"
+}

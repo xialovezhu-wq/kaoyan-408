@@ -1,0 +1,129 @@
+{
+  "archive_mode": "current_question_evidence",
+  "archive_package_type": "legacy_current_question_evidence",
+  "archive_verified_at": "2026-08-27T11:41:26+00:00",
+  "authorization": "CS408-LEGACY-ARCHIVE-e268987c29299c43298389b42d82c469df22254c0cda770aba94db37c734558a",
+  "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+  "canonical_package": false,
+  "capture_id": "CAP-20260816-c18277255b9d",
+  "conversation_complete": true,
+  "conversation_complete_basis": "verified_formal_problem_document_dialogue_complete",
+  "decision_locator": "cs408-sol-decision://sha256/9310882245490a60af9be6a6912f7f75e57502ba9596db34a90f976a2ffb5684",
+  "decision_sha256": "9310882245490a60af9be6a6912f7f75e57502ba9596db34a90f976a2ffb5684",
+  "evidence_kind": "formal_problem_document_v4",
+  "evidence_locator": "current-question-evidence://sha256/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+  "evidence_schema_version": "current-question-evidence-bundle-v4",
+  "evidence_sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+  "files": [
+    {
+      "byte_count": 2901,
+      "relative_path": "evidence/manifests/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1.json",
+      "role": "evidence_manifest",
+      "sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+      "source_relative_path": "manifests/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1.json",
+      "source_role": null
+    },
+    {
+      "byte_count": 61529,
+      "relative_path": "evidence/objects/a9b0cddc75c81f895b377487f7f805007d3c5c5fbc3c231ea20bb6ac65c4df80.json",
+      "role": "evidence_bundle",
+      "sha256": "a9b0cddc75c81f895b377487f7f805007d3c5c5fbc3c231ea20bb6ac65c4df80",
+      "source_relative_path": "objects/a9b0cddc75c81f895b377487f7f805007d3c5c5fbc3c231ea20bb6ac65c4df80.json",
+      "source_role": null
+    },
+    {
+      "byte_count": 5464598,
+      "relative_path": "evidence/attachments/0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997.bin",
+      "role": "evidence_attachment",
+      "sha256": "0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997",
+      "source_relative_path": "attachments/0f75958fc5dcf98adc76d838fa5408f3423880b10e848eb1290306feecf95997.bin",
+      "source_role": "source_document"
+    },
+    {
+      "byte_count": 427502,
+      "relative_path": "evidence/attachments/7d4dfca377d8c590e0bcd809271c941a282fe7bc762c9df2ea17bf06cdbac0ed.bin",
+      "role": "evidence_attachment",
+      "sha256": "7d4dfca377d8c590e0bcd809271c941a282fe7bc762c9df2ea17bf06cdbac0ed",
+      "source_relative_path": "attachments/7d4dfca377d8c590e0bcd809271c941a282fe7bc762c9df2ea17bf06cdbac0ed.bin",
+      "source_role": "question_image"
+    },
+    {
+      "byte_count": 127524,
+      "relative_path": "evidence/attachments/4a2d7a15ff0e38b865da5c7d4c138a3127f73f295b4398b866c05468a683a3e9.bin",
+      "role": "evidence_attachment",
+      "sha256": "4a2d7a15ff0e38b865da5c7d4c138a3127f73f295b4398b866c05468a683a3e9",
+      "source_relative_path": "attachments/4a2d7a15ff0e38b865da5c7d4c138a3127f73f295b4398b866c05468a683a3e9.bin",
+      "source_role": "learner_code_image"
+    },
+    {
+      "byte_count": 757507,
+      "relative_path": "evidence/attachments/2b7cc135cb7a4fd1cc6b2266a420a06fc03668ced88dc39dacc6d4c377e83d93.bin",
+      "role": "evidence_attachment",
+      "sha256": "2b7cc135cb7a4fd1cc6b2266a420a06fc03668ced88dc39dacc6d4c377e83d93",
+      "source_relative_path": "attachments/2b7cc135cb7a4fd1cc6b2266a420a06fc03668ced88dc39dacc6d4c377e83d93.bin",
+      "source_role": "solution_image"
+    },
+    {
+      "byte_count": 1720,
+      "event_id": "CE-483208e358c6121dde6e",
+      "relative_path": "proof/capture-event.jsonl",
+      "role": "canonical_capture_event",
+      "sha256": "4805c540999a9b9ad2604f9d67208b1601ed0551a1070289759794771009ffe6"
+    },
+    {
+      "byte_count": 1003,
+      "event_id": "CE-c68ca8c709868f063621",
+      "relative_path": "proof/result-event.jsonl",
+      "role": "canonical_result_event",
+      "sha256": "f9bca22f9138e31b90b6d95a35966c9831fb95733e194d426a0c33f90122f7a8"
+    },
+    {
+      "byte_count": 607,
+      "event_id": "CE-64513f1fa4ee2f6c0e9d",
+      "relative_path": "proof/closeout-event.jsonl",
+      "role": "canonical_closeout_event",
+      "sha256": "7f2d3513afb77aebf08dc2f397a420c8d5d4fe0c3aa083291d60dc45ae363f36"
+    },
+    {
+      "byte_count": 9016,
+      "event_id": null,
+      "relative_path": "proof/sol-decision.json",
+      "role": "sol_decision",
+      "sha256": "9310882245490a60af9be6a6912f7f75e57502ba9596db34a90f976a2ffb5684"
+    },
+    {
+      "byte_count": 742,
+      "event_id": "CE-c68ca8c709868f063621",
+      "relative_path": "proof/sol-terminal.json",
+      "role": "sol_terminal",
+      "sha256": "b79fed202a90171272fb18d6b26997658605b50559e1e648e4ca6f67a8bd2508"
+    }
+  ],
+  "formal_apply_allowed": false,
+  "formal_ids": [
+    "DS_2015_006"
+  ],
+  "formal_write_count": 0,
+  "ledger_terminal_event_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-c68ca8c709868f063621",
+  "ledger_terminal_event_sha256": "f9bca22f9138e31b90b6d95a35966c9831fb95733e194d426a0c33f90122f7a8",
+  "mark_result_count": 0,
+  "outcome": "curated",
+  "package_content_sha256": "8d12d7ea416f79c0332d1eef732562a3867d7511b05fcaa14bee0b9ea27f3288",
+  "package_id": "CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704",
+  "schema_version": "cs408-legacy-evidence-archive-package-v1",
+  "sealed": true,
+  "stable_evidence_refs": [
+    {
+      "kind": "current_question_evidence_bundle_v1",
+      "locator": "current-question-evidence://sha256/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+      "sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1"
+    }
+  ],
+  "study_date": "2026-08-16",
+  "subject": "cs408",
+  "terminal_binding_count": 0,
+  "terminal_locator": "cs408-sol-terminal://sha256/b79fed202a90171272fb18d6b26997658605b50559e1e648e4ca6f67a8bd2508",
+  "terminal_proof_kind": "sol_content_addressed_terminal",
+  "terminal_sha256": "b79fed202a90171272fb18d6b26997658605b50559e1e648e4ca6f67a8bd2508",
+  "unresolved_refs": []
+}

@@ -1,0 +1,95 @@
+{
+  "assessment": {
+    "choice_result": "incorrect",
+    "confidence": "high",
+    "first_action": null,
+    "first_action_provenance": null,
+    "first_break": "漏扣Hub时延",
+    "first_break_provenance": "derived_classification",
+    "first_result": "wrong",
+    "prompt_level": "none",
+    "reasoning_result": "not_observed"
+  },
+  "attachment_objects": [],
+  "context_id": "CQC-92FCA913E9E29011BA9BC960",
+  "current_question": {
+    "attachment_sha256s": [],
+    "options": [
+      {
+        "label": "A",
+        "text": "206 m"
+      },
+      {
+        "label": "B",
+        "text": "412 m"
+      },
+      {
+        "label": "C",
+        "text": "512 m"
+      },
+      {
+        "label": "D",
+        "text": "1024 m"
+      }
+    ],
+    "public_surface_sha256": "be29b8881542dd9071ad1a43e89226867cb7a1d9d4d41be8180b5e4c8f8d8ae7",
+    "public_text": "100 Mbit/s的CSMA/CD网络使用512 bit最短帧。两站间路径含一个Hub，Hub单程再生时延0.5微秒，线缆传播速度为2乘10的8次方 m/s。忽略其他时延，按碰撞往返边界计算，两站间线缆总长度最大约为多少？",
+    "response_instruction": "回复选项即可；若不是高置信度，请注明中或低。"
+  },
+  "evaluation_evidence": {
+    "correct_answer": null,
+    "correct_option": "B",
+    "grader_basis": "最短帧发送时间5.12微秒不小于2乘(线缆单程传播时延加0.5微秒)，故线缆单程传播预算2.06微秒，对应约412 m。",
+    "grader_capsule_id": "MRGC-26A933D6A1B17D8F5B753BFB",
+    "grader_result": "incorrect",
+    "missing_fields": [],
+    "provided_by": "morning_review_prepared_pack_v1",
+    "standard_explanation": "最短帧发送时间5.12微秒不小于2乘(线缆单程传播时延加0.5微秒)，故线缆单程传播预算2.06微秒，对应约412 m。"
+  },
+  "event_time": "2026-08-05T13:29:46.945163+08:00",
+  "formal_write_count": 0,
+  "frozen_assistant_feedback": {
+    "sha256": "368a7262cc824372b7b196955651ba023b9f24923be4ca4a49c6ca003b531e05",
+    "text": "当前选择偏离了碰撞往返时延的关键边界。先把往返总时延拆成线缆往返和Hub往返。"
+  },
+  "interaction_trace": {
+    "event_count": 1,
+    "events": [
+      {
+        "kind": "answer",
+        "ordinal": 1,
+        "role": "learner",
+        "text": "C"
+      }
+    ],
+    "schema": "current-question-interaction-trace-v1",
+    "truncated": false
+  },
+  "item_id": "MQ-10",
+  "learner_evidence": {
+    "answer_text": "C",
+    "choice": "C",
+    "confidence": "high",
+    "first_action": null,
+    "observed_at": "2026-08-05T13:29:46.945163+08:00",
+    "prompt_level": "none",
+    "reasoning": null
+  },
+  "missing_fields": [],
+  "provenance": {
+    "attachment_provenance": [],
+    "context_sha256": "92fca913e9e29011ba9bc9609c26d75df727da2a71e257dcb06aa6e881990081",
+    "created_at": "2026-08-05T13:29:46.945163+08:00",
+    "missing_items": [],
+    "source_locator": "RU_CN_2016_002",
+    "source_sha256": "be29b8881542dd9071ad1a43e89226867cb7a1d9d4d41be8180b5e4c8f8d8ae7"
+  },
+  "request_id": "AON-630E03F77E05040BE04AAE19F828BBA7C1CA2993136232EF90EF0B40903C4134",
+  "schema_version": "current-question-evidence-bundle-v2",
+  "session_id": "MR-2026-08-02-647a7cde",
+  "source_binding_sha256": "be29b8881542dd9071ad1a43e89226867cb7a1d9d4d41be8180b5e4c8f8d8ae7",
+  "source_id": "RU_CN_2016_002",
+  "source_kind": "morning_review",
+  "study_date": "2026-08-05",
+  "timezone": "Asia/Shanghai"
+}

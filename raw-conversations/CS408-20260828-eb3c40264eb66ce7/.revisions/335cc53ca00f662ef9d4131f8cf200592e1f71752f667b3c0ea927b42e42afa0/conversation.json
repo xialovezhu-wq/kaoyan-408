@@ -1,0 +1,50 @@
+{
+  "complete_order_preserved": true,
+  "schema_version": "cs408-full-conversation-v1",
+  "truncated": false,
+  "turn_count": 6,
+  "turns": [
+    {
+      "kind": "request",
+      "observed_at": null,
+      "ordinal": 1,
+      "role": "user",
+      "text": "简单来说，选一道考察香农公式的选择题给我做一下。"
+    },
+    {
+      "kind": "question",
+      "observed_at": null,
+      "ordinal": 2,
+      "role": "assistant",
+      "text": "选择 2016 年统考第 34 题。S 是信号平均功率，N 是噪声平均功率，S/N 是无量纲的线性功率比；分贝形式满足 SNR(dB)=10log10(S/N)。请写出 30 dB 如何转换为线性 S/N，再给出选项和置信度。"
+    },
+    {
+      "kind": "first_answer",
+      "observed_at": null,
+      "ordinal": 3,
+      "role": "user",
+      "text": "先把 30 dB 暂时当成 S/N=30，估算 log2(31) 约为 5，再乘 8 kHz 和 50%，最终选择 B，置信度中。"
+    },
+    {
+      "kind": "hint",
+      "observed_at": null,
+      "ordinal": 4,
+      "role": "assistant",
+      "text": "第一个断点是把 30 dB 直接当成线性 S/N=30；应先用 S/N=10^(30/10) 转成 1000，再代入香农公式。"
+    },
+    {
+      "kind": "correction",
+      "observed_at": null,
+      "ordinal": 5,
+      "role": "user",
+      "text": "S/N 等于 1000，所以是 8 乘以 log2(1+1000)，约为 8 乘以 10 等于 80，再乘 0.5 等于 40，因此选择 40 对应的选项。"
+    },
+    {
+      "kind": "frozen_feedback",
+      "observed_at": null,
+      "ordinal": 6,
+      "role": "assistant",
+      "text": "结论命中。30 dB 先转换为线性 S/N=1000，理论最大速率约为 8 kHz×log2(1001)≈80 kb/s，实际速率约为其 50%，即 40 kb/s，对应 C。本次为提示后纠正，不属于无提示独立掌握。"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "batch_id": "CUR-20260812-21f716438c94-A01",
+  "capture_id": "CAP-20260812-c523feab924a",
+  "decision_locator": "cs408-sol-decision://sha256/c4f2e7a8b0d221f996056084730dd5af6291d66498cb57e8cee8f902bd53b784",
+  "decision_sha256": "c4f2e7a8b0d221f996056084730dd5af6291d66498cb57e8cee8f902bd53b784",
+  "formal_id": "DS_2009_004",
+  "formal_write_count": 0,
+  "item_result_event_id": "CE-722d9ba5507fd30b9d83",
+  "item_result_event_sha256": "f32eb1bb5a52dcf901e315af79e16b7b2c1dd6f6358e18ed0ff764a95afd4eea",
+  "normal_receipt_sha256": null,
+  "outcome": "already_current",
+  "schema_version": "sol-curation-terminal-binding-408-v2",
+  "subject": "cs408",
+  "verification_sha256": "4f9a1d7ca43c4413c5e8ea878420d02a76c058281416c4a7fb5ba20eedc7bba4"
+}

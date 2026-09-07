@@ -1,0 +1,18 @@
+{
+  "answer_safe_manifest": true,
+  "attachment_objects": [],
+  "bundle_schema_version": "current-question-evidence-bundle-v2",
+  "context_id": "CQC-39E0E2AEEBD029427CDFEE22",
+  "created_at": "2026-08-05T13:49:01.591820+08:00",
+  "formal_write_count": 0,
+  "item_id": "MQ-15",
+  "object_sha256": "116c6c50bde8eaabf1323ff2553868526a1771b8876fbb284c2f984605ad171f",
+  "object_size_bytes": 3292,
+  "request_id": "AON-99AB9E7BBC7B3A59F33D4A13F020C3AEAA861548CC4F94181541DBCE0DC42066",
+  "schema_version": "current-question-evidence-manifest-v1",
+  "session_id": "MR-2026-08-02-647a7cde",
+  "source_binding_sha256": "b3777aa62ece693bf65ca79b9a888494a199b33f11a92731763dbefb3b9642a9",
+  "source_id": "RU_OS_2014_004",
+  "source_kind": "morning_review",
+  "study_date": "2026-08-05"
+}

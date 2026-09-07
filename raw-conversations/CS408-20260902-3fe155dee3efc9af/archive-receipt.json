@@ -1,0 +1,33 @@
+{
+  "archive_file_inventory_sha256": "95037b22ff0e708d0a8a1030ceec18b28f91060e8ac716374bd906f17c85ff9e",
+  "archive_manifest_sha256": "f9b0d9f1a315fc9e3627f37d82c99089d0b22b49c5de08bd4a256630bdd0f13e",
+  "archive_relative_path": "01_408/资料库/原始会话资料/2026-09-02/CS408-20260902-3fe155dee3efc9af",
+  "archive_verified_at": "2026-09-02T15:45:54+00:00",
+  "archive_volume": "T9-Data",
+  "display_asset_closure_receipt_id": "CS408-DISPLAY-e9dab84ecacc0f05b76e",
+  "display_asset_closure_receipt_relative_path": "details:.cs408-display-assets/closures/CS408-20260902-3fe155dee3efc9af/DS_2009_001.json",
+  "display_asset_closure_receipt_sha256": "ac2d5237a38170c920cc082a96b519b97f852a14bd64bdf2f0eb38e68f054f49",
+  "formal_ids": [
+    "DS_2009_001"
+  ],
+  "formal_reference_scan_sha256": "c98f29d3055a2a709f06eefd56a426322d3fc1d5836fb790bbb4af439a49201d",
+  "formal_terminal_locator": "cs408-sol-terminal://sha256/70647d1c70af94310f32356aadb45259ab288af22817665d89d44eb7d1a2db2c",
+  "formal_terminal_outcome": "curated",
+  "formal_terminal_sha256": "70647d1c70af94310f32356aadb45259ab288af22817665d89d44eb7d1a2db2c",
+  "formal_write_count": 0,
+  "locator_note_relative_path": "wiki/sources/raw_archives/CS408-20260902-3fe155dee3efc9af.md",
+  "locator_note_sha256": "349cf009d3fc482158e5eee6e865ced0940dc243262a55732947407e2366681e",
+  "no_display": true,
+  "package_id": "CS408-20260902-3fe155dee3efc9af",
+  "package_sha256": "3bd8b7021b599d03c13fc2aafc5b054716a613206046d15686a638562964dae7",
+  "pending_component": null,
+  "schema_version": "cs408-package-archive-receipt-v1",
+  "sentinel": {
+    "sentinel_relative_path": "00_迁移管理/状态/volume-sentinel.json",
+    "sentinel_sha256": "f086b32b29b2b38f1a28dffb8fde4fa850078332d8a23ae269cc8e857a6bd2ca",
+    "volume_name": "T9-Data",
+    "volume_uuid": "DC0D9415-AFA3-4C7E-89FD-6575EE7A4C10"
+  },
+  "stable_asset_count": 0,
+  "status": "ARCHIVED_AND_LOCATOR_BOUND"
+}

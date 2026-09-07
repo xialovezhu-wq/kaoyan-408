@@ -1,0 +1,76 @@
+{
+  "item_id": "MQ-01",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-29-a6f28ad2",
+  "source": {
+    "assessment": {
+      "choice_result": "correct",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "作答依赖 L5 提示",
+      "first_break_provenance": "derived_classification",
+      "prompt_level": "L5",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "每帧 1000 Byte 先换算为 8000 bit；发送一帧需 0.08 ms，首帧确认返回周期为 100.08 ms。一个窗口共可发送 8000000 bit，窗口上限约为 79.94 Mb/s；再与 100 Mb/s 的链路上限取较小者，约为 80 Mb/s。",
+      "grader_capsule_id": "MRGC-99FFCCD3954038F71FC0EC04",
+      "grader_result": "correct",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "每帧 1000 Byte 先换算为 8000 bit；发送一帧需 0.08 ms，首帧确认返回周期为 100.08 ms。一个窗口共可发送 8000000 bit，窗口上限约为 79.94 Mb/s；再与 100 Mb/s 的链路上限取较小者，约为 80 Mb/s。"
+    },
+    "learner_evidence": {
+      "answer_text": "C",
+      "choice": "C",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-29T21:23:17.911083+08:00",
+      "prompt_level": "L5",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [
+        "a9aac4a08e11ec5bc11a73b5034c11dd89b30ecf752c444ec996f0938cc2a70f"
+      ],
+      "options": [
+        {
+          "label": "A",
+          "text": "题图中的第一个选项"
+        },
+        {
+          "label": "B",
+          "text": "题图中的第二个选项"
+        },
+        {
+          "label": "C",
+          "text": "题图中的第三个选项"
+        },
+        {
+          "label": "D",
+          "text": "题图中的第四个选项"
+        }
+      ],
+      "public_surface_sha256": "a3f64d4da4bbf90337dd4e2d9ca6007440a554a76fda34ccf561aee1e6c75272",
+      "public_text": "请查看绑定的原题图片并作答。",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "image_question",
+    "source_binding_sha256": "a3f64d4da4bbf90337dd4e2d9ca6007440a554a76fda34ccf561aee1e6c75272",
+    "source_identity_provenance": {
+      "binding_verification": "reconstructed_legacy_display_session_pack_binding",
+      "machine_source_id": "CN_2014_002",
+      "normalization_basis": "verified_display_scheduling_formal_node_fallback",
+      "raw_source_label": "2014统考第25题",
+      "scheduling_binding_sha256": "57e361578586dd3a21e4d05baa3eb3bd695579d450fa39fa34fdbe1df1a5650d"
+    },
+    "source_kind": "morning_review"
+  },
+  "source_id": "CN_2014_002",
+  "study_date": "2026-08-29",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

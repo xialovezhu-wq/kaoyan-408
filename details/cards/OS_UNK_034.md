@@ -1,0 +1,44 @@
+# OS_UNK_034
+
+来源定位：HOS_0043 / 2.1.8 （38） / 段落3824
+
+正式节点：OS_UNK_034
+来源 ID：HOS_0043
+科目：操作系统
+主知识点：OS02-11 线程基本概念
+核心考点：从并发粒度、同一进程内资源共享、创建切换开销和通信方式分别判断收益，再把共享带来的竞争风险与安全性增强区分开。
+主模块：OS02 进程管理
+题型：单项选择题 / 不属于类优势边界辨析题
+解析来源：2026操作系统_带书签.pdf 第 72 页同题解析；current solution-01.png 与 BATCH-018 root recovery SHA-256 一致
+解析来源角色：独立同题解析只支持答案安全题目机制与知识角色复核；不据解析新增、选择或改写用户事实。
+匹配方式：BATCH-018 current question/solution direct visual exact / Wangdao question page 65 and solution page 72 / formal identity, year, locator, dates and user facts preserved
+
+## MarginNote 来源
+
+- OO3 item：rhvW9TBuQMu
+- OO3 路径：408 > 操作系统 > 3.操作系统 > 第二章 进程与线程 > 2.1 线程与进程 > 线程和多线程模型 > 引入线程机制后，有什么变化？ > 2.1.8 （38）
+
+> [!question] 题目
+> ![[assets/OS_UNK_034/question-01.png]]
+
+> [!answer]- 解析
+>
+> 正确答案：D
+> 
+> **解析**  
+> - **线程优点**：  
+>   - 提高系统并发性（并发粒度更小，效率更高）  
+>   - 节约系统资源（同进程内共享资源，减少开销）  
+>   - 便于进程通信（同进程内线程共享内存空间，通信简单）  
+> - **错误选项 D**：增强进程安全性并不是线程的优点，反而由于资源共享，线程间更容易出现安全问题。  
+> 
+> **结论**  
+> 线程的优点主要在于 **并发性、资源利用率、通信便利性**，不包括“增强安全性”。
+
+## 图片 QA 记录
+
+- 2026-07-03 annotation overlay S 批：直接查看当前题图并清理红点标注；清理后题面主体完整可读，中心空白区仅有极淡残影，不指向选项。原图已备份到 `assets/_quarantine/annotation_overlay_original_2026-07-03_batch_s/OS_UNK_034/question-01.png`。Tutor 安全范围：`OS02-11`、`OS02-12`。
+
+## 图片质检记录
+
+- 2026-07-03 annotation overlay S 批：直接查看当前题图并清理红点标注；清理后题面主体完整可读，中心空白区仅有极淡残影，不指向选项。原图备份：assets/_quarantine/annotation_overlay_original_2026-07-03_batch_s/OS_UNK_034/question-01.png。Tutor 安全范围：OS02-11、OS02-12。

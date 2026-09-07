@@ -1,0 +1,64 @@
+{
+  "attachments": [
+    {
+      "byte_count": 172692,
+      "label": "EXAM408-2012-Q08 question image page 1 ({'asset_ordinal': 1, 'source_page': 2})",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-000a92d5bfb39b820f62ccb0e98e8b329531af9f8ca31fffb40a42eceef5f94a.png",
+      "role": "question_image",
+      "sha256": "000a92d5bfb39b820f62ccb0e98e8b329531af9f8ca31fffb40a42eceef5f94a"
+    },
+    {
+      "byte_count": 318,
+      "label": "EXAM408-2012-Q08 question image page 2 ({'asset_ordinal': 2, 'source_page': 2})",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0002-821ee8819d23270bf449d27a59cd523f6322c5295c45cf6c0779345c375719de.png",
+      "role": "question_image",
+      "sha256": "821ee8819d23270bf449d27a59cd523f6322c5295c45cf6c0779345c375719de"
+    }
+  ],
+  "background_processing": "none",
+  "canonical_sha256": "fbfc20a6edfd5bfa88e105f0d7a3fa1e25a12bf739b6e20e05bf995c15fdd1ba",
+  "files": [
+    {
+      "byte_count": 7996,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "49acde8e879176960ea4be4854e7669a37a4c6697723dc1448073735465ef69e"
+    },
+    {
+      "byte_count": 2285,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "19209f9b426148e3c41856acfb2c9a004383592ba55b43daea535b1b4fb9cfc7"
+    },
+    {
+      "byte_count": 172692,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-000a92d5bfb39b820f62ccb0e98e8b329531af9f8ca31fffb40a42eceef5f94a.png",
+      "role": "question_image",
+      "sha256": "000a92d5bfb39b820f62ccb0e98e8b329531af9f8ca31fffb40a42eceef5f94a"
+    },
+    {
+      "byte_count": 318,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0002-821ee8819d23270bf449d27a59cd523f6322c5295c45cf6c0779345c375719de.png",
+      "role": "question_image",
+      "sha256": "821ee8819d23270bf449d27a59cd523f6322c5295c45cf6c0779345c375719de"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MCQ-0006",
+  "missing_fields": [],
+  "package_id": "CS408-20260903-e4bdb9e60814570d",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MCR-20260903-3A74C9E7114C2468",
+  "source_id": "EXAM408-2012-Q08",
+  "study_date": "2026-09-03",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

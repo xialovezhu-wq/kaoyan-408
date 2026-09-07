@@ -1,0 +1,55 @@
+{
+  "archive_manifest_sha256": "138ff50c5105b70626b961a976fcbb0fdf41354999e20ec2f3a5857dfddcf5ad",
+  "archive_mode": "current_question_evidence",
+  "archive_only": true,
+  "archive_package_sha256": "3baee7356687a26112943fecfe90e6717dac205782250c479f2faa8a7193aca3",
+  "archive_package_type": "legacy_current_question_evidence",
+  "archive_relative_path": "01_408/资料库/原始会话资料/2026-08-16/CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b",
+  "archive_verified_at": "2026-08-27T11:41:26+00:00",
+  "archive_volume": "T9-Data",
+  "authorization": "CS408-LEGACY-ARCHIVE-0cce4d6b74e986615291ebc197772bf831abf0381ae168699a65a2d82ee418e2",
+  "canonical_package": false,
+  "capture_id": "CAP-20260816-84ef7698669a",
+  "cleanup_count": null,
+  "conversation_complete": true,
+  "conversation_complete_basis": "verified_formal_problem_document_dialogue_complete",
+  "evidence_kind": "formal_problem_document_v4",
+  "evidence_locator": "current-question-evidence://sha256/b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+  "evidence_schema_version": "current-question-evidence-bundle-v4",
+  "evidence_sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+  "formal_apply_allowed": false,
+  "formal_ids": [
+    "DS_2019_003"
+  ],
+  "formal_write_count": 0,
+  "ledger_terminal_event_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-d751bcee3c8c61d6ec08",
+  "ledger_terminal_event_sha256": "271c9a884a20fb92802f6b19f7ae6b0d5cfe650f6457d869a536ff0605a35283",
+  "legacy_package_id": "CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b",
+  "locator_note_relative_path": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260816-84ef7698669a-b111c4d41f1c554b.md",
+  "locator_note_sha256": "72ae121899e99906b496edab89c2705466da1f92ddde1f88bf3d8b89ca59dd4b",
+  "mark_result_count": 0,
+  "proof_file_inventory_sha256": "73922a9954bfc8f132a1f4d6ef7e63217a215226c09423b662d779b71e906da3",
+  "schema_version": "cs408-legacy-evidence-archive-receipt-v1",
+  "sentinel": {
+    "sentinel_relative_path": "00_迁移管理/状态/volume-sentinel.json",
+    "sentinel_sha256": "f086b32b29b2b38f1a28dffb8fde4fa850078332d8a23ae269cc8e857a6bd2ca",
+    "volume_name": "T9-Data",
+    "volume_uuid": "DC0D9415-AFA3-4C7E-89FD-6575EE7A4C10"
+  },
+  "source_file_inventory_sha256": "964d01ea6d2038d70be3605e545bf4bc5d804c1253c8eb02e7f1c688dcd8f335",
+  "stable_evidence_refs": [
+    {
+      "kind": "current_question_evidence_bundle_v1",
+      "locator": "current-question-evidence://sha256/b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+      "sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38"
+    }
+  ],
+  "status": "ARCHIVED_AND_LOCATOR_BOUND",
+  "study_date": "2026-08-16",
+  "terminal_binding_count": 0,
+  "terminal_locator": "cs408-sol-terminal://sha256/43436bb98143cce7e883dc1b3c750fb7e8b7b27cb52f34d39ece5655f7453aa9",
+  "terminal_outcome": "curated",
+  "terminal_proof_kind": "sol_content_addressed_terminal",
+  "terminal_sha256": "43436bb98143cce7e883dc1b3c750fb7e8b7b27cb52f34d39ece5655f7453aa9",
+  "unresolved_refs": []
+}

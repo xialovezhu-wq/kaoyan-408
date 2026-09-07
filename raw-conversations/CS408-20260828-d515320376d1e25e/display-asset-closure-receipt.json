@@ -1,0 +1,22 @@
+{
+  "embed_resolution": "verified_existing",
+  "existing_display_proof": "already_current_hash_identical_embedded_assets",
+  "formal_id": "DS_2016_001",
+  "items": [
+    {
+      "source_sha256": "e56a95cae9fb78b23f514b64729753930c3f1c196e57f988e54776636bd8cc50",
+      "stable_sha256": "e56a95cae9fb78b23f514b64729753930c3f1c196e57f988e54776636bd8cc50",
+      "stable_vault_relative_path": "assets/DS_2016_001/question-01.png"
+    }
+  ],
+  "markdown_sha256": "c9658ac6880a65bb79fa2438d424ed1217a7d1ab326b84dc27d48c07e7118fa4",
+  "markdown_vault_relative_path": "cards/DS_2016_001.md",
+  "no_display": false,
+  "obsidian_reread": "verified_existing",
+  "package_id": "CS408-20260828-d515320376d1e25e",
+  "package_sha256": "34d0ad11c00668b0f1320a2115a196fdfbcc1a77fed4d427f891a7189b4a87b5",
+  "receipt_id": "CS408-DISPLAY-637f9914aaba6ed298e4",
+  "schema_version": "cs408-obsidian-asset-closure-receipt-v1",
+  "stable_asset_count": 1,
+  "subject": "cs408"
+}

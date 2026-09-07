@@ -1,0 +1,41 @@
+{
+  "answer_safe_manifest": true,
+  "attachment_objects": [
+    {
+      "byte_count": 594389,
+      "declared_mime_type": "image/png",
+      "detected_format": "png",
+      "detected_mime_type": "image/png",
+      "label": "2009 统考真题资料第 17 题题图",
+      "ordinal": 1,
+      "original_bytes_ref": "current-question-attachment://sha256/aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117",
+      "role": "question_image",
+      "sha256": "aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117"
+    },
+    {
+      "byte_count": 922449,
+      "declared_mime_type": "image/png",
+      "detected_format": "png",
+      "detected_mime_type": "image/png",
+      "label": "2009 统考真题资料第 17 题解析图",
+      "ordinal": 2,
+      "original_bytes_ref": "current-question-attachment://sha256/361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8",
+      "role": "solution_image",
+      "sha256": "361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8"
+    }
+  ],
+  "bundle_schema_version": "current-question-evidence-bundle-v3",
+  "context_id": "CQC-EC0CD6126DA2C598992C6E30",
+  "created_at": "2026-08-12T22:41:36.267000+08:00",
+  "formal_write_count": 0,
+  "item_id": "OQ-DEFERRED-020",
+  "object_sha256": "b7bb19674394d64932803e4d86d91ff57bb65fa99340cfe29b77e1fd8d05beed",
+  "object_size_bytes": 7765,
+  "request_id": "deferred-20260812-020-fast-capture-v1",
+  "schema_version": "current-question-evidence-manifest-v1",
+  "session_id": "ordinary-20260812-deferred",
+  "source_binding_sha256": "622d3521a907a69500af7bf36bf771e62e5587718e914a5a4d24c3db41604c27",
+  "source_id": "DEFERRED-20260812-020",
+  "source_kind": "ordinary_question",
+  "study_date": "2026-08-12"
+}

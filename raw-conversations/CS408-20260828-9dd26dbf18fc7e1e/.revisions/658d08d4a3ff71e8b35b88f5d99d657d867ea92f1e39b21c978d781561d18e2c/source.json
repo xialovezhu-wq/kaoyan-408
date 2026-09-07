@@ -1,0 +1,42 @@
+{
+  "item_id": "SQI-781eb615a011034dc6f6aeba",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": null,
+  "source": {
+    "entry_kind": "standalone_question_intake",
+    "options": [
+      {
+        "label": "A",
+        "text": "8 kb/s"
+      },
+      {
+        "label": "B",
+        "text": "20 kb/s"
+      },
+      {
+        "label": "C",
+        "text": "40 kb/s"
+      },
+      {
+        "label": "D",
+        "text": "80 kb/s"
+      }
+    ],
+    "question": "如图所示，如果连接 R2 和 R3 链路的频率带宽为 8 kHz，信噪比为 30 dB，该链路实际数据传输速率约为理论最大数据传输速率的 50%，那么该链路的实际数据传输速率约为（ ）。",
+    "question_identity_hint": "CN_2016_001",
+    "source": {
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/assets/CN_2016_001/question-01.png",
+      "question_type": "单项选择题",
+      "source_id": "EXAM408-2016-Q34",
+      "subject": "CN",
+      "title": "2016 年统考计算机网络第 34 题",
+      "year": "2016"
+    },
+    "standalone_item_id": "SQI-781eb615a011034dc6f6aeba",
+    "standalone_item_identity_sha256": "781eb615a011034dc6f6aeba19e6407613149e8de8deb746f6a0968994aa938d"
+  },
+  "source_id": "SQISRC-50c162a41a22a6e8-REQ-4e3744f23f2540fd",
+  "study_date": "2026-08-28",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

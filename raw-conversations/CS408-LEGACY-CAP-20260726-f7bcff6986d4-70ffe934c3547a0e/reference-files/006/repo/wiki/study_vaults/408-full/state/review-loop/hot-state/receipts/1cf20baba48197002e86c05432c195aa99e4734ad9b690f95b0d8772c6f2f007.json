@@ -1,0 +1,17 @@
+{
+  "answer_safe": true,
+  "byte_length": 2366,
+  "byte_offset": 458487,
+  "event_id": "RE-73d141d48b35112bdfd1",
+  "event_sha256": "9a8f705546747845dc6eabf72c58b42b6dac80ab62f8ded8517a565cf7ef90bc",
+  "formal_write_count": 0,
+  "generation": 1,
+  "idempotency_key_sha256": "cba6fb1b38ed419dc768e5847d4f1065f04de57638bcf73179f7ca9663329e82",
+  "kind": "review_hot_state_commit_receipt",
+  "line_sha256": "9a8f705546747845dc6eabf72c58b42b6dac80ab62f8ded8517a565cf7ef90bc",
+  "post_derived_integrity_sha256": "f1bacfcc1a2e7c68e9f7b3b2b55c7616d05515c47528f3bfdd95870380b50587",
+  "post_ledger_commitment_sha256": "e6de7db2d5f7704fd8a030f2a0b3d916045e28ee8e71222de34bc98976ed777c",
+  "precondition_sha256": "1f058b0b29ce19ddce909fda16a053d262867ff145e9dab9cb3ebe49a433b05e",
+  "projection_build_id": "RHS-569AF0A652C66CEA4341B80C",
+  "schema": "review_hot_state_commit_receipt_v1"
+}

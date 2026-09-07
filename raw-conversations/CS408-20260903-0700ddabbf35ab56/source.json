@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0019",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260903-3A74C9E7114C2468",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-03",
+      "campaign_item_commitment_sha256": "8efcd999ec29492f2bf62f521091ad17cd3c8408d102b64e325cdcd06bb412ba",
+      "capture_request_id": "RCR-2EA24437FA15D91C629B8F33",
+      "capture_required": true,
+      "display_receipt_sha256": "6f3a93c57880cc351b03983be751b7f3982cf64081969559cef2cab7c1ca82ac",
+      "formal_node_id": "DS_2020_003",
+      "grading_sha256": "a6d554430b8d5def28df3f9b169186624a0bfac71d2dd4b63e0d99da56a3badd",
+      "item_id": "MCQ-0019",
+      "pending_outcome_sha256": "2ea24437fa15d91c629b8f33bccff3f7cac5041a8a91cbfc0d4c9f611955e9c0",
+      "run_id": "MCR-20260903-3A74C9E7114C2468",
+      "segment_id": "MCR-20260903-3A74C9E7114C2468-S002",
+      "segment_ordinal": 1,
+      "surface_kind": "canonical_original",
+      "surface_sha256": "5524a3525defa5039a871ccc48ac9b7f8b2ba4287a61684b6cf7aaed82fe29f6",
+      "terminal_trace_sha256": "7a28e0bc5834578d57570f77f556de2bb5216225e20d2b9e86add8ca0901f06a",
+      "true_item_id": "EXAM408-2020-Q10",
+      "variant_id": null
+    },
+    "grading_capsule_sha256": "a6d554430b8d5def28df3f9b169186624a0bfac71d2dd4b63e0d99da56a3badd",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": "24a3b6bd9ccde3e83de4efd35f97b7a8511910d3e6b1c3e1ebda157433e2d851",
+    "question_surface": {
+      "options": {
+        "A": "见题图中的 A 选项",
+        "B": "见题图中的 B 选项",
+        "C": "见题图中的 C 选项",
+        "D": "见题图中的 D 选项"
+      },
+      "stem": "![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2020/EXAM408-2020-Q10/question-01.png)"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "high",
+      "corrected_response": "B",
+      "prompt_dependency": "full",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EXAM408-2020-Q10",
+  "study_date": "2026-09-03",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-01",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-29-c1929942",
+  "source": {
+    "assessment": {
+      "choice_result": "incorrect",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "把全部 18 位表项连续紧密打包，只在整表层面换算字节，忽略了每个表项都要按完整字节存储。",
+      "first_break_provenance": "derived_classification",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "簇大小为 4 KiB，卷中共有 2 的 18 次方个可编号簇。簇号字段最少需要 18 位，每个表项按完整字节收纳需要 3 B，乘全部表项后得到 768 KiB。",
+      "grader_capsule_id": "MRGC-E36A72DD9B7B61F47A25A1D3",
+      "grader_result": "incorrect",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "簇大小为 4 KiB，卷中共有 2 的 18 次方个可编号簇。簇号字段最少需要 18 位，每个表项按完整字节收纳需要 3 B，乘全部表项后得到 768 KiB。"
+    },
+    "learner_evidence": {
+      "answer_text": "B",
+      "choice": "B",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-29T17:51:03.517737+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "512 KiB"
+        },
+        {
+          "label": "B",
+          "text": "576 KiB"
+        },
+        {
+          "label": "C",
+          "text": "768 KiB"
+        },
+        {
+          "label": "D",
+          "text": "1024 KiB"
+        }
+      ],
+      "public_surface_sha256": "2f9af277d8aed18e48049a4d56fd934f46dde6c4dbfeee2293317bf38d0c91f7",
+      "public_text": "某 FAT 文件卷的容量为 1 GiB，磁盘块大小为 1 KiB，每簇含 4 个块。假定卷内全部空间按该簇大小编号，每个簇对应一个 FAT 表项；表项只需表示任一簇号，并按完整字节存储，不计保留项和其他开销。整张 FAT 至少需要多少存储空间？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "2f9af277d8aed18e48049a4d56fd934f46dde6c4dbfeee2293317bf38d0c91f7",
+    "source_kind": "morning_review"
+  },
+  "source_id": "RU_OS04_FAT_LOCATION",
+  "study_date": "2026-08-29",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

@@ -1,0 +1,161 @@
+{
+  "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+  "capture_id": "CAP-20260816-c18277255b9d",
+  "capture_original_evidence_sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+  "capture_payload_sha256": "c9b6779effe409f4b04bee4545c3fef80ea7fe492522c5f21a513bf2ae4e6693",
+  "capture_set_sha256": "6f2fe234d53bcc0d288f265043cf15738da33731ce11795b537b650e5102c718",
+  "decision": {
+    "basis": [
+      "已重开完整 formal_problem_document v4、来源 DOCX、题图、用户代码图与解析图；题目唯一对应 EXAM408-2015-Q41。",
+      "用户的文字算法、代码断点、复杂度判断与最小修改请求均有完整直接对话证据，足以形成新的答案安全正式节点。",
+      "正式库与来源索引中不存在 EXAM408-2015-Q41 的既有节点；new 保持 formal_id=null，由 RepoLock 内分配。"
+    ],
+    "canonical_package": {
+      "ask_type": "说明算法思想并给出代码，分析时间和空间复杂度。",
+      "asset_promotions": [
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2015/EXAM408-2015-Q41/question-01.png",
+          "protected": true,
+          "relative_path": "question-01.png",
+          "sha256": "bebfaf3fd9a4ce9aa16e1c3a8c5750eb0ed6e95b4902247d90a7c76759ea01e1"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2015/EXAM408-2015-Q41/solution-01.png",
+          "protected": true,
+          "relative_path": "solution-01.png",
+          "sha256": "b37a1d111be43ececb0e934c615d86d522940124cdf16088a0154634d100181d"
+        }
+      ],
+      "attachment_registry": {
+        "作答痕迹": "完整 DOCX 对话证据已验证，正式层仅保留安全摘要",
+        "可视化详情入口": "规范真题语料 EXAM408-2015-Q41",
+        "当前附件来源": "formal_problem_document v4 与规范真题语料",
+        "解析图或解析正文": "已接收并位于规范真题语料",
+        "题图": "已接收并位于规范真题语料"
+      },
+      "auto_id": true,
+      "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+      "capture_binding": {
+        "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+        "capture_id": "CAP-20260816-c18277255b9d",
+        "capture_payload_sha256": "c9b6779effe409f4b04bee4545c3fef80ea7fe492522c5f21a513bf2ae4e6693"
+      },
+      "capture_id": "CAP-20260816-c18277255b9d",
+      "capture_payload_sha256": "c9b6779effe409f4b04bee4545c3fef80ea7fe492522c5f21a513bf2ae4e6693",
+      "contract": "coordinator_approved_intake_v1",
+      "coordinator_checks": {
+        "answer_leak_check": "pass",
+        "duplicate_check": "pass",
+        "error_tags_verified": true,
+        "evidence_hashes_verified": true,
+        "historical_mapping_check": "pass_or_not_applicable",
+        "knowledge_tags_verified": true
+      },
+      "core_point": "利用 data 的绝对值不超过 n 的边界建立 n+1 个标记位，并通过正确的链域连接或前驱删除在一次扫描中保留每个绝对值首次出现的结点。",
+      "curation_evidence_binding": {
+        "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+        "capture_id": "CAP-20260816-c18277255b9d",
+        "capture_payload_sha256": "c9b6779effe409f4b04bee4545c3fef80ea7fe492522c5f21a513bf2ae4e6693"
+      },
+      "date_source": "完整 formal_problem_document v4、来源 DOCX 与规范真题语料核验；原学习日 2026-08-16。",
+      "decision": "pass",
+      "detail_card_source": {
+        "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2015-Q41.md",
+        "protected": true,
+        "sha256": "36762eff4591088c1b42bd381f1f764e3dc07615da901c0c1cd7b2349ebe4a42"
+      },
+      "detail_entry": "规范真题语料 EXAM408-2015-Q41；2015 年统考全卷第 41 题",
+      "error_tags": [
+        "E04 字段划分错误",
+        "E02 条件遗漏",
+        "E06 算法过程跳步"
+      ],
+      "evidence": [
+        {
+          "path": "/Users/xiazhibin/.codex/kaoyan-408-conversation-packages/legacy-verified/manifests/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1.json",
+          "protected": true,
+          "sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2015-Q41.md",
+          "protected": true,
+          "sha256": "36762eff4591088c1b42bd381f1f764e3dc07615da901c0c1cd7b2349ebe4a42"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2015/EXAM408-2015-Q41/question-01.png",
+          "protected": true,
+          "sha256": "bebfaf3fd9a4ce9aa16e1c3a8c5750eb0ed6e95b4902247d90a7c76759ea01e1"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2015/EXAM408-2015-Q41/solution-01.png",
+          "protected": true,
+          "sha256": "b37a1d111be43ececb0e934c615d86d522940124cdf16088a0154634d100181d"
+        }
+      ],
+      "first_done_date": "2026-08-16",
+      "formal_id": null,
+      "fuzzy_concepts": "绝对值下标 vs 原 data；数组长度 n vs n+1；头结点 vs 首数据结点；b=a vs b->link=a；跳过指针 vs 删除结点；核心扫描 O(m) vs 初始化后的完整 O(m+n)。",
+      "hit_knowledge": [
+        "DS02-15 线性表算法设计",
+        "DS02-06 单链表",
+        "DS02-07 头指针与头结点",
+        "DS02-09 单链表删除",
+        "DS01-11 时间复杂度分析",
+        "DS01-12 空间复杂度分析"
+      ],
+      "idempotency_key": "sha256:c9b6779effe409f4b04bee4545c3fef80ea7fe492522c5f21a513bf2ae4e6693",
+      "job_id": "SOL-CUR-CAP-20260816-c18277255b9d",
+      "key_parameters": "链表带头结点；数据满足绝对值不超过 n；标记数组必须覆盖 0 到 n；必须真正修改链域；时间按一趟扫描，辅助空间按标记数组。",
+      "latest_error_record": "2026-08-16 入库：算法思想与 O(m)/O(n) 主体判断正确，但代码未使用绝对值下标、数组未覆盖 n、未从首数据结点开始，并用局部指针赋值代替链域连接；重复结点处理也没有真正修改原链。",
+      "latest_review_date": "2026-08-16",
+      "main_knowledge": "DS02-15 线性表算法设计",
+      "mode": "new",
+      "module": "DS02 线性表",
+      "question_type": "综合应用题 / 单链表按绝对值去重算法设计题",
+      "redo_first_action": "先写当前结点前驱或结果链尾指针，再明确真正改变链表必须修改 pre->link 或 b->link，而不是只移动局部指针。",
+      "relation_candidates": [],
+      "relation_review": {
+        "basis": "已按单链表删除、绝对值去重、标记数组和复杂度检索既有正式节点；未找到同时共享同一代码断点与同一动作链的可靠强边。",
+        "reviewed_by": "Sol",
+        "status": "reviewed_no_reliable_edge"
+      },
+      "reviewed_at": "2026-08-27T16:45:00+08:00",
+      "reviewed_by": "Sol",
+      "safe_summary": "给定带头结点的单链表和数据绝对值上界，要求按首次出现原则处理绝对值重复结点，并分析复杂度。",
+      "schema_version": "coordinator_approved_intake_v1",
+      "source_id": "EXAM408-2015-Q41",
+      "sub_knowledge": [
+        "DS02-06 单链表",
+        "DS02-07 头指针与头结点",
+        "DS02-09 单链表删除",
+        "DS01-11 时间复杂度分析",
+        "DS01-12 空间复杂度分析"
+      ],
+      "subject": "DS",
+      "topic_chain_candidates": [],
+      "user_error_entry": "2026-08-16 入库：文字算法方向正确，但代码没有对 data 取绝对值、标记数组少一个位置、从头结点开始遍历，并把 b=a 当成连接链表；重复结点分支也未真正断链或释放。",
+      "year": "2015"
+    },
+    "confidence": "high",
+    "counterevidence": [
+      "用户文字算法方向与 O(m)/O(n) 主体判断正确，但代码没有真正完成链域连接或删除；不能把算法方向正确写成整题独立正确。",
+      "关系检索没有发现同时共享同一代码断点与完整动作链的可靠强边。"
+    ],
+    "decision": "new",
+    "evidence_refs": [
+      {
+        "locator": "current-question-evidence://sha256/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+        "sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1"
+      }
+    ],
+    "formal_id": null,
+    "unresolved_gaps": []
+  },
+  "evidence_kind": "formal_problem_document_v4",
+  "evidence_locator": "current-question-evidence://sha256/96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+  "formal_write_count": 0,
+  "processing_mode": "sol_direct_evidence",
+  "reopened_evidence_sha256": "96a5e5bc3a342704966a78d1f89a79af0aff4875585bdf3b38ecf24f9e3e89a1",
+  "schema_version": "sol-curation-decision-408-v2",
+  "subject": "cs408"
+}

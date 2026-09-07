@@ -1,0 +1,33 @@
+{
+  "attachments": [],
+  "background_processing": "none",
+  "canonical_sha256": "044e690129115f919cee57ebf43025681dc211784f5018d69bc6f2fcf9c1211d",
+  "files": [
+    {
+      "byte_count": 2359,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "f341ba56f5dac08f38cab4a9d59d0954399192f5b2e80d381ef8f0932f8bb882"
+    },
+    {
+      "byte_count": 2619,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "a90e86a39ca0b64d0e1a5a055b5b122178e303ff65cffd6603af07c7a61eb16c"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MQ-02",
+  "missing_fields": [],
+  "package_id": "CS408-20260830-35b47c6e4ee80d11",
+  "revision": 2,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": false,
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source_id": "RU_OS_2014_004",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

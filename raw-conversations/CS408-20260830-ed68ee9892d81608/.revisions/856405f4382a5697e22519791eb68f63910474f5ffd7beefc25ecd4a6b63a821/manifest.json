@@ -1,0 +1,33 @@
+{
+  "attachments": [],
+  "background_processing": "none",
+  "canonical_sha256": "856405f4382a5697e22519791eb68f63910474f5ffd7beefc25ecd4a6b63a821",
+  "files": [
+    {
+      "byte_count": 1918,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "57dec2a3f8e56241d0ea68cd3900e7b97a8eb173df723e66815af959d836dcec"
+    },
+    {
+      "byte_count": 2983,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "73ee23b861e9bf102f3367be1194ed74f668964725c610996de2ca75cc57ea9b"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MQ-03",
+  "missing_fields": [],
+  "package_id": "CS408-20260830-ed68ee9892d81608",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": false,
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source_id": "RU_OS04_PHYSICAL_ORGANIZATION",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-01",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source": {
+    "assessment": {
+      "choice_result": "correct",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "未观察到",
+      "first_break_provenance": "not_observed",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "题目要求的是发送数据前的共享信道预约。RTS/CTS 控制帧交换承担该功能；ACK 用于接收确认，随机退避用于竞争等待，CDMA 属于码分复用。",
+      "grader_capsule_id": "MRGC-9655572D8F0BA53713C013CB",
+      "grader_result": "correct",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "题目要求的是发送数据前的共享信道预约。RTS/CTS 控制帧交换承担该功能；ACK 用于接收确认，随机退避用于竞争等待，CDMA 属于码分复用。"
+    },
+    "learner_evidence": {
+      "answer_text": "C",
+      "choice": "C",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-30T11:13:13.406455+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "数据帧成功到达后，由接收端回送 ACK"
+        },
+        {
+          "label": "B",
+          "text": "为不同站点分配不同的 CDMA 码"
+        },
+        {
+          "label": "C",
+          "text": "发送 RTS，并在收到 CTS 后发送数据"
+        },
+        {
+          "label": "D",
+          "text": "信道忙时选择一个随机退避时间"
+        }
+      ],
+      "public_surface_sha256": "2a0ffbdbe213a65ff18775b4c9e50010f0073b985ed68f4c305872c54eef6709",
+      "public_text": "某 IEEE 802.11 无线局域网站点采用 CSMA/CA。该站点希望在发送数据前通过控制帧交互预约共享信道。应采用哪一种操作？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "2a0ffbdbe213a65ff18775b4c9e50010f0073b985ed68f4c305872c54eef6709",
+    "source_kind": "morning_review"
+  },
+  "source_id": "EXAM408-2018-Q35",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

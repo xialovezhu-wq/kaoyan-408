@@ -1,0 +1,81 @@
+{
+  "attachments": [
+    {
+      "byte_count": 63929,
+      "label": "EXAM408-2018-Q03 question image page 1 ({'asset_ordinal': 1, 'source_page': 2})",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-e60756a38fa470939a91718cb36ac4f3e6bf2cd1d31b6f62f625206c67743a43.png",
+      "role": "question_image",
+      "sha256": "e60756a38fa470939a91718cb36ac4f3e6bf2cd1d31b6f62f625206c67743a43"
+    },
+    {
+      "byte_count": 18914,
+      "label": "assistant-generated-upper-triangle-row6-diagram",
+      "mime_type": "image/svg+xml",
+      "relative_path": "attachments/0002-859f91f525442477b1395df11b5052ae7cce1e328f47bfea66b7819619b965ad.svg",
+      "role": "explanation_image",
+      "sha256": "859f91f525442477b1395df11b5052ae7cce1e328f47bfea66b7819619b965ad"
+    },
+    {
+      "byte_count": 581,
+      "label": "buffered-unpublished-feedback-delivery-limitation",
+      "mime_type": "application/json",
+      "relative_path": "attachments/0003-7b370e6c1953d3e8ffe3e08d7f5bc29d0ed607cf34222e5c908c798d3d3b3a37.json",
+      "role": "other_attachment",
+      "sha256": "7b370e6c1953d3e8ffe3e08d7f5bc29d0ed607cf34222e5c908c798d3d3b3a37"
+    }
+  ],
+  "background_processing": "none",
+  "canonical_sha256": "717cf117b52ec36af87492ed184f1e51ac0772fdd5dcdcbdc3ff1f58ea0b94ac",
+  "files": [
+    {
+      "byte_count": 8227,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "4e6458ae0a0e3796e7aad003e16ff091c0f4f18e9590f71f887cba61a28efd81"
+    },
+    {
+      "byte_count": 2166,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "5f7f97df0488f20c07fc819f5bd2f8f8f909ebecf949fac238a91c7e11588346"
+    },
+    {
+      "byte_count": 63929,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-e60756a38fa470939a91718cb36ac4f3e6bf2cd1d31b6f62f625206c67743a43.png",
+      "role": "question_image",
+      "sha256": "e60756a38fa470939a91718cb36ac4f3e6bf2cd1d31b6f62f625206c67743a43"
+    },
+    {
+      "byte_count": 18914,
+      "mime_type": "image/svg+xml",
+      "relative_path": "attachments/0002-859f91f525442477b1395df11b5052ae7cce1e328f47bfea66b7819619b965ad.svg",
+      "role": "explanation_image",
+      "sha256": "859f91f525442477b1395df11b5052ae7cce1e328f47bfea66b7819619b965ad"
+    },
+    {
+      "byte_count": 581,
+      "mime_type": "application/json",
+      "relative_path": "attachments/0003-7b370e6c1953d3e8ffe3e08d7f5bc29d0ed607cf34222e5c908c798d3d3b3a37.json",
+      "role": "other_attachment",
+      "sha256": "7b370e6c1953d3e8ffe3e08d7f5bc29d0ed607cf34222e5c908c798d3d3b3a37"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MCQ-0001",
+  "missing_fields": [
+    "Delivery limitation: draft turn 11 contains feedback prepared before an intervening user message but not emitted as a final chat message. It must not be treated as a separately observed visible turn; the delivered merged feedback is draft turn 14. Exact limitation recorded in attached MCQ-0001-visual-delivery-note.json."
+  ],
+  "package_id": "CS408-20260902-8c1c2382cc3c5121",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MCR-20260902-4B98E7C333461606",
+  "source_id": "EXAM408-2018-Q03",
+  "study_date": "2026-09-02",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

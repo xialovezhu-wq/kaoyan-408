@@ -1,0 +1,82 @@
+---
+type: llm_wiki_home
+system: 408
+status: active
+tags:
+  - llm-wiki
+  - kaoyan-408
+  - obsidian-home
+---
+
+# 408 LLM Wiki Home
+
+这是 408 错题关系网的 Obsidian 入口页。它不是正式错题库，不保存完整题干、完整解析、标准答案、错选答案、图片或手写痕迹。
+
+当前覆盖进度：394/399 compiled；5 个节点仅 formal source 登记，后续补概念页。详见 [[wiki/coverage/408-COVERAGE-001_正式错题全量覆盖索引|408 正式错题全量覆盖索引]] 和 [[wiki/concepts/概念页总览|408 概念页总览]]。
+
+## 进入 Wiki
+
+- [[wiki/index|408 LLM Wiki Index]]
+- [[wiki/log|408 LLM Wiki Log]]
+- [[raw/index|Raw Sources Index]]
+- [[schema/schema|LLM Wiki Schema]]
+- [[wiki/operation_center/408智能体操作中心|408 智能体操作中心]]
+- [[wiki/topics/Agent Dashboard 数据出口|Agent Dashboard 数据出口]]：`wiki/operation_center/dashboard-summary.json`
+
+## 核心 Wiki 页
+
+- [[wiki/source_summaries/408正式数据来源摘要|408 正式数据来源摘要]]
+- [[wiki/coverage/408-COVERAGE-001_正式错题全量覆盖索引|408 正式错题全量覆盖索引]]
+- [[wiki/concepts/LLM Wiki三层架构|LLM Wiki 三层架构]]
+- [[wiki/concepts/408错题关系网|408 错题关系网]]
+- [[wiki/concepts/复做保护|复做保护]]
+- [[wiki/concepts/概念页总览|408 概念页总览]]
+- [[wiki/concepts/OS01-17_系统调用边界|OS01-17 系统调用边界]]
+- [[wiki/concepts/CO06-18_DMA方式边界|CO06-18 DMA 方式边界]]
+- [[wiki/concepts/CN01-22_OSI七层模型边界|CN01-22 OSI 七层模型边界]]
+- [[wiki/concepts/CO04-08_寻址方式边界|CO04-08 寻址方式边界]]
+- [[wiki/concepts/CO05-15_微程序控制器边界|CO05-15 微程序控制器边界]]
+- [[wiki/concepts/OS03-07_连续分配管理边界|OS03-07 连续分配管理边界]]
+- [[wiki/concepts/OS05-23_SPOOLing技术边界|OS05-23 SPOOLing 技术边界]]
+- [[wiki/concepts/DS07-13_B树边界|DS07-13 B 树边界]]
+- [[wiki/concepts/OS02-05_进程状态转换边界|OS02-05 进程状态转换边界]]
+- [[wiki/concepts/OS02-07_进程创建边界|OS02-07 进程创建边界]]
+- [[wiki/concepts/CO06-11_程序中断方式边界|CO06-11 程序中断方式边界]]
+- [[wiki/concepts/CO05-05_寄存器边界|CO05-05 寄存器边界]]
+- [[wiki/concepts/CO01-08_指令执行过程边界|CO01-08 指令执行过程边界]]
+- [[wiki/concepts/CO02-20_IEEE754边界|CO02-20 IEEE 754 边界]]
+- [[wiki/concepts/CN01-10_计算机网络性能指标边界|CN01-10 计算机网络性能指标边界]]
+- [[wiki/concepts/CN02-13_波特率边界|CN02-13 波特率边界]]
+- [[wiki/concepts/CN02-15_奈奎斯特定理边界|CN02-15 奈奎斯特定理边界]]
+- [[wiki/concepts/CN02-30_中继器边界|CN02-30 中继器边界]]
+- [[wiki/concepts/CO05-04_控制器边界|CO05-04 控制器边界]]
+- [[wiki/concepts/CO05-22_指令流水线边界|CO05-22 指令流水线边界]]
+- [[wiki/concepts/CO06-06_I-O接口边界|CO06-06 I/O 接口边界]]
+- [[wiki/concepts/OS01-22_操作系统引导边界|OS01-22 操作系统引导边界]]
+- [[wiki/concepts/OS02-11_线程基本概念边界|OS02-11 线程基本概念边界]]
+- [[wiki/concepts/OS02-32_同步与互斥边界|OS02-32 同步与互斥边界]]
+- [[wiki/concepts/OS02-37_信号量边界|OS02-37 信号量边界]]
+- [[wiki/concepts/OS02-44_死锁基本概念边界|OS02-44 死锁基本概念边界]]
+- [[wiki/concepts/OS03-20_段式管理边界|OS03-20 段式管理边界]]
+- [[wiki/concepts/OS03-24_请求分页管理边界|OS03-24 请求分页管理边界]]
+- [[wiki/concepts/OS05-12_设备驱动程序边界|OS05-12 设备驱动程序边界]]
+- [[wiki/concepts/OS05-25_磁盘访问时间边界|OS05-25 磁盘访问时间边界]]
+- [[wiki/concepts/CN01-08_分组交换边界|CN01-08 分组交换边界]]
+- [[wiki/concepts/CN02-02_数据边界|CN02-02 数据边界]]
+- [[wiki/concepts/CN03-01_数据链路层功能边界|CN03-01 数据链路层功能边界]]
+- [[wiki/concepts/CN03-10_停止等待协议边界|CN03-10 停止等待协议边界]]
+- [[wiki/error_patterns/错因模式总览|错因模式总览]]
+- [[wiki/relation_summaries/关系网状态摘要|关系网状态摘要]]
+- [[wiki/queries/查询沉淀索引|查询沉淀索引]]
+- [[wiki/contradictions/张力与冲突索引|张力与冲突索引]]
+- [[wiki/topics/状态转移与边界条件|状态转移与边界条件]]
+- [[wiki/topics/Agent Dashboard 数据出口|Agent Dashboard 数据出口]]
+- [[wiki/questions/待确认问题索引|待确认问题索引]]
+- [[wiki/lint_reports/2026-06-28-karpathy-llm-wiki对齐报告|Karpathy LLM Wiki 对齐报告]]
+
+## 工作原则
+
+- raw sources 只读。
+- wiki 保存可复用的概念、关系、错因模式、专题和待确认问题。
+- schema 规定 AI 如何 ingest、query、lint。
+- 正式节点、关系边、专题链、复做记录和复习单元仍按 408 原规则维护。

@@ -1,0 +1,49 @@
+{
+  "attachments": [
+    {
+      "byte_count": 44188,
+      "label": "CO_2018_003 原题图片",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-a2ad21632cb3dcb58d5253baae9e149ed0a68a9284457618c18377c2e6c51d33.png",
+      "role": "question_image",
+      "sha256": "a2ad21632cb3dcb58d5253baae9e149ed0a68a9284457618c18377c2e6c51d33"
+    }
+  ],
+  "background_processing": "none",
+  "canonical_sha256": "615cca3ba6936e01fdea0e154e99a4ccb1fe1a00e6088dc1dcdeb54fce05e59c",
+  "files": [
+    {
+      "byte_count": 1362,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "62e3688e9f9591ad1c738c76ecbf0a2efe8c4d97df29231fd67c094dc16dfee0"
+    },
+    {
+      "byte_count": 2604,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "456a24ea2c69784ccd0322160b7c0aba6aa4511b7cce788a12e77927f6508117"
+    },
+    {
+      "byte_count": 44188,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-a2ad21632cb3dcb58d5253baae9e149ed0a68a9284457618c18377c2e6c51d33.png",
+      "role": "question_image",
+      "sha256": "a2ad21632cb3dcb58d5253baae9e149ed0a68a9284457618c18377c2e6c51d33"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MQ-04",
+  "missing_fields": [],
+  "package_id": "CS408-20260828-805159aaf9938263",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MR-2026-08-28-c5366c1c",
+  "source_id": "RU_CO_IEEE_BOUNDARIES",
+  "study_date": "2026-08-28",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

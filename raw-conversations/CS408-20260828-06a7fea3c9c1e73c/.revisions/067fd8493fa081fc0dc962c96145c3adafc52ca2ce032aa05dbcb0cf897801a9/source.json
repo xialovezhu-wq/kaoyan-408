@@ -1,0 +1,42 @@
+{
+  "item_id": "SQI-d60673757b6b293525baa90c",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": null,
+  "source": {
+    "entry_kind": "standalone_question_intake",
+    "options": [
+      {
+        "label": "A",
+        "text": "1010H，1014H，1004H"
+      },
+      {
+        "label": "B",
+        "text": "1010H，1004H，1014H"
+      },
+      {
+        "label": "C",
+        "text": "1014H，1010H，1004H"
+      },
+      {
+        "label": "D",
+        "text": "1014H，1004H，1010H"
+      }
+    ],
+    "question": "已知表头元素为 c 的单链表存储表。现将 f 存放于 1014H 并插入单链表，若 f 在逻辑上位于 a 和 e 之间，则 a、e、f 的链接地址依次是什么？",
+    "question_identity_hint": "DS_2016_001",
+    "source": {
+      "locator": "/Users/xiazhibin/Documents/kaoyan-408-details/assets/DS_2016_001/question-01.png",
+      "question_type": "单项选择题",
+      "source_id": "EXAM408-2016-Q01",
+      "subject": "DS",
+      "title": "2016 年统考单链表地址表还原与插入题",
+      "year": "2016"
+    },
+    "standalone_item_id": "SQI-d60673757b6b293525baa90c",
+    "standalone_item_identity_sha256": "d60673757b6b293525baa90cbc9a6c0e35b5f6413613cd21578f78af015ec312"
+  },
+  "source_id": "SQISRC-06590bcb3029170e-REQ-29822e2d5ea5ab97",
+  "study_date": "2026-08-28",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

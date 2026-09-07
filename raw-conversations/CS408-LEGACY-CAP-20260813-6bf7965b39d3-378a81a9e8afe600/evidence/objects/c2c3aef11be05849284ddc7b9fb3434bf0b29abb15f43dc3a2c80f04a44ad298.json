@@ -1,0 +1,144 @@
+{
+  "assessment": {
+    "choice_result": "not_applicable",
+    "confidence": "high",
+    "first_action": "遍历链表并将结点映射到数组，记录长度 n，再访问下标 n-k。",
+    "first_action_provenance": "user_report",
+    "first_break": "不知道如何在 C++ 中定义链表结点并据此写出完整代码。",
+    "first_break_provenance": "user_report",
+    "first_result": "partial",
+    "prompt_level": "none",
+    "reasoning_result": "partial"
+  },
+  "attachment_objects": [
+    {
+      "byte_count": 594389,
+      "declared_mime_type": "image/png",
+      "detected_format": "png",
+      "detected_mime_type": "image/png",
+      "label": "2009 统考真题资料第 17 题题图",
+      "ordinal": 1,
+      "original_bytes_ref": "current-question-attachment://sha256/aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117",
+      "role": "question_image",
+      "sha256": "aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117"
+    },
+    {
+      "byte_count": 922449,
+      "declared_mime_type": "image/png",
+      "detected_format": "png",
+      "detected_mime_type": "image/png",
+      "label": "2009 统考真题资料第 17 题解析图",
+      "ordinal": 2,
+      "original_bytes_ref": "current-question-attachment://sha256/361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8",
+      "role": "solution_image",
+      "sha256": "361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8"
+    }
+  ],
+  "context_id": "CQC-D9778D2FC4420132D78E936E",
+  "current_question": {
+    "attachment_sha256s": [
+      "aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117",
+      "361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8"
+    ],
+    "options": [],
+    "public_surface_sha256": "aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117",
+    "public_text": "2009 年统考真题（资料编排第 17 题）：带头结点的单链表只给出头指针 list；在不改变链表的前提下，查找倒数第 k 个结点，成功时输出 data 并返回 1，否则返回 0；要求给出尽可能高效的思想、步骤和程序实现。",
+    "response_instruction": "给出算法思想、实现和复杂度。"
+  },
+  "evaluation_evidence": {
+    "correct_answer": "使用前后两个指针。两者从首个数据结点开始，前指针先走 k 步；若途中到达空指针则失败。之后两指针同步后移，前指针为空时后指针即指向倒数第 k 个结点。",
+    "correct_option": null,
+    "grader_basis": "数组映射法能得到正确结果，完整复杂度 O(n)/O(n) 的判断正确；但空间不是尽可能高效，且初次不能定义链表结点并完成代码。",
+    "grader_capsule_id": "grader-deferred-20260813-020-v1",
+    "grader_result": "partial",
+    "missing_fields": [],
+    "provided_by": "current-dialogue-plus-attached-official-analysis",
+    "standard_explanation": "先定义含 data 与 link 的 LNode。由于链表带头结点，两个指针均从 list->link 出发；前指针先走 k 步并检查越界，再同步移动。时间 O(n)，额外空间 O(1)。"
+  },
+  "event_time": "2026-08-13T03:35:00.000000+08:00",
+  "formal_write_count": 0,
+  "frozen_assistant_feedback": {
+    "sha256": "556951f80df22d7e821d66b5e4c4618422e75d68bbb1250409b52694fe2166a2",
+    "text": "数组映射法能够正确求出结果，完整算法时间为 O(n)、额外空间为 O(n)，但没有达到题目“尽可能高效”的空间要求。第一处可验证断点是未能先定义含 data 和 link 的 LNode，再从 list->link 开始写双指针代码；同时还要处理前指针走 k 步时提前到 NULL 的边界。"
+  },
+  "interaction_trace": {
+    "events": [
+      {
+        "kind": "first_action",
+        "ordinal": 1,
+        "role": "learner",
+        "text": "从头遍历链表，将链表映射到数组并得到长度 n。"
+      },
+      {
+        "kind": "reasoning",
+        "ordinal": 2,
+        "role": "learner",
+        "text": "数组建好后用下标 n-k 定位倒数第 k 个结点；完整时间 O(n)、空间 O(n)。"
+      },
+      {
+        "kind": "utterance",
+        "ordinal": 3,
+        "role": "learner",
+        "text": "我不知道用 C++ 怎么把这个链表表示出来。"
+      }
+    ],
+    "full_trace_sha256": "0686e68d07167ab7d1dfdc11a2177687137f4e22c29804067fefb1877abf103e",
+    "included_event_count": 3,
+    "omitted_event_count": 0,
+    "omitted_ranges": [],
+    "original_event_count": 3,
+    "schema": "current-question-interaction-trace-v2",
+    "truncation_reason": null
+  },
+  "item_id": "OQ-DEFERRED-020-DATE-CORRECTION",
+  "learner_evidence": {
+    "answer_text": "先遍历链表并把各结点映射到数组，同时得到长度 n；若 k>n 则返回 0，否则访问数组下标 n-k。判断完整算法时间 O(n)、空间 O(n)，但不知道如何在 C++ 中表示链表并写出完整代码。",
+    "choice": "",
+    "confidence": "high",
+    "first_action": "遍历链表并将结点映射到数组，记录长度 n，再访问下标 n-k。",
+    "observed_at": "2026-08-13T03:35:00.000000+08:00",
+    "prompt_level": "none",
+    "reasoning": "数组建好后的定位是 O(1)，但建表需遍历，因此完整算法时间 O(n)、额外空间 O(n)；当时未能写出链表结点结构和双指针代码。"
+  },
+  "missing_fields": [],
+  "provenance": {
+    "attachment_provenance": [
+      {
+        "byte_count": 594389,
+        "declared_mime_type": "image/png",
+        "detected_format": "png",
+        "detected_mime_type": "image/png",
+        "label": "2009 统考真题资料第 17 题题图",
+        "ordinal": 1,
+        "original_bytes_ref": "current-question-attachment://sha256/aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117",
+        "role": "question_image",
+        "sha256": "aaccb6a86d4c3a3ed2d77bb7666390fde298ef0d91ae4252e1961efb34471117"
+      },
+      {
+        "byte_count": 922449,
+        "declared_mime_type": "image/png",
+        "detected_format": "png",
+        "detected_mime_type": "image/png",
+        "label": "2009 统考真题资料第 17 题解析图",
+        "ordinal": 2,
+        "original_bytes_ref": "current-question-attachment://sha256/361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8",
+        "role": "solution_image",
+        "sha256": "361fe72800b4249a0d9bdbece20008a85924e49c5496d407240bbef40466d0f8"
+      }
+    ],
+    "context_sha256": "d9778d2fc4420132d78e936e16f2f8551463c2fbd6a50e7b6bdefd6a51d2a8e7",
+    "created_at": "2026-08-13T03:35:00.000000+08:00",
+    "missing_items": [],
+    "source_locator": "DEFERRED-20260812-020",
+    "source_sha256": "622d3521a907a69500af7bf36bf771e62e5587718e914a5a4d24c3db41604c27"
+  },
+  "question_mode": "image_question",
+  "request_id": "deferred-20260813-020-date-correction-v1",
+  "schema_version": "current-question-evidence-bundle-v3",
+  "session_id": "ordinary-20260813-date-correction",
+  "source_binding_sha256": "622d3521a907a69500af7bf36bf771e62e5587718e914a5a4d24c3db41604c27",
+  "source_id": "DEFERRED-20260812-020",
+  "source_kind": "ordinary_question",
+  "study_date": "2026-08-13",
+  "timezone": "Asia/Shanghai"
+}

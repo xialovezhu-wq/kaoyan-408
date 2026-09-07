@@ -1,0 +1,33 @@
+{
+  "attachments": [],
+  "background_processing": "none",
+  "canonical_sha256": "122b9c7f366dd0be7a330a9cc5d10676f70f9e2b217eba9191d079678ecfd3a7",
+  "files": [
+    {
+      "byte_count": 1540,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "c63ff452dfd5adfc58fc520e91582e6466c63c8ca8e707d7efe6b35757641e0a"
+    },
+    {
+      "byte_count": 2582,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "f99e05d0653d404b6f670fdc19f88e691b1082789a9e9accc830463ca8d28591"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MQ-01",
+  "missing_fields": [],
+  "package_id": "CS408-20260830-ad8c71f600d34543",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source_id": "EXAM408-2018-Q35",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

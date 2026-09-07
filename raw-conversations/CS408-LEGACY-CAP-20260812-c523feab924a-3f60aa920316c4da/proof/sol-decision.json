@@ -1,0 +1,36 @@
+{
+  "batch_id": "CUR-20260812-21f716438c94-A01",
+  "capture_id": "CAP-20260812-c523feab924a",
+  "capture_original_evidence_sha256": "3f60aa920316c4daa21633422e9a6dadb99db166deac8a5c286dc6bf6c184681",
+  "capture_payload_sha256": "d4471334acce6c52753769a6fbe50269f31de097ba3b6aeb4442191655ee3715",
+  "capture_set_sha256": "21f716438c946cbe53778dd8a8c6dca169b6bc8534a63da8953e75fd7dd038b0",
+  "decision": {
+    "basis": [
+      "已重开完整 current-question-evidence-bundle-v3，题目唯一对应 2009 统考全卷第 42 题。",
+      "当前正式节点 DS_2009_004 已精确包含用户的数组映射方案、未先定义链表结点、头结点起点与 k 越界边界，以及双指针为讲解后理解的证据边界。",
+      "后续 2026-08-13 date-correction 证据与正式节点均明确把真实学习日固定为 2026-08-13，因此本项只能作为内容已表示的旧日期捕获关闭，不改写正式日期。"
+    ],
+    "canonical_package": null,
+    "confidence": "high",
+    "counterevidence": [
+      "2026-08-12 捕获中的日期已被同源 2026-08-13 date-correction 事件取代；不得把正式节点重新标为 2026-08-12。",
+      "当前证据没有无提示独立重写双指针代码的事实；正式节点也没有宣称独立掌握。"
+    ],
+    "decision": "already_current",
+    "evidence_refs": [
+      {
+        "locator": "current-question-evidence://sha256/3f60aa920316c4daa21633422e9a6dadb99db166deac8a5c286dc6bf6c184681",
+        "sha256": "3f60aa920316c4daa21633422e9a6dadb99db166deac8a5c286dc6bf6c184681"
+      }
+    ],
+    "formal_id": "DS_2009_004",
+    "unresolved_gaps": []
+  },
+  "evidence_kind": "legacy_current_question_evidence",
+  "evidence_locator": "current-question-evidence://sha256/3f60aa920316c4daa21633422e9a6dadb99db166deac8a5c286dc6bf6c184681",
+  "formal_write_count": 0,
+  "processing_mode": "sol_direct_evidence",
+  "reopened_evidence_sha256": "3f60aa920316c4daa21633422e9a6dadb99db166deac8a5c286dc6bf6c184681",
+  "schema_version": "sol-curation-decision-408-v2",
+  "subject": "cs408"
+}

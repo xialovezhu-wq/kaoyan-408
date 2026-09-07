@@ -1,0 +1,25 @@
+{
+  "schema_version": "protected_capture_evidence_manifest_v1",
+  "capture_source_id": "CAPTURE-CN-2014-25-GBN-THROUGHPUT",
+  "study_date": "2026-07-19",
+  "files": [
+    {
+      "kind": "detail_card_source",
+      "path": "/Users/xiazhibin/Documents/kaoyan-408-details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/detail-source.md",
+      "sha256": "7d4d40c197ea93f01597bedbf9d1fa14a14b2db3180f78529fcb812fbfda3df3",
+      "protected": true
+    },
+    {
+      "kind": "question_image",
+      "path": "/Users/xiazhibin/Documents/kaoyan-408-details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/question.png",
+      "sha256": "03294ffaff8a87811b900ddb7180d6e6dd468029bca3c51d2116a5fb4d85de4e",
+      "protected": true
+    },
+    {
+      "kind": "answer_explanation_image",
+      "path": "/Users/xiazhibin/Documents/kaoyan-408-details/capture-sources/2026-07-19/CAPTURE-CN-2014-25-GBN-THROUGHPUT/solution.png",
+      "sha256": "8231fb4fe46ded1ce9c41322384ff1614b6a51dbd5f143c82fd09dd2a96f3643",
+      "protected": true
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "archive_mode": "ledger_only_reference_files",
+  "archive_package_type": "legacy_current_question_evidence",
+  "archive_verified_at": "2026-08-27T11:41:13+00:00",
+  "authorization": "CS408-LEGACY-ARCHIVE-52a44b217a0d1eb02596e0cf4b91809c7f44784b15fea410010a3cf47b24d3bc",
+  "batch_id": "CUR-20260720-46ceb4e2354d-A02",
+  "canonical_package": false,
+  "capture_id": "CAP-20260720-3d492a3b5db2",
+  "conversation_complete": false,
+  "conversation_complete_basis": "no_complete_conversation_evidence_available",
+  "decision_locator": null,
+  "decision_sha256": null,
+  "evidence_kind": "ledger_only_reference_files",
+  "evidence_locator": "cs408-ledger-only://sha256/d6dd285d9aa803813ead64eec59275f7fea3dd2f092841818351540e87391ec0",
+  "evidence_schema_version": "ledger-only-reference-files-v1",
+  "evidence_sha256": "d6dd285d9aa803813ead64eec59275f7fea3dd2f092841818351540e87391ec0",
+  "files": [
+    {
+      "byte_count": 845059,
+      "declared_ref_sha256": "f327135d3971494261128e36565dd10eee799e23f6d3b011c0a2ad927d4ffdbb",
+      "relative_path": "reference-files/001/repo/wiki/study_vaults/408-full/state/review-loop/events.jsonl",
+      "role": "stable_evidence_reference_file",
+      "sha256": "16c56678877a400e812fe504b4ce896d6c8e14a956f81c6f6e433b5aaac6a90a",
+      "source_locator": "wiki/study_vaults/408-full/state/review-loop/events.jsonl#event_id=RE-7ea2f426cd66f4b2b1e6",
+      "source_path": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
+      "source_path_scope": "repo_relative",
+      "source_relative_path": "repo_relative:wiki/study_vaults/408-full/state/review-loop/events.jsonl",
+      "source_role": "review_loop_event",
+      "stable_ref_kind": "review_loop_event"
+    },
+    {
+      "byte_count": 30746,
+      "declared_ref_sha256": "01dce3f6fab7e4214446ce2331dfc34d6f4c6065565b57a2c87b9bb54014aa99",
+      "relative_path": "reference-files/002/repo/wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "role": "stable_evidence_reference_file",
+      "sha256": "4a9c9bc37100a67985454644ad9dd1c4c54243db370d2b296a1c8086acbaa6ca",
+      "source_locator": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl#sequence=1",
+      "source_path": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "source_path_scope": "repo_relative",
+      "source_relative_path": "repo_relative:wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "source_role": "morning_session_start",
+      "stable_ref_kind": "morning_session_start"
+    },
+    {
+      "byte_count": 30746,
+      "declared_ref_sha256": "77e4e74fe5b1431191d2a2571757234b5b9dc268b028c28463c3725fafff53cc",
+      "relative_path": "reference-files/003/repo/wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "role": "stable_evidence_reference_file",
+      "sha256": "4a9c9bc37100a67985454644ad9dd1c4c54243db370d2b296a1c8086acbaa6ca",
+      "source_locator": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl#sequence=53",
+      "source_path": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "source_path_scope": "repo_relative",
+      "source_relative_path": "repo_relative:wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl",
+      "source_role": "morning_session_first",
+      "stable_ref_kind": "morning_session_first"
+    },
+    {
+      "byte_count": 14676,
+      "declared_ref_sha256": "3dd673ba41067b62ebfb3634d6a2effb2c7fcbf779b8ce9a6e2ce1b82b2fac57",
+      "relative_path": "reference-files/004/repo/wiki/study_vaults/408-full/StudyVault/00-Dashboard/2026-07-20-408晨间行动队列.md",
+      "role": "stable_evidence_reference_file",
+      "sha256": "3dd673ba41067b62ebfb3634d6a2effb2c7fcbf779b8ce9a6e2ce1b82b2fac57",
+      "source_locator": "wiki/study_vaults/408-full/StudyVault/00-Dashboard/2026-07-20-408晨间行动队列.md",
+      "source_path": "wiki/study_vaults/408-full/StudyVault/00-Dashboard/2026-07-20-408晨间行动队列.md",
+      "source_path_scope": "repo_relative",
+      "source_relative_path": "repo_relative:wiki/study_vaults/408-full/StudyVault/00-Dashboard/2026-07-20-408晨间行动队列.md",
+      "source_role": "morning_session_queue",
+      "stable_ref_kind": "morning_session_queue"
+    },
+    {
+      "byte_count": 2111,
+      "event_id": "CE-d0bcdb5fefa0fe7818ba",
+      "relative_path": "proof/capture-event.jsonl",
+      "role": "canonical_capture_event",
+      "sha256": "1df36a05337e4be6281e43ed66ac8da61622392dd44f12d913ac445da940c3e6"
+    },
+    {
+      "byte_count": 734,
+      "event_id": "CE-c045ad5887c5dba7fd4e",
+      "relative_path": "proof/result-event.jsonl",
+      "role": "canonical_result_event",
+      "sha256": "4c71528b439ff8938650e97b6fdae63112d2eac469b34b61ffcd74dd8df6182c"
+    },
+    {
+      "byte_count": 592,
+      "event_id": "CE-ad598721bdc3d18230f3",
+      "relative_path": "proof/closeout-event.jsonl",
+      "role": "canonical_closeout_event",
+      "sha256": "5c3a527c6bceb1738a8bcc6d3149a397e7a025f2fbcb6e4e4de101695c05e41b"
+    }
+  ],
+  "formal_apply_allowed": false,
+  "formal_ids": [
+    "DS_2016_001"
+  ],
+  "formal_write_count": 0,
+  "ledger_terminal_event_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-c045ad5887c5dba7fd4e",
+  "ledger_terminal_event_sha256": "4c71528b439ff8938650e97b6fdae63112d2eac469b34b61ffcd74dd8df6182c",
+  "mark_result_count": 0,
+  "outcome": "curated",
+  "package_content_sha256": "4e058a2f22b3a2f36cb5e3047822c5ae337e7ad6acca7e23feb00d48c2178649",
+  "package_id": "CS408-LEGACY-CAP-20260720-3d492a3b5db2-d6dd285d9aa80381",
+  "schema_version": "cs408-legacy-evidence-archive-package-v1",
+  "sealed": true,
+  "stable_evidence_refs": [
+    {
+      "kind": "review_loop_event",
+      "locator": "wiki/study_vaults/408-full/state/review-loop/events.jsonl#event_id=RE-7ea2f426cd66f4b2b1e6",
+      "sha256": "f327135d3971494261128e36565dd10eee799e23f6d3b011c0a2ad927d4ffdbb"
+    },
+    {
+      "kind": "morning_session_start",
+      "locator": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl#sequence=1",
+      "sha256": "01dce3f6fab7e4214446ce2331dfc34d6f4c6065565b57a2c87b9bb54014aa99"
+    },
+    {
+      "kind": "morning_session_first",
+      "locator": "wiki/study_vaults/408-full/state/morning-review/MR-2026-07-20-3dd673ba/events.jsonl#sequence=53",
+      "sha256": "77e4e74fe5b1431191d2a2571757234b5b9dc268b028c28463c3725fafff53cc"
+    },
+    {
+      "kind": "morning_session_queue",
+      "locator": "wiki/study_vaults/408-full/StudyVault/00-Dashboard/2026-07-20-408晨间行动队列.md",
+      "sha256": "3dd673ba41067b62ebfb3634d6a2effb2c7fcbf779b8ce9a6e2ce1b82b2fac57"
+    }
+  ],
+  "study_date": "2026-07-20",
+  "subject": "cs408",
+  "terminal_binding_count": 0,
+  "terminal_locator": "wiki/study_vaults/408-full/state/intake-curation/events.jsonl#event_id=CE-c045ad5887c5dba7fd4e",
+  "terminal_proof_kind": "canonical_ledger_terminal_facts",
+  "terminal_sha256": "4c71528b439ff8938650e97b6fdae63112d2eac469b34b61ffcd74dd8df6182c",
+  "unresolved_refs": []
+}

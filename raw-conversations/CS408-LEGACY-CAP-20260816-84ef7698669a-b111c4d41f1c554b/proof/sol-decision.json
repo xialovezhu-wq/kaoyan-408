@@ -1,0 +1,159 @@
+{
+  "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+  "capture_id": "CAP-20260816-84ef7698669a",
+  "capture_original_evidence_sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+  "capture_payload_sha256": "2dbcb4e13824ab597797bdb5adf48fcfb1336ca480010d69ea9d08350f725e67",
+  "capture_set_sha256": "6f2fe234d53bcc0d288f265043cf15738da33731ce11795b537b650e5102c718",
+  "decision": {
+    "basis": [
+      "已重开完整 formal_problem_document v4、来源 DOCX、题图、解析图、交互图与用户代码图；题目唯一对应 EXAM408-2019-Q41。",
+      "用户第一断点与后续代码错误均有直接文档对话证据，足以形成新的答案安全正式节点。",
+      "正式库与来源索引中不存在 EXAM408-2019-Q41 的既有节点；new 保持 formal_id=null，由 RepoLock 内分配。"
+    ],
+    "canonical_package": {
+      "ask_type": "说明算法思想与步骤并给出代码，分析时间和空间复杂度。",
+      "asset_promotions": [
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2019/EXAM408-2019-Q41/question-01.png",
+          "protected": true,
+          "relative_path": "question-01.png",
+          "sha256": "cbb51152490295fcc63aed5a73119b58d8825e6486477eabb177cbf2c2a627eb"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2019/EXAM408-2019-Q41/solution-01.png",
+          "protected": true,
+          "relative_path": "solution-01.png",
+          "sha256": "4bb005c4540b424d60e4b8110cbd7a941205f09b70a2460a6c5fcb312b159195"
+        }
+      ],
+      "attachment_registry": {
+        "作答痕迹": "完整 DOCX 对话证据已验证，正式层仅保留安全摘要",
+        "可视化详情入口": "规范真题语料 EXAM408-2019-Q41",
+        "当前附件来源": "formal_problem_document v4 与规范真题语料",
+        "解析图或解析正文": "已接收并位于规范真题语料",
+        "题图": "已接收并位于规范真题语料"
+      },
+      "auto_id": true,
+      "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+      "capture_binding": {
+        "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+        "capture_id": "CAP-20260816-84ef7698669a",
+        "capture_payload_sha256": "2dbcb4e13824ab597797bdb5adf48fcfb1336ca480010d69ea9d08350f725e67"
+      },
+      "capture_id": "CAP-20260816-84ef7698669a",
+      "capture_payload_sha256": "2dbcb4e13824ab597797bdb5adf48fcfb1336ca480010d69ea9d08350f725e67",
+      "contract": "coordinator_approved_intake_v1",
+      "coordinator_checks": {
+        "answer_leak_check": "pass",
+        "duplicate_check": "pass",
+        "error_tags_verified": true,
+        "evidence_hashes_verified": true,
+        "historical_mapping_check": "pass_or_not_applicable",
+        "knowledge_tags_verified": true
+      },
+      "core_point": "用快慢指针找中点，原地逆置后半段，再将前后两段交替合并，并保持 O(n) 时间、O(1) 额外空间。",
+      "curation_evidence_binding": {
+        "batch_id": "CUR-20260816-6f2fe234d53b-A01",
+        "capture_id": "CAP-20260816-84ef7698669a",
+        "capture_payload_sha256": "2dbcb4e13824ab597797bdb5adf48fcfb1336ca480010d69ea9d08350f725e67"
+      },
+      "date_source": "完整 formal_problem_document v4、来源 DOCX 与规范真题语料核验；原学习日 2026-08-16。",
+      "decision": "pass",
+      "detail_card_source": {
+        "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2019-Q41.md",
+        "protected": true,
+        "sha256": "a915fdcf6a9cdbb83477f729376b478903cb58e2b9c40470c548c4a6067946f8"
+      },
+      "detail_entry": "规范真题语料 EXAM408-2019-Q41；2019 年统考全卷第 41 题",
+      "error_tags": [
+        "E06 算法过程跳步",
+        "E02 条件遗漏",
+        "E01 概念边界混淆"
+      ],
+      "evidence": [
+        {
+          "path": "/Users/xiazhibin/.codex/kaoyan-408-conversation-packages/legacy-verified/manifests/b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38.json",
+          "protected": true,
+          "sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/cards/EXAM408-2019-Q41.md",
+          "protected": true,
+          "sha256": "a915fdcf6a9cdbb83477f729376b478903cb58e2b9c40470c548c4a6067946f8"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2019/EXAM408-2019-Q41/question-01.png",
+          "protected": true,
+          "sha256": "cbb51152490295fcc63aed5a73119b58d8825e6486477eabb177cbf2c2a627eb"
+        },
+        {
+          "path": "/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2019/EXAM408-2019-Q41/solution-01.png",
+          "protected": true,
+          "sha256": "4bb005c4540b424d60e4b8110cbd7a941205f09b70a2460a6c5fcb312b159195"
+        }
+      ],
+      "first_done_date": "2026-08-16",
+      "formal_id": null,
+      "fuzzy_concepts": "O(1) 空间 vs 不允许辅助指针；中点 vs 终点；保存后继 vs 改写 next；断开 30→40 vs 断开 40→50；局部指针移动 vs 真正修改链域。",
+      "hit_knowledge": [
+        "DS02-15 线性表算法设计",
+        "DS02-06 单链表",
+        "DS02-07 头指针与头结点",
+        "DS01-11 时间复杂度分析",
+        "DS01-12 空间复杂度分析"
+      ],
+      "idempotency_key": "sha256:2dbcb4e13824ab597797bdb5adf48fcfb1336ca480010d69ea9d08350f725e67",
+      "job_id": "SOL-CUR-CAP-20260816-84ef7698669a",
+      "key_parameters": "带头结点；只能使用固定数量指针；必须覆盖奇偶长度边界；不得丢链；目标时间 O(n)、额外空间 O(1)。",
+      "latest_error_record": "2026-08-16 入库：不知道如何用固定数量指针完成后半段原地逆置；讲解后虽理解总体路线，代码仍在断链、保存后继、逆置连接、快指针边界与交替合并推进处出现错误，独立重写未验证。",
+      "latest_review_date": "2026-08-16",
+      "main_knowledge": "DS02-15 线性表算法设计",
+      "mode": "new",
+      "module": "DS02 线性表",
+      "question_type": "综合应用题 / 单链表原地重排算法设计题",
+      "redo_first_action": "先写出找中点、断开前后两段、保存后继并原地逆置后半段的指针不变量，再做交替合并。",
+      "relation_candidates": [],
+      "relation_review": {
+        "basis": "已按单链表算法设计、原地逆置和指针边界检索既有正式节点；未找到同时共享同一第一断点与同一动作链的可靠强边。",
+        "reviewed_by": "Sol",
+        "status": "reviewed_no_reliable_edge"
+      },
+      "reviewed_at": "2026-08-27T16:45:00+08:00",
+      "reviewed_by": "Sol",
+      "safe_summary": "给定带头结点的单链表，要求在不申请随规模增长的新空间时，按首尾交替顺序原地重排。",
+      "schema_version": "coordinator_approved_intake_v1",
+      "source_id": "EXAM408-2019-Q41",
+      "sub_knowledge": [
+        "DS02-06 单链表",
+        "DS02-07 头指针与头结点",
+        "DS01-11 时间复杂度分析",
+        "DS01-12 空间复杂度分析"
+      ],
+      "subject": "DS",
+      "topic_chain_candidates": [],
+      "user_error_entry": "2026-08-16 入库：知道反复从头寻找会成为 O(n²)，但不理解固定数量指针仍属于 O(1)，不能独立启动后半段原地逆置；后续代码还暴露断链位置、保存后继、逆置连接、快指针边界、合并前断链和结果尾指针推进问题。",
+      "year": "2019"
+    },
+    "confidence": "high",
+    "counterevidence": [
+      "用户在讲解后理解总体路线并能局部纠正，但没有无提示独立重写完整算法，不能写成已掌握。",
+      "关系检索没有发现同时共享同一第一断点和完整动作链的可靠强边。"
+    ],
+    "decision": "new",
+    "evidence_refs": [
+      {
+        "locator": "current-question-evidence://sha256/b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+        "sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38"
+      }
+    ],
+    "formal_id": null,
+    "unresolved_gaps": []
+  },
+  "evidence_kind": "formal_problem_document_v4",
+  "evidence_locator": "current-question-evidence://sha256/b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+  "formal_write_count": 0,
+  "processing_mode": "sol_direct_evidence",
+  "reopened_evidence_sha256": "b111c4d41f1c554b130c3ec974bf77cbfcb3a20c7e7cd9eab85d4513837c2d38",
+  "schema_version": "sol-curation-decision-408-v2",
+  "subject": "cs408"
+}

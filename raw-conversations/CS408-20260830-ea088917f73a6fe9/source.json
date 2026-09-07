@@ -1,0 +1,67 @@
+{
+  "item_id": "MQ-04",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MR-2026-08-30-70122c4b",
+  "source": {
+    "assessment": {
+      "choice_result": "correct",
+      "confidence": "high",
+      "first_action": null,
+      "first_action_provenance": null,
+      "first_break": "未观察到",
+      "first_break_provenance": "not_observed",
+      "prompt_level": "none",
+      "reasoning_result": "not_observed"
+    },
+    "evaluation_evidence": {
+      "correct_answer": null,
+      "correct_option": "C",
+      "grader_basis": "最短帧发送时间为 5.12 μs，碰撞往返中的 Hub 延时为 1.12 μs，留给线缆往返传播的时间为 4.00 μs。单程传播时间为 2.00 μs，对应 400 m。",
+      "grader_capsule_id": "MRGC-AD7C178611FBB88837B11693",
+      "grader_result": "correct",
+      "missing_fields": [],
+      "provided_by": "morning_review_prepared_pack_v1",
+      "standard_explanation": "最短帧发送时间为 5.12 μs，碰撞往返中的 Hub 延时为 1.12 μs，留给线缆往返传播的时间为 4.00 μs。单程传播时间为 2.00 μs，对应 400 m。"
+    },
+    "learner_evidence": {
+      "answer_text": "C",
+      "choice": "C",
+      "confidence": "high",
+      "first_action": null,
+      "observed_at": "2026-08-30T12:00:07.642238+08:00",
+      "prompt_level": "none",
+      "reasoning": null
+    },
+    "question": {
+      "attachment_sha256s": [],
+      "options": [
+        {
+          "label": "A",
+          "text": "512 m"
+        },
+        {
+          "label": "B",
+          "text": "456 m"
+        },
+        {
+          "label": "C",
+          "text": "400 m"
+        },
+        {
+          "label": "D",
+          "text": "800 m"
+        }
+      ],
+      "public_surface_sha256": "15fefa219ba1fc3ac479f3cce25ca37ef7c138125c76cb2e4557f7db94346a02",
+      "public_text": "两台主机经一个 Hub 组成共享的 100 Mb/s 以太网。按本题，最短帧为 512 bit，不计前导码；Hub 每次再生产生 0.56 μs 延时，碰撞往返信号每个方向都经过 Hub 一次；线缆传播速度为 2.0×10^8 m/s。为使发送端在最短帧发送完毕前检测到最远端碰撞，两站之间全部线缆的单程总长度理论最大值是多少？",
+      "response_instruction": "回复选项即可；若不是高置信度，请注明中或低."
+    },
+    "question_mode": "dialogue_only",
+    "source_binding_sha256": "15fefa219ba1fc3ac479f3cce25ca37ef7c138125c76cb2e4557f7db94346a02",
+    "source_kind": "morning_review"
+  },
+  "source_id": "EXAM408-2016-Q36",
+  "study_date": "2026-08-30",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}

@@ -1,0 +1,43 @@
+{
+  "complete_order_preserved": true,
+  "schema_version": "cs408-full-conversation-v1",
+  "truncated": false,
+  "turn_count": 5,
+  "turns": [
+    {
+      "kind": "utterance",
+      "observed_at": null,
+      "ordinal": 1,
+      "role": "user",
+      "text": "这里选择 C，置信度是高，就只是像 a 指向 f，f 指向 e，对吧？"
+    },
+    {
+      "kind": "first_action",
+      "observed_at": null,
+      "ordinal": 2,
+      "role": "user",
+      "text": "先把 f 插入 a 与 e 之间，更新 a 指向 f、f 指向 e。"
+    },
+    {
+      "kind": "reasoning",
+      "observed_at": null,
+      "ordinal": 3,
+      "role": "user",
+      "text": "根据插入后的局部链 a→f→e，判断选择 C。"
+    },
+    {
+      "kind": "answer",
+      "observed_at": null,
+      "ordinal": 4,
+      "role": "user",
+      "text": "C"
+    },
+    {
+      "kind": "frozen_feedback",
+      "observed_at": null,
+      "ordinal": 5,
+      "role": "assistant",
+      "text": "已独立命中权威答案，并能说明逻辑次序取决于 next 及局部插入的链接更新。"
+    }
+  ]
+}

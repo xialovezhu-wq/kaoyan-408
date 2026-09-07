@@ -1,0 +1,51 @@
+{
+  "attachments": [
+    {
+      "byte_count": 66101,
+      "label": "EXAM408-2017-Q03 question image page 1 ({'asset_ordinal': 1, 'source_page': 2})",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-134c098cac8b9a6b2670c426eb597b50c807202931c83aec721c028b655d10dd.png",
+      "role": "question_image",
+      "sha256": "134c098cac8b9a6b2670c426eb597b50c807202931c83aec721c028b655d10dd"
+    }
+  ],
+  "background_processing": "none",
+  "canonical_sha256": "2f945869b4507d06081f5997928383af7a4554b56cdcc090bc959f61b5b932c4",
+  "files": [
+    {
+      "byte_count": 4754,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "a48b0d06167ce8bfaa159f872f743d07267b863e3c1377b8237ade38074014f5"
+    },
+    {
+      "byte_count": 2166,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "1b8f2adebd92dc71c605285a64ef3fb724948ede693194006447f7b4d644f0ca"
+    },
+    {
+      "byte_count": 66101,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-134c098cac8b9a6b2670c426eb597b50c807202931c83aec721c028b655d10dd.png",
+      "role": "question_image",
+      "sha256": "134c098cac8b9a6b2670c426eb597b50c807202931c83aec721c028b655d10dd"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MCQ-0002",
+  "missing_fields": [
+    "二叉链表与十字链表的区别经讲解后由用户确认理解，尚未取得独立复述证据。"
+  ],
+  "package_id": "CS408-20260902-4ab99f8e028958cd",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MCR-20260902-4B98E7C333461606",
+  "source_id": "EXAM408-2017-Q03",
+  "study_date": "2026-09-02",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
