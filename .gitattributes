@@ -3417,6 +3417,7 @@
 "personalization/408/manifests/058d39200132b84569610a5ac6c6392d645fa369710265db93e622820de710a1.json" -text -filter
 "personalization/408/manifests/081678939f013c67b7dc2a0dc930239cd07228eef6e65470ff4cf3dc01af6ac3.json" -text -filter
 "personalization/408/manifests/1718f83c9c90ac15291d0e961709381289831adca200be9286a1779f1f1b89e5.json" -text -filter
+"personalization/408/manifests/191008bbeb020a78384a1c82e9cb11d4bbe9f35d6ce10f272018148e8a52891e.json" -text -filter
 "personalization/408/manifests/2b68853ed606569dce8af4ac1f250b4dccd76e6a192e77a6ea32d012694773c6.json" -text -filter
 "personalization/408/manifests/461b6b07a41f4cc1d5c0a6b48d9472832e35364ccb5297f11f090e7255bbda61.json" -text -filter
 "personalization/408/manifests/552f29a15428288e0b81e72d103d0b7ea655f69b70e913a16bc60ec29be2b334.json" -text -filter
@@ -7640,6 +7641,7 @@
 "personalization/408/objects/point-indexes/642dc41a9ae24ed55bcdc94799788884e921239cc3281d42bb7e89cf58b201eb.json" -text -filter
 "personalization/408/objects/point-indexes/7f8c71a82dd23dc9cbb6e3b2d93f5da97b1fcaf49070184e374cb9927c0eec53.json" -text -filter
 "personalization/408/objects/point-indexes/9ad1e05ae0cd37569e5ed7f7477d7d7a26f252eb48ddff9ad6f76c6ab79a6486.json" -text -filter
+"personalization/408/objects/point-indexes/a61ddaaf7556e354504be878c6091433e5d4cbc270464a7ea71c0a497e1d7f61.json" -text -filter
 "personalization/408/objects/point-indexes/be8386522024546eeca9b86689f63e02b7fb54b4e8c0f2ab4771c841046c7a2a.json" -text -filter
 "personalization/408/objects/point-indexes/c2565a89c01dfb27f6e4ad60846c4dfe0899e7a65900c01cfea01b128149cf64.json" -text -filter
 "personalization/408/objects/point-indexes/fd1e5f8616377bd0dcfc840b1bbccf8b1d4bc758dbcc96ac2594a39332c433d1.json" -text -filter
@@ -7649,6 +7651,7 @@
 "personalization/408/objects/point-source-coverage/7a1a36310666cee2804c0474835324e8c87142ec6c622930546ff79f2bf41e85.json" -text -filter
 "personalization/408/objects/point-source-coverage/a31722dbc24235e2b95ab6e3a25c263805b6729acf2b93fa44a8db1e677e5676.json" -text -filter
 "personalization/408/objects/point-source-coverage/ac6eb1bfac46b5a5c2e67ba16cd6dd3b4d9476706d589ff06346339e0c1d6664.json" -text -filter
+"personalization/408/objects/point-source-coverage/cd1a0a088186760fffe3d18749561edec382d20469d5c970ee393b91e15720bc.json" -text -filter
 "personalization/408/objects/point-source-coverage/f54eddcbcd83b9719f89d5305fbf87ff8bb5a8a0d417a9f92de7de9ad6e0d956.json" -text -filter
 "personalization/408/objects/point-source-coverage/fa02922a98362e462fff0b6c5082ced30044136d2a1ce1aea18c156e3268c602.json" -text -filter
 "personalization/408/objects/point-summaries/00132e1f816662381af269d5b2d648d18a2bce8df776b4023a8f023b50ba87f8.json" -text -filter
@@ -12917,6 +12920,7 @@
 "personalization/408/objects/profiles/fd2ba905e5d7e7da52b1b5d09d52b20048a6826add625dd140e6e0bd43861731.json" -text -filter
 "personalization/408/objects/profiles/fe82381e186ae42cb1d0ca408d80a822d59e562d085d9952df067c0cdc9e23ce.json" -text -filter
 "personalization/408/objects/profiles/fe99c8d5d7d564c3e28db2fdfb0408f7a582a0e1a07da79f18d633ca7a93f0e3.json" -text -filter
+"personalization/408/receipts/0eedabf23132fc834d5aa81445f06797f6a28eff7b611cbdf6f79093d57dfd96.json" -text -filter
 "personalization/408/receipts/457acd0409df47bf5abb08cf66fdb2b97d31f2ac9e86dee250f5a1de214da25f.json" -text -filter
 "personalization/408/receipts/4c9b717bc8b2d0e53448884be028abee921c24f1837818c8cb71b871cc0e8de6.json" -text -filter
 "personalization/408/receipts/4e02605ec21a854b88e8dc8a29cb71dadab1bbf0751b60a7451c116c74486e40.json" -text -filter
