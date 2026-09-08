@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-32f6cf5f122740b79633b764",
+  "admission_receipt_sha256": "6dea055de9e8e0c3ef7956ffe218bdca7a1d84f1b79d52f446158af7345aa539",
+  "campaign_cohort_sha256": "0d9d628a9b0aa428001aea74184c871923cb82f0785967176bb0e3e304adb24f",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2010_001",
+  "formal_result_event_id": "CE-764a08dccc266c6d0e20",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "3b25aa995c6a26b2e4ec9e562c4a569af4fec5af7258fbe2eb414d3a2d5dc62e",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS05_TREE_FOREST_EDGE_ACCOUNT",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-03",
+  "target_run_policy": "next_unfrozen_run_only"
+}

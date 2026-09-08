@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-7038af4f510f94d24709c865",
+  "admission_receipt_sha256": "4bb2ebfedcd547d282a3e91519ce9c6533ec203631eb3f9a710328a547402450",
+  "campaign_cohort_sha256": "7db3e72aae719e552913b8c49a86f6d8a0909017e74c429b2d34f31efe9ca22e",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2013_002",
+  "formal_result_event_id": "CE-0f92a5f7828f324aa487",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "ce38237e785d9e3dda43042013ecaa9ee2ee8564a4884c1da98e3b18498f829e",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS07_BTREE_HEIGHT_MIN_KEYS",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-03",
+  "target_run_policy": "next_unfrozen_run_only"
+}

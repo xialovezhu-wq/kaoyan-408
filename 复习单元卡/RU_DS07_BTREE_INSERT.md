@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_BTREE_INSERT
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_BTREE_INSERT · B 树插入的落叶、分裂与上推
 
 - 覆盖正式节点：DS_2020_003
 - 旧复习单元：RU_DS07_13_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

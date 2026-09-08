@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_BTREE_DELETE
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_BTREE_DELETE · B 树删除后的下限检查与修复
 
 - 覆盖正式节点：DS_2012_005、DS_2022_001
 - 旧复习单元：RU_DS07_13_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

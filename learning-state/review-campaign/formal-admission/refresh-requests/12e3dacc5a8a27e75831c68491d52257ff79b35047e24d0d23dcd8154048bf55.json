@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-b9d0e193f69509cf2139718f",
+  "admission_receipt_sha256": "efbe1cf3e4392c90007878468dc71b109e17fc65e357de66590781df77b3978d",
+  "campaign_cohort_sha256": "5614ff049b6dabe1707cab38d39111fd2dd95b9d8ce3312ea33992ecaf6402c8",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2010_002",
+  "formal_result_event_id": "CE-ee04fcb151d3c9e898e8",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "db718d0cc3b9750f3702553e58e010603bb04ccf570019b1b3e1e9cff6ecde00",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS06_MANDATORY_CONNECTIVITY_EXTREME",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-03",
+  "target_run_policy": "next_unfrozen_run_only"
+}

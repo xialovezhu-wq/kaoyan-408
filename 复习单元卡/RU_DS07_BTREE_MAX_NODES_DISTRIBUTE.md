@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_BTREE_MAX_NODES_DISTRIBUTE
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_BTREE_MAX_NODES_DISTRIBUTE · B 树给定关键字量时最大结点数
 
 - 覆盖正式节点：DS_2014_004、DS_2021_002
 - 旧复习单元：RU_DS07_13_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

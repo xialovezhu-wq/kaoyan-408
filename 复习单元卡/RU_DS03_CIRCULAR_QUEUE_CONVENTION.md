@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS03_CIRCULAR_QUEUE_CONVENTION
 subject: 数据结构
 module: DS03 栈、队列和数组
-schedule_state: uncalibrated_baseline_due
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS03_CIRCULAR_QUEUE_CONVENTION · 循环队列指针约定驱动空满公式
 
 - 覆盖正式节点：DS_2011_001、DS_2014_002
 - 旧复习单元：无
-- 当前状态：uncalibrated_baseline_due
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

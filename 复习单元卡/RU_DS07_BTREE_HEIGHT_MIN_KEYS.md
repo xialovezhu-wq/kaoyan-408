@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_BTREE_HEIGHT_MIN_KEYS
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_BTREE_HEIGHT_MIN_KEYS · B 树给定阶数与高度的最少关键字
 
 - 覆盖正式节点：DS_2013_002、DS_2018_001
 - 旧复习单元：RU_DS07_13_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

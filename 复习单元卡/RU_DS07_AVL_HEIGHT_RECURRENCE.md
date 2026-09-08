@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_AVL_HEIGHT_RECURRENCE
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_AVL_HEIGHT_RECURRENCE · AVL 平衡因子到结点数递推
 
 - 覆盖正式节点：DS_2012_004
 - 旧复习单元：RU_DS07_10_11
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

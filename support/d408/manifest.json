@@ -1,14 +1,5 @@
 {
-  "absent_inputs": [
-    {
-      "meaning": "empty under native absent-ledger semantics; not a formal-admission ledger",
-      "native_path": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
-      "published_paths_to_check": [
-        "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
-        "learning-state/review-campaign/admissions.jsonl"
-      ]
-    }
-  ],
+  "absent_inputs": [],
   "algorithm": {
     "canonical_source_ref": "scripts/morning_coverage_campaign_408.py",
     "fsrs": "6.3.2",
@@ -107,14 +98,14 @@
   "config_path": "support/d408/default-config.json",
   "current_cohort_selector": {
     "authoritative_master_path": "节点总表.md",
-    "master_sha256": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4",
+    "master_sha256": "7610f2922706fdf20cf6e0419506261720952e7c662ce8bc29fdd606bf848797",
     "matching_existing_snapshots": [
       {
-        "bytes": 8799,
-        "cohort_sha256": "78163a2df8842b2cd6ab88f8a2056bff14334034d3cced24b49925f7d7032d4c",
-        "formal_node_count": 454,
-        "published_path": "learning-state/review-campaign/formal-admission/cohorts/ce24b0a39da674df59ac73f6ae61440c2fa553a6df14128438c6e4e3e45adfdd.json",
-        "sha256": "8e650aa032964a4481d3ff31a72752c79de47c0ac6f4a2ea72fe927fcaad8b82"
+        "bytes": 8818,
+        "cohort_sha256": "5e92866bf42f277cee4e2181a27d6d7484803c68f7000946d0b3bcac4b0fe830",
+        "formal_node_count": 455,
+        "published_path": "learning-state/review-campaign/formal-admission/cohorts/aa6fb36cbb55be1c2cd49e5d88b79ad77e9f0c55defcc9e65f307c32bd8431aa.json",
+        "sha256": "3d6bb6fe3013bca3bbcf5d2199d6bd8700855e81855755334f5e205643f88695"
       }
     ],
     "rebuild_when_no_match": "run read_only_due.py with the explicit target date",
@@ -125,50 +116,61 @@
   "formal_writes_allowed": false,
   "inputs": [
     {
-      "bytes": 391118,
+      "bytes": 392885,
       "native_path": "节点总表.md",
       "published_path": "节点总表.md",
       "role": "formal_cohort_and_main_concepts",
-      "sha256": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4"
+      "sha256": "7610f2922706fdf20cf6e0419506261720952e7c662ce8bc29fdd606bf848797"
     },
     {
-      "bytes": 288003,
+      "bytes": 288754,
       "native_path": "原题复做轨总表.md",
       "published_path": "原题复做轨总表.md",
       "role": "accepted_original_track_eligibility",
-      "sha256": "e880fa0a23f6534a77ca02b1faccfa7af5c7d13d47e729d53a07115500701af2"
+      "sha256": "2f49794d3e711708c11b970f73c231cd55cfcb99dd526693b2f0914e4be55bd8"
     },
     {
-      "bytes": 1032309,
+      "bytes": 1086770,
       "native_path": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
       "published_path": "learning-state/review-loop/events.jsonl",
       "role": "full_review_event_history",
-      "sha256": "6ec2950a148aa7e5b0f7b97a01fdaa9aac7db29d3b080621271ba7f20632653f"
+      "sha256": "4c6e2402ac17eb5a3b3d4e51c0138cfb7b7a0157db7a118812e8aad5d9214d39"
     },
     {
-      "bytes": 158,
+      "bytes": 12645,
+      "native_path": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
+      "published_path": "learning-state/review-campaign/admissions.jsonl",
+      "role": "native_campaign_admissions",
+      "sha256": "0ced228ae920378390e1c9c20c994b9c582dfd4eb20e9a4ee1d809cdfeca0207"
+    },
+    {
+      "bytes": 104577,
       "native_path": "support/d408/concept-review-evidence.json",
       "published_path": "support/d408/concept-review-evidence.json",
       "role": "concept_priority_evidence",
-      "sha256": "7d100cacb9623823c927f08d1bf9dd4db5de853a053781f991c32fad7fec6a9c"
+      "sha256": "790038fc223ada2851cf111a1e8a664386ae61d54bb52d50d7fa4d5e1eead1f0"
     }
   ],
   "native_source_bindings": [
     {
       "ref": "节点总表.md",
-      "sha256": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4"
+      "sha256": "7610f2922706fdf20cf6e0419506261720952e7c662ce8bc29fdd606bf848797"
     },
     {
       "ref": "原题复做轨总表.md",
-      "sha256": "e880fa0a23f6534a77ca02b1faccfa7af5c7d13d47e729d53a07115500701af2"
+      "sha256": "2f49794d3e711708c11b970f73c231cd55cfcb99dd526693b2f0914e4be55bd8"
     },
     {
       "ref": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
-      "sha256": "6ec2950a148aa7e5b0f7b97a01fdaa9aac7db29d3b080621271ba7f20632653f"
+      "sha256": "4c6e2402ac17eb5a3b3d4e51c0138cfb7b7a0157db7a118812e8aad5d9214d39"
     },
     {
       "ref": "scripts/morning_coverage_campaign_408.py",
       "sha256": "c0fc7e8868e5a659666988d2844c620718c38c870d2acbeb197f12673679d6e7"
+    },
+    {
+      "ref": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
+      "sha256": "0ced228ae920378390e1c9c20c994b9c582dfd4eb20e9a4ee1d809cdfeca0207"
     }
   ],
   "preselected_due_list_included": false,

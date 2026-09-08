@@ -5,8 +5,8 @@
   "branch": "main",
   "publication_target": "local",
   "github_backup_required": false,
-  "local_version": "cb3ecc7cd2f1ee7c0cd35d07b2322aa403f3d82f9433c046ceb58d29c470317d",
-  "event_id": "concept-anchor-alignment-final-20260908",
+  "local_version": "6f06d69a0f60bbc0937b007291f63309c9abbcb20713c61691bcd279e222e4f7",
+  "event_id": "personalization-408:20892144c48250f3bb775a40055345fa4f4da329f9f86baab7116198fe4da05c",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -180,6 +180,16 @@
       "publish_root": "raw-conversations/CS408-20260830-ed68ee9892d81608"
     },
     {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260901-2add6815c4d2af5d.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2014_002"
+      ],
+      "manifest_sha256": "17beb1479d0f057d52d6dc645e8c864a62bee68677ab6ab11da340343d273b41",
+      "package_id": "CS408-20260901-2add6815c4d2af5d",
+      "publish_root": "raw-conversations/CS408-20260901-2add6815c4d2af5d"
+    },
+    {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260902-3fe155dee3efc9af.md",
       "conversation_complete": true,
       "formal_ids": [
@@ -218,6 +228,146 @@
       "manifest_sha256": "30348181fd26b73bf57cb767a301538207bb8c3733428d666f7585af6e476dd0",
       "package_id": "CS408-20260902-8c1c2382cc3c5121",
       "publish_root": "raw-conversations/CS408-20260902-8c1c2382cc3c5121"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-03c79dcc6519e6fc.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2010_002"
+      ],
+      "manifest_sha256": "c8267091804ae2b728f016ef7029bdc7035c1070e2c72e743701a9fd2922b47a",
+      "package_id": "CS408-20260903-03c79dcc6519e6fc",
+      "publish_root": "raw-conversations/CS408-20260903-03c79dcc6519e6fc"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-0700ddabbf35ab56.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2020_003"
+      ],
+      "manifest_sha256": "497ac17179e8bf5496ac2f3017fa23a4303597e086f448c2e5d7ca02e0523465",
+      "package_id": "CS408-20260903-0700ddabbf35ab56",
+      "publish_root": "raw-conversations/CS408-20260903-0700ddabbf35ab56"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-2e1244246ddcc07c.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2018_001"
+      ],
+      "manifest_sha256": "15db774cf19034f41ecbf78776ad42675923e5d1129c2125e7dae1fa48e87152",
+      "package_id": "CS408-20260903-2e1244246ddcc07c",
+      "publish_root": "raw-conversations/CS408-20260903-2e1244246ddcc07c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-3f21a4e7119afeab.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2013_002"
+      ],
+      "manifest_sha256": "9400dfb4ad294ba5f46dbe944a4533311d7d20622fd85ac1f82d0b3ff6fc02e2",
+      "package_id": "CS408-20260903-3f21a4e7119afeab",
+      "publish_root": "raw-conversations/CS408-20260903-3f21a4e7119afeab"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-5fe50c199931c37c.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2017_002"
+      ],
+      "manifest_sha256": "4f1fc3691513a2e83a84b44a3a647926af89e84cecf71e17c8770c5a86e290bc",
+      "package_id": "CS408-20260903-5fe50c199931c37c",
+      "publish_root": "raw-conversations/CS408-20260903-5fe50c199931c37c"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-72b10b26e50e7849.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "manifest_sha256": "090c3c0308e7ba1c3fe9a05f8942809ee4490b6136a432b71fd00f0de28a9245",
+      "package_id": "CS408-20260903-72b10b26e50e7849",
+      "publish_root": "raw-conversations/CS408-20260903-72b10b26e50e7849"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-8b04d47230051aa5.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2010_005"
+      ],
+      "manifest_sha256": "e289b06d6851958943f73ee1b656aa96bb13dacffcdf1f4abf27458312dd751a",
+      "package_id": "CS408-20260903-8b04d47230051aa5",
+      "publish_root": "raw-conversations/CS408-20260903-8b04d47230051aa5"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-b33b59879ab80f2d.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2010_001"
+      ],
+      "manifest_sha256": "b51c8cf1ff2623b3582ce302bcf98a0402c31c8191a7f9cc2e669e8bdc1b85ca",
+      "package_id": "CS408-20260903-b33b59879ab80f2d",
+      "publish_root": "raw-conversations/CS408-20260903-b33b59879ab80f2d"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-b9135ff79ae90eee.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2012_003"
+      ],
+      "manifest_sha256": "e1df95bdbcc2bc22dd842c659fd9bceb521db2574a3e3345ff4418df8a9531d6",
+      "package_id": "CS408-20260903-b9135ff79ae90eee",
+      "publish_root": "raw-conversations/CS408-20260903-b9135ff79ae90eee"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-e4bdb9e60814570d.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "manifest_sha256": "df974b17a2b79ad803a7fc4c67db417c82b790741d4b69636c5dcfdb79af6d9f",
+      "package_id": "CS408-20260903-e4bdb9e60814570d",
+      "publish_root": "raw-conversations/CS408-20260903-e4bdb9e60814570d"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-edd38e2373e3bce5.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2012_004"
+      ],
+      "manifest_sha256": "cb49eca1d5640336073550bca948c67fdb334778577629d7d301d7577d57e0bf",
+      "package_id": "CS408-20260903-edd38e2373e3bce5",
+      "publish_root": "raw-conversations/CS408-20260903-edd38e2373e3bce5"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260903-f85801d9be7b0aa4.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2017_001"
+      ],
+      "manifest_sha256": "a4f78da7ad65495deb2d43cf8aba9e7b370daf30ae1e967c2d2eae992ac4a8eb",
+      "package_id": "CS408-20260903-f85801d9be7b0aa4",
+      "publish_root": "raw-conversations/CS408-20260903-f85801d9be7b0aa4"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260908-41171f4d1a5acdc3.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2021_002"
+      ],
+      "manifest_sha256": "9300fbfae24eef95c78a6593b301cd2845ba7ca3bd74dc2c4f72c9c8edc6a512",
+      "package_id": "CS408-20260908-41171f4d1a5acdc3",
+      "publish_root": "raw-conversations/CS408-20260908-41171f4d1a5acdc3"
+    },
+    {
+      "archive_locator": "wiki/sources/raw_archives/CS408-20260908-78d77fd1c43bb90e.md",
+      "conversation_complete": true,
+      "formal_ids": [
+        "DS_2022_001"
+      ],
+      "manifest_sha256": "1be2406d06cfa256819fc155bbb77403d13e917167c1b1dab5eef0624c545394",
+      "package_id": "CS408-20260908-78d77fd1c43bb90e",
+      "publish_root": "raw-conversations/CS408-20260908-78d77fd1c43bb90e"
     },
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-LEGACY-CAP-20260718-09237d9262cc-34c4da3da0564b3f.md",
@@ -708,111 +858,6 @@
       "manifest_sha256": "b69acd6314b924aa8a9725728b520604c8ba08f036c88b20d1f37495a1fa25fa",
       "package_id": "CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704",
       "publish_root": "raw-conversations/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "17beb1479d0f057d52d6dc645e8c864a62bee68677ab6ab11da340343d273b41",
-      "package_id": "CS408-20260901-2add6815c4d2af5d",
-      "publish_root": "raw-conversations/CS408-20260901-2add6815c4d2af5d"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "c8267091804ae2b728f016ef7029bdc7035c1070e2c72e743701a9fd2922b47a",
-      "package_id": "CS408-20260903-03c79dcc6519e6fc",
-      "publish_root": "raw-conversations/CS408-20260903-03c79dcc6519e6fc"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "497ac17179e8bf5496ac2f3017fa23a4303597e086f448c2e5d7ca02e0523465",
-      "package_id": "CS408-20260903-0700ddabbf35ab56",
-      "publish_root": "raw-conversations/CS408-20260903-0700ddabbf35ab56"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "15db774cf19034f41ecbf78776ad42675923e5d1129c2125e7dae1fa48e87152",
-      "package_id": "CS408-20260903-2e1244246ddcc07c",
-      "publish_root": "raw-conversations/CS408-20260903-2e1244246ddcc07c"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "9400dfb4ad294ba5f46dbe944a4533311d7d20622fd85ac1f82d0b3ff6fc02e2",
-      "package_id": "CS408-20260903-3f21a4e7119afeab",
-      "publish_root": "raw-conversations/CS408-20260903-3f21a4e7119afeab"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "4f1fc3691513a2e83a84b44a3a647926af89e84cecf71e17c8770c5a86e290bc",
-      "package_id": "CS408-20260903-5fe50c199931c37c",
-      "publish_root": "raw-conversations/CS408-20260903-5fe50c199931c37c"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "090c3c0308e7ba1c3fe9a05f8942809ee4490b6136a432b71fd00f0de28a9245",
-      "package_id": "CS408-20260903-72b10b26e50e7849",
-      "publish_root": "raw-conversations/CS408-20260903-72b10b26e50e7849"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "e289b06d6851958943f73ee1b656aa96bb13dacffcdf1f4abf27458312dd751a",
-      "package_id": "CS408-20260903-8b04d47230051aa5",
-      "publish_root": "raw-conversations/CS408-20260903-8b04d47230051aa5"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "b51c8cf1ff2623b3582ce302bcf98a0402c31c8191a7f9cc2e669e8bdc1b85ca",
-      "package_id": "CS408-20260903-b33b59879ab80f2d",
-      "publish_root": "raw-conversations/CS408-20260903-b33b59879ab80f2d"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "e1df95bdbcc2bc22dd842c659fd9bceb521db2574a3e3345ff4418df8a9531d6",
-      "package_id": "CS408-20260903-b9135ff79ae90eee",
-      "publish_root": "raw-conversations/CS408-20260903-b9135ff79ae90eee"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "df974b17a2b79ad803a7fc4c67db417c82b790741d4b69636c5dcfdb79af6d9f",
-      "package_id": "CS408-20260903-e4bdb9e60814570d",
-      "publish_root": "raw-conversations/CS408-20260903-e4bdb9e60814570d"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "cb49eca1d5640336073550bca948c67fdb334778577629d7d301d7577d57e0bf",
-      "package_id": "CS408-20260903-edd38e2373e3bce5",
-      "publish_root": "raw-conversations/CS408-20260903-edd38e2373e3bce5"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "a4f78da7ad65495deb2d43cf8aba9e7b370daf30ae1e967c2d2eae992ac4a8eb",
-      "package_id": "CS408-20260903-f85801d9be7b0aa4",
-      "publish_root": "raw-conversations/CS408-20260903-f85801d9be7b0aa4"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "9300fbfae24eef95c78a6593b301cd2845ba7ca3bd74dc2c4f72c9c8edc6a512",
-      "package_id": "CS408-20260908-41171f4d1a5acdc3",
-      "publish_root": "raw-conversations/CS408-20260908-41171f4d1a5acdc3"
-    },
-    {
-      "formal_ids": [],
-      "formal_status": "pending_local_judgment",
-      "manifest_sha256": "1be2406d06cfa256819fc155bbb77403d13e917167c1b1dab5eef0624c545394",
-      "package_id": "CS408-20260908-78d77fd1c43bb90e",
-      "publish_root": "raw-conversations/CS408-20260908-78d77fd1c43bb90e"
     }
   ],
   "entrypoints": {
@@ -828,14 +873,14 @@
     "due_support": "support/d408/manifest.json"
   },
   "counts": {
-    "files": 12934,
-    "bytes": 786203356,
-    "current_files": 6301,
-    "retained_files": 6633,
+    "files": 14293,
+    "bytes": 807151187,
+    "current_files": 6441,
+    "retained_files": 7852,
     "lfs_files": 0
   },
   "source_counts": {
-    "formal_node_count": 454,
+    "formal_node_count": 455,
     "canonical_exam_count": 799
   },
   "saved_materials_status": "ALL_DECLARED_EXISTING_FILES_INCLUDED",
@@ -3181,7 +3226,9 @@
       ],
       "detail_card": "details/cards/DS_2010_001.md",
       "formal_id": "DS_2010_001",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-b33b59879ab80f2d"
+      ],
       "safe_card": "DS_2010_001.md",
       "source_id": "EXAM408-2010-Q05"
     },
@@ -3191,7 +3238,9 @@
       ],
       "detail_card": "details/cards/DS_2010_002.md",
       "formal_id": "DS_2010_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-03c79dcc6519e6fc"
+      ],
       "safe_card": "DS_2010_002.md",
       "source_id": "EXAM408-2010-Q07"
     },
@@ -3214,6 +3263,16 @@
       "raw_packages": [],
       "safe_card": "DS_2010_004.md",
       "source_id": "EXAM408-2010-Q42"
+    },
+    "DS_2010_005": {
+      "canonical_ids": [],
+      "detail_card": "details/cards/DS_2010_005.md",
+      "formal_id": "DS_2010_005",
+      "raw_packages": [
+        "CS408-20260903-8b04d47230051aa5"
+      ],
+      "safe_card": "DS_2010_005.md",
+      "source_id": "EXAM408-2010-Q03"
     },
     "DS_2011_001": {
       "canonical_ids": [
@@ -3261,7 +3320,9 @@
       ],
       "detail_card": "details/cards/DS_2012_002.md",
       "formal_id": "DS_2012_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-e4bdb9e60814570d"
+      ],
       "safe_card": "DS_2012_002.md",
       "source_id": "EXAM408-2012-Q08"
     },
@@ -3271,7 +3332,9 @@
       ],
       "detail_card": "details/cards/DS_2012_003.md",
       "formal_id": "DS_2012_003",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-b9135ff79ae90eee"
+      ],
       "safe_card": "DS_2012_003.md",
       "source_id": "EXAM408-2012-Q06"
     },
@@ -3281,7 +3344,9 @@
       ],
       "detail_card": "details/cards/DS_2012_004.md",
       "formal_id": "DS_2012_004",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-edd38e2373e3bce5"
+      ],
       "safe_card": "DS_2012_004.md",
       "source_id": "EXAM408-2012-Q04"
     },
@@ -3311,7 +3376,9 @@
       ],
       "detail_card": "details/cards/DS_2013_001.md",
       "formal_id": "DS_2013_001",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-72b10b26e50e7849"
+      ],
       "safe_card": "DS_2013_001.md",
       "source_id": "EXAM408-2013-Q09"
     },
@@ -3321,7 +3388,9 @@
       ],
       "detail_card": "details/cards/DS_2013_002.md",
       "formal_id": "DS_2013_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-3f21a4e7119afeab"
+      ],
       "safe_card": "DS_2013_002.md",
       "source_id": "EXAM408-2013-Q10"
     },
@@ -3331,7 +3400,9 @@
       ],
       "detail_card": "details/cards/DS_2014_002.md",
       "formal_id": "DS_2014_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260901-2add6815c4d2af5d"
+      ],
       "safe_card": "DS_2014_002.md",
       "source_id": "HDS_0006"
     },
@@ -3455,7 +3526,9 @@
       ],
       "detail_card": "details/cards/DS_2017_001.md",
       "formal_id": "DS_2017_001",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-f85801d9be7b0aa4"
+      ],
       "safe_card": "DS_2017_001.md",
       "source_id": "EXAM408-2017-Q07"
     },
@@ -3465,7 +3538,9 @@
       ],
       "detail_card": "details/cards/DS_2017_002.md",
       "formal_id": "DS_2017_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-5fe50c199931c37c"
+      ],
       "safe_card": "DS_2017_002.md",
       "source_id": "EXAM408-2017-Q08"
     },
@@ -3495,7 +3570,9 @@
       ],
       "detail_card": "details/cards/DS_2018_001.md",
       "formal_id": "DS_2018_001",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-2e1244246ddcc07c"
+      ],
       "safe_card": "DS_2018_001.md",
       "source_id": "EXAM408-2018-Q08"
     },
@@ -3575,7 +3652,9 @@
       ],
       "detail_card": "details/cards/DS_2020_003.md",
       "formal_id": "DS_2020_003",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260903-0700ddabbf35ab56"
+      ],
       "safe_card": "DS_2020_003.md",
       "source_id": "EXAM408-2020-Q10"
     },
@@ -3605,7 +3684,9 @@
       ],
       "detail_card": "details/cards/DS_2021_002.md",
       "formal_id": "DS_2021_002",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260908-41171f4d1a5acdc3"
+      ],
       "safe_card": "DS_2021_002.md",
       "source_id": "EXAM408-2021-Q09"
     },
@@ -3615,7 +3696,9 @@
       ],
       "detail_card": "details/cards/DS_2022_001.md",
       "formal_id": "DS_2022_001",
-      "raw_packages": [],
+      "raw_packages": [
+        "CS408-20260908-78d77fd1c43bb90e"
+      ],
       "safe_card": "DS_2022_001.md",
       "source_id": "EXAM408-2022-Q08"
     },
@@ -5275,14 +5358,14 @@
   "personalization": {
     "coverage": {
       "applied_correction_count": 6,
-      "formal_count": 454,
-      "formal_source_binding_count": 39,
-      "formal_with_points_count": 454,
+      "formal_count": 455,
+      "formal_source_binding_count": 54,
+      "formal_with_points_count": 455,
       "point_count": 599,
-      "record_count": 6793,
+      "record_count": 6981,
       "review_identity_mapping_count": 11,
       "skipped_unbound_source_count": 39,
-      "source_count": 1448,
+      "source_count": 1482,
       "unbound_admin_event_count": 39,
       "unbound_admin_event_ids": [
         "RE-0639940ec7f700158b2a",
@@ -5327,12 +5410,12 @@
       ],
       "unbound_learning_event_count": 0,
       "unbound_learning_event_ids": [],
-      "unknown_date_record_count": 3273
+      "unknown_date_record_count": 3316
     },
     "entrypoint": "personalization/408/manifest.json",
-    "formal_version": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4",
+    "formal_version": "7610f2922706fdf20cf6e0419506261720952e7c662ce8bc29fdd606bf848797",
     "schema": "study-personalization-408-v1",
-    "version": "890314045c7b673656761b0678e7f29683ac8596bce1f07bafa6da560bc40b53"
+    "version": "e6e8be99ffb8a173c892f342f88b9f684cb6a1f8cca1dd00fcf58144869b8349"
   },
   "web_read": {
     "schema": "study-mcp-local-read-v1",
@@ -5343,37 +5426,37 @@
   "file_inventory": [
     {
       "path": "published-inventory/cdb4ee2aea69-001.jsonl",
-      "sha256": "7e8bc46b0bb93e62dea0d4ff0cb51b57709da856b03c5385308ec3220510e6f1",
-      "count": 471,
-      "bytes": 112821,
+      "sha256": "db2fbf19373ee151b446af829ca3577641ef19e10f81c3201a09337b92721490",
+      "count": 472,
+      "bytes": 113061,
       "source_directory": "."
     },
     {
       "path": "published-inventory/41ffd8b76afc-001.jsonl",
-      "sha256": "80cf39665fac429a03a836fe819ecdb433af5decadbd7c5ffe1eb93c201486ef",
-      "count": 1264,
-      "bytes": 524184,
+      "sha256": "5957ff50a35a60cead65d7f4233526ea72f545e0ffcddf61657c29067ee9ae4e",
+      "count": 1268,
+      "bytes": 523716,
       "source_directory": "details"
     },
     {
       "path": "published-inventory/41ffd8b76afc-002.jsonl",
-      "sha256": "48ca83c1034d7e3a6c4704a5aaa964db33ec416803432f28058330b2e94b4e08",
-      "count": 905,
-      "bytes": 523961,
+      "sha256": "e889359361e1ad1014d6970a586e5e89f0732a9d7714538e2b4b2bbe7cb04400",
+      "count": 901,
+      "bytes": 523991,
       "source_directory": "details"
     },
     {
       "path": "published-inventory/41ffd8b76afc-003.jsonl",
-      "sha256": "de7435ef46b5062a8a7de31a0525a937c22be2ec1a585450ae27b7ce4b5ad059",
-      "count": 623,
-      "bytes": 270135,
+      "sha256": "15647e6226b0d0247642285d6941cc13bd0eba077fb87063a42ba676ef1c8294",
+      "count": 639,
+      "bytes": 277172,
       "source_directory": "details"
     },
     {
       "path": "published-inventory/b2a8e3338e08-001.jsonl",
-      "sha256": "ce6d73943c1c0f0920bb18b02744567c71274ae8e83b217200cf7549be4c8ffb",
-      "count": 23,
-      "bytes": 8485,
+      "sha256": "689ca34a6c34899b2c304fc8aafe27b8cd7397214214bcb1c05d91c4d7dc877d",
+      "count": 99,
+      "bytes": 35852,
       "source_directory": "learning-state"
     },
     {
@@ -5385,72 +5468,79 @@
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-001.jsonl",
-      "sha256": "810df3b5a35b4172a22afd831fd5ad59fd184db078054e2e29175405b775bd63",
+      "sha256": "3b95da5f15789d39651ccfb386b37fb957f3bddfdc828306ce6c071356bb9da9",
       "count": 1413,
-      "bytes": 524162,
+      "bytes": 524142,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-002.jsonl",
-      "sha256": "957b3f229da34317fd3f9a0ffd063f97a200e0d3da0aabc32113e6490a2919d6",
-      "count": 1415,
-      "bytes": 524005,
+      "sha256": "818807cb93c2b25b08569ce1fb4650710536f31953be2827e70ac186c7206325",
+      "count": 1412,
+      "bytes": 524066,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-003.jsonl",
-      "sha256": "ec53c113e2d8c7084e3bf32f2ba7909298f1a0da070838598bac7f9ae54afd46",
-      "count": 1412,
-      "bytes": 523915,
+      "sha256": "37d47ba4eac9b4278ed174516fde6c5715bec33f891747e78a49520a9994b870",
+      "count": 1408,
+      "bytes": 524243,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-004.jsonl",
-      "sha256": "e3e5649bcd27ca6d7411b256618471cfe5dfcdeb255648abc68e35516517837c",
-      "count": 1406,
-      "bytes": 524053,
+      "sha256": "19f9c88b07bd8915560c679cd17406eb80c9167598e3fd505d6a9e778ed5e40b",
+      "count": 1404,
+      "bytes": 524210,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-005.jsonl",
-      "sha256": "0385967b86745340d3b6fb9a32a2bb1b52559cfa7bded1f6d9a6c39d8a67a36a",
-      "count": 1409,
-      "bytes": 524193,
+      "sha256": "26ba3098c17ea46b475f447713e3b4e6f2a508ca4d9ab6802b02e7f2dde13a0d",
+      "count": 1405,
+      "bytes": 524203,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-006.jsonl",
-      "sha256": "6bc58e3ff8baf6ff3918fe1502d3b590934f074a50f1fb05011190844eee2d8a",
-      "count": 1238,
-      "bytes": 442139,
+      "sha256": "4df01d4a6a2fac0411a2c50bd15a5821c503232d29789e48c8b2fcdafb40cd83",
+      "count": 1406,
+      "bytes": 524245,
+      "source_directory": "personalization"
+    },
+    {
+      "path": "published-inventory/fc0e1b7a7a08-007.jsonl",
+      "sha256": "00d5ad56c6f6dcb3a7499630fa86f40056e6dd56073740ab593d2c75c4acebbc",
+      "count": 1065,
+      "bytes": 378252,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/6eea70ab7f69-001.jsonl",
-      "sha256": "e0bc638cd874185ce16d3b36815099864fad35b2b626e4f491e4857443ae560e",
-      "count": 835,
-      "bytes": 459416,
+      "sha256": "73ae83aeffb940332f954bd11ed88c7389204cc94235cdda46627eb59875f188",
+      "count": 865,
+      "bytes": 475228,
       "source_directory": "raw-conversations"
     },
     {
       "path": "published-inventory/8c5967fd8486-001.jsonl",
-      "sha256": "6a2f563db0dfa03abe0dac07fa57bc5c4439b0ee4c10df0ad8c84bddb75a7a4f",
+      "sha256": "68c1cc7b3ee22e2eb1665f37239bdf0dbd1b7a18c5f49bd45e0bf361e2c85bd7",
       "count": 2,
       "bytes": 961,
       "source_directory": "scripts"
     },
     {
       "path": "published-inventory/a18603086e5b-001.jsonl",
-      "sha256": "d98fed9ce26b053ded2259ae251aa5df74f50f40f76c8650f250019239af294b",
+      "sha256": "03e26f0dc879ebd12fcde87aa6f7cc2a305becc9f2e744eb74d54b879071aa7a",
       "count": 17,
-      "bytes": 8177,
+      "bytes": 8180,
       "source_directory": "support"
     },
     {
       "path": "published-inventory/12a435ec8454-001.jsonl",
-      "sha256": "d97b3df21a4d3c3bedbd889217f509c2a3642767686cc1a8aa1c295ac09c3640",
-      "count": 83,
-      "bytes": 24194,
+      "sha256": "cb28f416a877b9ad7702e19847ec106fe37e31a9a057c3fbf6a22bc284da6964",
+      "count": 98,
+      "bytes": 28319,
       "source_directory": "wiki"
     },
     {
@@ -5476,9 +5566,9 @@
     },
     {
       "path": "published-inventory/ad7bb5757216-001.jsonl",
-      "sha256": "df84099958f6dc8ad51ee8f268d31ab5802abec808ae0b4ee52a7de2e2a0b219",
-      "count": 326,
-      "bytes": 83115,
+      "sha256": "e39de2641b5ce436e733754944b3d4a116c49d859e4c21f2d004b464f52eb15a",
+      "count": 327,
+      "bytes": 83364,
       "source_directory": "复习单元卡"
     },
     {
@@ -5497,7 +5587,7 @@
     },
     {
       "path": "published-inventory/08d3250fa5d5-001.jsonl",
-      "sha256": "7f8497da44ca06036b38488829361dddaf36249b25e21f2904e41caaca36acff",
+      "sha256": "61e9de2bb7d83a866e0fd5a936b3fa56cb6cf32882137bda2c91d44580928396",
       "count": 4,
       "bytes": 1004,
       "source_directory": "节点库"

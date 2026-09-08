@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS06_AOE_CRITICAL_PATH_COVERAGE
 subject: 数据结构
 module: DS06 图
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS06_AOE_CRITICAL_PATH_COVERAGE · AOE 多关键路径的工期压缩
 
 - 覆盖正式节点：DS_2013_001
 - 旧复习单元：RU_DS06_21_23
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 
