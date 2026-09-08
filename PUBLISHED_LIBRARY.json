@@ -5,8 +5,8 @@
   "branch": "main",
   "publication_target": "local",
   "github_backup_required": false,
-  "local_version": "f6c3913ed6fbd538616b1f0e99252d8064d7bc4d22c05ea3e3e7af161d5391f6",
-  "event_id": "personalization-408:fd59491663eb344be36fe4d1891281bb92c76d6a517e091ed0851788878983b9",
+  "local_version": "fb6859b43fab335bbb5b6233a8252e75fe9bfc5059a5f66883e183fcc985898b",
+  "event_id": "personalization-408:85f2757aa9dce1b64428b507e7357af6ef263a05391d8db3622b78a39415021e",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -806,6 +806,13 @@
       "manifest_sha256": "9300fbfae24eef95c78a6593b301cd2845ba7ca3bd74dc2c4f72c9c8edc6a512",
       "package_id": "CS408-20260908-41171f4d1a5acdc3",
       "publish_root": "raw-conversations/CS408-20260908-41171f4d1a5acdc3"
+    },
+    {
+      "formal_ids": [],
+      "formal_status": "pending_local_judgment",
+      "manifest_sha256": "1be2406d06cfa256819fc155bbb77403d13e917167c1b1dab5eef0624c545394",
+      "package_id": "CS408-20260908-78d77fd1c43bb90e",
+      "publish_root": "raw-conversations/CS408-20260908-78d77fd1c43bb90e"
     }
   ],
   "entrypoints": {
@@ -821,10 +828,10 @@
     "due_support": "support/d408/manifest.json"
   },
   "counts": {
-    "files": 9907,
-    "bytes": 742288512,
-    "current_files": 6290,
-    "retained_files": 3617,
+    "files": 11121,
+    "bytes": 760285537,
+    "current_files": 6299,
+    "retained_files": 4822,
     "lfs_files": 0
   },
   "source_counts": {
@@ -5270,10 +5277,10 @@
       "formal_source_binding_count": 39,
       "formal_with_points_count": 454,
       "point_count": 599,
-      "record_count": 6781,
+      "record_count": 6787,
       "review_identity_mapping_count": 11,
       "skipped_unbound_source_count": 39,
-      "source_count": 1445,
+      "source_count": 1447,
       "unbound_admin_event_count": 39,
       "unbound_admin_event_ids": [
         "RE-0639940ec7f700158b2a",
@@ -5323,7 +5330,7 @@
     "entrypoint": "personalization/408/manifest.json",
     "formal_version": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4",
     "schema": "study-personalization-408-v1",
-    "version": "486e7d2509897c4acc9261525b76dcccf8ee305247c8a4823f16655bcc97dea8"
+    "version": "bd32e2917800fa1120614a45697674577bc22d6bd6a1751370080239567360ec"
   },
   "web_read": {
     "schema": "study-mcp-local-read-v1",
@@ -5334,7 +5341,7 @@
   "file_inventory": [
     {
       "path": "published-inventory/cdb4ee2aea69-001.jsonl",
-      "sha256": "a9f0361b7ba6ebbf8aa8da95f7d59cb02ed2969f865cf0a7d73c33b9fdc9d41e",
+      "sha256": "656c43b0f9b15760bb49e72db575501c874b5669e0690b203d1d9c6dccaf5a3f",
       "count": 471,
       "bytes": 112821,
       "source_directory": "."
@@ -5362,7 +5369,7 @@
     },
     {
       "path": "published-inventory/b2a8e3338e08-001.jsonl",
-      "sha256": "99d00dda1487a2a670fab069e09abacce93a582d35d7768d26e29f17aa0ba90d",
+      "sha256": "40e864b9d27cd9b2d16c7a2bc03f52f0889219af832060192a7d6bd6da1ad56f",
       "count": 23,
       "bytes": 8485,
       "source_directory": "learning-state"
@@ -5376,49 +5383,56 @@
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-001.jsonl",
-      "sha256": "3a87c5dd1b81288eb07c47f85bb17ff6afb93cf7243212e2ac02bb16a36bb28f",
-      "count": 1428,
-      "bytes": 524037,
+      "sha256": "46c74a7a1bdb59805aae4d2844f624b915b386df56cb025cfe4b33a5226f2de8",
+      "count": 1419,
+      "bytes": 523949,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-002.jsonl",
-      "sha256": "b48da05aa5abc299209a9fa5f42d38ee1110f33e864de4bef8c0c696cf377a7c",
-      "count": 1428,
-      "bytes": 524011,
+      "sha256": "b80a4dc976d58fae5b594cf788a6f1ede0a1063ec43128d907fa0b7c937c743a",
+      "count": 1420,
+      "bytes": 524128,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-003.jsonl",
-      "sha256": "b60eada84634e245f62825e06cab21c105409b8dd007138a17f9336600aec491",
-      "count": 1424,
-      "bytes": 524190,
+      "sha256": "4e9fac8b930ca1368585b089408631f0be5775684426ba544ec8ebde13f2519d",
+      "count": 1418,
+      "bytes": 524279,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-004.jsonl",
-      "sha256": "cf1d255dddde7b98283ccd7dcdccd252daef69aaab8c43effd7aa869988c3a83",
-      "count": 997,
-      "bytes": 350353,
+      "sha256": "ea3293a1120c585b2f228c3684637aeab11aba696b963d5a2f0b91e0463a6828",
+      "count": 1415,
+      "bytes": 524051,
+      "source_directory": "personalization"
+    },
+    {
+      "path": "published-inventory/fc0e1b7a7a08-005.jsonl",
+      "sha256": "9b64da9596fbef3468b409ac13ffc2a20717f119fc3589c4214cade7aae1ab7a",
+      "count": 810,
+      "bytes": 281476,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/6eea70ab7f69-001.jsonl",
-      "sha256": "6b22db1ed3b7d1ef6581ec4004a8f7f90b7fffb78c09a4c6abdd137067066b03",
-      "count": 826,
-      "bytes": 454835,
+      "sha256": "e0bc638cd874185ce16d3b36815099864fad35b2b626e4f491e4857443ae560e",
+      "count": 835,
+      "bytes": 459416,
       "source_directory": "raw-conversations"
     },
     {
       "path": "published-inventory/8c5967fd8486-001.jsonl",
-      "sha256": "4fef4a5d2c7110e8e5539372ebef4cb1a43939037c247252ca2d7a00b336103b",
+      "sha256": "d5d72dfa5f9e3a65839f3015c2714e603b1419c8b3421f14496aac68069963d0",
       "count": 1,
       "bytes": 483,
       "source_directory": "scripts"
     },
     {
       "path": "published-inventory/a18603086e5b-001.jsonl",
-      "sha256": "bf32a0f944c755315d11dbca937a0151a68eedec878474ed486ca443ed9553c8",
+      "sha256": "9a1067fb4501744399c2ca56b4b1c22c39a115d803cd51fe71df2333ccbb5b1e",
       "count": 16,
       "bytes": 7701,
       "source_directory": "support"
