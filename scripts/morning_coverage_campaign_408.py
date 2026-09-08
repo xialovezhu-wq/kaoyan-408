@@ -1127,6 +1127,13 @@ def build_due_run(
             row["formal_node_id"],
         )
     )
+    priority = memory.get("concept_review_priority")
+    if priority:
+        ranks = {}
+        for index, request in enumerate(priority["requests"]):
+            for fid in request["candidate_formal_node_ids"]:
+                ranks[fid] = min(ranks.get(fid, index), index)
+        due.sort(key=lambda row: ranks.get(row["formal_node_id"], len(ranks) + len(priority["requests"])))
     segment_size = int(config["segment_size"])
     segments: list[dict[str, Any]] = []
     for offset in range(0, len(due), segment_size):
@@ -1178,6 +1185,8 @@ def build_due_run(
         "formal_write_count": 0,
         "learner_evidence_write_count": 0,
     }
+    if priority:
+        run["concept_review_priority"] = priority
     run["run_sha256"] = canonical_sha256(run)
     return run
 
@@ -1348,6 +1357,9 @@ def load_projection(
     cohort = parse_cohort(master, config, as_of, admissions, track)
     events = read_events(ledger)
     memory = project_memory_states(cohort, events, config, as_of)
+    from concept_review_priority_408 import load_priority
+    _, point_rows = _markdown_rows(master)
+    memory["concept_review_priority"] = load_priority(repo, {row["ID"]: row for row in point_rows}, as_of.isoformat())
     return config, cohort, memory, _source_bindings(repo, admission_ledger), admissions
 
 

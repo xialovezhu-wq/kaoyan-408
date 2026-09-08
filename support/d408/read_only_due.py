@@ -74,6 +74,8 @@ def replay(repo: Path, target_date: str, output_dir: Path | None = None) -> dict
             shutil.copyfile(relative(repo, row["published_path"]), target)
         vendor = relative(scratch, manifest["dependency_runtime_path"])
         sys.path.insert(0, str(vendor))
+        scripts = scratch / "scripts"
+        sys.path.insert(0, str(scripts))
         native_path = relative(scratch, manifest["algorithm"]["canonical_source_ref"])
         spec = importlib.util.spec_from_file_location("d408_published_native", native_path)
         native = importlib.util.module_from_spec(spec)
@@ -93,14 +95,18 @@ def replay(repo: Path, target_date: str, output_dir: Path | None = None) -> dict
             if native.canonical_sha256(config) != manifest["config_canonical_sha256"]:
                 raise ValueError("native config differs from the bound default snapshot")
             due = native.build_due_run(cohort, memory, config, day, source_bindings=bindings)
+            from concept_review_priority_408 import due_context
+            _, point_rows = native._markdown_rows(scratch / "节点总表.md")
+            context = due_context(due, {row["ID"]: row for row in point_rows})
         finally:
             sys.dont_write_bytecode = previous
             sys.path.remove(str(vendor))
+            sys.path.remove(str(scripts))
         if due["formal_write_count"] != 0 or due["learner_evidence_write_count"] != 0:
             raise ValueError("native scheduler violated its read-only contract")
         if output_dir is not None:
             output_dir.mkdir(parents=True, exist_ok=True)
-            for filename, body in {"native-due-run.json": due, "current-cohort.json": cohort,
+            for filename, body in {"native-due-run.json": due, "due-context.json": context, "current-cohort.json": cohort,
                                    "full-memory-projection.json": memory}.items():
                 (output_dir / filename).write_text(
                     json.dumps(body, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8"

@@ -14,13 +14,18 @@
     "fsrs": "6.3.2",
     "policy_version": "morning-node-coverage-campaign-v1",
     "published_path": "scripts/morning_coverage_campaign_408.py",
-    "sha256": "97ec0636942cb9a6d09fd12f2ba98473c929b1adb9c6232c3b6e8fec51d1a32c"
+    "sha256": "c0fc7e8868e5a659666988d2844c620718c38c870d2acbeb197f12673679d6e7"
   },
   "components": [
     {
-      "bytes": 59616,
+      "bytes": 60286,
       "published_path": "scripts/morning_coverage_campaign_408.py",
-      "sha256": "97ec0636942cb9a6d09fd12f2ba98473c929b1adb9c6232c3b6e8fec51d1a32c"
+      "sha256": "c0fc7e8868e5a659666988d2844c620718c38c870d2acbeb197f12673679d6e7"
+    },
+    {
+      "bytes": 6651,
+      "published_path": "scripts/concept_review_priority_408.py",
+      "sha256": "02c22d61e44cbf19d79941043e84967b11dc32d10b328d89536c6840e8dc6630"
     },
     {
       "bytes": 1586,
@@ -28,9 +33,9 @@
       "sha256": "87933949db526713f84edd9d293f3c7897f351efe1f0f6a9c9b31771cd2f5b68"
     },
     {
-      "bytes": 7110,
+      "bytes": 7482,
       "published_path": "support/d408/read_only_due.py",
-      "sha256": "4817dfe03c21df61106eacd7161de11be5a78eb4f8ca0a0ed739578be5ad542a"
+      "sha256": "19325aa926e2bfd38351f0ae4eb9b65efd6a8f16502123f666e9066cd1c43f52"
     },
     {
       "bytes": 742,
@@ -139,6 +144,13 @@
       "published_path": "learning-state/review-loop/events.jsonl",
       "role": "full_review_event_history",
       "sha256": "6ec2950a148aa7e5b0f7b97a01fdaa9aac7db29d3b080621271ba7f20632653f"
+    },
+    {
+      "bytes": 158,
+      "native_path": "support/d408/concept-review-evidence.json",
+      "published_path": "support/d408/concept-review-evidence.json",
+      "role": "concept_priority_evidence",
+      "sha256": "7d100cacb9623823c927f08d1bf9dd4db5de853a053781f991c32fad7fec6a9c"
     }
   ],
   "native_source_bindings": [
@@ -156,7 +168,7 @@
     },
     {
       "ref": "scripts/morning_coverage_campaign_408.py",
-      "sha256": "97ec0636942cb9a6d09fd12f2ba98473c929b1adb9c6232c3b6e8fec51d1a32c"
+      "sha256": "c0fc7e8868e5a659666988d2844c620718c38c870d2acbeb197f12673679d6e7"
     }
   ],
   "preselected_due_list_included": false,

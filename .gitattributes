@@ -3321,6 +3321,7 @@
 "original-exams/ebaf4ccb77ed4913003a6083adb6b91b007ebff9f84cf9cd8b9f76605fd346cb.pdf" -text -filter
 "original-exams/ed7e8e470aa530dc4b1c27f4b83bc18ed3cea126675576372a2870a52e4d708a.pdf" -text -filter
 "personalization/408/manifest.json" -text -filter
+"personalization/408/manifests/058d39200132b84569610a5ac6c6392d645fa369710265db93e622820de710a1.json" -text -filter
 "personalization/408/manifests/081678939f013c67b7dc2a0dc930239cd07228eef6e65470ff4cf3dc01af6ac3.json" -text -filter
 "personalization/408/manifests/1718f83c9c90ac15291d0e961709381289831adca200be9286a1779f1f1b89e5.json" -text -filter
 "personalization/408/manifests/461b6b07a41f4cc1d5c0a6b48d9472832e35364ccb5297f11f090e7255bbda61.json" -text -filter
@@ -11605,6 +11606,7 @@
 "personalization/408/objects/profiles/fe82381e186ae42cb1d0ca408d80a822d59e562d085d9952df067c0cdc9e23ce.json" -text -filter
 "personalization/408/objects/profiles/fe99c8d5d7d564c3e28db2fdfb0408f7a582a0e1a07da79f18d633ca7a93f0e3.json" -text -filter
 "personalization/408/receipts/457acd0409df47bf5abb08cf66fdb2b97d31f2ac9e86dee250f5a1de214da25f.json" -text -filter
+"personalization/408/receipts/4c9b717bc8b2d0e53448884be028abee921c24f1837818c8cb71b871cc0e8de6.json" -text -filter
 "personalization/408/receipts/4e02605ec21a854b88e8dc8a29cb71dadab1bbf0751b60a7451c116c74486e40.json" -text -filter
 "personalization/408/receipts/6cc42938294d4fdc446563a4c29fb551002ae17197cf7f8869a3eb34bf3e88cb.json" -text -filter
 "personalization/408/receipts/854c4077933e54c48c7c46e9016ae4c301dd0b942f572455f48a880af071d778.json" -text -filter
@@ -12446,8 +12448,10 @@
 "raw-conversations/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704/proof/result-event.jsonl" -text -filter
 "raw-conversations/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704/proof/sol-decision.json" -text -filter
 "raw-conversations/CS408-LEGACY-CAP-20260816-c18277255b9d-96a5e5bc3a342704/proof/sol-terminal.json" -text -filter
+"scripts/concept_review_priority_408.py" -text -filter
 "scripts/morning_coverage_campaign_408.py" -text -filter
 "support/d408/README.md" -text -filter
+"support/d408/concept-review-evidence.json" -text -filter
 "support/d408/default-config.json" -text -filter
 "support/d408/manifest.json" -text -filter
 "support/d408/read_only_due.py" -text -filter
