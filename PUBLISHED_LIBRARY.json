@@ -3,8 +3,10 @@
   "subject": "408",
   "repository": "xialovezhu-wq/kaoyan-408",
   "branch": "main",
-  "local_version": "2e6a51a9b25e6694f9549edd5ec0bfad9141648b49fe5f3df866b000b0118e50",
-  "event_id": "R11-web-read-repair-20260907-408-01",
+  "publication_target": "local",
+  "github_backup_required": false,
+  "local_version": "3d4e46e1ccc0130f000358c250f03677af553546d3481f616cd5ef5aa8f3e34f",
+  "event_id": "LOCAL-MCP-20260908-01",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -812,7 +814,7 @@
   },
   "counts": {
     "files": 4621,
-    "bytes": 668739233,
+    "bytes": 668738881,
     "current_files": 4621,
     "retained_files": 0,
     "lfs_files": 0
@@ -5254,15 +5256,15 @@
     "unrelated textbooks/global prompts"
   ],
   "web_read": {
-    "schema": "study-web-read-v1",
-    "entrypoint": "WEB_READ_START.json",
+    "schema": "study-mcp-local-read-v1",
+    "entrypoint": "Study Library.library",
     "status": "NOT_YET_VERIFIED",
-    "fetch_max_lines": 8
+    "manual_base64_transport_required": false
   },
   "file_inventory": [
     {
       "path": "published-inventory/cdb4ee2aea69-001.jsonl",
-      "sha256": "c466e2138bade6d3e077bd7e202fba374868345a1c51cf6b6226cf8240e43945",
+      "sha256": "723f570f0ab95fc04aa6b651f9ac850c61f7b38e36061621c923df0d546837e9",
       "count": 471,
       "bytes": 112821,
       "source_directory": "."
