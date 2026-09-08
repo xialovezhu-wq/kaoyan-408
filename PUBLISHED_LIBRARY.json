@@ -5,8 +5,8 @@
   "branch": "main",
   "publication_target": "local",
   "github_backup_required": false,
-  "local_version": "3d4e46e1ccc0130f000358c250f03677af553546d3481f616cd5ef5aa8f3e34f",
-  "event_id": "LOCAL-MCP-20260908-01",
+  "local_version": "2986e315df07136ffef089961b4120d67b7a2c55c8300c8e0bc0e82ff47172bd",
+  "event_id": "MCP-PERSONALIZATION-20260908-01",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -809,13 +809,14 @@
     "historical_questions": "历史错题归档/定位索引.md",
     "knowledge_points": "知识点标签表.md",
     "learning_events": "learning-state/review-loop/events.jsonl",
+    "personalization": "personalization/408/manifest.json",
     "review_units": "复习单元总表.md",
     "due_support": "support/d408/manifest.json"
   },
   "counts": {
-    "files": 4621,
-    "bytes": 668738881,
-    "current_files": 4621,
+    "files": 6281,
+    "bytes": 688087297,
+    "current_files": 6281,
     "retained_files": 0,
     "lfs_files": 0
   },
@@ -5255,6 +5256,68 @@
     "temporary/backup authoring",
     "unrelated textbooks/global prompts"
   ],
+  "personalization": {
+    "coverage": {
+      "applied_correction_count": 6,
+      "formal_count": 454,
+      "formal_source_binding_count": 39,
+      "formal_with_points_count": 454,
+      "point_count": 599,
+      "record_count": 6775,
+      "review_identity_mapping_count": 11,
+      "skipped_unbound_source_count": 39,
+      "source_count": 1441,
+      "unbound_admin_event_count": 39,
+      "unbound_admin_event_ids": [
+        "RE-0639940ec7f700158b2a",
+        "RE-07902cb466a479283845",
+        "RE-07ae58297405ded19301",
+        "RE-0ba059c16cf6ca07d731",
+        "RE-0ccf7541abee546b6b13",
+        "RE-1d772b3d6ca15517d456",
+        "RE-346645707222344f627c",
+        "RE-381983e5eeac61aae07e",
+        "RE-42c2b459010d4266edaf",
+        "RE-441d0e887e25adbb09b6",
+        "RE-4a378492e682ac9e6480",
+        "RE-4ad04708975bedb5cb37",
+        "RE-4d8f008af042fa7963cc",
+        "RE-5498e0d878894b6a041a",
+        "RE-558fb0dce5536fa47e87",
+        "RE-5cc9a1a7636334ca85c5",
+        "RE-995440c111db9a8eae65",
+        "RE-a1fc1f45a7c1c3a64f93",
+        "RE-a37a472e80658f0b9de9",
+        "RE-a409ba1f451196b4b3c8",
+        "RE-abb16084be8bfdeeab5c",
+        "RE-ad8507da7803ed2c5b6b",
+        "RE-b74012052abc2391b54f",
+        "RE-b82725a5cee176d7f56f",
+        "RE-bc7372485b8f00d04477",
+        "RE-bd79c3b42c742bff9a4b",
+        "RE-c0c78843264138ba3498",
+        "RE-c41cf19d58062761a8dd",
+        "RE-c711af69621d81342bbf",
+        "RE-c9b604e0dde22cf2387d",
+        "RE-cb7430ab33c97342db81",
+        "RE-de74b3bc137978e28c7e",
+        "RE-df779d248e239d75843f",
+        "RE-e119df7c92fda5e7e697",
+        "RE-e615ed2d74c00cc0bb4d",
+        "RE-ea54a4ad06100b0d21bf",
+        "RE-ef9a4c66c7f38ea20972",
+        "RE-f12275ab6bbed3d5340d",
+        "RE-fe7c692348b4be53ce2d"
+      ],
+      "unbound_learning_event_count": 0,
+      "unbound_learning_event_ids": [],
+      "unknown_date_record_count": 3273
+    },
+    "entrypoint": "personalization/408/manifest.json",
+    "formal_version": "660b77443f4e77d6707198db3fad9715786dd760c8682258d2d3b3f511cbe6c4",
+    "schema": "study-personalization-408-v1",
+    "version": "215c8759077954d3fd517e9d901e2a47dfd31c66d443bdba8f1276262f0822da"
+  },
   "web_read": {
     "schema": "study-mcp-local-read-v1",
     "entrypoint": "Study Library.library",
@@ -5303,6 +5366,20 @@
       "count": 34,
       "bytes": 22040,
       "source_directory": "original-exams"
+    },
+    {
+      "path": "published-inventory/fc0e1b7a7a08-001.jsonl",
+      "sha256": "532d420ded0be901de9d74899abf54c16b1d7101687b5fba7701cd4bced757c6",
+      "count": 1563,
+      "bytes": 523966,
+      "source_directory": "personalization"
+    },
+    {
+      "path": "published-inventory/fc0e1b7a7a08-002.jsonl",
+      "sha256": "8b133e241896c1df47a61cda01b381986c317cf2a27dacd41ea946ac13502aeb",
+      "count": 97,
+      "bytes": 32004,
+      "source_directory": "personalization"
     },
     {
       "path": "published-inventory/6eea70ab7f69-001.jsonl",
