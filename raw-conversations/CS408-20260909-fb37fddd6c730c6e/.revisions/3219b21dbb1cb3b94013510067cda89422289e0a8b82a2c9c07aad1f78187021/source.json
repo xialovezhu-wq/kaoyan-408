@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0008",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260909-1729D7B5ED9B6146",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-09",
+      "campaign_item_commitment_sha256": "6281016628485c5343e0e767ce5a1ab1ab3165804a2f7936867bc1dc3d6ad5c4",
+      "capture_request_id": "RCR-F6D26005B630699692F71665",
+      "capture_required": true,
+      "display_receipt_sha256": "5999d595c498fa2271dce6604f29124d6ad9dc47f2354d61bc310436790e5e99",
+      "formal_node_id": "DS_2017_001",
+      "grading_sha256": "7fd6bd35144912c4f50f8de9fa032fd4d5a8a53c29196058b4804ed4d22adf1f",
+      "item_id": "MCQ-0008",
+      "pending_outcome_sha256": "f6d26005b630699692f7166575748f1f1a38a7d9a7fbd1405b45efdc1c1144c9",
+      "run_id": "MCR-20260909-1729D7B5ED9B6146",
+      "segment_id": "MCR-20260909-1729D7B5ED9B6146-S001",
+      "segment_ordinal": 0,
+      "surface_kind": "verified_variant",
+      "surface_sha256": "001123d6046845db619931627baf55fb0cff87566e870000b958d426c651b177",
+      "terminal_trace_sha256": "30732286d53ea4ea5401249b73458748a84ccccb8311600e88f824b81080fada",
+      "true_item_id": "EVB-934F05EE466A4DE378BF0525",
+      "variant_id": "EVB-934F05EE466A4DE378BF0525"
+    },
+    "grading_capsule_sha256": "7fd6bd35144912c4f50f8de9fa032fd4d5a8a53c29196058b4804ed4d22adf1f",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": null,
+    "question_surface": {
+      "options": {
+        "A": "11",
+        "B": "8",
+        "C": "9",
+        "D": "10"
+      },
+      "stem": "某简单无向图 H 有 14 条边，其中恰有 3 个度为 4 的顶点、2 个度为 3 的顶点，其余顶点的度均不超过 2。H 的顶点个数至少为（）。"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "high",
+      "corrected_response": "D",
+      "prompt_dependency": "progressive",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EVB-934F05EE466A4DE378BF0525",
+  "study_date": "2026-09-09",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
