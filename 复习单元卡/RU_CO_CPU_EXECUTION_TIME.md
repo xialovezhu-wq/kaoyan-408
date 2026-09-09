@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_CO_CPU_EXECUTION_TIME
 subject: 计算机组成原理
 module: CO01 计算机系统概述
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_CO_CPU_EXECUTION_TIME · CPU 执行时间：公式变量与优化措施落点
 
 - 覆盖正式节点：CO_2010_001、CO_2022_003
 - 旧复习单元：RU_CO01_09_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

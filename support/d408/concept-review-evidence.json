@@ -213,6 +213,98 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2023_004"
+      ],
+      "knowledge_points": [
+        "DS07-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "259c23ab0aad63c086d40bd51bd8cdf590f7f364e7db8af9e17a60dc7434266a",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_order": 2,
+      "source_sha256": "0fc1e29a3a147c57171c313e5d0914088eb4b8bdcc9260cc04998117ae3325d0",
+      "summary": "第一具体偏离是给 B 项加上不存在的“不”；用户举的左右叶同层例子本身不构成 B 树定义错误。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_004"
+      ],
+      "knowledge_points": [
+        "DS07-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "259c23ab0aad63c086d40bd51bd8cdf590f7f364e7db8af9e17a60dc7434266a",
+      "source_fragment": "turn:6#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_order": 6,
+      "source_sha256": "0fc1e29a3a147c57171c313e5d0914088eb4b8bdcc9260cc04998117ae3325d0",
+      "summary": "助手纠正原文后，用户提出不等深例子询问；解释后只说理解，没有给最后追问的本人答案。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_004"
+      ],
+      "knowledge_points": [
+        "DS07-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "259c23ab0aad63c086d40bd51bd8cdf590f7f364e7db8af9e17a60dc7434266a",
+      "source_fragment": "turn:5#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_order": 5,
+      "source_sha256": "0fc1e29a3a147c57171c313e5d0914088eb4b8bdcc9260cc04998117ae3325d0",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_004"
+      ],
+      "knowledge_points": [
+        "DS07-16"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "screened_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "259c23ab0aad63c086d40bd51bd8cdf590f7f364e7db8af9e17a60dc7434266a",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-4c9245d2e8d99ab7",
+      "source_order": 2,
+      "source_sha256": "0fc1e29a3a147c57171c313e5d0914088eb4b8bdcc9260cc04998117ae3325d0",
+      "summary": "首答明确叶结点通过指针相连属于 B+ 树而非 B 树，支持该结构区别本次独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2017_001"
       ],
       "knowledge_points": [
@@ -1547,6 +1639,213 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2017_001"
+      ],
+      "knowledge_points": [
+        "DS06-01"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "independent_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b233317130a7c479110230f1892cbca5d84fc99e0c41301bba5ce8d374ef16c6",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-fb37fddd6c730c6e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-fb37fddd6c730c6e",
+      "source_order": 2,
+      "source_sha256": "3219b21dbb1cb3b94013510067cda89422289e0a8b82a2c9c07aad1f78187021",
+      "summary": "首答正确算出 28−18=10，按剩余度上限得到至少 5 个新增顶点，合计 10。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2017_001"
+      ],
+      "knowledge_points": [
+        "DS06-02"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "independent_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b233317130a7c479110230f1892cbca5d84fc99e0c41301bba5ce8d374ef16c6",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-fb37fddd6c730c6e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-fb37fddd6c730c6e",
+      "source_order": 2,
+      "source_sha256": "3219b21dbb1cb3b94013510067cda89422289e0a8b82a2c9c07aad1f78187021",
+      "summary": "首答“一条边对应两个度”在简单无向图语境中正确，本次没有把度数总和当成边数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2015_001"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b499360de96aed2e82f6f6d15310c21c91e979bd003f1976b7afb3015aa115bc",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_order": 2,
+      "source_sha256": "3d860012e224431124f28df21dd8154ab43e9d0d6b568e7f5fce036f0f13c410",
+      "summary": "用户明确“不知道” HDL 做什么，因其与硬件相关而猜为可直接执行；不能把这段猜测写成有把握的错误理论。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2015_001"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b499360de96aed2e82f6f6d15310c21c91e979bd003f1976b7afb3015aa115bc",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_order": 4,
+      "source_sha256": "3d860012e224431124f28df21dd8154ab43e9d0d6b568e7f5fce036f0f13c410",
+      "summary": "助手解释 HDL 后用户只确认 A，没有用自己的话说明 HDL 与 CPU 程序的区别。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2015_001"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "b499360de96aed2e82f6f6d15310c21c91e979bd003f1976b7afb3015aa115bc",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_order": 3,
+      "source_sha256": "3d860012e224431124f28df21dd8154ab43e9d0d6b568e7f5fce036f0f13c410",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2015_001"
+      ],
+      "knowledge_points": [
+        "CO04-22"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "screened_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b499360de96aed2e82f6f6d15310c21c91e979bd003f1976b7afb3015aa115bc",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-71300a7f6dbe8eab",
+      "source_order": 2,
+      "source_sha256": "3d860012e224431124f28df21dd8154ab43e9d0d6b568e7f5fce036f0f13c410",
+      "summary": "首答已说明汇编源需先转换成二进制供机器执行，因此排除汇编；“汇编编译”措辞不精确，但方向正确，不应记汇编直接执行错误。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_003"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "bef51351f2bbff7190b875db96e46c6dfd82f413bbd9a6ed5a4bb0720b6169f9",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_order": 2,
+      "source_sha256": "c074fc2644f545254468a0e4cc8c55bce7c37b5bcc5c1c28fec7bd09795cf210",
+      "summary": "首答不是给出错误 BST 定义，而是明确自报“定义有点忘记了”。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_003"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "bef51351f2bbff7190b875db96e46c6dfd82f413bbd9a6ed5a4bb0720b6169f9",
+      "source_fragment": "turn:6#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_order": 6,
+      "source_sha256": "c074fc2644f545254468a0e4cc8c55bce7c37b5bcc5c1c28fec7bd09795cf210",
+      "summary": "助手给完整定义后，用户指出 x4>x3、x5<x4，且 x5 又在 x3 右边，支持提示后的祖先范围约束应用。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_003"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "bef51351f2bbff7190b875db96e46c6dfd82f413bbd9a6ed5a4bb0720b6169f9",
+      "source_fragment": "turn:5#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-fccfb27028dffdbb",
+      "source_order": 5,
+      "source_sha256": "c074fc2644f545254468a0e4cc8c55bce7c37b5bcc5c1c28fec7bd09795cf210",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2014_002"
       ],
       "knowledge_points": [
@@ -2490,6 +2789,52 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "screened_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "e64f5cd355a9c5f5025fe238519a44b0821efff5f8e66f4f0b04ead5b3d4da99",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-771a9c948d7eabf7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-771a9c948d7eabf7",
+      "source_order": 2,
+      "source_sha256": "50b81e36bcf8ade22cece3a2e587062b8750daf6c7787b814ef23d48ad0bd0e0",
+      "summary": "用户排除目标边的依据是当前生成树点集边界；支持本题的算法区分，不代表已独立证明所有最小生成树唯一性条件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-15"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "independent_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "e64f5cd355a9c5f5025fe238519a44b0821efff5f8e66f4f0b04ead5b3d4da99",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-771a9c948d7eabf7",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-771a9c948d7eabf7",
+      "source_order": 2,
+      "source_sha256": "50b81e36bcf8ade22cece3a2e587062b8750daf6c7787b814ef23d48ad0bd0e0",
+      "summary": "用户第 2 轮已给出正确 Prim 点集扩张、唯一第一条边和排除两端都在集合外的边；没有用户知识错误。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2017_002"
       ],
       "knowledge_points": [
@@ -2575,6 +2920,282 @@
       "source_order": 5,
       "source_sha256": "4d4f9db28eae01e965c96bddd7045874a64f6bd17ccf902a8a42d5eafa52bf3e",
       "summary": "仅自报理解，未本人重新验证候选或迁移。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 2,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "最初把主频倒数对应到 CPI，正确对象应是时钟周期时长。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:10#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 10,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "助手说明后，用户能复述每条指令周期数和总周期，但没有独立给出时钟周期时长的单位与换算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 3,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 4,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "第 4 轮把 M2 的 f 与 CPI 数值互换；第 10 轮知道主频是每秒周期数，却不理解总周期除以这一速率为何得秒。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:12#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 12,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "第 11 轮有类比解释和测试，第 12 轮只自报理解，没有测试答案；保留待验证。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:11#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 11,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 2,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "最初明确说“平均 CPI 不是等于主频分之一吗”；对象混淆有原话证据。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:10#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 10,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "第 10 轮在提示后能说明 I×CPI 得总周期，可保留这一步改善；仍不能推出整个时间式已经理解。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:9#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 9,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-14"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 4,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "第 4 轮形式上写对公式，但参数与计算不一致；第 6、8 轮又将 CPI/f 取倒，最后第 10 轮明确困难在单位除法。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-14"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:12#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 12,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "最终用户没有独立算对完整比值，也没有回答单位小题；结尾只支持自报理解，不能采纳助手第 13 轮的过度总结。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_001"
+      ],
+      "knowledge_points": [
+        "CO01-14"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "ef797d411f2a6b80acf170f07c7a31ce0f8f7e06224d7b7a342021b137a11e86",
+      "source_fragment": "turn:13#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-063fd38326a5b243",
+      "source_order": 13,
+      "source_sha256": "33e46994175f7edd5442dcdb0843c303b5df4ced0f86fe5f1ee431dfa403a6a8",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
     },
     {
       "correction_result": null,
@@ -2784,6 +3405,6 @@
       "summary": "补齐其余候选的排除和真实孩子不可被线索覆盖的核查。"
     }
   ],
-  "records_sha256": "f563fcff4f4bad2bed6e5b58f4374110ce1aae4d1ccff398ea53f5d93fd9929e",
+  "records_sha256": "c758844bbe76095ec67e6c17ad5ae917b7e627a361b497b9d8c54d9f3e23d165",
   "schema": "cs408-concept-evidence-snapshot-v1"
 }

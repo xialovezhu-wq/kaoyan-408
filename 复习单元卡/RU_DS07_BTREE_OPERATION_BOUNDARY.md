@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_BTREE_OPERATION_BOUNDARY
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_BTREE_OPERATION_BOUNDARY · B 树插入删除查找的性质边界
 
 - 覆盖正式节点：DS_2023_004
 - 旧复习单元：RU_DS07_13_16
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 
