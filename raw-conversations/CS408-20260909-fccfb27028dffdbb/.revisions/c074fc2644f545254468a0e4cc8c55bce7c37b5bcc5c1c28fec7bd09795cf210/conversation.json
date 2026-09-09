@@ -1,0 +1,57 @@
+{
+  "complete_order_preserved": true,
+  "schema_version": "cs408-full-conversation-v1",
+  "truncated": false,
+  "turn_count": 7,
+  "turns": [
+    {
+      "kind": "utterance",
+      "observed_at": null,
+      "ordinal": 1,
+      "role": "assistant",
+      "text": "正确。\n\n判定\n\n插入 48 后先得到 24 的左孩子 13、右孩子 53；53 的左孩子 37、右孩子 90；37 的右孩子 48。对 24 做 RL：先右旋 53，再左旋 24，得到 37 为根，左孩子 24，右孩子 53；53 的左孩子 48、右孩子 90。因此 37 的左右子结点是 24 和 53，选 \\(C\\)。\n\n下一题\n\n真题｜2018 年考研 408 第 6 题\n\n当前原图裁切，下面用同一题的完整预处理图显示。\n\n![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets-preprocessed/86d4328964c753540892072188aaf7c31b39dbe48cf4f7984e31a14b554217fa/2018/EXAM408-2018-Q06/question-01.png)\n\n请给出你的选项；如果不确定，也可以先写第一动作。"
+    },
+    {
+      "kind": "reasoning",
+      "observed_at": null,
+      "ordinal": 2,
+      "role": "user",
+      "text": "对了，这道题说是二叉排序树，我对二叉排序树的定义有点忘记了，不记得二叉排序树是什么东西了"
+    },
+    {
+      "kind": "hint",
+      "observed_at": null,
+      "ordinal": 3,
+      "role": "assistant",
+      "text": "线索\n\n二叉排序树（BST）对任意结点 \\(u\\) 都满足：左子树所有关键字小于 \\(u\\) 的关键字，右子树所有关键字大于 \\(u\\) 的关键字。等价地，中序遍历会得到递增序列。\n\n这道图里先不要急着看选项，先只看每条边：如果 \\(v\\) 是 \\(u\\) 的左孩子，那么 \\(v<u\\)；如果 \\(v\\) 是 \\(u\\) 的右孩子，那么 \\(v>u\\)。\n\n先判断：\\(x_2\\) 在 \\(x_1\\) 的哪一边？由此能得到 \\(x_1\\) 和 \\(x_2\\) 的大小关系是什么？"
+    },
+    {
+      "kind": "answer",
+      "observed_at": null,
+      "ordinal": 4,
+      "role": "user",
+      "text": "哦，所以这道题应该选择 C。\n\n我是对于二叉排序树定义不熟悉，把二叉排序树定义想清楚之后，这道题选择 C。"
+    },
+    {
+      "kind": "utterance",
+      "observed_at": null,
+      "ordinal": 5,
+      "role": "assistant",
+      "text": "答案 \\(C\\) 很可能正确，但请把关键一步说清楚：按图中的相邻边，\\(x_3\\)、\\(x_5\\)、\\(x_4\\) 三者的完整大小关系应该怎么写？"
+    },
+    {
+      "kind": "restatement",
+      "observed_at": null,
+      "ordinal": 6,
+      "role": "user",
+      "text": "很简单，因为 x4 是在 x3 的右边，所以 x4 比 x3 大；然后 x5 是在 x4 的左边，所以 x5 比 x4 要小。所以选择 C，没问题啊然后 x5 又是在 x3 的右边。"
+    },
+    {
+      "kind": "frozen_feedback",
+      "observed_at": null,
+      "ordinal": 7,
+      "role": "assistant",
+      "text": "正确。\\(x_4\\) 在 \\(x_3\\) 的右子树中，所以 \\(x_3<x_4\\)；\\(x_5\\) 是 \\(x_4\\) 的左孩子，所以 \\(x_5<x_4\\)；又因为 \\(x_5\\) 在 \\(x_3\\) 的右子树中，所以 \\(x_3<x_5\\)。合起来是 \\(x_3<x_5<x_4\\)，选 \\(C\\)。"
+    }
+  ]
+}
