@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0020",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260909-1729D7B5ED9B6146",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-09",
+      "campaign_item_commitment_sha256": "6558a1a452c73557abbd51707a232a567fc1487dc91e8132c3c3526492128342",
+      "capture_request_id": "RCR-C277388C262B0564FD569FD5",
+      "capture_required": true,
+      "display_receipt_sha256": "bf13d7dd19ed9070392efa23a7c95b9a8c1dccc65979d868aa8e51b221ee9da3",
+      "formal_node_id": "DS_2023_004",
+      "grading_sha256": "eae466cdbbe86fe577e81549e0b98a5f99d3b196dea96e814bfb3dc7429e6002",
+      "item_id": "MCQ-0020",
+      "pending_outcome_sha256": "c277388c262b0564fd569fd5882f31d0345d7c7b2e4f3949531e050965bc6f83",
+      "run_id": "MCR-20260909-1729D7B5ED9B6146",
+      "segment_id": "MCR-20260909-1729D7B5ED9B6146-S002",
+      "segment_ordinal": 1,
+      "surface_kind": "canonical_original",
+      "surface_sha256": "ab09347eadc09a4293ffea67c1db75bb025b48acf5243c3383f4b70dfda2fa63",
+      "terminal_trace_sha256": "34665ccd80367fd65599f55f7527bde03acaf9b516eed9ec4af10e4e00596f35",
+      "true_item_id": "EXAM408-2009-Q08",
+      "variant_id": null
+    },
+    "grading_capsule_sha256": "eae466cdbbe86fe577e81549e0b98a5f99d3b196dea96e814bfb3dc7429e6002",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": "f52b8d1981ea5ab853ef1ad618fc45bdebbf35ae12fdfd3b78b4aba5d8e5b47d",
+    "question_surface": {
+      "options": {
+        "A": "见题图中的 A 选项",
+        "B": "见题图中的 B 选项",
+        "C": "见题图中的 C 选项",
+        "D": "见题图中的 D 选项"
+      },
+      "stem": "![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2009/EXAM408-2009-Q08/question-01.png)\n![题目 2](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2009/EXAM408-2009-Q08/question-02.png)"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "high",
+      "corrected_response": "D",
+      "prompt_dependency": "progressive",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EXAM408-2009-Q08",
+  "study_date": "2026-09-09",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
