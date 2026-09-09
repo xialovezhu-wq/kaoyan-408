@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS07_AVL_INSERT_ROTATION
 subject: 数据结构
 module: DS07 查找
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS07_AVL_INSERT_ROTATION · AVL 插入失衡定位与旋转
 
 - 覆盖正式节点：DS_2021_001
 - 旧复习单元：RU_DS07_10_11
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

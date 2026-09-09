@@ -1156,6 +1156,213 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 4,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "旋转中把 48 放到 37 左子树违反大小约束，说明本次未持续用 BST 不变量验接线。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:6#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 6,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "最终结构恢复大小次序；没有本人完整中序验算，因此只记回接修复。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-08"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 4,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "48 插入到 37 右侧由助手先提示，用户随后复述正确；不记独立插入证据。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-08"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 3,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-10"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 4,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "第 3 轮已给 RL 线索后，用户指出第一个失衡结点为根 24、类型 RL；不能反推首答已独立定位。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-10"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 3,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 4,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "第 4 轮虽会说先右旋再左旋，仍把 48 接到 37 左侧并给出错误结果；50/53 口误不能解释全部结构问题。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:6#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 6,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "第 6 轮先延续错误，又在同一轮自行修正为 37 右孩子 53、53 左孩子 48、右孩子 90；属有提示背景中的自改。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "9fcf8e0ab410fd531e59b9fbf74ec35c73d465c77673a1ca7b07ed1569bcdcb8",
+      "source_fragment": "turn:5#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f5e1f9fb7d3193e9",
+      "source_order": 5,
+      "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2022_001"
       ],
       "knowledge_points": [
@@ -2577,6 +2784,6 @@
       "summary": "补齐其余候选的排除和真实孩子不可被线索覆盖的核查。"
     }
   ],
-  "records_sha256": "5be8adbbb2f894a031073657cab81714656a34065e7b964364bf3e2f3953a044",
+  "records_sha256": "f563fcff4f4bad2bed6e5b58f4374110ce1aae4d1ccff398ea53f5d93fd9929e",
   "schema": "cs408-concept-evidence-snapshot-v1"
 }
