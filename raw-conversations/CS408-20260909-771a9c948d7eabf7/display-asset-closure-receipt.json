@@ -1,0 +1,16 @@
+{
+  "embed_resolution": "verified_existing",
+  "existing_display_proof": "already_current_no_promoted_package_assets",
+  "formal_id": "DS_2012_002",
+  "items": [],
+  "markdown_sha256": "05d1806540fed10a1c9073eab4b37a8c756bc20d245edcbb5e6d7ccaeea7b981",
+  "markdown_vault_relative_path": "cards/DS_2012_002.md",
+  "no_display": true,
+  "obsidian_reread": "verified_existing",
+  "package_id": "CS408-20260909-771a9c948d7eabf7",
+  "package_sha256": "50b81e36bcf8ade22cece3a2e587062b8750daf6c7787b814ef23d48ad0bd0e0",
+  "receipt_id": "CS408-DISPLAY-972111cd5af811a23c50",
+  "schema_version": "cs408-obsidian-asset-closure-receipt-v1",
+  "stable_asset_count": 0,
+  "subject": "cs408"
+}

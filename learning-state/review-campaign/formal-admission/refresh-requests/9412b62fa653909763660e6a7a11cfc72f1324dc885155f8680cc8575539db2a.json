@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-f682d923a7afa56d571afcd2",
+  "admission_receipt_sha256": "9be083abaf42c6efe3b6e938a1f411d3250ef28e1f53112e71dec4270babad48",
+  "campaign_cohort_sha256": "c640029d0c9e20c17ceb2c3637b8d9e49c2f35e74a4341648920b5914dd06250",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2023_004",
+  "formal_result_event_id": "CE-c3362d883fc60a69ad48",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "996054394d3b64f6e66d05715a0b1ee3b99b5eeefaf8b05efc298fe128454821",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS07_BTREE_OPERATION_BOUNDARY",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-09",
+  "target_run_policy": "next_unfrozen_run_only"
+}

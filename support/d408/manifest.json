@@ -98,8 +98,16 @@
   "config_path": "support/d408/default-config.json",
   "current_cohort_selector": {
     "authoritative_master_path": "节点总表.md",
-    "master_sha256": "6f4b02376c9bd348be37014d7f1cf18c0a37da3577deff0d62b91309c8d6d5bb",
-    "matching_existing_snapshots": [],
+    "master_sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d",
+    "matching_existing_snapshots": [
+      {
+        "bytes": 8818,
+        "cohort_sha256": "c640029d0c9e20c17ceb2c3637b8d9e49c2f35e74a4341648920b5914dd06250",
+        "formal_node_count": 455,
+        "published_path": "learning-state/review-campaign/formal-admission/cohorts/2153947183c1e5175406c4ce29e5357b423390f2c663398cab3969a92c8015a1.json",
+        "sha256": "1f4575a9f26340f3827b8d3ae2c8ec501dd2de3e306dd22c4f2041a420fd21db"
+      }
+    ],
     "rebuild_when_no_match": "run read_only_due.py with the explicit target date",
     "rule": "snapshot.master_ref and master_sha256 must match this exact master",
     "snapshot_is_due_version": false
@@ -108,25 +116,25 @@
   "formal_writes_allowed": false,
   "inputs": [
     {
-      "bytes": 392290,
+      "bytes": 392135,
       "native_path": "节点总表.md",
       "published_path": "节点总表.md",
       "role": "formal_cohort_and_main_concepts",
-      "sha256": "6f4b02376c9bd348be37014d7f1cf18c0a37da3577deff0d62b91309c8d6d5bb"
+      "sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d"
     },
     {
-      "bytes": 288814,
+      "bytes": 288838,
       "native_path": "原题复做轨总表.md",
       "published_path": "原题复做轨总表.md",
       "role": "accepted_original_track_eligibility",
-      "sha256": "a651cc0b9062382ead1cea9e1a8d2111d78fa0ea381fcc72739b0dc9ed390fc2"
+      "sha256": "9a3f93e78f51eaaca0e2757fe282fb05f6a5e303e2c10b851b7e6476a780ec47"
     },
     {
-      "bytes": 1170319,
+      "bytes": 1184800,
       "native_path": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
       "published_path": "learning-state/review-loop/events.jsonl",
       "role": "full_review_event_history",
-      "sha256": "be69e56901b9d9fbb37dffbd316b4e415103fc76812e2a6e82227657582eede3"
+      "sha256": "21f0e778ed9f858ac26de26e64f7c9c445fa4ce2a288c49ef7d41409e3604e29"
     },
     {
       "bytes": 12645,
@@ -136,25 +144,25 @@
       "sha256": "0ced228ae920378390e1c9c20c994b9c582dfd4eb20e9a4ee1d809cdfeca0207"
     },
     {
-      "bytes": 139727,
+      "bytes": 159154,
       "native_path": "support/d408/concept-review-evidence.json",
       "published_path": "support/d408/concept-review-evidence.json",
       "role": "concept_priority_evidence",
-      "sha256": "174bfd7a2032426848d1a1dea095a1b8755bfc73edf716b78c9bd567e68d6a17"
+      "sha256": "e0326bd401812941c7b238f16f9ff0ead4dde3df3d46a07e7afaf7f1347c754e"
     }
   ],
   "native_source_bindings": [
     {
       "ref": "节点总表.md",
-      "sha256": "6f4b02376c9bd348be37014d7f1cf18c0a37da3577deff0d62b91309c8d6d5bb"
+      "sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d"
     },
     {
       "ref": "原题复做轨总表.md",
-      "sha256": "a651cc0b9062382ead1cea9e1a8d2111d78fa0ea381fcc72739b0dc9ed390fc2"
+      "sha256": "9a3f93e78f51eaaca0e2757fe282fb05f6a5e303e2c10b851b7e6476a780ec47"
     },
     {
       "ref": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
-      "sha256": "be69e56901b9d9fbb37dffbd316b4e415103fc76812e2a6e82227657582eede3"
+      "sha256": "21f0e778ed9f858ac26de26e64f7c9c445fa4ce2a288c49ef7d41409e3604e29"
     },
     {
       "ref": "scripts/morning_coverage_campaign_408.py",

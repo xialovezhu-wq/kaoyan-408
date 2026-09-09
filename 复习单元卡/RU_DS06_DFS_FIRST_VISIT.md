@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS06_DFS_FIRST_VISIT
 subject: 数据结构
 module: DS06 图
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS06_DFS_FIRST_VISIT · DFS 首次访问序列与回溯
 
 - 覆盖正式节点：DS_2015_002
 - 旧复习单元：RU_DS_2015_002
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

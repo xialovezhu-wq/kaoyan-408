@@ -1037,6 +1037,144 @@
     },
     {
       "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-21"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 2,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "首轮自报忘记最早/最迟算法；提示后 ve(2)=12 的 max 计算正确，最迟答案却取两条出边约束的最小值而回答 12。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-21"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:8#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 8,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "在明确目标活动后，本人最终算出 vl(4)−7=14；仍属于多次提示后的计算与复述。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-21"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:7#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 7,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-23"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:4#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 4,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "第一具体对象错误是把活动 d 当顶点，并把 vl(2) 当作 l(d)；不是 max/min 算术本身不会。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-23"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:8#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 8,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "本人第 8 轮明确“D 是 2 到 4 这条边”“2 到 5 这条边是 e”，可以保留对象区分修复。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2013_001"
+      ],
+      "knowledge_points": [
+        "DS06-23"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "71934e43e7c5fd9f50c2d9644be3afb65a7f78b99303dd39c19f3ba52d8c2a18",
+      "source_fragment": "turn:7#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-bde30327d71679bf",
+      "source_order": 7,
+      "source_sha256": "115894ad779034292f7852b019f4cf89fdb92156d15aae812291196c8163d5b1",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
       "event_kind": "explanation",
       "event_time": "",
       "evidence_role": "assistant_explanation",
@@ -1248,6 +1386,75 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2015_002"
+      ],
+      "knowledge_points": [
+        "DS06-10"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "94ed72a3150ca7b404fb08892e88073a4b107b4c97a0d0f6fde64bf4034fc2ef",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_order": 2,
+      "source_sha256": "727116e2b00e5d8151adbeea9a356bb5d089de0a61125bf87c6b3ff8568454b3",
+      "summary": "本人知道一路深入，并列出四个合法序列；第一处缺漏是先到 2 回溯后没有枚举先 3 再 1。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_002"
+      ],
+      "knowledge_points": [
+        "DS06-10"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "94ed72a3150ca7b404fb08892e88073a4b107b4c97a0d0f6fde64bf4034fc2ef",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_order": 4,
+      "source_sha256": "727116e2b00e5d8151adbeea9a356bb5d089de0a61125bf87c6b3ff8568454b3",
+      "summary": "助手指定遗漏分支后，本人补出 0231，并改为 5 个；这是提示后补全。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_002"
+      ],
+      "knowledge_points": [
+        "DS06-10"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "94ed72a3150ca7b404fb08892e88073a4b107b4c97a0d0f6fde64bf4034fc2ef",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-94581b9ecb0f6a30",
+      "source_order": 3,
+      "source_sha256": "727116e2b00e5d8151adbeea9a356bb5d089de0a61125bf87c6b3ff8568454b3",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2021_001"
       ],
       "knowledge_points": [
@@ -1448,6 +1655,121 @@
       "source_order": 5,
       "source_sha256": "f83f7efcc4df78bd2330341f4e9134b5d2e1edeaaf0695dc4ea80aeaa3f67ee5",
       "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "abddefcd2970eae7d4409277ea8e8025ad0a5ac57d4beb7af45feda20aef6af4",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_order": 2,
+      "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
+      "summary": "第一处不成立是“15 条边就意味着有 16 个节点是连在一起的”；没有题设支持全部边属于一个分量。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "abddefcd2970eae7d4409277ea8e8025ad0a5ac57d4beb7af45feda20aef6af4",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_order": 4,
+      "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
+      "summary": "本次该知识点的作答证据已保留。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "abddefcd2970eae7d4409277ea8e8025ad0a5ac57d4beb7af45feda20aef6af4",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_order": 3,
+      "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-02"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "abddefcd2970eae7d4409277ea8e8025ad0a5ac57d4beb7af45feda20aef6af4",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_order": 2,
+      "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
+      "summary": "将“没有连在一起的 9 个节点”直接等同全部树的棵数，混淆孤立点和连通分量。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-02"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "abddefcd2970eae7d4409277ea8e8025ad0a5ac57d4beb7af45feda20aef6af4",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-1841b3f0b69d19c8",
+      "source_order": 4,
+      "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
+      "summary": "原轮次 4 已按逐树差额修复，不是第二次独立事件。"
     },
     {
       "correction_result": null,
@@ -3403,8 +3725,146 @@
       "source_order": 7,
       "source_sha256": "40d3325749c032ebea0d40eb5fd79fe4414e2b7ee3f65c5b81cca812ea02fcfe",
       "summary": "补齐其余候选的排除和真实孩子不可被线索覆盖的核查。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-02"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 2,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "将“无右孩子”解释成“没有兄弟节点（即没有同层节点）”；同层不等于兄弟，无下一兄弟也不等于无任何兄弟。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-02"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 4,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "本人后续改用“最后一个孩子”“兄弟链的末尾”，这才是本轮可保留的术语修复。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-15"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "screened_correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 2,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "首答正确说明原树叶结点没有孩子，因此在左孩子右兄弟表示中没有左孩子；只保留这一方向，不写已完成整个存储结构掌握。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-16"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:2#outcome",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 2,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "首答已知左孩子右兄弟，却无法把无右孩子转为每条兄弟链的末尾；不能记成完全不知道转换规则。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-16"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:4#repair",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 4,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "接受链尾提示后，独立在该提示框架内算出非叶 1895，再加根得 1896，并说明其原因。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "hint",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2011_003"
+      ],
+      "knowledge_points": [
+        "DS05-16"
+      ],
+      "observed_date": "2026-09-09",
+      "outcome": null,
+      "prompt_dependency": "unknown",
+      "semantic_annotation_sha256": "fda2eb36204c97472301e285f09fc29e8b2d7b67d371c2572152baafe96998b0",
+      "source_fragment": "turn:3#hint",
+      "source_id": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260909-f8874cae5e97d4a1",
+      "source_order": 3,
+      "source_sha256": "bf4df0b76bd455a28465aefb7f2472c928ab3e3455a87f0a8d9078edb8e49311",
+      "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
     }
   ],
-  "records_sha256": "c758844bbe76095ec67e6c17ad5ae917b7e627a361b497b9d8c54d9f3e23d165",
+  "records_sha256": "9db9fb628796e2e2f46bd85e7cdfdf07f9ce2505f8332016aa6d372bf9dba2cc",
   "schema": "cs408-concept-evidence-snapshot-v1"
 }

@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-ae6aeaefec791f2034a77e7b",
+  "admission_receipt_sha256": "ab26a01bc3c7a89df6005dbfa0bb94747366455962581df3246b7249b3b0e5d4",
+  "campaign_cohort_sha256": "c640029d0c9e20c17ceb2c3637b8d9e49c2f35e74a4341648920b5914dd06250",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2017_001",
+  "formal_result_event_id": "CE-5ac29a03e27af8c60f80",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "fd2daafb94d095d70b98efe1c7863e4036ed9e17f94593b214e8b62f53f57480",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS06_HANDSHAKE_EXTREME",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-09",
+  "target_run_policy": "next_unfrozen_run_only"
+}
