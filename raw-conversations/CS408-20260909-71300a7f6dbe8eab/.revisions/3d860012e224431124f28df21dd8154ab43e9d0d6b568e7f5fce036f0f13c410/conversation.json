@@ -1,0 +1,43 @@
+{
+  "complete_order_preserved": true,
+  "schema_version": "cs408-full-conversation-v1",
+  "truncated": false,
+  "turn_count": 5,
+  "turns": [
+    {
+      "kind": "utterance",
+      "observed_at": null,
+      "ordinal": 1,
+      "role": "assistant",
+      "text": "正确。\n\n判定\n\nCPU 执行时间 \\(T=I\\times CPI/f\\)，所以 \\(T_1/T_2=(2/1.5)/(1/1.2)=1.6\\)，选 \\(C\\) 正确。你已经理清：先由指令数和 CPI 得到总时钟周期数，再除以主频得到秒数。\n\n下一题\n\n真题｜2015 年考研 408 第 12 题\n\n当前原图底部裁切，下面用同一题的完整预处理图显示。\n\n![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets-preprocessed/4975584e9db90eb2947d5c3bce3e968ee1ec27a244bf4c81ced8ef9190ec1470/2015/EXAM408-2015-Q12/question-01.png)\n\n请给出你的选项；如果不确定，也可以先写第一动作。"
+    },
+    {
+      "kind": "reasoning",
+      "observed_at": null,
+      "ordinal": 2,
+      "role": "user",
+      "text": "这道题应该选 C 吧。\n\n汇编语言源程序人写好之后，要先经过汇编编译生成二进制给机器去执行，所以它不是给计算机直接执行的，汇编语言肯定不能选，对吧？这样就把 B、D 排除了。\n\n硬件描述语言程序我不知道是干什么的，对 1、2、3 印象都很模糊。这道题要我蒙我就蒙 C，因为汇编语言很明显不行，而硬件描述语言程序好像跟硬件相关，机器也跟硬件相关，所以我选 C，蒙一个 C。"
+    },
+    {
+      "kind": "hint",
+      "observed_at": null,
+      "ordinal": 3,
+      "role": "assistant",
+      "text": "判定\n\n汇编语言程序确实不能直接执行，这一点你对了。但硬件描述语言程序也不能直接执行。\n\n硬件描述语言（HDL）是用来描述数字电路结构和行为的，不是机器指令。它要经过综合/实现，变成电路配置或门级网表，或者由仿真器解释执行；CPU 不会直接执行 HDL 源程序。\n\n所以硬件能直接执行的是哪一类程序？"
+    },
+    {
+      "kind": "restatement",
+      "observed_at": null,
+      "ordinal": 4,
+      "role": "user",
+      "text": "所以说这道题应该选择 A，对吧？"
+    },
+    {
+      "kind": "frozen_feedback",
+      "observed_at": null,
+      "ordinal": 5,
+      "role": "assistant",
+      "text": "正确。硬件能直接执行的是机器语言程序；汇编语言程序需要先汇编成机器指令，硬件描述语言程序需要经过综合/实现或仿真，不能由 CPU 直接执行。所以选 \\(A\\)。"
+    }
+  ]
+}
