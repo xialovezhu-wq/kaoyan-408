@@ -130,11 +130,11 @@
       "sha256": "2f49794d3e711708c11b970f73c231cd55cfcb99dd526693b2f0914e4be55bd8"
     },
     {
-      "bytes": 1114960,
+      "bytes": 1116754,
       "native_path": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
       "published_path": "learning-state/review-loop/events.jsonl",
       "role": "full_review_event_history",
-      "sha256": "a99dc4fd4e151f226614bae6e8c4631b758f8dfafab367c5a9047c08a7303ddb"
+      "sha256": "a1576bf43a5463cd57c7f290d3c2152038932795c37a203260c1a7d8266f83dc"
     },
     {
       "bytes": 12645,
@@ -162,7 +162,7 @@
     },
     {
       "ref": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
-      "sha256": "a99dc4fd4e151f226614bae6e8c4631b758f8dfafab367c5a9047c08a7303ddb"
+      "sha256": "a1576bf43a5463cd57c7f290d3c2152038932795c37a203260c1a7d8266f83dc"
     },
     {
       "ref": "scripts/morning_coverage_campaign_408.py",
