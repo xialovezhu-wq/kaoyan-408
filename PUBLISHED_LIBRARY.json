@@ -5,8 +5,8 @@
   "branch": "main",
   "publication_target": "local",
   "github_backup_required": false,
-  "local_version": "21fff32763cf6acc39afb584b674b483fa28df277dd43e480d30ecc59f72e9bc",
-  "event_id": "personalization-408:f5b0db739f08bcf81cf921cea7db52c935c4adc41ccbff83e3eca4faee995c61",
+  "local_version": "8ce0ec227b73d37655779c42b5b1c3612b7a4d46dcc64fb830bf7b3d6aafcf41",
+  "event_id": "personalization-408:4923572da993cee77cb965c740d2ff37a489801004f213db1e628f57bff6c7f4",
   "history_index": [
     {
       "archive_locator": "wiki/sources/raw_archives/CS408-20260828-06a7fea3c9c1e73c.md",
@@ -873,10 +873,10 @@
     "due_support": "support/d408/manifest.json"
   },
   "counts": {
-    "files": 14297,
-    "bytes": 808759105,
+    "files": 15503,
+    "bytes": 827784179,
     "current_files": 6441,
-    "retained_files": 7856,
+    "retained_files": 9062,
     "lfs_files": 0
   },
   "source_counts": {
@@ -5362,10 +5362,10 @@
       "formal_source_binding_count": 54,
       "formal_with_points_count": 455,
       "point_count": 599,
-      "record_count": 6981,
+      "record_count": 6984,
       "review_identity_mapping_count": 11,
       "skipped_unbound_source_count": 39,
-      "source_count": 1482,
+      "source_count": 1483,
       "unbound_admin_event_count": 39,
       "unbound_admin_event_ids": [
         "RE-0639940ec7f700158b2a",
@@ -5415,7 +5415,7 @@
     "entrypoint": "personalization/408/manifest.json",
     "formal_version": "7610f2922706fdf20cf6e0419506261720952e7c662ce8bc29fdd606bf848797",
     "schema": "study-personalization-408-v1",
-    "version": "fed1755d7f9acba415102502ce10c09376942ffb52965eb28efc24f4a0f7fce9"
+    "version": "c0ffd091dbdedd64b53f72ece78efbc27fb623cb567c22db8271c84fbcafaf07"
   },
   "web_read": {
     "schema": "study-mcp-local-read-v1",
@@ -5426,7 +5426,7 @@
   "file_inventory": [
     {
       "path": "published-inventory/cdb4ee2aea69-001.jsonl",
-      "sha256": "db2fbf19373ee151b446af829ca3577641ef19e10f81c3201a09337b92721490",
+      "sha256": "ede6909e649a93c3a45592375ee1ea2cff97e12a4116dca0df2020b4c0925a77",
       "count": 472,
       "bytes": 113061,
       "source_directory": "."
@@ -5454,7 +5454,7 @@
     },
     {
       "path": "published-inventory/b2a8e3338e08-001.jsonl",
-      "sha256": "689ca34a6c34899b2c304fc8aafe27b8cd7397214214bcb1c05d91c4d7dc877d",
+      "sha256": "ac663ee4f7cf0d84c3426a810b3f1c867b4e4f6a169fdbba2db5e7a6bbaf42ee",
       "count": 99,
       "bytes": 35852,
       "source_directory": "learning-state"
@@ -5468,51 +5468,58 @@
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-001.jsonl",
-      "sha256": "e2ad0042d99d5f7c14a9a5f350ef3c7bbf2a8cf731decbe441a67a117135b1ff",
-      "count": 1413,
-      "bytes": 524130,
+      "sha256": "b92aae0c346c1e80afa67b9eb47ab727be4aea5275ed574625afa40891629726",
+      "count": 1408,
+      "bytes": 524007,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-002.jsonl",
-      "sha256": "874af01b5ca31126fd71d5f377816494f2d55a4fe91bb936c24d3f78b38fece4",
-      "count": 1412,
-      "bytes": 524108,
+      "sha256": "35292b18fa547cd27738a4471a4728909782b863982d01ed9ccc7196bd4a96b4",
+      "count": 1408,
+      "bytes": 524145,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-003.jsonl",
-      "sha256": "198c6e7cfa52a0944aa82a579a16ee285b2e395692a4d6a40b95906cd7599eae",
-      "count": 1408,
-      "bytes": 524185,
+      "sha256": "474a217ca0977726e724fa203d1dbba01b6282cc4b35efe512fc00a45ae2d1ad",
+      "count": 1407,
+      "bytes": 524069,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-004.jsonl",
-      "sha256": "8738a2e3e64b279b760cdf9e3784a70cb4713bf8b555eefe355f445c413763e5",
-      "count": 1404,
-      "bytes": 524232,
+      "sha256": "59bc05365a6adf9c5bcd20f1ff31dc9274a593e6d3bb491b398cf33a4fe9fa9b",
+      "count": 1406,
+      "bytes": 523973,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-005.jsonl",
-      "sha256": "dcbee7507f5c9f453aefa29ebb17618ca3577d89c25d4316219e10c4a83c7b73",
-      "count": 1405,
-      "bytes": 524246,
+      "sha256": "49d612fd42b87c28877ee781a2c77bd27bb5ab3a2e048612c4bc7e084c6b8025",
+      "count": 1401,
+      "bytes": 523945,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-006.jsonl",
-      "sha256": "5b354733b0cb3f02f60bdf08a04d26f007808f44b35eba157f1ee6c8d1daff10",
-      "count": 1406,
-      "bytes": 524243,
+      "sha256": "b8a9160bf7701b5ce7759cbd401f493645baaf0ef799fb8bf419073c8918ed17",
+      "count": 1402,
+      "bytes": 523952,
       "source_directory": "personalization"
     },
     {
       "path": "published-inventory/fc0e1b7a7a08-007.jsonl",
-      "sha256": "488d6e63203e1c492930deea27e1d56eb71cbec671b0090a0059015e7028a28c",
-      "count": 1069,
-      "bytes": 379712,
+      "sha256": "1d1a2ce51a66196aaebf33c2498f9b205d914f12eab51a6a5a0d7c5672020279",
+      "count": 1400,
+      "bytes": 523922,
+      "source_directory": "personalization"
+    },
+    {
+      "path": "published-inventory/fc0e1b7a7a08-008.jsonl",
+      "sha256": "893a0633e435a255f72951a4841fdec3db410226d7dec652d0da6c4da5b60199",
+      "count": 891,
+      "bytes": 312584,
       "source_directory": "personalization"
     },
     {
@@ -5524,14 +5531,14 @@
     },
     {
       "path": "published-inventory/8c5967fd8486-001.jsonl",
-      "sha256": "68c1cc7b3ee22e2eb1665f37239bdf0dbd1b7a18c5f49bd45e0bf361e2c85bd7",
+      "sha256": "677c0226a95d57fc6a6b6c7f01d0569500faf1f805d8228b112f625b2124abad",
       "count": 2,
       "bytes": 961,
       "source_directory": "scripts"
     },
     {
       "path": "published-inventory/a18603086e5b-001.jsonl",
-      "sha256": "03e26f0dc879ebd12fcde87aa6f7cc2a305becc9f2e744eb74d54b879071aa7a",
+      "sha256": "a37bc34366034050e4d3308b7997ad5ae4b0d0471c7dbe0d2463d45849d4ba00",
       "count": 17,
       "bytes": 8180,
       "source_directory": "support"
