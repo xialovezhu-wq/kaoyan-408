@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0015",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260910-432F5441A975764A",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-10",
+      "campaign_item_commitment_sha256": "1f810acdc4520c9998bdc484cff5889f88f9261e26e05045257031e7acce8a09",
+      "capture_request_id": "RCR-F3FAB32D061648C52A9E2D57",
+      "capture_required": true,
+      "display_receipt_sha256": "5939c6455042cca45dc4616af73ac8118db3a873b762a8d4638ac5e6df41e212",
+      "formal_node_id": "DS_2016_002",
+      "grading_sha256": "55ba7929caa0e12fe37060a122910372ffbc30f8dc352f803c1dc7cccbb85960",
+      "item_id": "MCQ-0015",
+      "pending_outcome_sha256": "f3fab32d061648c52a9e2d5702841da6abcf867bcf2ea198bedc0d7b38674781",
+      "run_id": "MCR-20260910-432F5441A975764A",
+      "segment_id": "MCR-20260910-432F5441A975764A-S001",
+      "segment_ordinal": 0,
+      "surface_kind": "verified_variant",
+      "surface_sha256": "5ffe72a2914e1a5dbfb4b080f550d902f15b113fa1382f59b8da30085a09458a",
+      "terminal_trace_sha256": "71c2bb85da50db6633d50ad7b48ccb0089c48cbe94b5f930adfb2c973cd2a0ec",
+      "true_item_id": "EVB-D442C340D51AA320FFFF8E03",
+      "variant_id": "EVB-D442C340D51AA320FFFF8E03"
+    },
+    "grading_capsule_sha256": "55ba7929caa0e12fe37060a122910372ffbc30f8dc352f803c1dc7cccbb85960",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": null,
+    "question_surface": {
+      "options": {
+        "A": "7条",
+        "B": "21条",
+        "C": "8条",
+        "D": "6条"
+      },
+      "stem": "森林F有29个结点、21条边，按孩子—兄弟规则转换为二叉树T：左指针指向最左孩子，右指针指向下一兄弟，各棵树的根也按次序用右指针相连，不增设任何结点。从T的根出发，仅沿右孩子指针走到空指针为止，共经过多少条非空右链接？"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "high",
+      "corrected_response": "A",
+      "prompt_dependency": "progressive",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EVB-D442C340D51AA320FFFF8E03",
+  "study_date": "2026-09-10",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
