@@ -1,0 +1,49 @@
+{
+  "attachments": [
+    {
+      "byte_count": 50280,
+      "label": "EXAM408-2016-Q12 question image page 1 ({'asset_ordinal': 1, 'source_page': 3})",
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-51026d35c8a87b625ad95062f4ccbf0e7996128191192dd413238957dbac5825.png",
+      "role": "question_image",
+      "sha256": "51026d35c8a87b625ad95062f4ccbf0e7996128191192dd413238957dbac5825"
+    }
+  ],
+  "background_processing": "none",
+  "canonical_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+  "files": [
+    {
+      "byte_count": 6661,
+      "mime_type": "application/json",
+      "relative_path": "conversation.json",
+      "role": "conversation",
+      "sha256": "1e21b0a02adc63e3bc88129bd80180bd59e957de97dfbfd7b8573aac2cb9391f"
+    },
+    {
+      "byte_count": 2157,
+      "mime_type": "application/json",
+      "relative_path": "source.json",
+      "role": "source",
+      "sha256": "1135bece8ef0150c14c8f09ac4dde411f3d3ca166f6908ce9148eac9f94cbad5"
+    },
+    {
+      "byte_count": 50280,
+      "mime_type": "image/png",
+      "relative_path": "attachments/0001-51026d35c8a87b625ad95062f4ccbf0e7996128191192dd413238957dbac5825.png",
+      "role": "question_image",
+      "sha256": "51026d35c8a87b625ad95062f4ccbf0e7996128191192dd413238957dbac5825"
+    }
+  ],
+  "formal_write_count": 0,
+  "item_id": "MCQ-0009",
+  "missing_fields": [],
+  "package_id": "CS408-20260910-3ed1b615f941ddcd",
+  "revision": 1,
+  "schema_version": "cs408-conversation-package-manifest-v1",
+  "sealed": true,
+  "session_id": "MCR-20260910-432F5441A975764A",
+  "source_id": "EXAM408-2016-Q12",
+  "study_date": "2026-09-10",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
