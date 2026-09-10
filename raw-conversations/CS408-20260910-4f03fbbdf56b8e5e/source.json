@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0013",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260910-432F5441A975764A",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-10",
+      "campaign_item_commitment_sha256": "9aee9e39f98bb71707c73945a3a0785a3059000864aa1e340692bd98d75bbb8f",
+      "capture_request_id": "RCR-C52E0456DDE0DEF51A910F7F",
+      "capture_required": true,
+      "display_receipt_sha256": "16a71e1b3d886c09292989f06669606b5215da2c54211d661e98863c9d31728f",
+      "formal_node_id": "CO_2013_003",
+      "grading_sha256": "0faaaedfee73f108af42c3151d8593efc14f91b08f15adf2f9cc9f1f626ec52a",
+      "item_id": "MCQ-0013",
+      "pending_outcome_sha256": "c52e0456dde0def51a910f7f0ce2ed0f0a93c792e631ecf04edd84d11ba543e5",
+      "run_id": "MCR-20260910-432F5441A975764A",
+      "segment_id": "MCR-20260910-432F5441A975764A-S001",
+      "segment_ordinal": 0,
+      "surface_kind": "canonical_original",
+      "surface_sha256": "ded87ef3f0b8847faeada7bb2566f598e449ef8de2314edff8c2f6abed2bd6da",
+      "terminal_trace_sha256": "da06815c5c73f28e9551b635a9b8486c54945375b61b0ca7c76882270733503e",
+      "true_item_id": "EXAM408-2013-Q12",
+      "variant_id": null
+    },
+    "grading_capsule_sha256": "0faaaedfee73f108af42c3151d8593efc14f91b08f15adf2f9cc9f1f626ec52a",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": "8c2a91c0d27a1a006a0953b655df0bfbf5f04201771ae4d04804daf4ffd92840",
+    "question_surface": {
+      "options": {
+        "A": "见题图中的 A 选项",
+        "B": "见题图中的 B 选项",
+        "C": "见题图中的 C 选项",
+        "D": "见题图中的 D 选项"
+      },
+      "stem": "![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2013/EXAM408-2013-Q12/question-01.png)"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "high",
+      "corrected_response": "C",
+      "prompt_dependency": "full",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EXAM408-2013-Q12",
+  "study_date": "2026-09-10",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
