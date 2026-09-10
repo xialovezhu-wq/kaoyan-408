@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0020",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260910-432F5441A975764A",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-10",
+      "campaign_item_commitment_sha256": "a202f93dd328fea012daf7174c728bde57e7fb0a0fffc3792978611839401c36",
+      "capture_request_id": "RCR-F39ADF0B1EF6C02BE1C103E9",
+      "capture_required": true,
+      "display_receipt_sha256": "95b0cfbd0b94f54346ccd803f74966d7b1086cf9d21c7ea85b6f308adf518f0a",
+      "formal_node_id": "CO_2021_001",
+      "grading_sha256": "b36c59670610f08cc7b7e4980a538db8cc0162b88d8ee89aa91862539d3b12d6",
+      "item_id": "MCQ-0020",
+      "pending_outcome_sha256": "f39adf0b1ef6c02be1c103e9eda8c967b5158b805927464bd3999b4af21cabe1",
+      "run_id": "MCR-20260910-432F5441A975764A",
+      "segment_id": "MCR-20260910-432F5441A975764A-S002",
+      "segment_ordinal": 1,
+      "surface_kind": "canonical_original",
+      "surface_sha256": "d4685f7d1662b476184949d201cb81b04aab602da2ac94b4947290d72fda2499",
+      "terminal_trace_sha256": "dbb3ddbfe4ce651a03a2e659a95f8f2d06615003c01c8149ebfbb98f8ee60367",
+      "true_item_id": "EXAM408-2021-Q12",
+      "variant_id": null
+    },
+    "grading_capsule_sha256": "b36c59670610f08cc7b7e4980a538db8cc0162b88d8ee89aa91862539d3b12d6",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": "202f12a5bd33198a8162c87b651ced7860545b8996882a36977b4eaf8eef5812",
+    "question_surface": {
+      "options": {
+        "A": "见题图中的 A 选项",
+        "B": "见题图中的 B 选项",
+        "C": "见题图中的 C 选项",
+        "D": "见题图中的 D 选项"
+      },
+      "stem": "![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2021/EXAM408-2021-Q12/question-01.png)\n![题目 2](/Users/xiazhibin/Documents/kaoyan-408-details/corpus/408统考真题/assets/2021/EXAM408-2021-Q12/question-02.png)"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "low",
+      "corrected_response": "D",
+      "prompt_dependency": "full",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "EXAM408-2021-Q12",
+  "study_date": "2026-09-10",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
