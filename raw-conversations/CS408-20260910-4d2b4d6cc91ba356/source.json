@@ -1,0 +1,49 @@
+{
+  "item_id": "MCQ-0024",
+  "schema_version": "cs408-conversation-source-v1",
+  "session_id": "MCR-20260910-432F5441A975764A",
+  "source": {
+    "campaign_binding": {
+      "campaign_date": "2026-09-10",
+      "campaign_item_commitment_sha256": "bff9f7fb1bbe6f7dd160e41c9918700b1637a853f562212a91d238ad9d13fb9b",
+      "capture_request_id": "RCR-F38C654F8C36FDC2887E8B3E",
+      "capture_required": true,
+      "display_receipt_sha256": "4a01bb7e2f9632c31a90b8696bebc23152bf32706263b29866832de75df987d5",
+      "formal_node_id": "DS_2023_005",
+      "grading_sha256": "05ea0d88429fbce5ce22ab8a867b232cb42a9648af13253e4fc9f7a907ea2978",
+      "item_id": "MCQ-0024",
+      "pending_outcome_sha256": "f38c654f8c36fdc2887e8b3e9462f1221764ce1bee6a3f9413f7bd0cc8575fcb",
+      "run_id": "MCR-20260910-432F5441A975764A",
+      "segment_id": "MCR-20260910-432F5441A975764A-S002",
+      "segment_ordinal": 1,
+      "surface_kind": "formal_original",
+      "surface_sha256": "8de6dda7683e65f0adb16e5666911f7f9a6d163ec7f906ffc776e53fa3a7cbef",
+      "terminal_trace_sha256": "c06abd93d61272a82183ee08ba8f64e379e1b158872af89896a65699f0c0500d",
+      "true_item_id": "FOS-900C9689FF75A616CD1E1ECB",
+      "variant_id": null
+    },
+    "grading_capsule_sha256": "05ea0d88429fbce5ce22ab8a867b232cb42a9648af13253e4fc9f7a907ea2978",
+    "origin": "morning_coverage_campaign_v1",
+    "question_asset_sha256": "fbf5903d5b849e47cae7850ecf601a6c8fbd9c8e267ec88f435c739bf9793ca9",
+    "question_surface": {
+      "options": {
+        "A": "见题图中的 A 选项",
+        "B": "见题图中的 B 选项",
+        "C": "见题图中的 C 选项",
+        "D": "见题图中的 D 选项"
+      },
+      "stem": "![题目 1](/Users/xiazhibin/Documents/kaoyan-408-details/assets/DS_2023_005/question-01.png)"
+    },
+    "schema": "cs408-campaign-package-source-v1",
+    "terminal_assessment": {
+      "confidence": "medium",
+      "corrected_response": "C",
+      "prompt_dependency": "full",
+      "reasoning_result": "sound"
+    }
+  },
+  "source_id": "FOS-900C9689FF75A616CD1E1ECB",
+  "study_date": "2026-09-10",
+  "subject": "cs408",
+  "timezone": "Asia/Shanghai"
+}
