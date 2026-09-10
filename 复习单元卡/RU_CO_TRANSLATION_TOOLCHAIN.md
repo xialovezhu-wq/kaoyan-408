@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_CO_TRANSLATION_TOOLCHAIN
 subject: 计算机组成原理
 module: CO01 计算机系统概述
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_CO_TRANSLATION_TOOLCHAIN · 程序翻译工具链：阶段顺序与各工具职责
 
 - 覆盖正式节点：CO_2016_003、CO_2022_002
 - 旧复习单元：RU_CO01_06_CO04_22、RU_CO_2016_003、RU_CO_2022_002
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

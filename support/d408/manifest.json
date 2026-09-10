@@ -98,14 +98,14 @@
   "config_path": "support/d408/default-config.json",
   "current_cohort_selector": {
     "authoritative_master_path": "节点总表.md",
-    "master_sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d",
+    "master_sha256": "65927d83f12dae920aac85fb706ee37cea51bfc84dbebab01b6849f532ca5856",
     "matching_existing_snapshots": [
       {
-        "bytes": 8818,
-        "cohort_sha256": "c640029d0c9e20c17ceb2c3637b8d9e49c2f35e74a4341648920b5914dd06250",
-        "formal_node_count": 455,
-        "published_path": "learning-state/review-campaign/formal-admission/cohorts/2153947183c1e5175406c4ce29e5357b423390f2c663398cab3969a92c8015a1.json",
-        "sha256": "1f4575a9f26340f3827b8d3ae2c8ec501dd2de3e306dd22c4f2041a420fd21db"
+        "bytes": 8913,
+        "cohort_sha256": "ed0f1b08ee37881505a1a8c467436716e17c7334c723fdf4d968556add92bf0f",
+        "formal_node_count": 460,
+        "published_path": "learning-state/review-campaign/formal-admission/cohorts/29871fe76fbd4580576590100089c24eee25bb474164ba8782cfe8140300cc65.json",
+        "sha256": "ab7d4cce9e9d350e7d5d491d5449d6be1d446a70d58c289dd983a24d1cde5105"
       }
     ],
     "rebuild_when_no_match": "run read_only_due.py with the explicit target date",
@@ -116,53 +116,53 @@
   "formal_writes_allowed": false,
   "inputs": [
     {
-      "bytes": 392135,
+      "bytes": 397333,
       "native_path": "节点总表.md",
       "published_path": "节点总表.md",
       "role": "formal_cohort_and_main_concepts",
-      "sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d"
+      "sha256": "65927d83f12dae920aac85fb706ee37cea51bfc84dbebab01b6849f532ca5856"
     },
     {
-      "bytes": 288838,
+      "bytes": 291719,
       "native_path": "原题复做轨总表.md",
       "published_path": "原题复做轨总表.md",
       "role": "accepted_original_track_eligibility",
-      "sha256": "9a3f93e78f51eaaca0e2757fe282fb05f6a5e303e2c10b851b7e6476a780ec47"
+      "sha256": "ad0221604fa871bfeb1f748273d7c8e4da8873dc24945a49a442381c815f3e92"
     },
     {
-      "bytes": 1258417,
+      "bytes": 1323548,
       "native_path": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
       "published_path": "learning-state/review-loop/events.jsonl",
       "role": "full_review_event_history",
-      "sha256": "647aff470bd9b237900bfab3aed598e8946557c71ea1da6d85e794ab6c01feef"
+      "sha256": "5ac7d0ff864a29e9acdac06c80e367d842bb22e4a540ee74c927c5340a414422"
     },
     {
-      "bytes": 12645,
+      "bytes": 27845,
       "native_path": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
       "published_path": "learning-state/review-campaign/admissions.jsonl",
       "role": "native_campaign_admissions",
-      "sha256": "0ced228ae920378390e1c9c20c994b9c582dfd4eb20e9a4ee1d809cdfeca0207"
+      "sha256": "80f6d2491c47a750e07321efa9361cbefc6da2b415c890708d297fa65d7d1854"
     },
     {
-      "bytes": 159154,
+      "bytes": 272721,
       "native_path": "support/d408/concept-review-evidence.json",
       "published_path": "support/d408/concept-review-evidence.json",
       "role": "concept_priority_evidence",
-      "sha256": "e0326bd401812941c7b238f16f9ff0ead4dde3df3d46a07e7afaf7f1347c754e"
+      "sha256": "30ab76a90b5744b7782a9eb11490f2958d3c74c3f105a520fef898057edcf3fd"
     }
   ],
   "native_source_bindings": [
     {
       "ref": "节点总表.md",
-      "sha256": "0e00ef353844e590172dcb1c0c72f83ae3944f93a15e8f16d2f36e964e3b1c9d"
+      "sha256": "65927d83f12dae920aac85fb706ee37cea51bfc84dbebab01b6849f532ca5856"
     },
     {
       "ref": "原题复做轨总表.md",
-      "sha256": "9a3f93e78f51eaaca0e2757fe282fb05f6a5e303e2c10b851b7e6476a780ec47"
+      "sha256": "ad0221604fa871bfeb1f748273d7c8e4da8873dc24945a49a442381c815f3e92"
     },
     {
       "ref": "wiki/study_vaults/408-full/state/review-loop/events.jsonl",
-      "sha256": "647aff470bd9b237900bfab3aed598e8946557c71ea1da6d85e794ab6c01feef"
+      "sha256": "5ac7d0ff864a29e9acdac06c80e367d842bb22e4a540ee74c927c5340a414422"
     },
     {
       "ref": "scripts/morning_coverage_campaign_408.py",
@@ -170,7 +170,7 @@
     },
     {
       "ref": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
-      "sha256": "0ced228ae920378390e1c9c20c994b9c582dfd4eb20e9a4ee1d809cdfeca0207"
+      "sha256": "80f6d2491c47a750e07321efa9361cbefc6da2b415c890708d297fa65d7d1854"
     }
   ],
   "preselected_due_list_included": false,

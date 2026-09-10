@@ -37,3 +37,12 @@
 ## 图片 QA 记录
 
 - 2026-07-03 partial-pass V 批：直接查看当前题图，题图主体清晰可复做，右侧浅水印不遮挡关键文字，未见答案提示；当前无独立解析图，折叠解析文字已补足总线速率计算过程。Tutor 安全范围：`CO06-03`。
+
+<!-- cs408-display-assets-v1:CS408-20260910-7aa18548684cec2c:start -->
+
+## 原始资料与归档
+
+> [!question]- 原始题面资料
+> ![[assets/CO_UNK_056/question-798963708ea3f076.png]]
+
+<!-- cs408-display-assets-v1:CS408-20260910-7aa18548684cec2c:end -->

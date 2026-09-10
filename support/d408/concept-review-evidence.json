@@ -6,6 +6,535 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:2#CO01-12",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 2,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "把主频与 CPI 说成倒数关系，忽略时钟周期才是主频倒数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:5#CO01-12",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 5,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "说明时钟周期为主频倒数并给出两种等价写法。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-12"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:8#CO01-12",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 8,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "提示后按每秒时钟周期数起算并完成换算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:2#CO01-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 2,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "不能回忆 CPI 与主频的关系。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:3#CO01-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 3,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "区分主频、CPI 与指令条数三者的量纲。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:8#CO01-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 8,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "提示后正确按各类指令比例加权求和得到平均 CPI。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:2#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 2,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "首答无法建立 MIPS 与主频、CPI 的关系，先停在按指令总条数求解的入口。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:3#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 3,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "讲解平均 CPI 加权求和与 MIPS 主频除以 CPI 的固定三步。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:6#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 6,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "按主频除以平均 CPI 得到小数结果，方向正确但未完成百万量级换算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:7#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 7,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "用 MHz 口径说明除以 CPI 后单位随主频变化。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2013_003"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "07f54713c9dacf2a31869ae06f17ac8be2690ad0c097540d75db41d7aad17589",
+      "source_fragment": "turn:8#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4f03fbbdf56b8e5e",
+      "source_order": 8,
+      "source_sha256": "45d94d028b74b6e014b69fd3234800bdfa5c3a1c73432e5cc5955290bea65ac8",
+      "summary": "提示后完整复述每秒周期数、平均 CPI 与百万条三步换算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-02"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:2#DS07-02",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 2,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "用探测路径变长解释平均查找长度增大。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:2#DS07-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 2,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "承认装填因子不熟，并把散列函数描述成只有取模一种构造方法。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:5#DS07-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 5,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "补齐散列函数的常见构造方法与三条共同要求。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:3#DS07-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 3,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "说明堆积发生在冲突处理阶段而非建表之前。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:5#DS07-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 5,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "说明开放定址法逐步探测与拉链法不产生堆积的差别。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:2#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 2,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "正确判断堆积直接影响平均查找长度并排除其余干扰项。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2014_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "0918f5b25b5ef2c475e6048e10be8af1617c37c8f2b6d89623f1f3eab96a5963",
+      "source_fragment": "turn:3#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-00171db10b33eac0",
+      "source_order": 3,
+      "source_sha256": "ffe1b447940ac1ed044c234a6a2880155841508988b0e48d668b93d02ed10518",
+      "summary": "给出装填因子、堆积与平均查找长度之间的因果方向。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "096cb9eb171d00d2d6237a0a16dba89e39052f5fbb8d0796b51b28abcc8d5f38",
+      "source_fragment": "turn:2#DS05-01",
+      "source_id": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_order": 2,
+      "source_sha256": "6f3b2bb84f93f077db39fde3cc04fd51606f93469f53f0c25968a5ad9a9fcc33",
+      "summary": "由结点数与边数差额正确推出森林中树的棵数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "096cb9eb171d00d2d6237a0a16dba89e39052f5fbb8d0796b51b28abcc8d5f38",
+      "source_fragment": "turn:3#DS05-01",
+      "source_id": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_order": 3,
+      "source_sha256": "6f3b2bb84f93f077db39fde3cc04fd51606f93469f53f0c25968a5ad9a9fcc33",
+      "summary": "区分链上的结点数与链接数。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-01"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "096cb9eb171d00d2d6237a0a16dba89e39052f5fbb8d0796b51b28abcc8d5f38",
+      "source_fragment": "turn:4#DS05-01",
+      "source_id": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_order": 4,
+      "source_sha256": "6f3b2bb84f93f077db39fde3cc04fd51606f93469f53f0c25968a5ad9a9fcc33",
+      "summary": "提示后按结点数与链接数差一修正结论。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS05-02"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "096cb9eb171d00d2d6237a0a16dba89e39052f5fbb8d0796b51b28abcc8d5f38",
+      "source_fragment": "turn:2#DS05-02",
+      "source_id": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_order": 2,
+      "source_sha256": "6f3b2bb84f93f077db39fde3cc04fd51606f93469f53f0c25968a5ad9a9fcc33",
+      "summary": "把树的棵数直接当成非空链接数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2016_002"
+      ],
+      "knowledge_points": [
+        "DS06-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "096cb9eb171d00d2d6237a0a16dba89e39052f5fbb8d0796b51b28abcc8d5f38",
+      "source_fragment": "turn:3#DS06-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-d3e91ac902ac4d5c",
+      "source_order": 3,
+      "source_sha256": "6f3b2bb84f93f077db39fde3cc04fd51606f93469f53f0c25968a5ad9a9fcc33",
+      "summary": "讲解以孩子兄弟表示下的根链作结构对照。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2013_001"
       ],
       "knowledge_points": [
@@ -213,6 +742,144 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:2#CO01-06",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 2,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "把生成汇编语言源程序的一步当成本题所问，未区分四个工具各自吃进与产出什么。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:3#CO01-06",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 3,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "给出高级语言到机器级目标代码的完整流程与四个工具职责。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO01-06"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:6#CO01-06",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 6,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "提示后按各自输入输出排除汇编、链接与解释三个工具。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO04-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:4#CO04-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 4,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "追问机器级目标代码文件是否就是汇编语言源程序，两者被混为一层。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO04-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:5#CO04-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 5,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "区分汇编语言源程序文本与机器码目标文件。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2016_003"
+      ],
+      "knowledge_points": [
+        "CO04-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "10c6f4bb9fb9690967d59e2b200521b90cf714eaa2ff64312d64ee18b57db1f0",
+      "source_fragment": "turn:6#CO04-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3ed1b615f941ddcd",
+      "source_order": 6,
+      "source_sha256": "9f18081d033ed8f13b2cc699a918a3f435151e6ecca1b52d89ca0441ae173681",
+      "summary": "提示后能说明汇编语言源程序是中间文本而目标文件是机器码。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2023_004"
       ],
       "knowledge_points": [
@@ -298,6 +965,98 @@
       "source_order": 2,
       "source_sha256": "0fc1e29a3a147c57171c313e5d0914088eb4b8bdcc9260cc04998117ae3325d0",
       "summary": "首答明确叶结点通过指针相连属于 B+ 树而非 B 树，支持该结构区别本次独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_005"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "2e9263ee0d4e58fad19f4b74a95611bc5247a361c0da928422d3c57c6ff2aff8",
+      "source_fragment": "turn:2#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_order": 2,
+      "source_sha256": "d4dff43786c01b179377112e9e86db3d7ef4783b43b28a2241414252648635f7",
+      "summary": "把程序计数器判成对程序员不可见，并把内存变量对应到存储器数据寄存器。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_005"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "2e9263ee0d4e58fad19f4b74a95611bc5247a361c0da928422d3c57c6ff2aff8",
+      "source_fragment": "turn:3#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_order": 3,
+      "source_sha256": "d4dff43786c01b179377112e9e86db3d7ef4783b43b28a2241414252648635f7",
+      "summary": "给出能否直接写进汇编指令的判据并逐项核对四个候选。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_005"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "2e9263ee0d4e58fad19f4b74a95611bc5247a361c0da928422d3c57c6ff2aff8",
+      "source_fragment": "turn:5#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_order": 5,
+      "source_sha256": "d4dff43786c01b179377112e9e86db3d7ef4783b43b28a2241414252648635f7",
+      "summary": "用分支与循环在汇编层落到流程控制状态再次说明可见性。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_005"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "2e9263ee0d4e58fad19f4b74a95611bc5247a361c0da928422d3c57c6ff2aff8",
+      "source_fragment": "turn:6#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eea66b6332ccafb8",
+      "source_order": 6,
+      "source_sha256": "d4dff43786c01b179377112e9e86db3d7ef4783b43b28a2241414252648635f7",
+      "summary": "提示后按转移改写与访存中转两类动作说明可见性判据。"
     },
     {
       "correction_result": null,
@@ -850,6 +1609,213 @@
       "source_order": 5,
       "source_sha256": "b9addee46f16b68e2ea3c4d73dfbdbe45513fb29b8259476a3fa0b52a563b5a6",
       "summary": "只概括用递归，未完整复述递推关系或实际重算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "CO_UNK_056"
+      ],
+      "knowledge_points": [
+        "CO06-03"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "3babd4f211cb84eeb50f8322364c917a0571a4fb069cfc1745911f33412b10ee",
+      "source_fragment": "turn:4#CO06-03",
+      "source_id": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_order": 4,
+      "source_sha256": "437a1bef5fd3c3e3af33341ac197f40d01c4d486dbc907ff5fca16c5d0e72919",
+      "summary": "报告无法把总线带宽与时钟周期、总线周期对应起来，未给出任何计算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_UNK_056"
+      ],
+      "knowledge_points": [
+        "CO06-03"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "3babd4f211cb84eeb50f8322364c917a0571a4fb069cfc1745911f33412b10ee",
+      "source_fragment": "turn:5#CO06-03",
+      "source_id": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_order": 5,
+      "source_sha256": "437a1bef5fd3c3e3af33341ac197f40d01c4d486dbc907ff5fca16c5d0e72919",
+      "summary": "拆出时钟周期、总线周期与一次传送量三层并给出带宽公式。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_UNK_056"
+      ],
+      "knowledge_points": [
+        "CO06-03"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "3babd4f211cb84eeb50f8322364c917a0571a4fb069cfc1745911f33412b10ee",
+      "source_fragment": "turn:6#CO06-03",
+      "source_id": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-7aa18548684cec2c",
+      "source_order": 6,
+      "source_sha256": "437a1bef5fd3c3e3af33341ac197f40d01c4d486dbc907ff5fca16c5d0e72919",
+      "summary": "提示后按三层量复述并得出带宽结果。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:2#DS06-14",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 2,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "判断最小生成树可以不包含某条最小权边，机制是两端点已经连通。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:6#DS06-14",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 6,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "把权值更小也不会选用作为理由，与最小性的条件冲突。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:7#DS06-14",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 7,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "指出被舍弃边不可能严格小于路径上的边，并给出等权环条件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:8#DS06-14",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 8,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "用等权环与严格更小两种对照说明条件。"
+    },
+    {
+      "correction_result": "partial",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-14"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:9#DS06-14",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 9,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "要求跳过本题，未补充等权环这一充分条件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_002"
+      ],
+      "knowledge_points": [
+        "DS06-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "4f2772223b45d75b5af2036b4e07e2469da608a97fa660d50b32f1dc664b57f0",
+      "source_fragment": "turn:6#DS06-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-eb59ccbed9bb3304",
+      "source_order": 6,
+      "source_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+      "summary": "说明从一个顶点向外扩张，不同起点可能得到不同树而总代价唯一。"
     },
     {
       "correction_result": null,
@@ -1451,6 +2417,558 @@
     },
     {
       "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2018_006"
+      ],
+      "knowledge_points": [
+        "CO05-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "99054af50949a60cae4deade2a97a2f818dfd48e5687442344b49b1ccb99609b",
+      "source_fragment": "turn:3#CO05-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_order": 3,
+      "source_sha256": "dc0c8380cd86dc197efc5e2fdd43fbcfa98c4b605e15aaa60fdcf4ac953614ac",
+      "summary": "讲解区分隐指令与保护现场的分工。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2018_006"
+      ],
+      "knowledge_points": [
+        "CO05-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "99054af50949a60cae4deade2a97a2f818dfd48e5687442344b49b1ccb99609b",
+      "source_fragment": "turn:2#CO05-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_order": 2,
+      "source_sha256": "dc0c8380cd86dc197efc5e2fdd43fbcfa98c4b605e15aaa60fdcf4ac953614ac",
+      "summary": "在抓手提示下选中，并说明优先级不按请求到达先后排队。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2018_006"
+      ],
+      "knowledge_points": [
+        "CO05-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "99054af50949a60cae4deade2a97a2f818dfd48e5687442344b49b1ccb99609b",
+      "source_fragment": "turn:3#CO05-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_order": 3,
+      "source_sha256": "dc0c8380cd86dc197efc5e2fdd43fbcfa98c4b605e15aaa60fdcf4ac953614ac",
+      "summary": "逐条辨析四项并给出中断隐指令与响应时点的边界。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2018_006"
+      ],
+      "knowledge_points": [
+        "CO05-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "99054af50949a60cae4deade2a97a2f818dfd48e5687442344b49b1ccb99609b",
+      "source_fragment": "turn:4#CO05-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-11c63205accd183d",
+      "source_order": 4,
+      "source_sha256": "dc0c8380cd86dc197efc5e2fdd43fbcfa98c4b605e15aaa60fdcf4ac953614ac",
+      "summary": "复述只有处于开中断状态才响应外部可屏蔽请求。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-02"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:2#DS07-02",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 2,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "不知道平均查找长度中失败情形的求法。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-02"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:7#DS07-02",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 7,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "区分成功与失败两种平均查找长度的口径。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-02"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:10#DS07-02",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 10,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "表示理解平均查找长度的定义。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:5#DS07-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 5,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "讲解给出表状态与各失败入口的比较过程，散列表结构作为题面场景使用。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-18"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:2#DS07-18",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 2,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "正确按散列函数计算各关键字的初始地址。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:2#DS07-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 2,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "未按开放定址法的探测序列处理冲突。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:3#DS07-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 3,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "说明探测序列与再散列的区别。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:2#DS07-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 2,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "把线性探测再散列写成重新用同一个散列函数计算地址，冲突后的落位因此偏离。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:3#DS07-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 3,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "给出线性探测的地址序列并纠正第二步落位。"
+    },
+    {
+      "correction_result": "partial",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:4#DS07-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 4,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "接受纠正后改对冲突落位，但对删除标记与失败查找仍不理解。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:5#DS07-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 5,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "完整走一遍表状态并说明被删除位置变成墓碑。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:2#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 2,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "报告不知道查找失败的平均查找长度如何计算。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:3#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 3,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "给出失败查找的比较口径与分母为表长。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:4#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 4,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "仍要求重新讲解失败查找的求法。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:5#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 5,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "逐入口列出比较次数并给出平均值。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:6#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 6,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "知道本例结果但不理解该指标定义。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:7#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 7,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "给出一句话定义并派生出分母、终止位置与墓碑三条规则。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:8#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 8,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "追问为什么失败要除以表长而成功除以元素个数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:9#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 9,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "用被平均样本个数解释两个分母的不同。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "DS_2023_005"
+      ],
+      "knowledge_points": [
+        "DS07-22"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "9f10a808839ec7581db1748823c5428124829be6ed2a711c85c8c86bcf336970",
+      "source_fragment": "turn:10#DS07-22",
+      "source_id": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-4d2b4d6cc91ba356",
+      "source_order": 10,
+      "source_sha256": "df7ec174ec6968ccc50f4b67c465e83bcb449cb3fbd7bfdfc425bd72bad64746",
+      "summary": "表示理解后结束本题。"
+    },
+    {
+      "correction_result": null,
       "event_kind": "outcome",
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
@@ -1662,6 +3180,190 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "OS_2010_001"
+      ],
+      "knowledge_points": [
+        "OS01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "a0d0be193d15e73145a6f52f05a64244a40f0de36ac6bd96eaf1e80b6c15a874",
+      "source_fragment": "turn:2#OS01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_order": 2,
+      "source_sha256": "ab09190f50552d0325f3fbe67fd225151bb7b740078f43330a8979f83bb92c7a",
+      "summary": "认为应用不能执行系统调用，改判为库函数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "OS_2010_001"
+      ],
+      "knowledge_points": [
+        "OS01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "a0d0be193d15e73145a6f52f05a64244a40f0de36ac6bd96eaf1e80b6c15a874",
+      "source_fragment": "turn:3#OS01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_order": 3,
+      "source_sha256": "ab09190f50552d0325f3fbe67fd225151bb7b740078f43330a8979f83bb92c7a",
+      "summary": "说明应用通过陷入类指令发起系统调用并由内核完成特权部分。"
+    },
+    {
+      "correction_result": "partial",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "OS_2010_001"
+      ],
+      "knowledge_points": [
+        "OS01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "a0d0be193d15e73145a6f52f05a64244a40f0de36ac6bd96eaf1e80b6c15a874",
+      "source_fragment": "turn:4#OS01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f54aa77f772a3ed4",
+      "source_order": 4,
+      "source_sha256": "ab09190f50552d0325f3fbe67fd225151bb7b740078f43330a8979f83bb92c7a",
+      "summary": "接受结论并概括为唯一入口，未自行说明权限检查边界。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_006"
+      ],
+      "knowledge_points": [
+        "CO05-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "aaf062fba7f861a55cfef5d177ac3de14bc542e397f740bf1f196669e09e1632",
+      "source_fragment": "turn:2#CO05-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_order": 2,
+      "source_sha256": "38d53630230e0efdf7cab127d25153e8ab0ae75a5e2f1ae2970ce8cc69c70b91",
+      "summary": "未把硬件在进入服务程序前完成的关中断、保存断点与引出服务分开。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_006"
+      ],
+      "knowledge_points": [
+        "CO05-20"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "aaf062fba7f861a55cfef5d177ac3de14bc542e397f740bf1f196669e09e1632",
+      "source_fragment": "turn:3#CO05-20",
+      "source_id": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_order": 3,
+      "source_sha256": "38d53630230e0efdf7cab127d25153e8ab0ae75a5e2f1ae2970ce8cc69c70b91",
+      "summary": "说明中断隐指令负责的三件事及其发生位置。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2010_006"
+      ],
+      "knowledge_points": [
+        "CO05-21"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "aaf062fba7f861a55cfef5d177ac3de14bc542e397f740bf1f196669e09e1632",
+      "source_fragment": "turn:2#CO05-21",
+      "source_id": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_order": 2,
+      "source_sha256": "38d53630230e0efdf7cab127d25153e8ab0ae75a5e2f1ae2970ce8cc69c70b91",
+      "summary": "把保存断点与保护现场混为一事，并按错误的硬件软件分界排序。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2010_006"
+      ],
+      "knowledge_points": [
+        "CO05-21"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "aaf062fba7f861a55cfef5d177ac3de14bc542e397f740bf1f196669e09e1632",
+      "source_fragment": "turn:3#CO05-21",
+      "source_id": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_order": 3,
+      "source_sha256": "38d53630230e0efdf7cab127d25153e8ab0ae75a5e2f1ae2970ce8cc69c70b91",
+      "summary": "区分中断隐指令与中断服务程序内的软件流程。"
+    },
+    {
+      "correction_result": "partial",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "CO_2010_006"
+      ],
+      "knowledge_points": [
+        "CO05-21"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "aaf062fba7f861a55cfef5d177ac3de14bc542e397f740bf1f196669e09e1632",
+      "source_fragment": "turn:4#CO05-21",
+      "source_id": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f048051bf8f20215",
+      "source_order": 4,
+      "source_sha256": "38d53630230e0efdf7cab127d25153e8ab0ae75a5e2f1ae2970ce8cc69c70b91",
+      "summary": "认下审题范围错误并要求跳过，未复述服务程序内的完整顺序。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2016_002"
       ],
       "knowledge_points": [
@@ -1770,6 +3472,190 @@
       "source_order": 4,
       "source_sha256": "f1d2c78d1c79e4d473c956a656a9f713a1eda7c50fe1f2604695db09312b29c5",
       "summary": "原轮次 4 已按逐树差额修复，不是第二次独立事件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-04"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:5#DS05-04",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 5,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "说明各类左子树规模互不重叠因此可以相加。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-04"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:6#DS05-04",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 6,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "按规模拆分累计得出结论。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-09"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:2#DS05-09",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 2,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "正确说明先序序列的第一个结点为根、其余结点分成连续两段。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-10"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:3#DS05-10",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 3,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "讲解用中序约束作对照说明本类计数不使用中序。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:2#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 2,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "把固定先序约束下的结构计数理解成剩余结点的排列。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:3#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 3,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "说明先序序列固定的是访问顺序，计数对象是树的形状。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:5#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 5,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "按左子树规模拆分并给出递推与累计方法。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2015_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "adc2f77c712ac4c736cdc1e5dc0c014e3ae0b578a7ced7a2c9ab4c37f8420dd7",
+      "source_fragment": "turn:6#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0c768f70ca108e60",
+      "source_order": 6,
+      "source_sha256": "e7886da878a5d2ec632f0311a0037f6357950189751bc402c9615ae47856f660",
+      "summary": "提示后按四种规模划分累计得出结果，其中一项写成等价乘积。"
     },
     {
       "correction_result": null,
@@ -1961,6 +3847,121 @@
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
       "formal_ids": [
+        "DS_2012_001"
+      ],
+      "knowledge_points": [
+        "DS05-09"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b0004ba3c912ffe53e253b6b77787d1f85f4f394fb2aa7ececb737a4a1f9e728",
+      "source_fragment": "turn:4#DS05-09",
+      "source_id": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_order": 4,
+      "source_sha256": "fc4ac5bb4ae32711bceb5e8790537e819ea6a77853224ff2f4aa7b1ac96e2cbb",
+      "summary": "正确使用先序遍历根左右的顺序。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_001"
+      ],
+      "knowledge_points": [
+        "DS05-11"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b0004ba3c912ffe53e253b6b77787d1f85f4f394fb2aa7ececb737a4a1f9e728",
+      "source_fragment": "turn:4#DS05-11",
+      "source_id": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_order": 4,
+      "source_sha256": "fc4ac5bb4ae32711bceb5e8790537e819ea6a77853224ff2f4aa7b1ac96e2cbb",
+      "summary": "正确使用后序遍历左右根的顺序。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b0004ba3c912ffe53e253b6b77787d1f85f4f394fb2aa7ececb737a4a1f9e728",
+      "source_fragment": "turn:4#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_order": 4,
+      "source_sha256": "fc4ac5bb4ae32711bceb5e8790537e819ea6a77853224ff2f4aa7b1ac96e2cbb",
+      "summary": "把整棵树不能唯一还原直接推成本题所问的局部关系也不能确定。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2012_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b0004ba3c912ffe53e253b6b77787d1f85f4f394fb2aa7ececb737a4a1f9e728",
+      "source_fragment": "turn:5#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_order": 5,
+      "source_sha256": "fc4ac5bb4ae32711bceb5e8790537e819ea6a77853224ff2f4aa7b1ac96e2cbb",
+      "summary": "给出只看前序第二个位置与后序倒数第二个位置的局部判定规则。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2012_001"
+      ],
+      "knowledge_points": [
+        "DS05-13"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b0004ba3c912ffe53e253b6b77787d1f85f4f394fb2aa7ececb737a4a1f9e728",
+      "source_fragment": "turn:6#DS05-13",
+      "source_id": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-3b92f468f8684490",
+      "source_order": 6,
+      "source_sha256": "fc4ac5bb4ae32711bceb5e8790537e819ea6a77853224ff2f4aa7b1ac96e2cbb",
+      "summary": "复述两个位置相同与不同各自对应的孩子结构。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
         "DS_2017_001"
       ],
       "knowledge_points": [
@@ -2000,6 +4001,121 @@
       "source_order": 2,
       "source_sha256": "3219b21dbb1cb3b94013510067cda89422289e0a8b82a2c9c07aad1f78187021",
       "summary": "首答“一条边对应两个度”在简单无向图语境中正确，本次没有把度数总和当成边数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2021_001"
+      ],
+      "knowledge_points": [
+        "CO01-09"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b344e46662b618080af6eb60ad7aa2c1b2b6659c36d6ff88130d88e6e884f0bd",
+      "source_fragment": "turn:3#CO01-09",
+      "source_id": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_order": 3,
+      "source_sha256": "f5b78817cf504b2b74a9be564826a8b5c935b0c4358157ad4b0312295106b499",
+      "summary": "讲解区分速率类指标与容量类词头。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2021_001"
+      ],
+      "knowledge_points": [
+        "CO01-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b344e46662b618080af6eb60ad7aa2c1b2b6659c36d6ff88130d88e6e884f0bd",
+      "source_fragment": "turn:3#CO01-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_order": 3,
+      "source_sha256": "f5b78817cf504b2b74a9be564826a8b5c935b0c4358157ad4b0312295106b499",
+      "summary": "以 MIPS 所在的十进制词头体系作对照。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2021_001"
+      ],
+      "knowledge_points": [
+        "CO01-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b344e46662b618080af6eb60ad7aa2c1b2b6659c36d6ff88130d88e6e884f0bd",
+      "source_fragment": "turn:4#CO01-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_order": 4,
+      "source_sha256": "f5b78817cf504b2b74a9be564826a8b5c935b0c4358157ad4b0312295106b499",
+      "summary": "知道 P 为十进制的千万亿量级，但改写系数时未同步调整指数。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2021_001"
+      ],
+      "knowledge_points": [
+        "CO01-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b344e46662b618080af6eb60ad7aa2c1b2b6659c36d6ff88130d88e6e884f0bd",
+      "source_fragment": "turn:5#CO01-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_order": 5,
+      "source_sha256": "f5b78817cf504b2b74a9be564826a8b5c935b0c4358157ad4b0312295106b499",
+      "summary": "给出系数缩放与指数增减的对应规则。"
+    },
+    {
+      "correction_result": "uncertain",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "CO_2021_001"
+      ],
+      "knowledge_points": [
+        "CO01-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b344e46662b618080af6eb60ad7aa2c1b2b6659c36d6ff88130d88e6e884f0bd",
+      "source_fragment": "turn:6#CO01-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-cc7985e695ee133d",
+      "source_order": 6,
+      "source_sha256": "f5b78817cf504b2b74a9be564826a8b5c935b0c4358157ad4b0312295106b499",
+      "summary": "表示没有问题并要求继续，未独立复算。"
     },
     {
       "correction_result": null,
@@ -2095,6 +4211,167 @@
     },
     {
       "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-06"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:3#DS07-06",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 3,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "围绕二叉搜索树插入规则说明路径方向。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-08"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:3#DS07-08",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 3,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "讲解给出插入路径与第一个失衡结点的定位过程。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-10"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:2#DS07-10",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 2,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "指出需要从插入点向上找第一个失衡结点，判型结论正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-10"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:5#DS07-10",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 5,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "给出查找失衡结点并决定旋转型的固定链路。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:2#DS07-11",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 2,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "判型与中间结构正确，但两步旋转的名称与操作对象说反。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:3#DS07-11",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 3,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "给出从失衡结点到插入点前两步方向决定旋转型与两步对象的标准命名。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "DS_2021_001"
+      ],
+      "knowledge_points": [
+        "DS07-11"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "b6964310eae42fa8c6d962689d70e5f56808047eb7cffd7dc52bbadb994dca29",
+      "source_fragment": "turn:4#DS07-11",
+      "source_id": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-f2766960aca5b6fd",
+      "source_order": 4,
+      "source_sha256": "b9bb924d6282d175839a3648eecd4ac0ff7474b3570963b1fdef56526be309af",
+      "summary": "按标准命名复述两步旋转方向。"
+    },
+    {
+      "correction_result": null,
       "event_kind": "outcome",
       "event_time": "",
       "evidence_role": "observed_learner_evidence",
@@ -2161,6 +4438,420 @@
       "source_order": 5,
       "source_sha256": "c074fc2644f545254468a0e4cc8c55bce7c37b5bcc5c1c28fec7bd09795cf210",
       "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:2#CO05-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 2,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "报告不了解微程序控制方式，先按整体编码的方式猜测。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:3#CO05-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 3,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "说明微程序控制基本原理与操作控制字段、顺序控制字段的分工。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:2#CO05-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 2,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "把字段直接编码法理解成对全部微命令整体编码，按总数取位。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:3#CO05-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 3,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "说明字段直接编码法按互斥分组、组内编码、各组字段并排拼接。"
+    },
+    {
+      "correction_result": "partial",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:4#CO05-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 4,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "按各组取对数求和得到结果，但漏掉组内全不发档的必要性。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-16"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:5#CO05-16",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 5,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "指出应按组内微命令数加一取上整，并用二的整数次幂边界说明差异。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2012_007"
+      ],
+      "knowledge_points": [
+        "CO05-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c81626c23a77bfd2148b5db0a90fe4b4fab741c423acba2357deebad13427517",
+      "source_fragment": "turn:3#CO05-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-1a84d22b28c7d828",
+      "source_order": 3,
+      "source_sha256": "94e7a876e46650e8abbf6a46fff30cd05aa6cd9c6ba3df71a6716cf3f2397905",
+      "summary": "讲解以互斥微命令不能同时发出来说明分组依据。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "wrong",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:2#CO01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 2,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "把机器字长与指令字长混为一谈，未先确定各部件宽度由谁决定。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:3#CO01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 3,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "区分机器字长与指令字长并给出各自的决定者。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO01-17"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:6#CO01-17",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 6,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "提示后按部件逐条写出宽度归属。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "learner_report",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO02-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:2#CO02-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 2,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "报告不知道算术逻辑单元是什么，无法判断其宽度。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO02-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:3#CO02-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 3,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "说明算术逻辑单元执行整数与逻辑运算并吃一个机器字。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO02-15"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:6#CO02-15",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 6,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "提示后把算术逻辑单元归入宽度由机器字长决定的部件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO04-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "uncertain",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:2#CO04-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 2,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "不能区分机器字长与指令字长各自描述的对象。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO04-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:4#CO04-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 4,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "排除指令寄存器时正确使用指令字长与机器字长不一定相等这一条件。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO04-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:7#CO04-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 7,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "收束措辞：宽度由格式决定，而不是由是否与整数相关决定。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "partial",
+      "prompt_dependency": "independent",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:4#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 4,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "通用寄存器只说存操作数，未推进到宽度归属；并把指令寄存器说成与操作数地址相关。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2020_001"
+      ],
+      "knowledge_points": [
+        "CO05-05"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "c851052e0818a73df7f2d89a5fcdff20bce379eb37bb423f20420c7618e29c0f",
+      "source_fragment": "turn:6#CO05-05",
+      "source_id": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-0fb5321aa174c1d2",
+      "source_order": 6,
+      "source_sha256": "c7b1c3e9eec913a7363bb308ad85890558bb0b190525ad10e3549b3545f77cdd",
+      "summary": "提示后补齐通用寄存器宽度归属并纠正指令寄存器的决定者。"
     },
     {
       "correction_result": null,
@@ -2460,6 +5151,98 @@
       "source_order": 2,
       "source_sha256": "16ddf76fcbad2d62b298f4c852c7eb616953266c849133cea8b545e7bc3d0596",
       "summary": "正确使用根与非根下限并识别最少占用结构；只确认这部分推理。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2009_004"
+      ],
+      "knowledge_points": [
+        "CO05-18"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "d7634c5ce73267b8e47d1e4d1d93670b94cdaaba81ac9163497180a91c936b02",
+      "source_fragment": "turn:2#CO05-18",
+      "source_id": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_order": 2,
+      "source_sha256": "eb2506ffbe1e8e8a54329e47510f8ef79eebf718184c9aa4c709a28218987008",
+      "summary": "把除数为零、浮点下溢与访存缺页归入内部异常一侧。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "outcome",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2009_004"
+      ],
+      "knowledge_points": [
+        "CO05-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": "correct",
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "d7634c5ce73267b8e47d1e4d1d93670b94cdaaba81ac9163497180a91c936b02",
+      "source_fragment": "turn:2#CO05-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_order": 2,
+      "source_sha256": "eb2506ffbe1e8e8a54329e47510f8ef79eebf718184c9aa4c709a28218987008",
+      "summary": "在出题抓手指向内外判别轴的条件下正确分类并排除其余候选。"
+    },
+    {
+      "correction_result": null,
+      "event_kind": "explanation",
+      "event_time": "",
+      "evidence_role": "assistant_explanation",
+      "formal_ids": [
+        "CO_2009_004"
+      ],
+      "knowledge_points": [
+        "CO05-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "d7634c5ce73267b8e47d1e4d1d93670b94cdaaba81ac9163497180a91c936b02",
+      "source_fragment": "turn:3#CO05-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_order": 3,
+      "source_sha256": "eb2506ffbe1e8e8a54329e47510f8ef79eebf718184c9aa4c709a28218987008",
+      "summary": "逐项定位四个候选并给出内外的分界线。"
+    },
+    {
+      "correction_result": "correct",
+      "event_kind": "repair",
+      "event_time": "",
+      "evidence_role": "observed_learner_evidence",
+      "formal_ids": [
+        "CO_2009_004"
+      ],
+      "knowledge_points": [
+        "CO05-19"
+      ],
+      "observed_date": "2026-09-10",
+      "outcome": null,
+      "prompt_dependency": "hint_or_prompted",
+      "semantic_annotation_sha256": "d7634c5ce73267b8e47d1e4d1d93670b94cdaaba81ac9163497180a91c936b02",
+      "source_fragment": "turn:4#CO05-19",
+      "source_id": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_kind": "semantic_formal_intake",
+      "source_locator": "cs408-conversation-package://CS408-20260910-65ee329ab285a0ad",
+      "source_order": 4,
+      "source_sha256": "eb2506ffbe1e8e8a54329e47510f8ef79eebf718184c9aa4c709a28218987008",
+      "summary": "复述外部由外设提出、内部由 CPU 自己检测。"
     },
     {
       "correction_result": null,
@@ -3865,6 +6648,6 @@
       "summary": "助手提示已保留；提示内容只作为参考证据，不记独立正确。"
     }
   ],
-  "records_sha256": "9db9fb628796e2e2f46bd85e7cdfdf07f9ce2505f8332016aa6d372bf9dba2cc",
+  "records_sha256": "33d7dcab585c6263a15143fa990bb917ba11665fefe80e7a759ab2cd6548ffac",
   "schema": "cs408-concept-evidence-snapshot-v1"
 }

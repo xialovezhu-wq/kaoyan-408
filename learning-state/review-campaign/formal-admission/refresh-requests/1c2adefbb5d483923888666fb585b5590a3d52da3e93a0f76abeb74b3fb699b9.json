@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-bb33c5d31f769908c36adad4",
+  "admission_receipt_sha256": "0a384282a4ffed32c77351e42b0a736caa5da750c220b84c952fe6a313e503d2",
+  "campaign_cohort_sha256": "24b2db57eae69c85b2b42952770099a1f55a02df8ff7f6baaef8164b6a741eb2",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "DS_2015_001",
+  "formal_result_event_id": "CE-83fa805b9a8b2afd2c7d",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "dc1d77f72f79699d8b585c91e905765d322093624e94e0270f6d96ac7dda58fb",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_DS05_PREORDER_CATALAN",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-10",
+  "target_run_policy": "next_unfrozen_run_only"
+}

@@ -1,0 +1,21 @@
+{
+  "archive_relative_path": "01_408/资料库/原始会话资料/2026-09-10/CS408-20260910-eb59ccbed9bb3304",
+  "archive_verified_at": "2026-09-10T13:14:11+00:00",
+  "display_asset_closure_receipt_id": "CS408-DISPLAY-e54f12ab84d19d2818f7",
+  "display_asset_closure_receipt_relative_path": "details:.cs408-display-assets/closures/CS408-20260910-eb59ccbed9bb3304/DS_2012_002.json",
+  "display_asset_closure_receipt_sha256": "02d9663fb19ae1126033bd4ae9f4c36dab4085af32cb91983d5fb99dda91a7d9",
+  "formal_ids": [
+    "DS_2012_002"
+  ],
+  "formal_reference_scan_sha256": "c98f29d3055a2a709f06eefd56a426322d3fc1d5836fb790bbb4af439a49201d",
+  "formal_terminal_locator": "cs408-sol-terminal://sha256/e2b0fc278e7581f08e603600ff1454b1cedc8c8576e4f765213155d3818bd285",
+  "formal_terminal_outcome": "curated",
+  "formal_terminal_sha256": "e2b0fc278e7581f08e603600ff1454b1cedc8c8576e4f765213155d3818bd285",
+  "formal_write_count": 0,
+  "no_display": false,
+  "package_id": "CS408-20260910-eb59ccbed9bb3304",
+  "package_sha256": "dbe7f80eeeb73541e1b9aa0715f7a225a9d5cbc76dd221d6ec69e5d9d2c3faa1",
+  "pending_component": null,
+  "schema_version": "cs408-package-archive-intent-v1",
+  "stable_asset_count": 1
+}

@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS05_TRAVERSAL_LOCAL_CONSTRAINT
 subject: 数据结构
 module: DS05 树与二叉树
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS05_TRAVERSAL_LOCAL_CONSTRAINT · 先序后序的局部结构约束
 
 - 覆盖正式节点：DS_2011_002、DS_2012_001
 - 旧复习单元：RU_DS_2012_001
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

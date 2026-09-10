@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_DS05_PREORDER_CATALAN
 subject: 数据结构
 module: DS03 栈、队列和数组
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_DS05_PREORDER_CATALAN · 固定先序下二叉树形态计数
 
 - 覆盖正式节点：DS_2015_001（主知识点 DS03-04 入栈与出栈序列）
 - 旧复习单元：RU_DS_2015_001
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

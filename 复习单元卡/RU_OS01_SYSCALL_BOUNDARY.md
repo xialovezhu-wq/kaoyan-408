@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_OS01_SYSCALL_BOUNDARY
 subject: 操作系统
 module: OS01 操作系统概述
-schedule_state: recalibration_required_after_rebuild
+schedule_state: "active_scheduled"
 ---
 
 # RU_OS01_SYSCALL_BOUNDARY · 系统调用、库函数与内核内部机制的边界
 
 - 覆盖正式节点：OS_2010_001、OS_2021_003
 - 旧复习单元：RU_OS01_14_17_20260528、RU_OS_2021_003、RU_OS_2010_001
-- 当前状态：recalibration_required_after_rebuild
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

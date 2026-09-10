@@ -3,14 +3,14 @@ schema: review_unit_card_v2
 review_unit_id: RU_CO_BUS_RATE_CONVERSION
 subject: 计算机组成原理
 module: CO06 总线与输入输出系统
-schedule_state: uncalibrated_baseline_due
+schedule_state: "active_scheduled"
 ---
 
 # RU_CO_BUS_RATE_CONVERSION · 总线/链路数据率：数据量、频率与 bit/Byte 单位链
 
 - 覆盖正式节点：CO_UNK_056、CO_UNK_057
 - 旧复习单元：无
-- 当前状态：uncalibrated_baseline_due
+- 当前状态：active_scheduled
 
 ## 闭卷提取
 

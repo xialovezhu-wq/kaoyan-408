@@ -1,0 +1,42 @@
+{
+  "active_run_mutation_count": 0,
+  "admission_receipt_sha256": "b8aba197d99a5d5da434d47f2ff78404266100de0e119c7e972bbf688433ff32",
+  "campaign_cohort_sha256": "7a01ff8b23ffda364da2b067f09b44c5efaa477968e45b52f78ead458af52db2",
+  "campaign_id": "RC-408-2026-110D",
+  "created_at": "2026-09-10T13:14:51.461956+00:00",
+  "forecast_ref": "/Users/xiazhibin/.codex/408-curation-20260910/CAP-20260910-9211501d469e/forecast.json",
+  "forecast_sha256": "470aa7dae86baf3a47a496daee7dfddbdd9df1b6d7cd811b5c170ff1265ee6cd",
+  "formal_node_id": "DS_2016_002",
+  "formal_write_count": 0,
+  "frozen_run_mutation_count": 0,
+  "next_unfrozen_due_run_ref": "/Users/xiazhibin/.codex/408-curation-20260910/CAP-20260910-9211501d469e/next-unfrozen-due.json",
+  "next_unfrozen_due_run_sha256": "7885d1f1fe9b23c76805e9722224bd569f854ed32142c3446ce03e5c0e3d3d3d",
+  "request_sha256": "6c59afec8f0ebd1c5fad9fd266646db30fe765d28a28ce6dbce2d99ce392e2cd",
+  "scheduler_owner": "morning_coverage_campaign_408.py",
+  "scheduler_refresh_receipt": {
+    "admission_cutoff": {
+      "byte_size": 22787,
+      "event_count": 27,
+      "latest_event_id": "CAE-a7fb0584d8213833a61a7f05",
+      "latest_event_sha256": "a3cbe893b77d8c78bce054e6a8d6b4026d04a0a3e6d7fa75fb3f8b4c17dc9b42",
+      "ref": "wiki/study_vaults/408-full/state/review-campaign/admissions.jsonl",
+      "sha256": "251990401683cf41e4e5d4f90c0b430928bd7be7f465953632c8dbbfad8eff0b"
+    },
+    "admission_event_binding_set_sha256": "64ce7eeed94b0b485122ed39d77851d9bba0b129e6e33e148c65e510bfde6697",
+    "campaign_id": "RC-408-2026-110D",
+    "cohort_sha256": "e0169f36af1ac14b821713118f23268b72ad7cce1e50582749fbc2e888ed75bd",
+    "config_sha256": "a80bdb14e3653961938639caccceb7761675cc6b7b75c820e3841aeacbbcf75c",
+    "forecast_content_sha256": "00865c568cc01f44fcf7ed33c0d56314218e5edce1441ea511732dd1997c81f5",
+    "formal_write_count": 0,
+    "learner_evidence_write_count": 0,
+    "memory_projection_sha256": "1c873253f0ad04abc06074ad6ab8d4360d176044c7c15ede2ad43891b61a6f21",
+    "receipt_sha256": "5d30dd0d724acb710340b24693e37b4a9aec5a63c9a694b07bb59a694b0f50af",
+    "refresh_handoff_sha256": "feda22e40be14b8a25c9f196fa7507cfcf7947d2dd4b3ed328b067ec90d382e5",
+    "schema": "review_campaign_forecast_refresh_receipt_v1",
+    "trigger_admission_event_id": "CAE-a7fb0584d8213833a61a7f05",
+    "trigger_admission_event_sha256": "a3cbe893b77d8c78bce054e6a8d6b4026d04a0a3e6d7fa75fb3f8b4c17dc9b42"
+  },
+  "schema": "campaign_forecast_handoff_receipt_v1",
+  "status": "refreshed",
+  "target_run_policy": "next_unfrozen_run_only"
+}

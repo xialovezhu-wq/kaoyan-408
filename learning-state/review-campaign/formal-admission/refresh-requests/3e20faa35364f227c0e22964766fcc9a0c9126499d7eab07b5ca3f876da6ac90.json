@@ -1,0 +1,27 @@
+{
+  "active_run_mutation_allowed": false,
+  "admission_event_id": "CAE-837d7ce66070bdfb8a1273ab",
+  "admission_receipt_sha256": "f359d8bf3dc25a8b39048f0add109c6b859effdd94bbfeaa3183222c7a6ed15a",
+  "campaign_cohort_sha256": "4643ecdebba9edb8f1762a94a33b7b6c3fe66b486ca91b55ef91ec8233b8bf9d",
+  "campaign_id": "RC-408-2026-110D",
+  "contract_version": "campaign-node-admission-v1",
+  "formal_apply_count": 0,
+  "formal_node_id": "CO_2009_004",
+  "formal_result_event_id": "CE-f7cc7f4a3579e66b928a",
+  "formal_write_count": 0,
+  "frozen_run_mutation_allowed": false,
+  "learner_outcome_write_count": 0,
+  "luna_call_count": 0,
+  "mcp_call_count": 0,
+  "provider_call_count": 0,
+  "request_sha256": "debd53c02fe1a9e1acbf6abbfdcc1058926a284969b4c99e868319e288f34c66",
+  "requested_products": [
+    "next_unfrozen_due_run",
+    "coverage_forecast"
+  ],
+  "review_backflow_write_count": 0,
+  "review_unit_id": "RU_CO_2009_004",
+  "schema": "campaign_forecast_refresh_request_v1",
+  "study_date": "2026-09-10",
+  "target_run_policy": "next_unfrozen_run_only"
+}
