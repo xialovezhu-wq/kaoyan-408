@@ -17,6 +17,7 @@ sys.path.insert(0, str(SCRIPTS))
 import intake_fact_capture_408 as capture  # noqa: E402
 import capture_hot_writer_408 as capture_hot  # noqa: E402
 import capture_commit_index_408 as capture_commit  # noqa: E402
+import producer_binding_attestation_408 as producer_binding  # noqa: E402
 
 
 class IntakeFactCaptureTests(unittest.TestCase):
@@ -54,6 +55,7 @@ class IntakeFactCaptureTests(unittest.TestCase):
             producer_files=[
                 PROJECT_ROOT / "scripts" / "intake_fact_capture_408.py",
                 PROJECT_ROOT / "scripts" / "capture_hot_writer_408.py",
+                PROJECT_ROOT / "scripts" / "managed_408_current_turn.py",
                 PROJECT_ROOT / "scripts" / "capture_commit_index_408.py",
                 PROJECT_ROOT / "scripts" / "bounded_jsonl_index_408.py",
                 PROJECT_ROOT / "scripts" / "intake_lib_408.py",
@@ -2050,6 +2052,10 @@ class IntakeFactCaptureTests(unittest.TestCase):
                     repo_root=root,
                 )
             self.assertEqual(receipt["producer_binding_status"], "attested")
+            self.assertRegex(receipt["receipt_sha256"], r"^[0-9a-f]{64}$")
+            self.assertEqual(
+                receipt["recorded_at"], "2026-08-17T07:00:00+00:00"
+            )
             self.assertRegex(
                 receipt["producer_binding_attestation_sha256"],
                 r"^[0-9a-f]{64}$",
@@ -2062,11 +2068,115 @@ class IntakeFactCaptureTests(unittest.TestCase):
             self.assertEqual(
                 value["capture_content_sha256"], receipt["payload_sha256"]
             )
+            self.assertEqual(
+                value["attestation_sha256"],
+                receipt["producer_binding_attestation_sha256"],
+            )
+            self.assertEqual(
+                hashlib.sha256(sidecar.read_bytes()).hexdigest(),
+                receipt["producer_binding_attestation_file_sha256"],
+            )
             self.assertEqual(value["formal_write_count"], 0)
             self.assertFalse(
                 {"release_id", "activation_id", "dispatcher_authority", "mcp_authority"}
                 & set(value)
             )
+
+    def test_shared_finalizer_reopens_same_sidecar_and_fails_closed_on_conflict(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            payload = self._payload(
+                study_date="2026-08-17",
+                idempotency_key="capture:shared-producer-finalizer",
+            )
+            with mock.patch.object(
+                capture,
+                "_now_utc",
+                return_value="2026-08-17T07:00:00+00:00",
+            ):
+                receipt = capture.capture(
+                    self._write(root, payload, "shared-finalizer.json"),
+                    repo_root=root,
+                )
+
+            first = producer_binding.commit_capture_with_producer_attestation(
+                descriptor_path=self._descriptor_path,
+                repo_root=root,
+                subject="cs408",
+                capture_id=str(receipt["capture_id"]),
+                capture_content_sha256=str(receipt["payload_sha256"]),
+                capture_receipt_sha256=str(receipt["receipt_sha256"]),
+                recorded_at=str(receipt["recorded_at"]),
+                recovered=False,
+            )
+            second = producer_binding.commit_capture_with_producer_attestation(
+                descriptor_path=self._descriptor_path,
+                repo_root=root,
+                subject="cs408",
+                capture_id=str(receipt["capture_id"]),
+                capture_content_sha256=str(receipt["payload_sha256"]),
+                capture_receipt_sha256=str(receipt["receipt_sha256"]),
+                recorded_at=str(receipt["recorded_at"]),
+                recovered=True,
+            )
+
+            self.assertTrue(first["idempotent"])
+            self.assertTrue(second["idempotent"])
+            self.assertTrue(second["recovered"])
+            self.assertTrue(second["handoff_ready_allowed"])
+            self.assertEqual(
+                first["producer_attestation_sha256"],
+                second["producer_attestation_sha256"],
+            )
+            self.assertEqual(
+                second["capture_identity"],
+                {
+                    "capture_id": receipt["capture_id"],
+                    "capture_content_sha256": receipt["payload_sha256"],
+                    "capture_receipt_sha256": receipt["receipt_sha256"],
+                },
+            )
+            for changed in (
+                {"capture_content_sha256": "e" * 64},
+                {"capture_receipt_sha256": "e" * 64},
+                {"recorded_at": "2026-08-17T07:00:01+00:00"},
+            ):
+                inputs = {
+                    "descriptor_path": self._descriptor_path,
+                    "repo_root": root,
+                    "subject": "cs408",
+                    "capture_id": str(receipt["capture_id"]),
+                    "capture_content_sha256": str(receipt["payload_sha256"]),
+                    "capture_receipt_sha256": str(receipt["receipt_sha256"]),
+                    "recorded_at": str(receipt["recorded_at"]),
+                    "recovered": True,
+                }
+                inputs.update(changed)
+                with self.subTest(changed=changed), self.assertRaisesRegex(
+                    producer_binding.ProducerBindingError,
+                    "capture ledger binding mismatch",
+                ):
+                    producer_binding.commit_capture_with_producer_attestation(
+                        **inputs
+                    )
+            sidecar = Path(second["producer_attestation_path"])
+            sidecar.write_text("{}\n", encoding="utf-8")
+            with self.assertRaisesRegex(
+                producer_binding.ProducerBindingError,
+                "producer attestation no-clobber conflict",
+            ):
+                producer_binding.commit_capture_with_producer_attestation(
+                    descriptor_path=self._descriptor_path,
+                    repo_root=root,
+                    subject="cs408",
+                    capture_id=str(receipt["capture_id"]),
+                    capture_content_sha256=str(receipt["payload_sha256"]),
+                    capture_receipt_sha256=str(receipt["receipt_sha256"]),
+                    recorded_at=str(receipt["recorded_at"]),
+                    recovered=True,
+                )
 
 
 if __name__ == "__main__":

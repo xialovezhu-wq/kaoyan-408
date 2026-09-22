@@ -415,7 +415,7 @@ def _morning_capture_commit(
         private_root=private_root,
     )
     _fault(fault_injector, "before_capture_commit")
-    capture = _commit_capture(root, payload)
+    capture = _commit_capture(root, payload, private_root=private_root)
     _fault(fault_injector, "after_capture_commit")
     if capture.get("capture_id") != expected_capture_id:
         raise ManagedCurrentTurnError("capture_background_handoff_id_drifted")
@@ -755,7 +755,12 @@ def _mark_morning_feedback(
         ) from exc
 
 
-def _commit_capture(repo: Path, payload: dict[str, Any]) -> dict[str, Any]:
+def _commit_capture(
+    repo: Path,
+    payload: dict[str, Any],
+    *,
+    private_root: str | Path | None,
+) -> dict[str, Any]:
     ledger, state, hot_root = _capture_paths(repo)
     if not ledger.is_file() or not state.is_file():
         raise ManagedCurrentTurnError("capture_truth_not_prepared")
@@ -768,8 +773,42 @@ def _commit_capture(repo: Path, payload: dict[str, Any]) -> dict[str, Any]:
                 lock_token=lock_token,
                 validated_payload=payload,
             )
+            events = capture_model._load_events(capture_model.capture_root(repo))
+            matching = [
+                event
+                for event in events
+                if event.get("event_type") == "fact_captured"
+                and event.get("capture_id") == result.get("capture_id")
+            ]
+            if len(matching) != 1:
+                raise ManagedCurrentTurnError(
+                    "capture_finalizer_ledger_identity_invalid"
+                )
+            event = matching[0]
+            finalization = (
+                capture_model.commit_capture_with_producer_attestation(
+                    descriptor_path=(
+                        capture_model.producer_binding_descriptor_path()
+                    ),
+                    repo_root=repo,
+                    subject="cs408",
+                    capture_id=str(result.get("capture_id") or ""),
+                    capture_content_sha256=str(
+                        result.get("payload_sha256") or ""
+                    ),
+                    capture_receipt_sha256=str(
+                        result.get("receipt_sha256") or ""
+                    ),
+                    recorded_at=str(event.get("created_at") or ""),
+                    recovered=result.get("status") == "ALREADY_COMMITTED",
+                )
+            )
     except (capture_hot.CaptureHotWriterError, OSError) as exc:
         raise ManagedCurrentTurnError(f"capture_commit_failed:{exc}") from exc
+    except capture_model.ProducerBindingError as exc:
+        raise ManagedCurrentTurnError(
+            f"capture_producer_binding_failed:{exc}"
+        ) from exc
     joint = result.get("joint_verification") or {}
     if (
         result.get("status") not in {"CAPTURED", "ALREADY_COMMITTED"}
@@ -778,6 +817,40 @@ def _commit_capture(repo: Path, payload: dict[str, Any]) -> dict[str, Any]:
         or result.get("formal_write_count") != 0
     ):
         raise ManagedCurrentTurnError("capture_commit_not_verified")
+    result = {
+        **result,
+        "recorded_at": finalization["recorded_at"],
+        "producer_binding_status": finalization["producer_binding_status"],
+        "producer_binding_attestation_path": finalization[
+            "producer_attestation_path"
+        ],
+        "producer_binding_attestation_sha256": finalization[
+            "producer_attestation_sha256"
+        ],
+        "producer_binding_attestation_file_sha256": finalization[
+            "producer_attestation_file_sha256"
+        ],
+    }
+    internal_attestation_sha = result[
+        "producer_binding_attestation_sha256"
+    ]
+    sidecar_file_sha = result[
+        "producer_binding_attestation_file_sha256"
+    ]
+    if internal_attestation_sha is not None or sidecar_file_sha is not None:
+        if not (
+            SHA256_RE.fullmatch(str(internal_attestation_sha or ""))
+            and SHA256_RE.fullmatch(str(sidecar_file_sha or ""))
+        ):
+            raise ManagedCurrentTurnError(
+                "capture_producer_binding_receipt_invalid"
+            )
+        private_evidence.publish_background_handoff_producer_binding(
+            private_root=private_root,
+            capture_id=str(result["capture_id"]),
+            producer_binding_attestation_sha256=str(internal_attestation_sha),
+            producer_binding_attestation_file_sha256=str(sidecar_file_sha),
+        )
     return result
 
 
@@ -1498,7 +1571,9 @@ def run_current_question_turn(
                     )
                 )
                 _fault(fault_injector, "before_capture_commit")
-                capture = _commit_capture(root, capture_payload)
+                capture = _commit_capture(
+                    root, capture_payload, private_root=private_root
+                )
                 _fault(fault_injector, "after_capture_commit")
                 if capture.get("capture_id") != expected_capture_id:
                     raise ManagedCurrentTurnError("capture_background_handoff_id_drifted")
@@ -1601,6 +1676,16 @@ def run_current_question_turn(
         "capture_status": capture_status,
         "capture_id": capture.get("capture_id") if capture else None,
         "capture_receipt_sha256": capture.get("receipt_sha256") if capture else None,
+        "producer_binding_attestation_sha256": (
+            capture.get("producer_binding_attestation_sha256")
+            if capture
+            else None
+        ),
+        "producer_binding_attestation_file_sha256": (
+            capture.get("producer_binding_attestation_file_sha256")
+            if capture
+            else None
+        ),
         "background_handoff_status": (
             background_handoff.get("status") if background_handoff else None
         ),
@@ -2373,7 +2458,9 @@ def recover_current_capture(
         )
     )
     capture = _commit_capture(
-        root, capture_model._validate_capture_payload(payload)
+        root,
+        capture_model._validate_capture_payload(payload),
+        private_root=private_root,
     )
     if capture.get("capture_id") != expected_capture_id:
         raise ManagedCurrentTurnError("capture_recovery_background_handoff_id_drifted")
@@ -2437,6 +2524,12 @@ def recover_current_capture(
         "context_id": context["context_id"],
         "capture_id": capture["capture_id"],
         "capture_receipt_sha256": capture["receipt_sha256"],
+        "producer_binding_attestation_sha256": capture[
+            "producer_binding_attestation_sha256"
+        ],
+        "producer_binding_attestation_file_sha256": capture[
+            "producer_binding_attestation_file_sha256"
+        ],
         "background_handoff_status": background_handoff["status"],
         "background_handoff_locator": background_handoff["locator"],
         "background_handoff": background_handoff,

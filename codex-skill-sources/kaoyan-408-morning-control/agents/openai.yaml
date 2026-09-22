@@ -1,0 +1,6 @@
+interface:
+  display_name: "408 晨间控制面"
+  short_description: "准备题包、创建唯一 session 并发布第一题"
+  default_prompt: "使用 $kaoyan-408-morning-control 开始今天的 408 晨间复盘，发布第一题后停止并等待我作答。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,38 @@
+{
+  "skill_name": "kaoyan-408-morning-control",
+  "evals": [
+    {
+      "id": 1,
+      "name": "start_reuses_existing_preparation_job",
+      "prompt": "开始今天的 408 晨间复盘。已知当日 preparation job 是 MRJ-EXISTING。",
+      "expected_output": "Use start_morning_review_408.py with the existing preparation job, publish one verified pack, one session, and one first display, then stop.",
+      "expectations": [
+        "The existing job is adopted rather than duplicated.",
+        "The control plane stops after an answer-safe first display receipt.",
+        "Preparation and formal write counts remain zero."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "completed_old_session_auto_closeout",
+      "prompt": "旧 session 仍显示 active，但 canonical ledger 中全部题已经终态；开始今天的新复盘。",
+      "expected_output": "Rebuild the stale session projection from canonical evidence, append at most one close event, retain all historical artifacts, and continue only after the active gate clears.",
+      "expectations": [
+        "No outcome, repair, or capture is replayed.",
+        "A repeated closeout is idempotent.",
+        "Missing or conflicting canonical evidence fails closed with a distinct error."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "sol_and_luna_model_boundary",
+      "prompt": "说明晨间题包和失败题 capture 分别使用哪个模型，并开始晨间复盘。",
+      "expected_output": "Request gpt-5.6-sol with max reasoning for both pack author and independent verifier; leave gpt-5.6-luna max only to asynchronous two-pass capture analysis.",
+      "expectations": [
+        "The control plane never calls Luna.",
+        "Requested and runtime-confirmed model identity are reported separately.",
+        "The learner hot path never waits for or polls Luna."
+      ]
+    }
+  ]
+}

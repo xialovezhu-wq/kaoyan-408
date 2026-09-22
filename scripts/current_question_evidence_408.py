@@ -37,6 +37,9 @@ BACKGROUND_HANDOFF_SCHEMA = "current-question-background-handoff-v1"
 BACKGROUND_HANDOFF_BINDING_SCHEMA = (
     "current-question-background-handoff-binding-v1"
 )
+BACKGROUND_HANDOFF_PRODUCER_BINDING_SCHEMA = (
+    "current-question-background-handoff-producer-binding-companion-v1"
+)
 RECOVERY_SCHEMA = "current-question-capture-recovery-v1"
 TURN_RECEIPT_SCHEMA = "current-question-turn-receipt-v1"
 DEFAULT_PRIVATE_ROOT = (
@@ -199,6 +202,13 @@ BACKGROUND_HANDOFF_BINDING_KEYS = {
     "object_sha256",
     "locator",
     "updated_at",
+    "formal_write_count",
+}
+BACKGROUND_HANDOFF_PRODUCER_BINDING_KEYS = {
+    "schema_version",
+    "capture_id",
+    "producer_binding_attestation_sha256",
+    "producer_binding_attestation_file_sha256",
     "formal_write_count",
 }
 CURRENT_QUESTION_KEYS = {
@@ -1984,10 +1994,10 @@ def _write_background_handoff(
     }
 
 
-def read_background_handoff_for_capture(
+def _read_background_handoff_raw(
     capture_id: str, *, private_root: str | Path | None = None
 ) -> tuple[dict[str, Any], dict[str, Any]]:
-    """Resolve the current immutable background-handoff object for a capture."""
+    """Resolve only the persisted v1 binding and immutable v1 object."""
 
     _bounded_string(
         capture_id, 256, "capture_id", nullable=False, allow_empty=False
@@ -2033,6 +2043,138 @@ def read_background_handoff_for_capture(
     return binding, handoff
 
 
+def _background_handoff_producer_binding_path(
+    root: Path, capture_id: str
+) -> Path:
+    binding_key = _sha256(capture_id.encode("utf-8"))
+    return (
+        root
+        / "background-handoffs"
+        / "producer-binding-companions"
+        / f"{binding_key}.json"
+    )
+
+
+def _validate_background_handoff_producer_binding(
+    value: object, capture_id: str
+) -> dict[str, Any]:
+    row = _exact_mapping(
+        value,
+        BACKGROUND_HANDOFF_PRODUCER_BINDING_KEYS,
+        "background handoff Producer binding companion",
+    )
+    if (
+        row.get("schema_version")
+        != BACKGROUND_HANDOFF_PRODUCER_BINDING_SCHEMA
+        or row.get("capture_id") != capture_id
+        or row.get("formal_write_count") != 0
+        or not SHA256_RE.fullmatch(
+            str(row.get("producer_binding_attestation_sha256") or "")
+        )
+        or not SHA256_RE.fullmatch(
+            str(row.get("producer_binding_attestation_file_sha256") or "")
+        )
+    ):
+        raise CurrentQuestionEvidenceError(
+            "background handoff Producer binding companion is invalid"
+        )
+    return row
+
+
+def publish_background_handoff_producer_binding(
+    *,
+    private_root: str | Path | None,
+    capture_id: str,
+    producer_binding_attestation_sha256: str,
+    producer_binding_attestation_file_sha256: str,
+) -> dict[str, Any]:
+    """Publish an immutable companion without changing the v1 handoff bytes."""
+
+    _bounded_string(
+        capture_id, 256, "capture_id", nullable=False, allow_empty=False
+    )
+    value = _validate_background_handoff_producer_binding(
+        {
+            "schema_version": BACKGROUND_HANDOFF_PRODUCER_BINDING_SCHEMA,
+            "capture_id": capture_id,
+            "producer_binding_attestation_sha256": (
+                producer_binding_attestation_sha256
+            ),
+            "producer_binding_attestation_file_sha256": (
+                producer_binding_attestation_file_sha256
+            ),
+            "formal_write_count": 0,
+        },
+        capture_id,
+    )
+    root = _private_root(private_root)
+    raw = _json_bytes(value, pretty=True)
+    _atomic_private_write(
+        _background_handoff_producer_binding_path(root, capture_id),
+        raw,
+        root=root,
+    )
+    return dict(value)
+
+
+def _read_background_handoff_producer_binding(
+    *, private_root: str | Path | None, capture_id: str
+) -> dict[str, Any] | None:
+    root = _private_root(private_root)
+    path = _background_handoff_producer_binding_path(root, capture_id)
+    try:
+        info = path.lstat()
+    except FileNotFoundError:
+        return None
+    except OSError as exc:
+        raise CurrentQuestionEvidenceError(
+            "background handoff Producer binding companion is unavailable"
+        ) from exc
+    if (
+        stat.S_ISLNK(info.st_mode)
+        or not stat.S_ISREG(info.st_mode)
+        or info.st_size <= 0
+        or info.st_size > MAX_METADATA_BYTES
+        or stat.S_IMODE(info.st_mode) & 0o077
+    ):
+        raise CurrentQuestionEvidenceError(
+            "background handoff Producer binding companion is unsafe"
+        )
+    try:
+        raw = path.read_bytes()
+        value = json.loads(raw)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise CurrentQuestionEvidenceError(
+            "background handoff Producer binding companion is invalid"
+        ) from exc
+    if len(raw) != info.st_size:
+        raise CurrentQuestionEvidenceError(
+            "background handoff Producer binding companion drifted"
+        )
+    return _validate_background_handoff_producer_binding(value, capture_id)
+
+
+def read_background_handoff_for_capture(
+    capture_id: str, *, private_root: str | Path | None = None
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Resolve v1 handoff bytes plus release-neutral companion fields."""
+
+    binding, handoff = _read_background_handoff_raw(
+        capture_id, private_root=private_root
+    )
+    companion = _read_background_handoff_producer_binding(
+        private_root=private_root, capture_id=capture_id
+    )
+    if companion is None:
+        return binding, handoff
+    return binding, {
+        **handoff,
+        "producer_binding_attestation_sha256": companion[
+            "producer_binding_attestation_sha256"
+        ],
+    }
+
+
 def publish_background_handoff_pending(
     *,
     private_root: str | Path | None,
@@ -2065,7 +2207,7 @@ def publish_background_handoff_pending(
     _validate_background_handoff_object(pending)
     with _background_handoff_lock(capture_id, private_root=private_root):
         try:
-            _, existing = read_background_handoff_for_capture(
+            _, existing = _read_background_handoff_raw(
                 capture_id, private_root=private_root
             )
         except CurrentQuestionEvidenceError as exc:
@@ -2109,7 +2251,7 @@ def publish_background_handoff_ready(
     """Atomically point the gate at one immutable, fully bound ready object."""
 
     with _background_handoff_lock(capture_id, private_root=private_root):
-        _, existing = read_background_handoff_for_capture(
+        _, existing = _read_background_handoff_raw(
             capture_id, private_root=private_root
         )
         for field, expected in {
@@ -2307,6 +2449,7 @@ __all__ = [
     "TRACE_SUPPLEMENT_BINDING_SCHEMA",
     "BACKGROUND_HANDOFF_SCHEMA",
     "BACKGROUND_HANDOFF_BINDING_SCHEMA",
+    "BACKGROUND_HANDOFF_PRODUCER_BINDING_SCHEMA",
     "BACKGROUND_HANDOFF_LOCATOR_PREFIX",
     "LOCATOR_PREFIX",
     "MANIFEST_SCHEMA",
@@ -2331,6 +2474,7 @@ __all__ = [
     "read_trace_supplement_for_capture",
     "publish_background_handoff_pending",
     "publish_background_handoff_ready",
+    "publish_background_handoff_producer_binding",
     "read_background_handoff_for_capture",
     "stage_attachments",
     "bundle_evidence_status",

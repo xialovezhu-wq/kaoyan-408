@@ -47,7 +47,8 @@ from review_feedback_loop import (
 from producer_binding_attestation_408 import (
     ProducerBindingError,
     build_descriptor,
-    publish_attestation,
+    capture_receipt_sha256,
+    commit_capture_with_producer_attestation,
     write_descriptor,
 )
 
@@ -2384,14 +2385,17 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
             if existing.get("event_type") != "fact_captured" or existing.get("payload_sha256") != payload_hash:
                 raise CaptureError("idempotency_key 已被不同事实载荷使用")
             current = replay(events)["captures"][existing["capture_id"]]
+            receipt_sha = capture_receipt_sha256(existing)
             try:
-                producer_binding = publish_attestation(
+                producer_binding = commit_capture_with_producer_attestation(
                     descriptor_path=producer_binding_descriptor_path(),
                     repo_root=Path(repo_root),
                     subject="cs408",
                     capture_id=str(existing["capture_id"]),
                     capture_content_sha256=str(existing["payload_sha256"]),
+                    capture_receipt_sha256=receipt_sha,
                     recorded_at=str(existing["created_at"]),
+                    recovered=True,
                 )
             except (
                 OSError,
@@ -2407,14 +2411,21 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
                 "capture_id": existing["capture_id"],
                 "quality_status": current["quality_status"],
                 "payload_sha256": payload_hash,
+                "receipt_sha256": receipt_sha,
+                "recorded_at": str(existing["created_at"]),
                 "created": False,
                 "formal_write_count": 0,
-                "producer_binding_status": producer_binding["status"],
+                "producer_binding_status": producer_binding[
+                    "producer_binding_status"
+                ],
                 "producer_binding_attestation_path": producer_binding[
-                    "attestation_path"
+                    "producer_attestation_path"
                 ],
                 "producer_binding_attestation_sha256": producer_binding[
-                    "attestation_sha256"
+                    "producer_attestation_sha256"
+                ],
+                "producer_binding_attestation_file_sha256": producer_binding[
+                    "producer_attestation_file_sha256"
                 ],
             }
         event = {
@@ -2428,14 +2439,17 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
             "capture": payload,
         }
         _append_event(root, events, event)
+        receipt_sha = capture_receipt_sha256(event)
         try:
-            producer_binding = publish_attestation(
+            producer_binding = commit_capture_with_producer_attestation(
                 descriptor_path=producer_binding_descriptor_path(),
                 repo_root=Path(repo_root),
                 subject="cs408",
                 capture_id=capture_id,
                 capture_content_sha256=payload_hash,
+                capture_receipt_sha256=receipt_sha,
                 recorded_at=str(event["created_at"]),
+                recovered=False,
             )
         except (
             OSError,
@@ -2459,14 +2473,19 @@ def _capture_value(raw: Any, *, repo_root: str | Path = ".") -> dict[str, Any]:
             else "captured_unconfirmed"
         ),
         "payload_sha256": payload_hash,
+        "receipt_sha256": receipt_sha,
+        "recorded_at": str(event["created_at"]),
         "created": True,
         "formal_write_count": 0,
-        "producer_binding_status": producer_binding["status"],
+        "producer_binding_status": producer_binding["producer_binding_status"],
         "producer_binding_attestation_path": producer_binding[
-            "attestation_path"
+            "producer_attestation_path"
         ],
         "producer_binding_attestation_sha256": producer_binding[
-            "attestation_sha256"
+            "producer_attestation_sha256"
+        ],
+        "producer_binding_attestation_file_sha256": producer_binding[
+            "producer_attestation_file_sha256"
         ],
     }
 
